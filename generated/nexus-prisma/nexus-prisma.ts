@@ -15,241 +15,99 @@ export interface NexusPrismaTypes {
   objectTypes: {
     fields: {
       Query: QueryObject
-      Pokemon: PokemonObject
-      Ability: AbilityObject
-      Form: FormObject
-      GameIndex: GameIndexObject
-      Item: ItemObject
-      Move: MoveObject
-      Species: SpeciesObject
-      Sprite: SpriteObject
-      Stat: StatObject
-      Type: TypeObject
-      PokemonConnection: PokemonConnectionObject
+      Character: CharacterObject
+      Moves: MovesObject
+      Movements: MovementsObject
+      CharacterConnection: CharacterConnectionObject
       PageInfo: PageInfoObject
-      PokemonEdge: PokemonEdgeObject
-      AggregatePokemon: AggregatePokemonObject
-      AbilityConnection: AbilityConnectionObject
-      AbilityEdge: AbilityEdgeObject
-      AggregateAbility: AggregateAbilityObject
-      FormConnection: FormConnectionObject
-      FormEdge: FormEdgeObject
-      AggregateForm: AggregateFormObject
-      GameIndexConnection: GameIndexConnectionObject
-      GameIndexEdge: GameIndexEdgeObject
-      AggregateGameIndex: AggregateGameIndexObject
-      ItemConnection: ItemConnectionObject
-      ItemEdge: ItemEdgeObject
-      AggregateItem: AggregateItemObject
-      MoveConnection: MoveConnectionObject
-      MoveEdge: MoveEdgeObject
-      AggregateMove: AggregateMoveObject
-      SpeciesConnection: SpeciesConnectionObject
-      SpeciesEdge: SpeciesEdgeObject
-      AggregateSpecies: AggregateSpeciesObject
-      SpriteConnection: SpriteConnectionObject
-      SpriteEdge: SpriteEdgeObject
-      AggregateSprite: AggregateSpriteObject
-      StatConnection: StatConnectionObject
-      StatEdge: StatEdgeObject
-      AggregateStat: AggregateStatObject
-      TypeConnection: TypeConnectionObject
-      TypeEdge: TypeEdgeObject
-      AggregateType: AggregateTypeObject
+      CharacterEdge: CharacterEdgeObject
+      AggregateCharacter: AggregateCharacterObject
+      MovesConnection: MovesConnectionObject
+      MovesEdge: MovesEdgeObject
+      AggregateMoves: AggregateMovesObject
+      MovementsConnection: MovementsConnectionObject
+      MovementsEdge: MovementsEdgeObject
+      AggregateMovements: AggregateMovementsObject
       Mutation: MutationObject
       BatchPayload: BatchPayloadObject
       Subscription: SubscriptionObject
-      PokemonSubscriptionPayload: PokemonSubscriptionPayloadObject
-      PokemonPreviousValues: PokemonPreviousValuesObject
-      AbilitySubscriptionPayload: AbilitySubscriptionPayloadObject
-      AbilityPreviousValues: AbilityPreviousValuesObject
-      FormSubscriptionPayload: FormSubscriptionPayloadObject
-      FormPreviousValues: FormPreviousValuesObject
-      GameIndexSubscriptionPayload: GameIndexSubscriptionPayloadObject
-      GameIndexPreviousValues: GameIndexPreviousValuesObject
-      ItemSubscriptionPayload: ItemSubscriptionPayloadObject
-      ItemPreviousValues: ItemPreviousValuesObject
-      MoveSubscriptionPayload: MoveSubscriptionPayloadObject
-      MovePreviousValues: MovePreviousValuesObject
-      SpeciesSubscriptionPayload: SpeciesSubscriptionPayloadObject
-      SpeciesPreviousValues: SpeciesPreviousValuesObject
-      SpriteSubscriptionPayload: SpriteSubscriptionPayloadObject
-      SpritePreviousValues: SpritePreviousValuesObject
-      StatSubscriptionPayload: StatSubscriptionPayloadObject
-      StatPreviousValues: StatPreviousValuesObject
-      TypeSubscriptionPayload: TypeSubscriptionPayloadObject
-      TypePreviousValues: TypePreviousValuesObject
+      CharacterSubscriptionPayload: CharacterSubscriptionPayloadObject
+      CharacterPreviousValues: CharacterPreviousValuesObject
+      MovesSubscriptionPayload: MovesSubscriptionPayloadObject
+      MovesPreviousValues: MovesPreviousValuesObject
+      MovementsSubscriptionPayload: MovementsSubscriptionPayloadObject
+      MovementsPreviousValues: MovementsPreviousValuesObject
     }
     fieldsDetails: {
       Query: QueryFieldDetails
-      Pokemon: PokemonFieldDetails
-      Ability: AbilityFieldDetails
-      Form: FormFieldDetails
-      GameIndex: GameIndexFieldDetails
-      Item: ItemFieldDetails
-      Move: MoveFieldDetails
-      Species: SpeciesFieldDetails
-      Sprite: SpriteFieldDetails
-      Stat: StatFieldDetails
-      Type: TypeFieldDetails
-      PokemonConnection: PokemonConnectionFieldDetails
+      Character: CharacterFieldDetails
+      Moves: MovesFieldDetails
+      Movements: MovementsFieldDetails
+      CharacterConnection: CharacterConnectionFieldDetails
       PageInfo: PageInfoFieldDetails
-      PokemonEdge: PokemonEdgeFieldDetails
-      AggregatePokemon: AggregatePokemonFieldDetails
-      AbilityConnection: AbilityConnectionFieldDetails
-      AbilityEdge: AbilityEdgeFieldDetails
-      AggregateAbility: AggregateAbilityFieldDetails
-      FormConnection: FormConnectionFieldDetails
-      FormEdge: FormEdgeFieldDetails
-      AggregateForm: AggregateFormFieldDetails
-      GameIndexConnection: GameIndexConnectionFieldDetails
-      GameIndexEdge: GameIndexEdgeFieldDetails
-      AggregateGameIndex: AggregateGameIndexFieldDetails
-      ItemConnection: ItemConnectionFieldDetails
-      ItemEdge: ItemEdgeFieldDetails
-      AggregateItem: AggregateItemFieldDetails
-      MoveConnection: MoveConnectionFieldDetails
-      MoveEdge: MoveEdgeFieldDetails
-      AggregateMove: AggregateMoveFieldDetails
-      SpeciesConnection: SpeciesConnectionFieldDetails
-      SpeciesEdge: SpeciesEdgeFieldDetails
-      AggregateSpecies: AggregateSpeciesFieldDetails
-      SpriteConnection: SpriteConnectionFieldDetails
-      SpriteEdge: SpriteEdgeFieldDetails
-      AggregateSprite: AggregateSpriteFieldDetails
-      StatConnection: StatConnectionFieldDetails
-      StatEdge: StatEdgeFieldDetails
-      AggregateStat: AggregateStatFieldDetails
-      TypeConnection: TypeConnectionFieldDetails
-      TypeEdge: TypeEdgeFieldDetails
-      AggregateType: AggregateTypeFieldDetails
+      CharacterEdge: CharacterEdgeFieldDetails
+      AggregateCharacter: AggregateCharacterFieldDetails
+      MovesConnection: MovesConnectionFieldDetails
+      MovesEdge: MovesEdgeFieldDetails
+      AggregateMoves: AggregateMovesFieldDetails
+      MovementsConnection: MovementsConnectionFieldDetails
+      MovementsEdge: MovementsEdgeFieldDetails
+      AggregateMovements: AggregateMovementsFieldDetails
       Mutation: MutationFieldDetails
       BatchPayload: BatchPayloadFieldDetails
       Subscription: SubscriptionFieldDetails
-      PokemonSubscriptionPayload: PokemonSubscriptionPayloadFieldDetails
-      PokemonPreviousValues: PokemonPreviousValuesFieldDetails
-      AbilitySubscriptionPayload: AbilitySubscriptionPayloadFieldDetails
-      AbilityPreviousValues: AbilityPreviousValuesFieldDetails
-      FormSubscriptionPayload: FormSubscriptionPayloadFieldDetails
-      FormPreviousValues: FormPreviousValuesFieldDetails
-      GameIndexSubscriptionPayload: GameIndexSubscriptionPayloadFieldDetails
-      GameIndexPreviousValues: GameIndexPreviousValuesFieldDetails
-      ItemSubscriptionPayload: ItemSubscriptionPayloadFieldDetails
-      ItemPreviousValues: ItemPreviousValuesFieldDetails
-      MoveSubscriptionPayload: MoveSubscriptionPayloadFieldDetails
-      MovePreviousValues: MovePreviousValuesFieldDetails
-      SpeciesSubscriptionPayload: SpeciesSubscriptionPayloadFieldDetails
-      SpeciesPreviousValues: SpeciesPreviousValuesFieldDetails
-      SpriteSubscriptionPayload: SpriteSubscriptionPayloadFieldDetails
-      SpritePreviousValues: SpritePreviousValuesFieldDetails
-      StatSubscriptionPayload: StatSubscriptionPayloadFieldDetails
-      StatPreviousValues: StatPreviousValuesFieldDetails
-      TypeSubscriptionPayload: TypeSubscriptionPayloadFieldDetails
-      TypePreviousValues: TypePreviousValuesFieldDetails
+      CharacterSubscriptionPayload: CharacterSubscriptionPayloadFieldDetails
+      CharacterPreviousValues: CharacterPreviousValuesFieldDetails
+      MovesSubscriptionPayload: MovesSubscriptionPayloadFieldDetails
+      MovesPreviousValues: MovesPreviousValuesFieldDetails
+      MovementsSubscriptionPayload: MovementsSubscriptionPayloadFieldDetails
+      MovementsPreviousValues: MovementsPreviousValuesFieldDetails
     }
   }
   inputTypes: {
     fields: {
-      PokemonWhereUniqueInput: PokemonWhereUniqueInputInputObject
-      AbilityWhereInput: AbilityWhereInputInputObject
-      FormWhereInput: FormWhereInputInputObject
-      GameIndexWhereInput: GameIndexWhereInputInputObject
-      ItemWhereInput: ItemWhereInputInputObject
-      MoveWhereInput: MoveWhereInputInputObject
-      SpeciesWhereInput: SpeciesWhereInputInputObject
-      SpriteWhereInput: SpriteWhereInputInputObject
-      StatWhereInput: StatWhereInputInputObject
-      TypeWhereInput: TypeWhereInputInputObject
-      PokemonWhereInput: PokemonWhereInputInputObject
-      PokemonCreateInput: PokemonCreateInputInputObject
-      AbilityCreateManyInput: AbilityCreateManyInputInputObject
-      AbilityCreateInput: AbilityCreateInputInputObject
-      FormCreateManyInput: FormCreateManyInputInputObject
-      FormCreateInput: FormCreateInputInputObject
-      GameIndexCreateManyInput: GameIndexCreateManyInputInputObject
-      GameIndexCreateInput: GameIndexCreateInputInputObject
-      ItemCreateManyInput: ItemCreateManyInputInputObject
-      ItemCreateInput: ItemCreateInputInputObject
-      MoveCreateManyInput: MoveCreateManyInputInputObject
-      MoveCreateInput: MoveCreateInputInputObject
-      SpeciesCreateManyInput: SpeciesCreateManyInputInputObject
-      SpeciesCreateInput: SpeciesCreateInputInputObject
-      SpriteCreateManyInput: SpriteCreateManyInputInputObject
-      SpriteCreateInput: SpriteCreateInputInputObject
-      StatCreateManyInput: StatCreateManyInputInputObject
-      StatCreateInput: StatCreateInputInputObject
-      TypeCreateManyInput: TypeCreateManyInputInputObject
-      TypeCreateInput: TypeCreateInputInputObject
-      PokemonUpdateInput: PokemonUpdateInputInputObject
-      AbilityUpdateManyInput: AbilityUpdateManyInputInputObject
-      AbilityScalarWhereInput: AbilityScalarWhereInputInputObject
-      AbilityUpdateManyWithWhereNestedInput: AbilityUpdateManyWithWhereNestedInputInputObject
-      AbilityUpdateManyDataInput: AbilityUpdateManyDataInputInputObject
-      FormUpdateManyInput: FormUpdateManyInputInputObject
-      FormScalarWhereInput: FormScalarWhereInputInputObject
-      FormUpdateManyWithWhereNestedInput: FormUpdateManyWithWhereNestedInputInputObject
-      FormUpdateManyDataInput: FormUpdateManyDataInputInputObject
-      GameIndexUpdateManyInput: GameIndexUpdateManyInputInputObject
-      GameIndexScalarWhereInput: GameIndexScalarWhereInputInputObject
-      GameIndexUpdateManyWithWhereNestedInput: GameIndexUpdateManyWithWhereNestedInputInputObject
-      GameIndexUpdateManyDataInput: GameIndexUpdateManyDataInputInputObject
-      ItemUpdateManyInput: ItemUpdateManyInputInputObject
-      ItemScalarWhereInput: ItemScalarWhereInputInputObject
-      ItemUpdateManyWithWhereNestedInput: ItemUpdateManyWithWhereNestedInputInputObject
-      ItemUpdateManyDataInput: ItemUpdateManyDataInputInputObject
-      MoveUpdateManyInput: MoveUpdateManyInputInputObject
-      MoveScalarWhereInput: MoveScalarWhereInputInputObject
-      MoveUpdateManyWithWhereNestedInput: MoveUpdateManyWithWhereNestedInputInputObject
-      MoveUpdateManyDataInput: MoveUpdateManyDataInputInputObject
-      SpeciesUpdateManyInput: SpeciesUpdateManyInputInputObject
-      SpeciesScalarWhereInput: SpeciesScalarWhereInputInputObject
-      SpeciesUpdateManyWithWhereNestedInput: SpeciesUpdateManyWithWhereNestedInputInputObject
-      SpeciesUpdateManyDataInput: SpeciesUpdateManyDataInputInputObject
-      SpriteUpdateManyInput: SpriteUpdateManyInputInputObject
-      SpriteScalarWhereInput: SpriteScalarWhereInputInputObject
-      SpriteUpdateManyWithWhereNestedInput: SpriteUpdateManyWithWhereNestedInputInputObject
-      SpriteUpdateManyDataInput: SpriteUpdateManyDataInputInputObject
-      StatUpdateManyInput: StatUpdateManyInputInputObject
-      StatScalarWhereInput: StatScalarWhereInputInputObject
-      StatUpdateManyWithWhereNestedInput: StatUpdateManyWithWhereNestedInputInputObject
-      StatUpdateManyDataInput: StatUpdateManyDataInputInputObject
-      TypeUpdateManyInput: TypeUpdateManyInputInputObject
-      TypeScalarWhereInput: TypeScalarWhereInputInputObject
-      TypeUpdateManyWithWhereNestedInput: TypeUpdateManyWithWhereNestedInputInputObject
-      TypeUpdateManyDataInput: TypeUpdateManyDataInputInputObject
-      PokemonUpdateManyMutationInput: PokemonUpdateManyMutationInputInputObject
-      AbilityUpdateManyMutationInput: AbilityUpdateManyMutationInputInputObject
-      FormUpdateManyMutationInput: FormUpdateManyMutationInputInputObject
-      GameIndexUpdateManyMutationInput: GameIndexUpdateManyMutationInputInputObject
-      ItemUpdateManyMutationInput: ItemUpdateManyMutationInputInputObject
-      MoveUpdateManyMutationInput: MoveUpdateManyMutationInputInputObject
-      SpeciesUpdateManyMutationInput: SpeciesUpdateManyMutationInputInputObject
-      SpriteUpdateManyMutationInput: SpriteUpdateManyMutationInputInputObject
-      StatUpdateManyMutationInput: StatUpdateManyMutationInputInputObject
-      TypeUpdateManyMutationInput: TypeUpdateManyMutationInputInputObject
-      PokemonSubscriptionWhereInput: PokemonSubscriptionWhereInputInputObject
-      AbilitySubscriptionWhereInput: AbilitySubscriptionWhereInputInputObject
-      FormSubscriptionWhereInput: FormSubscriptionWhereInputInputObject
-      GameIndexSubscriptionWhereInput: GameIndexSubscriptionWhereInputInputObject
-      ItemSubscriptionWhereInput: ItemSubscriptionWhereInputInputObject
-      MoveSubscriptionWhereInput: MoveSubscriptionWhereInputInputObject
-      SpeciesSubscriptionWhereInput: SpeciesSubscriptionWhereInputInputObject
-      SpriteSubscriptionWhereInput: SpriteSubscriptionWhereInputInputObject
-      StatSubscriptionWhereInput: StatSubscriptionWhereInputInputObject
-      TypeSubscriptionWhereInput: TypeSubscriptionWhereInputInputObject
+      CharacterWhereUniqueInput: CharacterWhereUniqueInputInputObject
+      MovesWhereInput: MovesWhereInputInputObject
+      CharacterWhereInput: CharacterWhereInputInputObject
+      MovementsWhereInput: MovementsWhereInputInputObject
+      MovesWhereUniqueInput: MovesWhereUniqueInputInputObject
+      MovementsWhereUniqueInput: MovementsWhereUniqueInputInputObject
+      CharacterCreateInput: CharacterCreateInputInputObject
+      MovesCreateManyWithoutUserInput: MovesCreateManyWithoutUserInputInputObject
+      MovesCreateWithoutUserInput: MovesCreateWithoutUserInputInputObject
+      MovementsCreateOneInput: MovementsCreateOneInputInputObject
+      MovementsCreateInput: MovementsCreateInputInputObject
+      CharacterUpdateInput: CharacterUpdateInputInputObject
+      MovesUpdateManyWithoutUserInput: MovesUpdateManyWithoutUserInputInputObject
+      MovesUpdateWithWhereUniqueWithoutUserInput: MovesUpdateWithWhereUniqueWithoutUserInputInputObject
+      MovesUpdateWithoutUserDataInput: MovesUpdateWithoutUserDataInputInputObject
+      MovesUpsertWithWhereUniqueWithoutUserInput: MovesUpsertWithWhereUniqueWithoutUserInputInputObject
+      MovesScalarWhereInput: MovesScalarWhereInputInputObject
+      MovesUpdateManyWithWhereNestedInput: MovesUpdateManyWithWhereNestedInputInputObject
+      MovesUpdateManyDataInput: MovesUpdateManyDataInputInputObject
+      MovementsUpdateOneInput: MovementsUpdateOneInputInputObject
+      MovementsUpdateDataInput: MovementsUpdateDataInputInputObject
+      MovementsUpsertNestedInput: MovementsUpsertNestedInputInputObject
+      CharacterUpdateManyMutationInput: CharacterUpdateManyMutationInputInputObject
+      MovesCreateInput: MovesCreateInputInputObject
+      CharacterCreateOneWithoutMoveInfoInput: CharacterCreateOneWithoutMoveInfoInputInputObject
+      CharacterCreateWithoutMoveInfoInput: CharacterCreateWithoutMoveInfoInputInputObject
+      MovesUpdateInput: MovesUpdateInputInputObject
+      CharacterUpdateOneWithoutMoveInfoInput: CharacterUpdateOneWithoutMoveInfoInputInputObject
+      CharacterUpdateWithoutMoveInfoDataInput: CharacterUpdateWithoutMoveInfoDataInputInputObject
+      CharacterUpsertWithoutMoveInfoInput: CharacterUpsertWithoutMoveInfoInputInputObject
+      MovesUpdateManyMutationInput: MovesUpdateManyMutationInputInputObject
+      MovementsUpdateInput: MovementsUpdateInputInputObject
+      MovementsUpdateManyMutationInput: MovementsUpdateManyMutationInputInputObject
+      CharacterSubscriptionWhereInput: CharacterSubscriptionWhereInputInputObject
+      MovesSubscriptionWhereInput: MovesSubscriptionWhereInputInputObject
+      MovementsSubscriptionWhereInput: MovementsSubscriptionWhereInputInputObject
     }
   }
   enumTypes: {
-    AbilityOrderByInput: AbilityOrderByInputValues,
-    FormOrderByInput: FormOrderByInputValues,
-    GameIndexOrderByInput: GameIndexOrderByInputValues,
-    ItemOrderByInput: ItemOrderByInputValues,
-    MoveOrderByInput: MoveOrderByInputValues,
-    SpeciesOrderByInput: SpeciesOrderByInputValues,
-    SpriteOrderByInput: SpriteOrderByInputValues,
-    StatOrderByInput: StatOrderByInputValues,
-    TypeOrderByInput: TypeOrderByInputValues,
-    PokemonOrderByInput: PokemonOrderByInputValues,
+    MovesOrderByInput: MovesOrderByInputValues,
+    CharacterOrderByInput: CharacterOrderByInputValues,
+    MovementsOrderByInput: MovementsOrderByInputValues,
     MutationType: MutationTypeValues,
   }
 }
@@ -258,63 +116,31 @@ export interface NexusPrismaTypes {
 
 type QueryObject =
   | QueryFields
-  | { name: 'pokemon', args?: QueryPokemonArgs[] | false, alias?: string  } 
-  | { name: 'pokemons', args?: QueryPokemonsArgs[] | false, alias?: string  } 
-  | { name: 'pokemonsConnection', args?: QueryPokemonsConnectionArgs[] | false, alias?: string  } 
-  | { name: 'abilities', args?: QueryAbilitiesArgs[] | false, alias?: string  } 
-  | { name: 'abilitiesConnection', args?: QueryAbilitiesConnectionArgs[] | false, alias?: string  } 
-  | { name: 'forms', args?: QueryFormsArgs[] | false, alias?: string  } 
-  | { name: 'formsConnection', args?: QueryFormsConnectionArgs[] | false, alias?: string  } 
-  | { name: 'gameIndexes', args?: QueryGameIndexesArgs[] | false, alias?: string  } 
-  | { name: 'gameIndexesConnection', args?: QueryGameIndexesConnectionArgs[] | false, alias?: string  } 
-  | { name: 'items', args?: QueryItemsArgs[] | false, alias?: string  } 
-  | { name: 'itemsConnection', args?: QueryItemsConnectionArgs[] | false, alias?: string  } 
+  | { name: 'character', args?: QueryCharacterArgs[] | false, alias?: string  } 
+  | { name: 'characters', args?: QueryCharactersArgs[] | false, alias?: string  } 
+  | { name: 'charactersConnection', args?: QueryCharactersConnectionArgs[] | false, alias?: string  } 
   | { name: 'moves', args?: QueryMovesArgs[] | false, alias?: string  } 
-  | { name: 'movesConnection', args?: QueryMovesConnectionArgs[] | false, alias?: string  } 
-  | { name: 'specieses', args?: QuerySpeciesesArgs[] | false, alias?: string  } 
-  | { name: 'speciesesConnection', args?: QuerySpeciesesConnectionArgs[] | false, alias?: string  } 
-  | { name: 'sprites', args?: QuerySpritesArgs[] | false, alias?: string  } 
-  | { name: 'spritesConnection', args?: QuerySpritesConnectionArgs[] | false, alias?: string  } 
-  | { name: 'stats', args?: QueryStatsArgs[] | false, alias?: string  } 
-  | { name: 'statsConnection', args?: QueryStatsConnectionArgs[] | false, alias?: string  } 
-  | { name: 'types', args?: QueryTypesArgs[] | false, alias?: string  } 
-  | { name: 'typesConnection', args?: QueryTypesConnectionArgs[] | false, alias?: string  } 
+  | { name: 'moveses', args?: QueryMovesesArgs[] | false, alias?: string  } 
+  | { name: 'movesesConnection', args?: QueryMovesesConnectionArgs[] | false, alias?: string  } 
+  | { name: 'movements', args?: QueryMovementsArgs[] | false, alias?: string  } 
+  | { name: 'movementses', args?: QueryMovementsesArgs[] | false, alias?: string  } 
+  | { name: 'movementsesConnection', args?: QueryMovementsesConnectionArgs[] | false, alias?: string  } 
 
 type QueryFields =
-  | 'pokemon'
-  | 'pokemons'
-  | 'pokemonsConnection'
-  | 'abilities'
-  | 'abilitiesConnection'
-  | 'forms'
-  | 'formsConnection'
-  | 'gameIndexes'
-  | 'gameIndexesConnection'
-  | 'items'
-  | 'itemsConnection'
+  | 'character'
+  | 'characters'
+  | 'charactersConnection'
   | 'moves'
-  | 'movesConnection'
-  | 'specieses'
-  | 'speciesesConnection'
-  | 'sprites'
-  | 'spritesConnection'
-  | 'stats'
-  | 'statsConnection'
-  | 'types'
-  | 'typesConnection'
+  | 'moveses'
+  | 'movesesConnection'
+  | 'movements'
+  | 'movementses'
+  | 'movementsesConnection'
 
 
-type QueryPokemonArgs =
+type QueryCharacterArgs =
   | 'where'
-type QueryPokemonsArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type QueryPokemonsConnectionArgs =
+type QueryCharactersArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -322,63 +148,7 @@ type QueryPokemonsConnectionArgs =
   | 'before'
   | 'first'
   | 'last'
-type QueryAbilitiesArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type QueryAbilitiesConnectionArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type QueryFormsArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type QueryFormsConnectionArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type QueryGameIndexesArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type QueryGameIndexesConnectionArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type QueryItemsArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type QueryItemsConnectionArgs =
+type QueryCharactersConnectionArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -388,13 +158,7 @@ type QueryItemsConnectionArgs =
   | 'last'
 type QueryMovesArgs =
   | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type QueryMovesConnectionArgs =
+type QueryMovesesArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -402,7 +166,7 @@ type QueryMovesConnectionArgs =
   | 'before'
   | 'first'
   | 'last'
-type QuerySpeciesesArgs =
+type QueryMovesesConnectionArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -410,7 +174,9 @@ type QuerySpeciesesArgs =
   | 'before'
   | 'first'
   | 'last'
-type QuerySpeciesesConnectionArgs =
+type QueryMovementsArgs =
+  | 'where'
+type QueryMovementsesArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -418,47 +184,7 @@ type QuerySpeciesesConnectionArgs =
   | 'before'
   | 'first'
   | 'last'
-type QuerySpritesArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type QuerySpritesConnectionArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type QueryStatsArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type QueryStatsConnectionArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type QueryTypesArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type QueryTypesConnectionArgs =
+type QueryMovementsesConnectionArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -469,391 +195,151 @@ type QueryTypesConnectionArgs =
   
 
 export interface QueryFieldDetails {
-  pokemon: {
-    type: 'Pokemon'
-    args: Record<QueryPokemonArgs, core.NexusArgDef<string>>
+  character: {
+    type: 'Character'
+    args: Record<QueryCharacterArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where: PokemonWhereUniqueInput }  ,
+      args: { where: CharacterWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Pokemon | null> | prisma.Pokemon | null
+    ) => Promise<prisma.Character | null> | prisma.Character | null
   }
-  pokemons: {
-    type: 'Pokemon'
-    args: Record<QueryPokemonsArgs, core.NexusArgDef<string>>
+  characters: {
+    type: 'Character'
+    args: Record<QueryCharactersArgs, core.NexusArgDef<string>>
     description: string
     list: true
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: PokemonWhereInput | null, orderBy?: prisma.PokemonOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: CharacterWhereInput | null, orderBy?: prisma.CharacterOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Pokemon[]> | prisma.Pokemon[]
+    ) => Promise<prisma.Character[]> | prisma.Character[]
   }
-  pokemonsConnection: {
-    type: 'PokemonConnection'
-    args: Record<QueryPokemonsConnectionArgs, core.NexusArgDef<string>>
+  charactersConnection: {
+    type: 'CharacterConnection'
+    args: Record<QueryCharactersConnectionArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: PokemonWhereInput | null, orderBy?: prisma.PokemonOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: CharacterWhereInput | null, orderBy?: prisma.CharacterOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.PokemonConnection> | prisma.PokemonConnection
-  }
-  abilities: {
-    type: 'Ability'
-    args: Record<QueryAbilitiesArgs, core.NexusArgDef<string>>
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Query">,
-      args: { where?: AbilityWhereInput | null, orderBy?: prisma.AbilityOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Ability[]> | prisma.Ability[]
-  }
-  abilitiesConnection: {
-    type: 'AbilityConnection'
-    args: Record<QueryAbilitiesConnectionArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Query">,
-      args: { where?: AbilityWhereInput | null, orderBy?: prisma.AbilityOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.AbilityConnection> | prisma.AbilityConnection
-  }
-  forms: {
-    type: 'Form'
-    args: Record<QueryFormsArgs, core.NexusArgDef<string>>
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Query">,
-      args: { where?: FormWhereInput | null, orderBy?: prisma.FormOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Form[]> | prisma.Form[]
-  }
-  formsConnection: {
-    type: 'FormConnection'
-    args: Record<QueryFormsConnectionArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Query">,
-      args: { where?: FormWhereInput | null, orderBy?: prisma.FormOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.FormConnection> | prisma.FormConnection
-  }
-  gameIndexes: {
-    type: 'GameIndex'
-    args: Record<QueryGameIndexesArgs, core.NexusArgDef<string>>
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Query">,
-      args: { where?: GameIndexWhereInput | null, orderBy?: prisma.GameIndexOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.GameIndex[]> | prisma.GameIndex[]
-  }
-  gameIndexesConnection: {
-    type: 'GameIndexConnection'
-    args: Record<QueryGameIndexesConnectionArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Query">,
-      args: { where?: GameIndexWhereInput | null, orderBy?: prisma.GameIndexOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.GameIndexConnection> | prisma.GameIndexConnection
-  }
-  items: {
-    type: 'Item'
-    args: Record<QueryItemsArgs, core.NexusArgDef<string>>
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Query">,
-      args: { where?: ItemWhereInput | null, orderBy?: prisma.ItemOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Item[]> | prisma.Item[]
-  }
-  itemsConnection: {
-    type: 'ItemConnection'
-    args: Record<QueryItemsConnectionArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Query">,
-      args: { where?: ItemWhereInput | null, orderBy?: prisma.ItemOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.ItemConnection> | prisma.ItemConnection
+    ) => Promise<prisma.CharacterConnection> | prisma.CharacterConnection
   }
   moves: {
-    type: 'Move'
+    type: 'Moves'
     args: Record<QueryMovesArgs, core.NexusArgDef<string>>
     description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Query">,
-      args: { where?: MoveWhereInput | null, orderBy?: prisma.MoveOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Move[]> | prisma.Move[]
-  }
-  movesConnection: {
-    type: 'MoveConnection'
-    args: Record<QueryMovesConnectionArgs, core.NexusArgDef<string>>
-    description: string
     list: undefined
-    nullable: false
+    nullable: true
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: MoveWhereInput | null, orderBy?: prisma.MoveOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where: MovesWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.MoveConnection> | prisma.MoveConnection
+    ) => Promise<prisma.Moves | null> | prisma.Moves | null
   }
-  specieses: {
-    type: 'Species'
-    args: Record<QuerySpeciesesArgs, core.NexusArgDef<string>>
+  moveses: {
+    type: 'Moves'
+    args: Record<QueryMovesesArgs, core.NexusArgDef<string>>
     description: string
     list: true
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: SpeciesWhereInput | null, orderBy?: prisma.SpeciesOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: MovesWhereInput | null, orderBy?: prisma.MovesOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Species[]> | prisma.Species[]
+    ) => Promise<prisma.Moves[]> | prisma.Moves[]
   }
-  speciesesConnection: {
-    type: 'SpeciesConnection'
-    args: Record<QuerySpeciesesConnectionArgs, core.NexusArgDef<string>>
+  movesesConnection: {
+    type: 'MovesConnection'
+    args: Record<QueryMovesesConnectionArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: SpeciesWhereInput | null, orderBy?: prisma.SpeciesOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: MovesWhereInput | null, orderBy?: prisma.MovesOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.SpeciesConnection> | prisma.SpeciesConnection
+    ) => Promise<prisma.MovesConnection> | prisma.MovesConnection
   }
-  sprites: {
-    type: 'Sprite'
-    args: Record<QuerySpritesArgs, core.NexusArgDef<string>>
+  movements: {
+    type: 'Movements'
+    args: Record<QueryMovementsArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where: MovementsWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Movements | null> | prisma.Movements | null
+  }
+  movementses: {
+    type: 'Movements'
+    args: Record<QueryMovementsesArgs, core.NexusArgDef<string>>
     description: string
     list: true
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: SpriteWhereInput | null, orderBy?: prisma.SpriteOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: MovementsWhereInput | null, orderBy?: prisma.MovementsOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Sprite[]> | prisma.Sprite[]
+    ) => Promise<prisma.Movements[]> | prisma.Movements[]
   }
-  spritesConnection: {
-    type: 'SpriteConnection'
-    args: Record<QuerySpritesConnectionArgs, core.NexusArgDef<string>>
+  movementsesConnection: {
+    type: 'MovementsConnection'
+    args: Record<QueryMovementsesConnectionArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: SpriteWhereInput | null, orderBy?: prisma.SpriteOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: MovementsWhereInput | null, orderBy?: prisma.MovementsOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.SpriteConnection> | prisma.SpriteConnection
-  }
-  stats: {
-    type: 'Stat'
-    args: Record<QueryStatsArgs, core.NexusArgDef<string>>
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Query">,
-      args: { where?: StatWhereInput | null, orderBy?: prisma.StatOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Stat[]> | prisma.Stat[]
-  }
-  statsConnection: {
-    type: 'StatConnection'
-    args: Record<QueryStatsConnectionArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Query">,
-      args: { where?: StatWhereInput | null, orderBy?: prisma.StatOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.StatConnection> | prisma.StatConnection
-  }
-  types: {
-    type: 'Type'
-    args: Record<QueryTypesArgs, core.NexusArgDef<string>>
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Query">,
-      args: { where?: TypeWhereInput | null, orderBy?: prisma.TypeOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Type[]> | prisma.Type[]
-  }
-  typesConnection: {
-    type: 'TypeConnection'
-    args: Record<QueryTypesConnectionArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Query">,
-      args: { where?: TypeWhereInput | null, orderBy?: prisma.TypeOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.TypeConnection> | prisma.TypeConnection
+    ) => Promise<prisma.MovementsConnection> | prisma.MovementsConnection
   }
 }
   
 
-// Types for Pokemon
+// Types for Character
 
-type PokemonObject =
-  | PokemonFields
-  | { name: 'abilities', args?: PokemonAbilitiesArgs[] | false, alias?: string  } 
-  | { name: 'base_experience', args?: [] | false, alias?: string  } 
-  | { name: 'forms', args?: PokemonFormsArgs[] | false, alias?: string  } 
-  | { name: 'game_indices', args?: PokemonGame_indicesArgs[] | false, alias?: string  } 
-  | { name: 'held_items', args?: PokemonHeld_itemsArgs[] | false, alias?: string  } 
-  | { name: 'height', args?: [] | false, alias?: string  } 
+type CharacterObject =
+  | CharacterFields
   | { name: 'id', args?: [] | false, alias?: string  } 
-  | { name: 'is_default', args?: [] | false, alias?: string  } 
-  | { name: 'location_area_encounters', args?: [] | false, alias?: string  } 
-  | { name: 'moves', args?: PokemonMovesArgs[] | false, alias?: string  } 
   | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'order', args?: [] | false, alias?: string  } 
-  | { name: 'species', args?: PokemonSpeciesArgs[] | false, alias?: string  } 
-  | { name: 'sprites', args?: PokemonSpritesArgs[] | false, alias?: string  } 
-  | { name: 'stats', args?: PokemonStatsArgs[] | false, alias?: string  } 
-  | { name: 'types', args?: PokemonTypesArgs[] | false, alias?: string  } 
-  | { name: 'weight', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
+  | { name: 'displayName', args?: [] | false, alias?: string  } 
+  | { name: 'mainImgUrl', args?: [] | false, alias?: string  } 
+  | { name: 'thumbnailImg', args?: [] | false, alias?: string  } 
+  | { name: 'colorTheme', args?: [] | false, alias?: string  } 
+  | { name: 'moveInfo', args?: CharacterMoveInfoArgs[] | false, alias?: string  } 
+  | { name: 'movementsInfo', args?: [] | false, alias?: string  } 
 
-type PokemonFields =
-  | 'abilities'
-  | 'base_experience'
-  | 'forms'
-  | 'game_indices'
-  | 'held_items'
-  | 'height'
+type CharacterFields =
   | 'id'
-  | 'is_default'
-  | 'location_area_encounters'
-  | 'moves'
   | 'name'
-  | 'order'
-  | 'species'
-  | 'sprites'
-  | 'stats'
-  | 'types'
-  | 'weight'
-  | 'url'
+  | 'displayName'
+  | 'mainImgUrl'
+  | 'thumbnailImg'
+  | 'colorTheme'
+  | 'moveInfo'
+  | 'movementsInfo'
 
 
-type PokemonAbilitiesArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type PokemonFormsArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type PokemonGame_indicesArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type PokemonHeld_itemsArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type PokemonMovesArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type PokemonSpeciesArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type PokemonSpritesArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type PokemonStatsArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type PokemonTypesArgs =
+type CharacterMoveInfoArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -863,75 +349,7 @@ type PokemonTypesArgs =
   | 'last'
   
 
-export interface PokemonFieldDetails {
-  abilities: {
-    type: 'Ability'
-    args: Record<PokemonAbilitiesArgs, core.NexusArgDef<string>>
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Pokemon">,
-      args: { where?: AbilityWhereInput | null, orderBy?: prisma.AbilityOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Ability[]> | prisma.Ability[]
-  }
-  base_experience: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  forms: {
-    type: 'Form'
-    args: Record<PokemonFormsArgs, core.NexusArgDef<string>>
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Pokemon">,
-      args: { where?: FormWhereInput | null, orderBy?: prisma.FormOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Form[]> | prisma.Form[]
-  }
-  game_indices: {
-    type: 'GameIndex'
-    args: Record<PokemonGame_indicesArgs, core.NexusArgDef<string>>
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Pokemon">,
-      args: { where?: GameIndexWhereInput | null, orderBy?: prisma.GameIndexOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.GameIndex[]> | prisma.GameIndex[]
-  }
-  held_items: {
-    type: 'Item'
-    args: Record<PokemonHeld_itemsArgs, core.NexusArgDef<string>>
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Pokemon">,
-      args: { where?: ItemWhereInput | null, orderBy?: prisma.ItemOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Item[]> | prisma.Item[]
-  }
-  height: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
+export interface CharacterFieldDetails {
   id: {
     type: 'ID'
     args: {}
@@ -940,15 +358,15 @@ export interface PokemonFieldDetails {
     nullable: false
     resolve: undefined
   }
-  is_default: {
-    type: 'Boolean'
+  name: {
+    type: 'String'
     args: {}
     description: string
     list: undefined
-    nullable: true
+    nullable: false
     resolve: undefined
   }
-  location_area_encounters: {
+  displayName: {
     type: 'String'
     args: {}
     description: string
@@ -956,28 +374,135 @@ export interface PokemonFieldDetails {
     nullable: true
     resolve: undefined
   }
-  moves: {
-    type: 'Move'
-    args: Record<PokemonMovesArgs, core.NexusArgDef<string>>
+  mainImgUrl: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  thumbnailImg: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  colorTheme: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  moveInfo: {
+    type: 'Moves'
+    args: Record<CharacterMoveInfoArgs, core.NexusArgDef<string>>
     description: string
     list: true
     nullable: false
     resolve: (
-      root: core.RootValue<"Pokemon">,
-      args: { where?: MoveWhereInput | null, orderBy?: prisma.MoveOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      root: core.RootValue<"Character">,
+      args: { where?: MovesWhereInput | null, orderBy?: prisma.MovesOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Move[]> | prisma.Move[]
+    ) => Promise<prisma.Moves[]> | prisma.Moves[]
+  }
+  movementsInfo: {
+    type: 'Movements'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Character">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Movements | null> | prisma.Movements | null
+  }
+}
+  
+
+// Types for Moves
+
+type MovesObject =
+  | MovesFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'name', args?: [] | false, alias?: string  } 
+  | { name: 'user', args?: [] | false, alias?: string  } 
+  | { name: 'hitBoxActive', args?: [] | false, alias?: string  } 
+  | { name: 'firstActionableFrame', args?: [] | false, alias?: string  } 
+  | { name: 'baseDmg', args?: [] | false, alias?: string  } 
+  | { name: 'angle', args?: [] | false, alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback', args?: [] | false, alias?: string  } 
+  | { name: 'landingLag', args?: [] | false, alias?: string  } 
+  | { name: 'autoCancel', args?: [] | false, alias?: string  } 
+  | { name: 'knockbackGrowth', args?: [] | false, alias?: string  } 
+  | { name: 'moveType', args?: [] | false, alias?: string  } 
+  | { name: 'isWeightDependent', args?: [] | false, alias?: string  } 
+
+type MovesFields =
+  | 'id'
+  | 'name'
+  | 'user'
+  | 'hitBoxActive'
+  | 'firstActionableFrame'
+  | 'baseDmg'
+  | 'angle'
+  | 'baseKnockBackSetKnockback'
+  | 'landingLag'
+  | 'autoCancel'
+  | 'knockbackGrowth'
+  | 'moveType'
+  | 'isWeightDependent'
+
+
+
+  
+
+export interface MovesFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
   }
   name: {
     type: 'String'
     args: {}
     description: string
     list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  user: {
+    type: 'Character'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Moves">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Character | null> | prisma.Character | null
+  }
+  hitBoxActive: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
     nullable: true
     resolve: undefined
   }
-  order: {
+  firstActionableFrame: {
     type: 'Int'
     args: {}
     description: string
@@ -985,57 +510,130 @@ export interface PokemonFieldDetails {
     nullable: true
     resolve: undefined
   }
-  species: {
-    type: 'Species'
-    args: Record<PokemonSpeciesArgs, core.NexusArgDef<string>>
+  baseDmg: {
+    type: 'Int'
+    args: {}
     description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Pokemon">,
-      args: { where?: SpeciesWhereInput | null, orderBy?: prisma.SpeciesOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Species[]> | prisma.Species[]
+    list: undefined
+    nullable: true
+    resolve: undefined
   }
-  sprites: {
-    type: 'Sprite'
-    args: Record<PokemonSpritesArgs, core.NexusArgDef<string>>
+  angle: {
+    type: 'String'
+    args: {}
     description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Pokemon">,
-      args: { where?: SpriteWhereInput | null, orderBy?: prisma.SpriteOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Sprite[]> | prisma.Sprite[]
+    list: undefined
+    nullable: true
+    resolve: undefined
   }
-  stats: {
-    type: 'Stat'
-    args: Record<PokemonStatsArgs, core.NexusArgDef<string>>
+  baseKnockBackSetKnockback: {
+    type: 'String'
+    args: {}
     description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Pokemon">,
-      args: { where?: StatWhereInput | null, orderBy?: prisma.StatOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Stat[]> | prisma.Stat[]
+    list: undefined
+    nullable: true
+    resolve: undefined
   }
-  types: {
-    type: 'Type'
-    args: Record<PokemonTypesArgs, core.NexusArgDef<string>>
+  landingLag: {
+    type: 'Int'
+    args: {}
     description: string
-    list: true
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  autoCancel: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  knockbackGrowth: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  moveType: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  isWeightDependent: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+}
+  
+
+// Types for Movements
+
+type MovementsObject =
+  | MovementsFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'weight', args?: [] | false, alias?: string  } 
+  | { name: 'maxJumps', args?: [] | false, alias?: string  } 
+  | { name: 'runSpeed', args?: [] | false, alias?: string  } 
+  | { name: 'wallJump', args?: [] | false, alias?: string  } 
+  | { name: 'walkSpeed', args?: [] | false, alias?: string  } 
+  | { name: 'wallCling', args?: [] | false, alias?: string  } 
+  | { name: 'airSpeed', args?: [] | false, alias?: string  } 
+  | { name: 'crawl', args?: [] | false, alias?: string  } 
+  | { name: 'fallSpeed', args?: [] | false, alias?: string  } 
+  | { name: 'tether', args?: [] | false, alias?: string  } 
+  | { name: 'fastFallSpeed', args?: [] | false, alias?: string  } 
+  | { name: 'jumpSquat', args?: [] | false, alias?: string  } 
+  | { name: 'airAcceleration', args?: [] | false, alias?: string  } 
+  | { name: 'softLandingLag', args?: [] | false, alias?: string  } 
+  | { name: 'gravity', args?: [] | false, alias?: string  } 
+  | { name: 'hardLandingLag', args?: [] | false, alias?: string  } 
+  | { name: 'shAirTime', args?: [] | false, alias?: string  } 
+  | { name: 'fhAirTime', args?: [] | false, alias?: string  } 
+
+type MovementsFields =
+  | 'id'
+  | 'weight'
+  | 'maxJumps'
+  | 'runSpeed'
+  | 'wallJump'
+  | 'walkSpeed'
+  | 'wallCling'
+  | 'airSpeed'
+  | 'crawl'
+  | 'fallSpeed'
+  | 'tether'
+  | 'fastFallSpeed'
+  | 'jumpSquat'
+  | 'airAcceleration'
+  | 'softLandingLag'
+  | 'gravity'
+  | 'hardLandingLag'
+  | 'shAirTime'
+  | 'fhAirTime'
+
+
+
+  
+
+export interface MovementsFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
     nullable: false
-    resolve: (
-      root: core.RootValue<"Pokemon">,
-      args: { where?: TypeWhereInput | null, orderBy?: prisma.TypeOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Type[]> | prisma.Type[]
+    resolve: undefined
   }
   weight: {
     type: 'Int'
@@ -1045,343 +643,7 @@ export interface PokemonFieldDetails {
     nullable: true
     resolve: undefined
   }
-  url: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for Ability
-
-type AbilityObject =
-  | AbilityFields
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
-
-type AbilityFields =
-  | 'name'
-  | 'url'
-
-
-
-  
-
-export interface AbilityFieldDetails {
-  name: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  url: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for Form
-
-type FormObject =
-  | FormFields
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
-
-type FormFields =
-  | 'name'
-  | 'url'
-
-
-
-  
-
-export interface FormFieldDetails {
-  name: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  url: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for GameIndex
-
-type GameIndexObject =
-  | GameIndexFields
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
-
-type GameIndexFields =
-  | 'name'
-  | 'url'
-
-
-
-  
-
-export interface GameIndexFieldDetails {
-  name: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  url: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for Item
-
-type ItemObject =
-  | ItemFields
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
-
-type ItemFields =
-  | 'name'
-  | 'url'
-
-
-
-  
-
-export interface ItemFieldDetails {
-  name: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  url: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for Move
-
-type MoveObject =
-  | MoveFields
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
-
-type MoveFields =
-  | 'name'
-  | 'url'
-
-
-
-  
-
-export interface MoveFieldDetails {
-  name: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  url: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for Species
-
-type SpeciesObject =
-  | SpeciesFields
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
-
-type SpeciesFields =
-  | 'name'
-  | 'url'
-
-
-
-  
-
-export interface SpeciesFieldDetails {
-  name: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  url: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for Sprite
-
-type SpriteObject =
-  | SpriteFields
-  | { name: 'back_default', args?: [] | false, alias?: string  } 
-  | { name: 'back_female', args?: [] | false, alias?: string  } 
-  | { name: 'back_shiny', args?: [] | false, alias?: string  } 
-  | { name: 'back_shiny_female', args?: [] | false, alias?: string  } 
-  | { name: 'front_default', args?: [] | false, alias?: string  } 
-  | { name: 'front_female', args?: [] | false, alias?: string  } 
-  | { name: 'front_shiny', args?: [] | false, alias?: string  } 
-  | { name: 'front_shiny_female', args?: [] | false, alias?: string  } 
-
-type SpriteFields =
-  | 'back_default'
-  | 'back_female'
-  | 'back_shiny'
-  | 'back_shiny_female'
-  | 'front_default'
-  | 'front_female'
-  | 'front_shiny'
-  | 'front_shiny_female'
-
-
-
-  
-
-export interface SpriteFieldDetails {
-  back_default: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  back_female: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  back_shiny: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  back_shiny_female: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  front_default: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  front_female: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  front_shiny: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  front_shiny_female: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for Stat
-
-type StatObject =
-  | StatFields
-  | { name: 'base_stat', args?: [] | false, alias?: string  } 
-  | { name: 'effort', args?: [] | false, alias?: string  } 
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
-
-type StatFields =
-  | 'base_stat'
-  | 'effort'
-  | 'name'
-  | 'url'
-
-
-
-  
-
-export interface StatFieldDetails {
-  base_stat: {
+  maxJumps: {
     type: 'Int'
     args: {}
     description: string
@@ -1389,7 +651,7 @@ export interface StatFieldDetails {
     nullable: true
     resolve: undefined
   }
-  effort: {
+  runSpeed: {
     type: 'Int'
     args: {}
     description: string
@@ -1397,7 +659,71 @@ export interface StatFieldDetails {
     nullable: true
     resolve: undefined
   }
-  name: {
+  wallJump: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  walkSpeed: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  wallCling: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  airSpeed: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  crawl: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  fallSpeed: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  tether: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  fastFallSpeed: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  jumpSquat: {
     type: 'String'
     args: {}
     description: string
@@ -1405,7 +731,47 @@ export interface StatFieldDetails {
     nullable: true
     resolve: undefined
   }
-  url: {
+  airAcceleration: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  softLandingLag: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  gravity: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  hardLandingLag: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  shAirTime: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  fhAirTime: {
     type: 'String'
     args: {}
     description: string
@@ -1416,60 +782,15 @@ export interface StatFieldDetails {
 }
   
 
-// Types for Type
+// Types for CharacterConnection
 
-type TypeObject =
-  | TypeFields
-  | { name: 'slot', args?: [] | false, alias?: string  } 
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
-
-type TypeFields =
-  | 'slot'
-  | 'name'
-  | 'url'
-
-
-
-  
-
-export interface TypeFieldDetails {
-  slot: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  name: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  url: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for PokemonConnection
-
-type PokemonConnectionObject =
-  | PokemonConnectionFields
+type CharacterConnectionObject =
+  | CharacterConnectionFields
   | { name: 'pageInfo', args?: [] | false, alias?: string  } 
   | { name: 'edges', args?: [] | false, alias?: string  } 
   | { name: 'aggregate', args?: [] | false, alias?: string  } 
 
-type PokemonConnectionFields =
+type CharacterConnectionFields =
   | 'pageInfo'
   | 'edges'
   | 'aggregate'
@@ -1478,7 +799,7 @@ type PokemonConnectionFields =
 
   
 
-export interface PokemonConnectionFieldDetails {
+export interface CharacterConnectionFieldDetails {
   pageInfo: {
     type: 'PageInfo'
     args: {}
@@ -1486,37 +807,37 @@ export interface PokemonConnectionFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"PokemonConnection">,
+      root: core.RootValue<"CharacterConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.PageInfo> | prisma.PageInfo
   }
   edges: {
-    type: 'PokemonEdge'
+    type: 'CharacterEdge'
     args: {}
     description: string
     list: true
     nullable: false
     resolve: (
-      root: core.RootValue<"PokemonConnection">,
+      root: core.RootValue<"CharacterConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.PokemonEdge[]> | prisma.PokemonEdge[]
+    ) => Promise<prisma.CharacterEdge[]> | prisma.CharacterEdge[]
   }
   aggregate: {
-    type: 'AggregatePokemon'
+    type: 'AggregateCharacter'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"PokemonConnection">,
+      root: core.RootValue<"CharacterConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.AggregatePokemon> | prisma.AggregatePokemon
+    ) => Promise<prisma.AggregateCharacter> | prisma.AggregateCharacter
   }
 }
   
@@ -1576,14 +897,14 @@ export interface PageInfoFieldDetails {
 }
   
 
-// Types for PokemonEdge
+// Types for CharacterEdge
 
-type PokemonEdgeObject =
-  | PokemonEdgeFields
+type CharacterEdgeObject =
+  | CharacterEdgeFields
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'cursor', args?: [] | false, alias?: string  } 
 
-type PokemonEdgeFields =
+type CharacterEdgeFields =
   | 'node'
   | 'cursor'
 
@@ -1591,19 +912,19 @@ type PokemonEdgeFields =
 
   
 
-export interface PokemonEdgeFieldDetails {
+export interface CharacterEdgeFieldDetails {
   node: {
-    type: 'Pokemon'
+    type: 'Character'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"PokemonEdge">,
+      root: core.RootValue<"CharacterEdge">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Pokemon> | prisma.Pokemon
+    ) => Promise<prisma.Character> | prisma.Character
   }
   cursor: {
     type: 'String'
@@ -1616,20 +937,20 @@ export interface PokemonEdgeFieldDetails {
 }
   
 
-// Types for AggregatePokemon
+// Types for AggregateCharacter
 
-type AggregatePokemonObject =
-  | AggregatePokemonFields
+type AggregateCharacterObject =
+  | AggregateCharacterFields
   | { name: 'count', args?: [] | false, alias?: string  } 
 
-type AggregatePokemonFields =
+type AggregateCharacterFields =
   | 'count'
 
 
 
   
 
-export interface AggregatePokemonFieldDetails {
+export interface AggregateCharacterFieldDetails {
   count: {
     type: 'Int'
     args: {}
@@ -1641,15 +962,15 @@ export interface AggregatePokemonFieldDetails {
 }
   
 
-// Types for AbilityConnection
+// Types for MovesConnection
 
-type AbilityConnectionObject =
-  | AbilityConnectionFields
+type MovesConnectionObject =
+  | MovesConnectionFields
   | { name: 'pageInfo', args?: [] | false, alias?: string  } 
   | { name: 'edges', args?: [] | false, alias?: string  } 
   | { name: 'aggregate', args?: [] | false, alias?: string  } 
 
-type AbilityConnectionFields =
+type MovesConnectionFields =
   | 'pageInfo'
   | 'edges'
   | 'aggregate'
@@ -1658,7 +979,7 @@ type AbilityConnectionFields =
 
   
 
-export interface AbilityConnectionFieldDetails {
+export interface MovesConnectionFieldDetails {
   pageInfo: {
     type: 'PageInfo'
     args: {}
@@ -1666,49 +987,49 @@ export interface AbilityConnectionFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"AbilityConnection">,
+      root: core.RootValue<"MovesConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.PageInfo> | prisma.PageInfo
   }
   edges: {
-    type: 'AbilityEdge'
+    type: 'MovesEdge'
     args: {}
     description: string
     list: true
     nullable: false
     resolve: (
-      root: core.RootValue<"AbilityConnection">,
+      root: core.RootValue<"MovesConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.AbilityEdge[]> | prisma.AbilityEdge[]
+    ) => Promise<prisma.MovesEdge[]> | prisma.MovesEdge[]
   }
   aggregate: {
-    type: 'AggregateAbility'
+    type: 'AggregateMoves'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"AbilityConnection">,
+      root: core.RootValue<"MovesConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.AggregateAbility> | prisma.AggregateAbility
+    ) => Promise<prisma.AggregateMoves> | prisma.AggregateMoves
   }
 }
   
 
-// Types for AbilityEdge
+// Types for MovesEdge
 
-type AbilityEdgeObject =
-  | AbilityEdgeFields
+type MovesEdgeObject =
+  | MovesEdgeFields
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'cursor', args?: [] | false, alias?: string  } 
 
-type AbilityEdgeFields =
+type MovesEdgeFields =
   | 'node'
   | 'cursor'
 
@@ -1716,19 +1037,19 @@ type AbilityEdgeFields =
 
   
 
-export interface AbilityEdgeFieldDetails {
+export interface MovesEdgeFieldDetails {
   node: {
-    type: 'Ability'
+    type: 'Moves'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"AbilityEdge">,
+      root: core.RootValue<"MovesEdge">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Ability> | prisma.Ability
+    ) => Promise<prisma.Moves> | prisma.Moves
   }
   cursor: {
     type: 'String'
@@ -1741,20 +1062,20 @@ export interface AbilityEdgeFieldDetails {
 }
   
 
-// Types for AggregateAbility
+// Types for AggregateMoves
 
-type AggregateAbilityObject =
-  | AggregateAbilityFields
+type AggregateMovesObject =
+  | AggregateMovesFields
   | { name: 'count', args?: [] | false, alias?: string  } 
 
-type AggregateAbilityFields =
+type AggregateMovesFields =
   | 'count'
 
 
 
   
 
-export interface AggregateAbilityFieldDetails {
+export interface AggregateMovesFieldDetails {
   count: {
     type: 'Int'
     args: {}
@@ -1766,15 +1087,15 @@ export interface AggregateAbilityFieldDetails {
 }
   
 
-// Types for FormConnection
+// Types for MovementsConnection
 
-type FormConnectionObject =
-  | FormConnectionFields
+type MovementsConnectionObject =
+  | MovementsConnectionFields
   | { name: 'pageInfo', args?: [] | false, alias?: string  } 
   | { name: 'edges', args?: [] | false, alias?: string  } 
   | { name: 'aggregate', args?: [] | false, alias?: string  } 
 
-type FormConnectionFields =
+type MovementsConnectionFields =
   | 'pageInfo'
   | 'edges'
   | 'aggregate'
@@ -1783,7 +1104,7 @@ type FormConnectionFields =
 
   
 
-export interface FormConnectionFieldDetails {
+export interface MovementsConnectionFieldDetails {
   pageInfo: {
     type: 'PageInfo'
     args: {}
@@ -1791,49 +1112,49 @@ export interface FormConnectionFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"FormConnection">,
+      root: core.RootValue<"MovementsConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.PageInfo> | prisma.PageInfo
   }
   edges: {
-    type: 'FormEdge'
+    type: 'MovementsEdge'
     args: {}
     description: string
     list: true
     nullable: false
     resolve: (
-      root: core.RootValue<"FormConnection">,
+      root: core.RootValue<"MovementsConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FormEdge[]> | prisma.FormEdge[]
+    ) => Promise<prisma.MovementsEdge[]> | prisma.MovementsEdge[]
   }
   aggregate: {
-    type: 'AggregateForm'
+    type: 'AggregateMovements'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"FormConnection">,
+      root: core.RootValue<"MovementsConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.AggregateForm> | prisma.AggregateForm
+    ) => Promise<prisma.AggregateMovements> | prisma.AggregateMovements
   }
 }
   
 
-// Types for FormEdge
+// Types for MovementsEdge
 
-type FormEdgeObject =
-  | FormEdgeFields
+type MovementsEdgeObject =
+  | MovementsEdgeFields
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'cursor', args?: [] | false, alias?: string  } 
 
-type FormEdgeFields =
+type MovementsEdgeFields =
   | 'node'
   | 'cursor'
 
@@ -1841,19 +1162,19 @@ type FormEdgeFields =
 
   
 
-export interface FormEdgeFieldDetails {
+export interface MovementsEdgeFieldDetails {
   node: {
-    type: 'Form'
+    type: 'Movements'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"FormEdge">,
+      root: core.RootValue<"MovementsEdge">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Form> | prisma.Form
+    ) => Promise<prisma.Movements> | prisma.Movements
   }
   cursor: {
     type: 'String'
@@ -1866,895 +1187,20 @@ export interface FormEdgeFieldDetails {
 }
   
 
-// Types for AggregateForm
+// Types for AggregateMovements
 
-type AggregateFormObject =
-  | AggregateFormFields
+type AggregateMovementsObject =
+  | AggregateMovementsFields
   | { name: 'count', args?: [] | false, alias?: string  } 
 
-type AggregateFormFields =
+type AggregateMovementsFields =
   | 'count'
 
 
 
   
 
-export interface AggregateFormFieldDetails {
-  count: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-}
-  
-
-// Types for GameIndexConnection
-
-type GameIndexConnectionObject =
-  | GameIndexConnectionFields
-  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
-  | { name: 'edges', args?: [] | false, alias?: string  } 
-  | { name: 'aggregate', args?: [] | false, alias?: string  } 
-
-type GameIndexConnectionFields =
-  | 'pageInfo'
-  | 'edges'
-  | 'aggregate'
-
-
-
-  
-
-export interface GameIndexConnectionFieldDetails {
-  pageInfo: {
-    type: 'PageInfo'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"GameIndexConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.PageInfo> | prisma.PageInfo
-  }
-  edges: {
-    type: 'GameIndexEdge'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"GameIndexConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.GameIndexEdge[]> | prisma.GameIndexEdge[]
-  }
-  aggregate: {
-    type: 'AggregateGameIndex'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"GameIndexConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.AggregateGameIndex> | prisma.AggregateGameIndex
-  }
-}
-  
-
-// Types for GameIndexEdge
-
-type GameIndexEdgeObject =
-  | GameIndexEdgeFields
-  | { name: 'node', args?: [] | false, alias?: string  } 
-  | { name: 'cursor', args?: [] | false, alias?: string  } 
-
-type GameIndexEdgeFields =
-  | 'node'
-  | 'cursor'
-
-
-
-  
-
-export interface GameIndexEdgeFieldDetails {
-  node: {
-    type: 'GameIndex'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"GameIndexEdge">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.GameIndex> | prisma.GameIndex
-  }
-  cursor: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-}
-  
-
-// Types for AggregateGameIndex
-
-type AggregateGameIndexObject =
-  | AggregateGameIndexFields
-  | { name: 'count', args?: [] | false, alias?: string  } 
-
-type AggregateGameIndexFields =
-  | 'count'
-
-
-
-  
-
-export interface AggregateGameIndexFieldDetails {
-  count: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-}
-  
-
-// Types for ItemConnection
-
-type ItemConnectionObject =
-  | ItemConnectionFields
-  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
-  | { name: 'edges', args?: [] | false, alias?: string  } 
-  | { name: 'aggregate', args?: [] | false, alias?: string  } 
-
-type ItemConnectionFields =
-  | 'pageInfo'
-  | 'edges'
-  | 'aggregate'
-
-
-
-  
-
-export interface ItemConnectionFieldDetails {
-  pageInfo: {
-    type: 'PageInfo'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"ItemConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.PageInfo> | prisma.PageInfo
-  }
-  edges: {
-    type: 'ItemEdge'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"ItemConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.ItemEdge[]> | prisma.ItemEdge[]
-  }
-  aggregate: {
-    type: 'AggregateItem'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"ItemConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.AggregateItem> | prisma.AggregateItem
-  }
-}
-  
-
-// Types for ItemEdge
-
-type ItemEdgeObject =
-  | ItemEdgeFields
-  | { name: 'node', args?: [] | false, alias?: string  } 
-  | { name: 'cursor', args?: [] | false, alias?: string  } 
-
-type ItemEdgeFields =
-  | 'node'
-  | 'cursor'
-
-
-
-  
-
-export interface ItemEdgeFieldDetails {
-  node: {
-    type: 'Item'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"ItemEdge">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Item> | prisma.Item
-  }
-  cursor: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-}
-  
-
-// Types for AggregateItem
-
-type AggregateItemObject =
-  | AggregateItemFields
-  | { name: 'count', args?: [] | false, alias?: string  } 
-
-type AggregateItemFields =
-  | 'count'
-
-
-
-  
-
-export interface AggregateItemFieldDetails {
-  count: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-}
-  
-
-// Types for MoveConnection
-
-type MoveConnectionObject =
-  | MoveConnectionFields
-  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
-  | { name: 'edges', args?: [] | false, alias?: string  } 
-  | { name: 'aggregate', args?: [] | false, alias?: string  } 
-
-type MoveConnectionFields =
-  | 'pageInfo'
-  | 'edges'
-  | 'aggregate'
-
-
-
-  
-
-export interface MoveConnectionFieldDetails {
-  pageInfo: {
-    type: 'PageInfo'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"MoveConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.PageInfo> | prisma.PageInfo
-  }
-  edges: {
-    type: 'MoveEdge'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"MoveConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.MoveEdge[]> | prisma.MoveEdge[]
-  }
-  aggregate: {
-    type: 'AggregateMove'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"MoveConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.AggregateMove> | prisma.AggregateMove
-  }
-}
-  
-
-// Types for MoveEdge
-
-type MoveEdgeObject =
-  | MoveEdgeFields
-  | { name: 'node', args?: [] | false, alias?: string  } 
-  | { name: 'cursor', args?: [] | false, alias?: string  } 
-
-type MoveEdgeFields =
-  | 'node'
-  | 'cursor'
-
-
-
-  
-
-export interface MoveEdgeFieldDetails {
-  node: {
-    type: 'Move'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"MoveEdge">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Move> | prisma.Move
-  }
-  cursor: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-}
-  
-
-// Types for AggregateMove
-
-type AggregateMoveObject =
-  | AggregateMoveFields
-  | { name: 'count', args?: [] | false, alias?: string  } 
-
-type AggregateMoveFields =
-  | 'count'
-
-
-
-  
-
-export interface AggregateMoveFieldDetails {
-  count: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-}
-  
-
-// Types for SpeciesConnection
-
-type SpeciesConnectionObject =
-  | SpeciesConnectionFields
-  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
-  | { name: 'edges', args?: [] | false, alias?: string  } 
-  | { name: 'aggregate', args?: [] | false, alias?: string  } 
-
-type SpeciesConnectionFields =
-  | 'pageInfo'
-  | 'edges'
-  | 'aggregate'
-
-
-
-  
-
-export interface SpeciesConnectionFieldDetails {
-  pageInfo: {
-    type: 'PageInfo'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"SpeciesConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.PageInfo> | prisma.PageInfo
-  }
-  edges: {
-    type: 'SpeciesEdge'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"SpeciesConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.SpeciesEdge[]> | prisma.SpeciesEdge[]
-  }
-  aggregate: {
-    type: 'AggregateSpecies'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"SpeciesConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.AggregateSpecies> | prisma.AggregateSpecies
-  }
-}
-  
-
-// Types for SpeciesEdge
-
-type SpeciesEdgeObject =
-  | SpeciesEdgeFields
-  | { name: 'node', args?: [] | false, alias?: string  } 
-  | { name: 'cursor', args?: [] | false, alias?: string  } 
-
-type SpeciesEdgeFields =
-  | 'node'
-  | 'cursor'
-
-
-
-  
-
-export interface SpeciesEdgeFieldDetails {
-  node: {
-    type: 'Species'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"SpeciesEdge">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Species> | prisma.Species
-  }
-  cursor: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-}
-  
-
-// Types for AggregateSpecies
-
-type AggregateSpeciesObject =
-  | AggregateSpeciesFields
-  | { name: 'count', args?: [] | false, alias?: string  } 
-
-type AggregateSpeciesFields =
-  | 'count'
-
-
-
-  
-
-export interface AggregateSpeciesFieldDetails {
-  count: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-}
-  
-
-// Types for SpriteConnection
-
-type SpriteConnectionObject =
-  | SpriteConnectionFields
-  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
-  | { name: 'edges', args?: [] | false, alias?: string  } 
-  | { name: 'aggregate', args?: [] | false, alias?: string  } 
-
-type SpriteConnectionFields =
-  | 'pageInfo'
-  | 'edges'
-  | 'aggregate'
-
-
-
-  
-
-export interface SpriteConnectionFieldDetails {
-  pageInfo: {
-    type: 'PageInfo'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"SpriteConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.PageInfo> | prisma.PageInfo
-  }
-  edges: {
-    type: 'SpriteEdge'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"SpriteConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.SpriteEdge[]> | prisma.SpriteEdge[]
-  }
-  aggregate: {
-    type: 'AggregateSprite'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"SpriteConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.AggregateSprite> | prisma.AggregateSprite
-  }
-}
-  
-
-// Types for SpriteEdge
-
-type SpriteEdgeObject =
-  | SpriteEdgeFields
-  | { name: 'node', args?: [] | false, alias?: string  } 
-  | { name: 'cursor', args?: [] | false, alias?: string  } 
-
-type SpriteEdgeFields =
-  | 'node'
-  | 'cursor'
-
-
-
-  
-
-export interface SpriteEdgeFieldDetails {
-  node: {
-    type: 'Sprite'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"SpriteEdge">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Sprite> | prisma.Sprite
-  }
-  cursor: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-}
-  
-
-// Types for AggregateSprite
-
-type AggregateSpriteObject =
-  | AggregateSpriteFields
-  | { name: 'count', args?: [] | false, alias?: string  } 
-
-type AggregateSpriteFields =
-  | 'count'
-
-
-
-  
-
-export interface AggregateSpriteFieldDetails {
-  count: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-}
-  
-
-// Types for StatConnection
-
-type StatConnectionObject =
-  | StatConnectionFields
-  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
-  | { name: 'edges', args?: [] | false, alias?: string  } 
-  | { name: 'aggregate', args?: [] | false, alias?: string  } 
-
-type StatConnectionFields =
-  | 'pageInfo'
-  | 'edges'
-  | 'aggregate'
-
-
-
-  
-
-export interface StatConnectionFieldDetails {
-  pageInfo: {
-    type: 'PageInfo'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"StatConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.PageInfo> | prisma.PageInfo
-  }
-  edges: {
-    type: 'StatEdge'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"StatConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.StatEdge[]> | prisma.StatEdge[]
-  }
-  aggregate: {
-    type: 'AggregateStat'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"StatConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.AggregateStat> | prisma.AggregateStat
-  }
-}
-  
-
-// Types for StatEdge
-
-type StatEdgeObject =
-  | StatEdgeFields
-  | { name: 'node', args?: [] | false, alias?: string  } 
-  | { name: 'cursor', args?: [] | false, alias?: string  } 
-
-type StatEdgeFields =
-  | 'node'
-  | 'cursor'
-
-
-
-  
-
-export interface StatEdgeFieldDetails {
-  node: {
-    type: 'Stat'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"StatEdge">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Stat> | prisma.Stat
-  }
-  cursor: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-}
-  
-
-// Types for AggregateStat
-
-type AggregateStatObject =
-  | AggregateStatFields
-  | { name: 'count', args?: [] | false, alias?: string  } 
-
-type AggregateStatFields =
-  | 'count'
-
-
-
-  
-
-export interface AggregateStatFieldDetails {
-  count: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-}
-  
-
-// Types for TypeConnection
-
-type TypeConnectionObject =
-  | TypeConnectionFields
-  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
-  | { name: 'edges', args?: [] | false, alias?: string  } 
-  | { name: 'aggregate', args?: [] | false, alias?: string  } 
-
-type TypeConnectionFields =
-  | 'pageInfo'
-  | 'edges'
-  | 'aggregate'
-
-
-
-  
-
-export interface TypeConnectionFieldDetails {
-  pageInfo: {
-    type: 'PageInfo'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"TypeConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.PageInfo> | prisma.PageInfo
-  }
-  edges: {
-    type: 'TypeEdge'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"TypeConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.TypeEdge[]> | prisma.TypeEdge[]
-  }
-  aggregate: {
-    type: 'AggregateType'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"TypeConnection">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.AggregateType> | prisma.AggregateType
-  }
-}
-  
-
-// Types for TypeEdge
-
-type TypeEdgeObject =
-  | TypeEdgeFields
-  | { name: 'node', args?: [] | false, alias?: string  } 
-  | { name: 'cursor', args?: [] | false, alias?: string  } 
-
-type TypeEdgeFields =
-  | 'node'
-  | 'cursor'
-
-
-
-  
-
-export interface TypeEdgeFieldDetails {
-  node: {
-    type: 'Type'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"TypeEdge">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Type> | prisma.Type
-  }
-  cursor: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-}
-  
-
-// Types for AggregateType
-
-type AggregateTypeObject =
-  | AggregateTypeFields
-  | { name: 'count', args?: [] | false, alias?: string  } 
-
-type AggregateTypeFields =
-  | 'count'
-
-
-
-  
-
-export interface AggregateTypeFieldDetails {
+export interface AggregateMovementsFieldDetails {
   count: {
     type: 'Int'
     args: {}
@@ -2770,583 +1216,327 @@ export interface AggregateTypeFieldDetails {
 
 type MutationObject =
   | MutationFields
-  | { name: 'createPokemon', args?: MutationCreatePokemonArgs[] | false, alias?: string  } 
-  | { name: 'updatePokemon', args?: MutationUpdatePokemonArgs[] | false, alias?: string  } 
-  | { name: 'updateManyPokemons', args?: MutationUpdateManyPokemonsArgs[] | false, alias?: string  } 
-  | { name: 'upsertPokemon', args?: MutationUpsertPokemonArgs[] | false, alias?: string  } 
-  | { name: 'deletePokemon', args?: MutationDeletePokemonArgs[] | false, alias?: string  } 
-  | { name: 'deleteManyPokemons', args?: MutationDeleteManyPokemonsArgs[] | false, alias?: string  } 
-  | { name: 'createAbility', args?: MutationCreateAbilityArgs[] | false, alias?: string  } 
-  | { name: 'updateManyAbilities', args?: MutationUpdateManyAbilitiesArgs[] | false, alias?: string  } 
-  | { name: 'deleteManyAbilities', args?: MutationDeleteManyAbilitiesArgs[] | false, alias?: string  } 
-  | { name: 'createForm', args?: MutationCreateFormArgs[] | false, alias?: string  } 
-  | { name: 'updateManyForms', args?: MutationUpdateManyFormsArgs[] | false, alias?: string  } 
-  | { name: 'deleteManyForms', args?: MutationDeleteManyFormsArgs[] | false, alias?: string  } 
-  | { name: 'createGameIndex', args?: MutationCreateGameIndexArgs[] | false, alias?: string  } 
-  | { name: 'updateManyGameIndexes', args?: MutationUpdateManyGameIndexesArgs[] | false, alias?: string  } 
-  | { name: 'deleteManyGameIndexes', args?: MutationDeleteManyGameIndexesArgs[] | false, alias?: string  } 
-  | { name: 'createItem', args?: MutationCreateItemArgs[] | false, alias?: string  } 
-  | { name: 'updateManyItems', args?: MutationUpdateManyItemsArgs[] | false, alias?: string  } 
-  | { name: 'deleteManyItems', args?: MutationDeleteManyItemsArgs[] | false, alias?: string  } 
-  | { name: 'createMove', args?: MutationCreateMoveArgs[] | false, alias?: string  } 
-  | { name: 'updateManyMoves', args?: MutationUpdateManyMovesArgs[] | false, alias?: string  } 
-  | { name: 'deleteManyMoves', args?: MutationDeleteManyMovesArgs[] | false, alias?: string  } 
-  | { name: 'createSpecies', args?: MutationCreateSpeciesArgs[] | false, alias?: string  } 
-  | { name: 'updateManySpecieses', args?: MutationUpdateManySpeciesesArgs[] | false, alias?: string  } 
-  | { name: 'deleteManySpecieses', args?: MutationDeleteManySpeciesesArgs[] | false, alias?: string  } 
-  | { name: 'createSprite', args?: MutationCreateSpriteArgs[] | false, alias?: string  } 
-  | { name: 'updateManySprites', args?: MutationUpdateManySpritesArgs[] | false, alias?: string  } 
-  | { name: 'deleteManySprites', args?: MutationDeleteManySpritesArgs[] | false, alias?: string  } 
-  | { name: 'createStat', args?: MutationCreateStatArgs[] | false, alias?: string  } 
-  | { name: 'updateManyStats', args?: MutationUpdateManyStatsArgs[] | false, alias?: string  } 
-  | { name: 'deleteManyStats', args?: MutationDeleteManyStatsArgs[] | false, alias?: string  } 
-  | { name: 'createType', args?: MutationCreateTypeArgs[] | false, alias?: string  } 
-  | { name: 'updateManyTypes', args?: MutationUpdateManyTypesArgs[] | false, alias?: string  } 
-  | { name: 'deleteManyTypes', args?: MutationDeleteManyTypesArgs[] | false, alias?: string  } 
+  | { name: 'createCharacter', args?: MutationCreateCharacterArgs[] | false, alias?: string  } 
+  | { name: 'updateCharacter', args?: MutationUpdateCharacterArgs[] | false, alias?: string  } 
+  | { name: 'updateManyCharacters', args?: MutationUpdateManyCharactersArgs[] | false, alias?: string  } 
+  | { name: 'upsertCharacter', args?: MutationUpsertCharacterArgs[] | false, alias?: string  } 
+  | { name: 'deleteCharacter', args?: MutationDeleteCharacterArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyCharacters', args?: MutationDeleteManyCharactersArgs[] | false, alias?: string  } 
+  | { name: 'createMoves', args?: MutationCreateMovesArgs[] | false, alias?: string  } 
+  | { name: 'updateMoves', args?: MutationUpdateMovesArgs[] | false, alias?: string  } 
+  | { name: 'updateManyMoveses', args?: MutationUpdateManyMovesesArgs[] | false, alias?: string  } 
+  | { name: 'upsertMoves', args?: MutationUpsertMovesArgs[] | false, alias?: string  } 
+  | { name: 'deleteMoves', args?: MutationDeleteMovesArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyMoveses', args?: MutationDeleteManyMovesesArgs[] | false, alias?: string  } 
+  | { name: 'createMovements', args?: MutationCreateMovementsArgs[] | false, alias?: string  } 
+  | { name: 'updateMovements', args?: MutationUpdateMovementsArgs[] | false, alias?: string  } 
+  | { name: 'updateManyMovementses', args?: MutationUpdateManyMovementsesArgs[] | false, alias?: string  } 
+  | { name: 'upsertMovements', args?: MutationUpsertMovementsArgs[] | false, alias?: string  } 
+  | { name: 'deleteMovements', args?: MutationDeleteMovementsArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyMovementses', args?: MutationDeleteManyMovementsesArgs[] | false, alias?: string  } 
 
 type MutationFields =
-  | 'createPokemon'
-  | 'updatePokemon'
-  | 'updateManyPokemons'
-  | 'upsertPokemon'
-  | 'deletePokemon'
-  | 'deleteManyPokemons'
-  | 'createAbility'
-  | 'updateManyAbilities'
-  | 'deleteManyAbilities'
-  | 'createForm'
-  | 'updateManyForms'
-  | 'deleteManyForms'
-  | 'createGameIndex'
-  | 'updateManyGameIndexes'
-  | 'deleteManyGameIndexes'
-  | 'createItem'
-  | 'updateManyItems'
-  | 'deleteManyItems'
-  | 'createMove'
-  | 'updateManyMoves'
-  | 'deleteManyMoves'
-  | 'createSpecies'
-  | 'updateManySpecieses'
-  | 'deleteManySpecieses'
-  | 'createSprite'
-  | 'updateManySprites'
-  | 'deleteManySprites'
-  | 'createStat'
-  | 'updateManyStats'
-  | 'deleteManyStats'
-  | 'createType'
-  | 'updateManyTypes'
-  | 'deleteManyTypes'
+  | 'createCharacter'
+  | 'updateCharacter'
+  | 'updateManyCharacters'
+  | 'upsertCharacter'
+  | 'deleteCharacter'
+  | 'deleteManyCharacters'
+  | 'createMoves'
+  | 'updateMoves'
+  | 'updateManyMoveses'
+  | 'upsertMoves'
+  | 'deleteMoves'
+  | 'deleteManyMoveses'
+  | 'createMovements'
+  | 'updateMovements'
+  | 'updateManyMovementses'
+  | 'upsertMovements'
+  | 'deleteMovements'
+  | 'deleteManyMovementses'
 
 
-type MutationCreatePokemonArgs =
+type MutationCreateCharacterArgs =
   | 'data'
-type MutationUpdatePokemonArgs =
-  | 'data'
-  | 'where'
-type MutationUpdateManyPokemonsArgs =
+type MutationUpdateCharacterArgs =
   | 'data'
   | 'where'
-type MutationUpsertPokemonArgs =
+type MutationUpdateManyCharactersArgs =
+  | 'data'
+  | 'where'
+type MutationUpsertCharacterArgs =
   | 'where'
   | 'create'
   | 'update'
-type MutationDeletePokemonArgs =
+type MutationDeleteCharacterArgs =
   | 'where'
-type MutationDeleteManyPokemonsArgs =
+type MutationDeleteManyCharactersArgs =
   | 'where'
-type MutationCreateAbilityArgs =
+type MutationCreateMovesArgs =
   | 'data'
-type MutationUpdateManyAbilitiesArgs =
-  | 'data'
-  | 'where'
-type MutationDeleteManyAbilitiesArgs =
-  | 'where'
-type MutationCreateFormArgs =
-  | 'data'
-type MutationUpdateManyFormsArgs =
+type MutationUpdateMovesArgs =
   | 'data'
   | 'where'
-type MutationDeleteManyFormsArgs =
-  | 'where'
-type MutationCreateGameIndexArgs =
-  | 'data'
-type MutationUpdateManyGameIndexesArgs =
+type MutationUpdateManyMovesesArgs =
   | 'data'
   | 'where'
-type MutationDeleteManyGameIndexesArgs =
+type MutationUpsertMovesArgs =
   | 'where'
-type MutationCreateItemArgs =
-  | 'data'
-type MutationUpdateManyItemsArgs =
-  | 'data'
+  | 'create'
+  | 'update'
+type MutationDeleteMovesArgs =
   | 'where'
-type MutationDeleteManyItemsArgs =
+type MutationDeleteManyMovesesArgs =
   | 'where'
-type MutationCreateMoveArgs =
+type MutationCreateMovementsArgs =
   | 'data'
-type MutationUpdateManyMovesArgs =
-  | 'data'
-  | 'where'
-type MutationDeleteManyMovesArgs =
-  | 'where'
-type MutationCreateSpeciesArgs =
-  | 'data'
-type MutationUpdateManySpeciesesArgs =
+type MutationUpdateMovementsArgs =
   | 'data'
   | 'where'
-type MutationDeleteManySpeciesesArgs =
-  | 'where'
-type MutationCreateSpriteArgs =
-  | 'data'
-type MutationUpdateManySpritesArgs =
+type MutationUpdateManyMovementsesArgs =
   | 'data'
   | 'where'
-type MutationDeleteManySpritesArgs =
+type MutationUpsertMovementsArgs =
   | 'where'
-type MutationCreateStatArgs =
-  | 'data'
-type MutationUpdateManyStatsArgs =
-  | 'data'
+  | 'create'
+  | 'update'
+type MutationDeleteMovementsArgs =
   | 'where'
-type MutationDeleteManyStatsArgs =
-  | 'where'
-type MutationCreateTypeArgs =
-  | 'data'
-type MutationUpdateManyTypesArgs =
-  | 'data'
-  | 'where'
-type MutationDeleteManyTypesArgs =
+type MutationDeleteManyMovementsesArgs =
   | 'where'
   
 
 export interface MutationFieldDetails {
-  createPokemon: {
-    type: 'Pokemon'
-    args: Record<MutationCreatePokemonArgs, core.NexusArgDef<string>>
+  createCharacter: {
+    type: 'Character'
+    args: Record<MutationCreateCharacterArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: PokemonCreateInput }  ,
+      args: { data: CharacterCreateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Pokemon> | prisma.Pokemon
+    ) => Promise<prisma.Character> | prisma.Character
   }
-  updatePokemon: {
-    type: 'Pokemon'
-    args: Record<MutationUpdatePokemonArgs, core.NexusArgDef<string>>
+  updateCharacter: {
+    type: 'Character'
+    args: Record<MutationUpdateCharacterArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: PokemonUpdateInput, where: PokemonWhereUniqueInput }  ,
+      args: { data: CharacterUpdateInput, where: CharacterWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Pokemon | null> | prisma.Pokemon | null
+    ) => Promise<prisma.Character | null> | prisma.Character | null
   }
-  updateManyPokemons: {
+  updateManyCharacters: {
     type: 'BatchPayload'
-    args: Record<MutationUpdateManyPokemonsArgs, core.NexusArgDef<string>>
+    args: Record<MutationUpdateManyCharactersArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: PokemonUpdateManyMutationInput, where?: PokemonWhereInput | null }  ,
+      args: { data: CharacterUpdateManyMutationInput, where?: CharacterWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
   }
-  upsertPokemon: {
-    type: 'Pokemon'
-    args: Record<MutationUpsertPokemonArgs, core.NexusArgDef<string>>
+  upsertCharacter: {
+    type: 'Character'
+    args: Record<MutationUpsertCharacterArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where: PokemonWhereUniqueInput, create: PokemonCreateInput, update: PokemonUpdateInput }  ,
+      args: { where: CharacterWhereUniqueInput, create: CharacterCreateInput, update: CharacterUpdateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Pokemon> | prisma.Pokemon
+    ) => Promise<prisma.Character> | prisma.Character
   }
-  deletePokemon: {
-    type: 'Pokemon'
-    args: Record<MutationDeletePokemonArgs, core.NexusArgDef<string>>
+  deleteCharacter: {
+    type: 'Character'
+    args: Record<MutationDeleteCharacterArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where: PokemonWhereUniqueInput }  ,
+      args: { where: CharacterWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Pokemon | null> | prisma.Pokemon | null
+    ) => Promise<prisma.Character | null> | prisma.Character | null
   }
-  deleteManyPokemons: {
+  deleteManyCharacters: {
     type: 'BatchPayload'
-    args: Record<MutationDeleteManyPokemonsArgs, core.NexusArgDef<string>>
+    args: Record<MutationDeleteManyCharactersArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where?: PokemonWhereInput | null }  ,
+      args: { where?: CharacterWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
   }
-  createAbility: {
-    type: 'Ability'
-    args: Record<MutationCreateAbilityArgs, core.NexusArgDef<string>>
+  createMoves: {
+    type: 'Moves'
+    args: Record<MutationCreateMovesArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: AbilityCreateInput }  ,
+      args: { data: MovesCreateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Ability> | prisma.Ability
+    ) => Promise<prisma.Moves> | prisma.Moves
   }
-  updateManyAbilities: {
+  updateMoves: {
+    type: 'Moves'
+    args: Record<MutationUpdateMovesArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: MovesUpdateInput, where: MovesWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Moves | null> | prisma.Moves | null
+  }
+  updateManyMoveses: {
     type: 'BatchPayload'
-    args: Record<MutationUpdateManyAbilitiesArgs, core.NexusArgDef<string>>
+    args: Record<MutationUpdateManyMovesesArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: AbilityUpdateManyMutationInput, where?: AbilityWhereInput | null }  ,
+      args: { data: MovesUpdateManyMutationInput, where?: MovesWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
   }
-  deleteManyAbilities: {
-    type: 'BatchPayload'
-    args: Record<MutationDeleteManyAbilitiesArgs, core.NexusArgDef<string>>
+  upsertMoves: {
+    type: 'Moves'
+    args: Record<MutationUpsertMovesArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where?: AbilityWhereInput | null }  ,
+      args: { where: MovesWhereUniqueInput, create: MovesCreateInput, update: MovesUpdateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Moves> | prisma.Moves
+  }
+  deleteMoves: {
+    type: 'Moves'
+    args: Record<MutationDeleteMovesArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: MovesWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Moves | null> | prisma.Moves | null
+  }
+  deleteManyMoveses: {
+    type: 'BatchPayload'
+    args: Record<MutationDeleteManyMovesesArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where?: MovesWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
   }
-  createForm: {
-    type: 'Form'
-    args: Record<MutationCreateFormArgs, core.NexusArgDef<string>>
+  createMovements: {
+    type: 'Movements'
+    args: Record<MutationCreateMovementsArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: FormCreateInput }  ,
+      args: { data: MovementsCreateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Form> | prisma.Form
+    ) => Promise<prisma.Movements> | prisma.Movements
   }
-  updateManyForms: {
+  updateMovements: {
+    type: 'Movements'
+    args: Record<MutationUpdateMovementsArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: MovementsUpdateInput, where: MovementsWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Movements | null> | prisma.Movements | null
+  }
+  updateManyMovementses: {
     type: 'BatchPayload'
-    args: Record<MutationUpdateManyFormsArgs, core.NexusArgDef<string>>
+    args: Record<MutationUpdateManyMovementsesArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: FormUpdateManyMutationInput, where?: FormWhereInput | null }  ,
+      args: { data: MovementsUpdateManyMutationInput, where?: MovementsWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
   }
-  deleteManyForms: {
+  upsertMovements: {
+    type: 'Movements'
+    args: Record<MutationUpsertMovementsArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: MovementsWhereUniqueInput, create: MovementsCreateInput, update: MovementsUpdateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Movements> | prisma.Movements
+  }
+  deleteMovements: {
+    type: 'Movements'
+    args: Record<MutationDeleteMovementsArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: MovementsWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Movements | null> | prisma.Movements | null
+  }
+  deleteManyMovementses: {
     type: 'BatchPayload'
-    args: Record<MutationDeleteManyFormsArgs, core.NexusArgDef<string>>
+    args: Record<MutationDeleteManyMovementsesArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where?: FormWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
-  }
-  createGameIndex: {
-    type: 'GameIndex'
-    args: Record<MutationCreateGameIndexArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { data: GameIndexCreateInput }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.GameIndex> | prisma.GameIndex
-  }
-  updateManyGameIndexes: {
-    type: 'BatchPayload'
-    args: Record<MutationUpdateManyGameIndexesArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { data: GameIndexUpdateManyMutationInput, where?: GameIndexWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
-  }
-  deleteManyGameIndexes: {
-    type: 'BatchPayload'
-    args: Record<MutationDeleteManyGameIndexesArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { where?: GameIndexWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
-  }
-  createItem: {
-    type: 'Item'
-    args: Record<MutationCreateItemArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { data: ItemCreateInput }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Item> | prisma.Item
-  }
-  updateManyItems: {
-    type: 'BatchPayload'
-    args: Record<MutationUpdateManyItemsArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { data: ItemUpdateManyMutationInput, where?: ItemWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
-  }
-  deleteManyItems: {
-    type: 'BatchPayload'
-    args: Record<MutationDeleteManyItemsArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { where?: ItemWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
-  }
-  createMove: {
-    type: 'Move'
-    args: Record<MutationCreateMoveArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { data: MoveCreateInput }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Move> | prisma.Move
-  }
-  updateManyMoves: {
-    type: 'BatchPayload'
-    args: Record<MutationUpdateManyMovesArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { data: MoveUpdateManyMutationInput, where?: MoveWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
-  }
-  deleteManyMoves: {
-    type: 'BatchPayload'
-    args: Record<MutationDeleteManyMovesArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { where?: MoveWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
-  }
-  createSpecies: {
-    type: 'Species'
-    args: Record<MutationCreateSpeciesArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { data: SpeciesCreateInput }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Species> | prisma.Species
-  }
-  updateManySpecieses: {
-    type: 'BatchPayload'
-    args: Record<MutationUpdateManySpeciesesArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { data: SpeciesUpdateManyMutationInput, where?: SpeciesWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
-  }
-  deleteManySpecieses: {
-    type: 'BatchPayload'
-    args: Record<MutationDeleteManySpeciesesArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { where?: SpeciesWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
-  }
-  createSprite: {
-    type: 'Sprite'
-    args: Record<MutationCreateSpriteArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { data: SpriteCreateInput }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Sprite> | prisma.Sprite
-  }
-  updateManySprites: {
-    type: 'BatchPayload'
-    args: Record<MutationUpdateManySpritesArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { data: SpriteUpdateManyMutationInput, where?: SpriteWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
-  }
-  deleteManySprites: {
-    type: 'BatchPayload'
-    args: Record<MutationDeleteManySpritesArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { where?: SpriteWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
-  }
-  createStat: {
-    type: 'Stat'
-    args: Record<MutationCreateStatArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { data: StatCreateInput }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Stat> | prisma.Stat
-  }
-  updateManyStats: {
-    type: 'BatchPayload'
-    args: Record<MutationUpdateManyStatsArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { data: StatUpdateManyMutationInput, where?: StatWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
-  }
-  deleteManyStats: {
-    type: 'BatchPayload'
-    args: Record<MutationDeleteManyStatsArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { where?: StatWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
-  }
-  createType: {
-    type: 'Type'
-    args: Record<MutationCreateTypeArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { data: TypeCreateInput }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Type> | prisma.Type
-  }
-  updateManyTypes: {
-    type: 'BatchPayload'
-    args: Record<MutationUpdateManyTypesArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { data: TypeUpdateManyMutationInput, where?: TypeWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
-  }
-  deleteManyTypes: {
-    type: 'BatchPayload'
-    args: Record<MutationDeleteManyTypesArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"Mutation">,
-      args: { where?: TypeWhereInput | null }  ,
+      args: { where?: MovementsWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
@@ -3383,196 +1573,77 @@ export interface BatchPayloadFieldDetails {
 
 type SubscriptionObject =
   | SubscriptionFields
-  | { name: 'pokemon', args?: SubscriptionPokemonArgs[] | false, alias?: string  } 
-  | { name: 'ability', args?: SubscriptionAbilityArgs[] | false, alias?: string  } 
-  | { name: 'form', args?: SubscriptionFormArgs[] | false, alias?: string  } 
-  | { name: 'gameIndex', args?: SubscriptionGameIndexArgs[] | false, alias?: string  } 
-  | { name: 'item', args?: SubscriptionItemArgs[] | false, alias?: string  } 
-  | { name: 'move', args?: SubscriptionMoveArgs[] | false, alias?: string  } 
-  | { name: 'species', args?: SubscriptionSpeciesArgs[] | false, alias?: string  } 
-  | { name: 'sprite', args?: SubscriptionSpriteArgs[] | false, alias?: string  } 
-  | { name: 'stat', args?: SubscriptionStatArgs[] | false, alias?: string  } 
-  | { name: 'type', args?: SubscriptionTypeArgs[] | false, alias?: string  } 
+  | { name: 'character', args?: SubscriptionCharacterArgs[] | false, alias?: string  } 
+  | { name: 'moves', args?: SubscriptionMovesArgs[] | false, alias?: string  } 
+  | { name: 'movements', args?: SubscriptionMovementsArgs[] | false, alias?: string  } 
 
 type SubscriptionFields =
-  | 'pokemon'
-  | 'ability'
-  | 'form'
-  | 'gameIndex'
-  | 'item'
-  | 'move'
-  | 'species'
-  | 'sprite'
-  | 'stat'
-  | 'type'
+  | 'character'
+  | 'moves'
+  | 'movements'
 
 
-type SubscriptionPokemonArgs =
+type SubscriptionCharacterArgs =
   | 'where'
-type SubscriptionAbilityArgs =
+type SubscriptionMovesArgs =
   | 'where'
-type SubscriptionFormArgs =
-  | 'where'
-type SubscriptionGameIndexArgs =
-  | 'where'
-type SubscriptionItemArgs =
-  | 'where'
-type SubscriptionMoveArgs =
-  | 'where'
-type SubscriptionSpeciesArgs =
-  | 'where'
-type SubscriptionSpriteArgs =
-  | 'where'
-type SubscriptionStatArgs =
-  | 'where'
-type SubscriptionTypeArgs =
+type SubscriptionMovementsArgs =
   | 'where'
   
 
 export interface SubscriptionFieldDetails {
-  pokemon: {
-    type: 'PokemonSubscriptionPayload'
-    args: Record<SubscriptionPokemonArgs, core.NexusArgDef<string>>
+  character: {
+    type: 'CharacterSubscriptionPayload'
+    args: Record<SubscriptionCharacterArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Subscription">,
-      args: { where?: PokemonSubscriptionWhereInput | null }  ,
+      args: { where?: CharacterSubscriptionWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.PokemonSubscriptionPayload | null> | prisma.PokemonSubscriptionPayload | null
+    ) => Promise<prisma.CharacterSubscriptionPayload | null> | prisma.CharacterSubscriptionPayload | null
   }
-  ability: {
-    type: 'AbilitySubscriptionPayload'
-    args: Record<SubscriptionAbilityArgs, core.NexusArgDef<string>>
+  moves: {
+    type: 'MovesSubscriptionPayload'
+    args: Record<SubscriptionMovesArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Subscription">,
-      args: { where?: AbilitySubscriptionWhereInput | null }  ,
+      args: { where?: MovesSubscriptionWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.AbilitySubscriptionPayload | null> | prisma.AbilitySubscriptionPayload | null
+    ) => Promise<prisma.MovesSubscriptionPayload | null> | prisma.MovesSubscriptionPayload | null
   }
-  form: {
-    type: 'FormSubscriptionPayload'
-    args: Record<SubscriptionFormArgs, core.NexusArgDef<string>>
+  movements: {
+    type: 'MovementsSubscriptionPayload'
+    args: Record<SubscriptionMovementsArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Subscription">,
-      args: { where?: FormSubscriptionWhereInput | null }  ,
+      args: { where?: MovementsSubscriptionWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.FormSubscriptionPayload | null> | prisma.FormSubscriptionPayload | null
-  }
-  gameIndex: {
-    type: 'GameIndexSubscriptionPayload'
-    args: Record<SubscriptionGameIndexArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"Subscription">,
-      args: { where?: GameIndexSubscriptionWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.GameIndexSubscriptionPayload | null> | prisma.GameIndexSubscriptionPayload | null
-  }
-  item: {
-    type: 'ItemSubscriptionPayload'
-    args: Record<SubscriptionItemArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"Subscription">,
-      args: { where?: ItemSubscriptionWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.ItemSubscriptionPayload | null> | prisma.ItemSubscriptionPayload | null
-  }
-  move: {
-    type: 'MoveSubscriptionPayload'
-    args: Record<SubscriptionMoveArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"Subscription">,
-      args: { where?: MoveSubscriptionWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.MoveSubscriptionPayload | null> | prisma.MoveSubscriptionPayload | null
-  }
-  species: {
-    type: 'SpeciesSubscriptionPayload'
-    args: Record<SubscriptionSpeciesArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"Subscription">,
-      args: { where?: SpeciesSubscriptionWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.SpeciesSubscriptionPayload | null> | prisma.SpeciesSubscriptionPayload | null
-  }
-  sprite: {
-    type: 'SpriteSubscriptionPayload'
-    args: Record<SubscriptionSpriteArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"Subscription">,
-      args: { where?: SpriteSubscriptionWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.SpriteSubscriptionPayload | null> | prisma.SpriteSubscriptionPayload | null
-  }
-  stat: {
-    type: 'StatSubscriptionPayload'
-    args: Record<SubscriptionStatArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"Subscription">,
-      args: { where?: StatSubscriptionWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.StatSubscriptionPayload | null> | prisma.StatSubscriptionPayload | null
-  }
-  type: {
-    type: 'TypeSubscriptionPayload'
-    args: Record<SubscriptionTypeArgs, core.NexusArgDef<string>>
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"Subscription">,
-      args: { where?: TypeSubscriptionWhereInput | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.TypeSubscriptionPayload | null> | prisma.TypeSubscriptionPayload | null
+    ) => Promise<prisma.MovementsSubscriptionPayload | null> | prisma.MovementsSubscriptionPayload | null
   }
 }
   
 
-// Types for PokemonSubscriptionPayload
+// Types for CharacterSubscriptionPayload
 
-type PokemonSubscriptionPayloadObject =
-  | PokemonSubscriptionPayloadFields
+type CharacterSubscriptionPayloadObject =
+  | CharacterSubscriptionPayloadFields
   | { name: 'mutation', args?: [] | false, alias?: string  } 
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'updatedFields', args?: [] | false, alias?: string  } 
   | { name: 'previousValues', args?: [] | false, alias?: string  } 
 
-type PokemonSubscriptionPayloadFields =
+type CharacterSubscriptionPayloadFields =
   | 'mutation'
   | 'node'
   | 'updatedFields'
@@ -3582,7 +1653,7 @@ type PokemonSubscriptionPayloadFields =
 
   
 
-export interface PokemonSubscriptionPayloadFieldDetails {
+export interface CharacterSubscriptionPayloadFieldDetails {
   mutation: {
     type: 'MutationType'
     args: {}
@@ -3590,24 +1661,24 @@ export interface PokemonSubscriptionPayloadFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"PokemonSubscriptionPayload">,
+      root: core.RootValue<"CharacterSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.MutationType> | prisma.MutationType
   }
   node: {
-    type: 'Pokemon'
+    type: 'Character'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"PokemonSubscriptionPayload">,
+      root: core.RootValue<"CharacterSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Pokemon | null> | prisma.Pokemon | null
+    ) => Promise<prisma.Character | null> | prisma.Character | null
   }
   updatedFields: {
     type: 'String'
@@ -3618,67 +1689,45 @@ export interface PokemonSubscriptionPayloadFieldDetails {
     resolve: undefined
   }
   previousValues: {
-    type: 'PokemonPreviousValues'
+    type: 'CharacterPreviousValues'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"PokemonSubscriptionPayload">,
+      root: core.RootValue<"CharacterSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.PokemonPreviousValues | null> | prisma.PokemonPreviousValues | null
+    ) => Promise<prisma.CharacterPreviousValues | null> | prisma.CharacterPreviousValues | null
   }
 }
   
 
-// Types for PokemonPreviousValues
+// Types for CharacterPreviousValues
 
-type PokemonPreviousValuesObject =
-  | PokemonPreviousValuesFields
-  | { name: 'base_experience', args?: [] | false, alias?: string  } 
-  | { name: 'height', args?: [] | false, alias?: string  } 
+type CharacterPreviousValuesObject =
+  | CharacterPreviousValuesFields
   | { name: 'id', args?: [] | false, alias?: string  } 
-  | { name: 'is_default', args?: [] | false, alias?: string  } 
-  | { name: 'location_area_encounters', args?: [] | false, alias?: string  } 
   | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'order', args?: [] | false, alias?: string  } 
-  | { name: 'weight', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
+  | { name: 'displayName', args?: [] | false, alias?: string  } 
+  | { name: 'mainImgUrl', args?: [] | false, alias?: string  } 
+  | { name: 'thumbnailImg', args?: [] | false, alias?: string  } 
+  | { name: 'colorTheme', args?: [] | false, alias?: string  } 
 
-type PokemonPreviousValuesFields =
-  | 'base_experience'
-  | 'height'
+type CharacterPreviousValuesFields =
   | 'id'
-  | 'is_default'
-  | 'location_area_encounters'
   | 'name'
-  | 'order'
-  | 'weight'
-  | 'url'
+  | 'displayName'
+  | 'mainImgUrl'
+  | 'thumbnailImg'
+  | 'colorTheme'
 
 
 
   
 
-export interface PokemonPreviousValuesFieldDetails {
-  base_experience: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  height: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
+export interface CharacterPreviousValuesFieldDetails {
   id: {
     type: 'ID'
     args: {}
@@ -3687,20 +1736,161 @@ export interface PokemonPreviousValuesFieldDetails {
     nullable: false
     resolve: undefined
   }
-  is_default: {
-    type: 'Boolean'
+  name: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  displayName: {
+    type: 'String'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: undefined
   }
-  location_area_encounters: {
+  mainImgUrl: {
     type: 'String'
     args: {}
     description: string
     list: undefined
     nullable: true
+    resolve: undefined
+  }
+  thumbnailImg: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  colorTheme: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+}
+  
+
+// Types for MovesSubscriptionPayload
+
+type MovesSubscriptionPayloadObject =
+  | MovesSubscriptionPayloadFields
+  | { name: 'mutation', args?: [] | false, alias?: string  } 
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
+  | { name: 'previousValues', args?: [] | false, alias?: string  } 
+
+type MovesSubscriptionPayloadFields =
+  | 'mutation'
+  | 'node'
+  | 'updatedFields'
+  | 'previousValues'
+
+
+
+  
+
+export interface MovesSubscriptionPayloadFieldDetails {
+  mutation: {
+    type: 'MutationType'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"MovesSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MutationType> | prisma.MutationType
+  }
+  node: {
+    type: 'Moves'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"MovesSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Moves | null> | prisma.Moves | null
+  }
+  updatedFields: {
+    type: 'String'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: undefined
+  }
+  previousValues: {
+    type: 'MovesPreviousValues'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"MovesSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MovesPreviousValues | null> | prisma.MovesPreviousValues | null
+  }
+}
+  
+
+// Types for MovesPreviousValues
+
+type MovesPreviousValuesObject =
+  | MovesPreviousValuesFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'name', args?: [] | false, alias?: string  } 
+  | { name: 'hitBoxActive', args?: [] | false, alias?: string  } 
+  | { name: 'firstActionableFrame', args?: [] | false, alias?: string  } 
+  | { name: 'baseDmg', args?: [] | false, alias?: string  } 
+  | { name: 'angle', args?: [] | false, alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback', args?: [] | false, alias?: string  } 
+  | { name: 'landingLag', args?: [] | false, alias?: string  } 
+  | { name: 'autoCancel', args?: [] | false, alias?: string  } 
+  | { name: 'knockbackGrowth', args?: [] | false, alias?: string  } 
+  | { name: 'moveType', args?: [] | false, alias?: string  } 
+  | { name: 'isWeightDependent', args?: [] | false, alias?: string  } 
+
+type MovesPreviousValuesFields =
+  | 'id'
+  | 'name'
+  | 'hitBoxActive'
+  | 'firstActionableFrame'
+  | 'baseDmg'
+  | 'angle'
+  | 'baseKnockBackSetKnockback'
+  | 'landingLag'
+  | 'autoCancel'
+  | 'knockbackGrowth'
+  | 'moveType'
+  | 'isWeightDependent'
+
+
+
+  
+
+export interface MovesPreviousValuesFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
     resolve: undefined
   }
   name: {
@@ -3708,15 +1898,218 @@ export interface PokemonPreviousValuesFieldDetails {
     args: {}
     description: string
     list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  hitBoxActive: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
     nullable: true
     resolve: undefined
   }
-  order: {
+  firstActionableFrame: {
     type: 'Int'
     args: {}
     description: string
     list: undefined
     nullable: true
+    resolve: undefined
+  }
+  baseDmg: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  angle: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  baseKnockBackSetKnockback: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  landingLag: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  autoCancel: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  knockbackGrowth: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  moveType: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  isWeightDependent: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+}
+  
+
+// Types for MovementsSubscriptionPayload
+
+type MovementsSubscriptionPayloadObject =
+  | MovementsSubscriptionPayloadFields
+  | { name: 'mutation', args?: [] | false, alias?: string  } 
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
+  | { name: 'previousValues', args?: [] | false, alias?: string  } 
+
+type MovementsSubscriptionPayloadFields =
+  | 'mutation'
+  | 'node'
+  | 'updatedFields'
+  | 'previousValues'
+
+
+
+  
+
+export interface MovementsSubscriptionPayloadFieldDetails {
+  mutation: {
+    type: 'MutationType'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"MovementsSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MutationType> | prisma.MutationType
+  }
+  node: {
+    type: 'Movements'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"MovementsSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Movements | null> | prisma.Movements | null
+  }
+  updatedFields: {
+    type: 'String'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: undefined
+  }
+  previousValues: {
+    type: 'MovementsPreviousValues'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"MovementsSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MovementsPreviousValues | null> | prisma.MovementsPreviousValues | null
+  }
+}
+  
+
+// Types for MovementsPreviousValues
+
+type MovementsPreviousValuesObject =
+  | MovementsPreviousValuesFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'weight', args?: [] | false, alias?: string  } 
+  | { name: 'maxJumps', args?: [] | false, alias?: string  } 
+  | { name: 'runSpeed', args?: [] | false, alias?: string  } 
+  | { name: 'wallJump', args?: [] | false, alias?: string  } 
+  | { name: 'walkSpeed', args?: [] | false, alias?: string  } 
+  | { name: 'wallCling', args?: [] | false, alias?: string  } 
+  | { name: 'airSpeed', args?: [] | false, alias?: string  } 
+  | { name: 'crawl', args?: [] | false, alias?: string  } 
+  | { name: 'fallSpeed', args?: [] | false, alias?: string  } 
+  | { name: 'tether', args?: [] | false, alias?: string  } 
+  | { name: 'fastFallSpeed', args?: [] | false, alias?: string  } 
+  | { name: 'jumpSquat', args?: [] | false, alias?: string  } 
+  | { name: 'airAcceleration', args?: [] | false, alias?: string  } 
+  | { name: 'softLandingLag', args?: [] | false, alias?: string  } 
+  | { name: 'gravity', args?: [] | false, alias?: string  } 
+  | { name: 'hardLandingLag', args?: [] | false, alias?: string  } 
+  | { name: 'shAirTime', args?: [] | false, alias?: string  } 
+  | { name: 'fhAirTime', args?: [] | false, alias?: string  } 
+
+type MovementsPreviousValuesFields =
+  | 'id'
+  | 'weight'
+  | 'maxJumps'
+  | 'runSpeed'
+  | 'wallJump'
+  | 'walkSpeed'
+  | 'wallCling'
+  | 'airSpeed'
+  | 'crawl'
+  | 'fallSpeed'
+  | 'tether'
+  | 'fastFallSpeed'
+  | 'jumpSquat'
+  | 'airAcceleration'
+  | 'softLandingLag'
+  | 'gravity'
+  | 'hardLandingLag'
+  | 'shAirTime'
+  | 'fhAirTime'
+
+
+
+  
+
+export interface MovementsPreviousValuesFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
     resolve: undefined
   }
   weight: {
@@ -3727,903 +2120,7 @@ export interface PokemonPreviousValuesFieldDetails {
     nullable: true
     resolve: undefined
   }
-  url: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for AbilitySubscriptionPayload
-
-type AbilitySubscriptionPayloadObject =
-  | AbilitySubscriptionPayloadFields
-  | { name: 'mutation', args?: [] | false, alias?: string  } 
-  | { name: 'node', args?: [] | false, alias?: string  } 
-  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
-  | { name: 'previousValues', args?: [] | false, alias?: string  } 
-
-type AbilitySubscriptionPayloadFields =
-  | 'mutation'
-  | 'node'
-  | 'updatedFields'
-  | 'previousValues'
-
-
-
-  
-
-export interface AbilitySubscriptionPayloadFieldDetails {
-  mutation: {
-    type: 'MutationType'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"AbilitySubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.MutationType> | prisma.MutationType
-  }
-  node: {
-    type: 'Ability'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"AbilitySubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Ability | null> | prisma.Ability | null
-  }
-  updatedFields: {
-    type: 'String'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: undefined
-  }
-  previousValues: {
-    type: 'AbilityPreviousValues'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"AbilitySubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.AbilityPreviousValues | null> | prisma.AbilityPreviousValues | null
-  }
-}
-  
-
-// Types for AbilityPreviousValues
-
-type AbilityPreviousValuesObject =
-  | AbilityPreviousValuesFields
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
-
-type AbilityPreviousValuesFields =
-  | 'name'
-  | 'url'
-
-
-
-  
-
-export interface AbilityPreviousValuesFieldDetails {
-  name: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  url: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for FormSubscriptionPayload
-
-type FormSubscriptionPayloadObject =
-  | FormSubscriptionPayloadFields
-  | { name: 'mutation', args?: [] | false, alias?: string  } 
-  | { name: 'node', args?: [] | false, alias?: string  } 
-  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
-  | { name: 'previousValues', args?: [] | false, alias?: string  } 
-
-type FormSubscriptionPayloadFields =
-  | 'mutation'
-  | 'node'
-  | 'updatedFields'
-  | 'previousValues'
-
-
-
-  
-
-export interface FormSubscriptionPayloadFieldDetails {
-  mutation: {
-    type: 'MutationType'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"FormSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.MutationType> | prisma.MutationType
-  }
-  node: {
-    type: 'Form'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"FormSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Form | null> | prisma.Form | null
-  }
-  updatedFields: {
-    type: 'String'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: undefined
-  }
-  previousValues: {
-    type: 'FormPreviousValues'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"FormSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.FormPreviousValues | null> | prisma.FormPreviousValues | null
-  }
-}
-  
-
-// Types for FormPreviousValues
-
-type FormPreviousValuesObject =
-  | FormPreviousValuesFields
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
-
-type FormPreviousValuesFields =
-  | 'name'
-  | 'url'
-
-
-
-  
-
-export interface FormPreviousValuesFieldDetails {
-  name: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  url: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for GameIndexSubscriptionPayload
-
-type GameIndexSubscriptionPayloadObject =
-  | GameIndexSubscriptionPayloadFields
-  | { name: 'mutation', args?: [] | false, alias?: string  } 
-  | { name: 'node', args?: [] | false, alias?: string  } 
-  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
-  | { name: 'previousValues', args?: [] | false, alias?: string  } 
-
-type GameIndexSubscriptionPayloadFields =
-  | 'mutation'
-  | 'node'
-  | 'updatedFields'
-  | 'previousValues'
-
-
-
-  
-
-export interface GameIndexSubscriptionPayloadFieldDetails {
-  mutation: {
-    type: 'MutationType'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"GameIndexSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.MutationType> | prisma.MutationType
-  }
-  node: {
-    type: 'GameIndex'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"GameIndexSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.GameIndex | null> | prisma.GameIndex | null
-  }
-  updatedFields: {
-    type: 'String'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: undefined
-  }
-  previousValues: {
-    type: 'GameIndexPreviousValues'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"GameIndexSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.GameIndexPreviousValues | null> | prisma.GameIndexPreviousValues | null
-  }
-}
-  
-
-// Types for GameIndexPreviousValues
-
-type GameIndexPreviousValuesObject =
-  | GameIndexPreviousValuesFields
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
-
-type GameIndexPreviousValuesFields =
-  | 'name'
-  | 'url'
-
-
-
-  
-
-export interface GameIndexPreviousValuesFieldDetails {
-  name: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  url: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for ItemSubscriptionPayload
-
-type ItemSubscriptionPayloadObject =
-  | ItemSubscriptionPayloadFields
-  | { name: 'mutation', args?: [] | false, alias?: string  } 
-  | { name: 'node', args?: [] | false, alias?: string  } 
-  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
-  | { name: 'previousValues', args?: [] | false, alias?: string  } 
-
-type ItemSubscriptionPayloadFields =
-  | 'mutation'
-  | 'node'
-  | 'updatedFields'
-  | 'previousValues'
-
-
-
-  
-
-export interface ItemSubscriptionPayloadFieldDetails {
-  mutation: {
-    type: 'MutationType'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"ItemSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.MutationType> | prisma.MutationType
-  }
-  node: {
-    type: 'Item'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"ItemSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Item | null> | prisma.Item | null
-  }
-  updatedFields: {
-    type: 'String'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: undefined
-  }
-  previousValues: {
-    type: 'ItemPreviousValues'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"ItemSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.ItemPreviousValues | null> | prisma.ItemPreviousValues | null
-  }
-}
-  
-
-// Types for ItemPreviousValues
-
-type ItemPreviousValuesObject =
-  | ItemPreviousValuesFields
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
-
-type ItemPreviousValuesFields =
-  | 'name'
-  | 'url'
-
-
-
-  
-
-export interface ItemPreviousValuesFieldDetails {
-  name: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  url: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for MoveSubscriptionPayload
-
-type MoveSubscriptionPayloadObject =
-  | MoveSubscriptionPayloadFields
-  | { name: 'mutation', args?: [] | false, alias?: string  } 
-  | { name: 'node', args?: [] | false, alias?: string  } 
-  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
-  | { name: 'previousValues', args?: [] | false, alias?: string  } 
-
-type MoveSubscriptionPayloadFields =
-  | 'mutation'
-  | 'node'
-  | 'updatedFields'
-  | 'previousValues'
-
-
-
-  
-
-export interface MoveSubscriptionPayloadFieldDetails {
-  mutation: {
-    type: 'MutationType'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"MoveSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.MutationType> | prisma.MutationType
-  }
-  node: {
-    type: 'Move'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"MoveSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Move | null> | prisma.Move | null
-  }
-  updatedFields: {
-    type: 'String'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: undefined
-  }
-  previousValues: {
-    type: 'MovePreviousValues'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"MoveSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.MovePreviousValues | null> | prisma.MovePreviousValues | null
-  }
-}
-  
-
-// Types for MovePreviousValues
-
-type MovePreviousValuesObject =
-  | MovePreviousValuesFields
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
-
-type MovePreviousValuesFields =
-  | 'name'
-  | 'url'
-
-
-
-  
-
-export interface MovePreviousValuesFieldDetails {
-  name: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  url: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for SpeciesSubscriptionPayload
-
-type SpeciesSubscriptionPayloadObject =
-  | SpeciesSubscriptionPayloadFields
-  | { name: 'mutation', args?: [] | false, alias?: string  } 
-  | { name: 'node', args?: [] | false, alias?: string  } 
-  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
-  | { name: 'previousValues', args?: [] | false, alias?: string  } 
-
-type SpeciesSubscriptionPayloadFields =
-  | 'mutation'
-  | 'node'
-  | 'updatedFields'
-  | 'previousValues'
-
-
-
-  
-
-export interface SpeciesSubscriptionPayloadFieldDetails {
-  mutation: {
-    type: 'MutationType'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"SpeciesSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.MutationType> | prisma.MutationType
-  }
-  node: {
-    type: 'Species'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"SpeciesSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Species | null> | prisma.Species | null
-  }
-  updatedFields: {
-    type: 'String'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: undefined
-  }
-  previousValues: {
-    type: 'SpeciesPreviousValues'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"SpeciesSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.SpeciesPreviousValues | null> | prisma.SpeciesPreviousValues | null
-  }
-}
-  
-
-// Types for SpeciesPreviousValues
-
-type SpeciesPreviousValuesObject =
-  | SpeciesPreviousValuesFields
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
-
-type SpeciesPreviousValuesFields =
-  | 'name'
-  | 'url'
-
-
-
-  
-
-export interface SpeciesPreviousValuesFieldDetails {
-  name: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  url: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for SpriteSubscriptionPayload
-
-type SpriteSubscriptionPayloadObject =
-  | SpriteSubscriptionPayloadFields
-  | { name: 'mutation', args?: [] | false, alias?: string  } 
-  | { name: 'node', args?: [] | false, alias?: string  } 
-  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
-  | { name: 'previousValues', args?: [] | false, alias?: string  } 
-
-type SpriteSubscriptionPayloadFields =
-  | 'mutation'
-  | 'node'
-  | 'updatedFields'
-  | 'previousValues'
-
-
-
-  
-
-export interface SpriteSubscriptionPayloadFieldDetails {
-  mutation: {
-    type: 'MutationType'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"SpriteSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.MutationType> | prisma.MutationType
-  }
-  node: {
-    type: 'Sprite'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"SpriteSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Sprite | null> | prisma.Sprite | null
-  }
-  updatedFields: {
-    type: 'String'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: undefined
-  }
-  previousValues: {
-    type: 'SpritePreviousValues'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"SpriteSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.SpritePreviousValues | null> | prisma.SpritePreviousValues | null
-  }
-}
-  
-
-// Types for SpritePreviousValues
-
-type SpritePreviousValuesObject =
-  | SpritePreviousValuesFields
-  | { name: 'back_default', args?: [] | false, alias?: string  } 
-  | { name: 'back_female', args?: [] | false, alias?: string  } 
-  | { name: 'back_shiny', args?: [] | false, alias?: string  } 
-  | { name: 'back_shiny_female', args?: [] | false, alias?: string  } 
-  | { name: 'front_default', args?: [] | false, alias?: string  } 
-  | { name: 'front_female', args?: [] | false, alias?: string  } 
-  | { name: 'front_shiny', args?: [] | false, alias?: string  } 
-  | { name: 'front_shiny_female', args?: [] | false, alias?: string  } 
-
-type SpritePreviousValuesFields =
-  | 'back_default'
-  | 'back_female'
-  | 'back_shiny'
-  | 'back_shiny_female'
-  | 'front_default'
-  | 'front_female'
-  | 'front_shiny'
-  | 'front_shiny_female'
-
-
-
-  
-
-export interface SpritePreviousValuesFieldDetails {
-  back_default: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  back_female: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  back_shiny: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  back_shiny_female: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  front_default: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  front_female: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  front_shiny: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  front_shiny_female: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for StatSubscriptionPayload
-
-type StatSubscriptionPayloadObject =
-  | StatSubscriptionPayloadFields
-  | { name: 'mutation', args?: [] | false, alias?: string  } 
-  | { name: 'node', args?: [] | false, alias?: string  } 
-  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
-  | { name: 'previousValues', args?: [] | false, alias?: string  } 
-
-type StatSubscriptionPayloadFields =
-  | 'mutation'
-  | 'node'
-  | 'updatedFields'
-  | 'previousValues'
-
-
-
-  
-
-export interface StatSubscriptionPayloadFieldDetails {
-  mutation: {
-    type: 'MutationType'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"StatSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.MutationType> | prisma.MutationType
-  }
-  node: {
-    type: 'Stat'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"StatSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Stat | null> | prisma.Stat | null
-  }
-  updatedFields: {
-    type: 'String'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: undefined
-  }
-  previousValues: {
-    type: 'StatPreviousValues'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"StatSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.StatPreviousValues | null> | prisma.StatPreviousValues | null
-  }
-}
-  
-
-// Types for StatPreviousValues
-
-type StatPreviousValuesObject =
-  | StatPreviousValuesFields
-  | { name: 'base_stat', args?: [] | false, alias?: string  } 
-  | { name: 'effort', args?: [] | false, alias?: string  } 
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
-
-type StatPreviousValuesFields =
-  | 'base_stat'
-  | 'effort'
-  | 'name'
-  | 'url'
-
-
-
-  
-
-export interface StatPreviousValuesFieldDetails {
-  base_stat: {
+  maxJumps: {
     type: 'Int'
     args: {}
     description: string
@@ -4631,7 +2128,7 @@ export interface StatPreviousValuesFieldDetails {
     nullable: true
     resolve: undefined
   }
-  effort: {
+  runSpeed: {
     type: 'Int'
     args: {}
     description: string
@@ -4639,114 +2136,15 @@ export interface StatPreviousValuesFieldDetails {
     nullable: true
     resolve: undefined
   }
-  name: {
-    type: 'String'
+  wallJump: {
+    type: 'Boolean'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: undefined
   }
-  url: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-}
-  
-
-// Types for TypeSubscriptionPayload
-
-type TypeSubscriptionPayloadObject =
-  | TypeSubscriptionPayloadFields
-  | { name: 'mutation', args?: [] | false, alias?: string  } 
-  | { name: 'node', args?: [] | false, alias?: string  } 
-  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
-  | { name: 'previousValues', args?: [] | false, alias?: string  } 
-
-type TypeSubscriptionPayloadFields =
-  | 'mutation'
-  | 'node'
-  | 'updatedFields'
-  | 'previousValues'
-
-
-
-  
-
-export interface TypeSubscriptionPayloadFieldDetails {
-  mutation: {
-    type: 'MutationType'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: (
-      root: core.RootValue<"TypeSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.MutationType> | prisma.MutationType
-  }
-  node: {
-    type: 'Type'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"TypeSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Type | null> | prisma.Type | null
-  }
-  updatedFields: {
-    type: 'String'
-    args: {}
-    description: string
-    list: true
-    nullable: false
-    resolve: undefined
-  }
-  previousValues: {
-    type: 'TypePreviousValues'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: (
-      root: core.RootValue<"TypeSubscriptionPayload">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.TypePreviousValues | null> | prisma.TypePreviousValues | null
-  }
-}
-  
-
-// Types for TypePreviousValues
-
-type TypePreviousValuesObject =
-  | TypePreviousValuesFields
-  | { name: 'slot', args?: [] | false, alias?: string  } 
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'url', args?: [] | false, alias?: string  } 
-
-type TypePreviousValuesFields =
-  | 'slot'
-  | 'name'
-  | 'url'
-
-
-
-  
-
-export interface TypePreviousValuesFieldDetails {
-  slot: {
+  walkSpeed: {
     type: 'Int'
     args: {}
     description: string
@@ -4754,7 +2152,55 @@ export interface TypePreviousValuesFieldDetails {
     nullable: true
     resolve: undefined
   }
-  name: {
+  wallCling: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  airSpeed: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  crawl: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  fallSpeed: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  tether: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  fastFallSpeed: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  jumpSquat: {
     type: 'String'
     args: {}
     description: string
@@ -4762,7 +2208,47 @@ export interface TypePreviousValuesFieldDetails {
     nullable: true
     resolve: undefined
   }
-  url: {
+  airAcceleration: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  softLandingLag: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  gravity: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  hardLandingLag: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  shAirTime: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  fhAirTime: {
     type: 'String'
     args: {}
     description: string
@@ -4774,861 +2260,14 @@ export interface TypePreviousValuesFieldDetails {
   
 
 
-export interface PokemonWhereUniqueInput {
+export interface CharacterWhereUniqueInput {
   id?: string | null
 }
-export type PokemonWhereUniqueInputInputObject =
-  | Extract<keyof PokemonWhereUniqueInput, string>
+export type CharacterWhereUniqueInputInputObject =
+  | Extract<keyof CharacterWhereUniqueInput, string>
   | { name: 'id', alias?: string  } 
   
-export interface AbilityWhereInput {
-  name?: string | null
-  name_not?: string | null
-  name_in?: string[]
-  name_not_in?: string[]
-  name_lt?: string | null
-  name_lte?: string | null
-  name_gt?: string | null
-  name_gte?: string | null
-  name_contains?: string | null
-  name_not_contains?: string | null
-  name_starts_with?: string | null
-  name_not_starts_with?: string | null
-  name_ends_with?: string | null
-  name_not_ends_with?: string | null
-  url?: string | null
-  url_not?: string | null
-  url_in?: string[]
-  url_not_in?: string[]
-  url_lt?: string | null
-  url_lte?: string | null
-  url_gt?: string | null
-  url_gte?: string | null
-  url_contains?: string | null
-  url_not_contains?: string | null
-  url_starts_with?: string | null
-  url_not_starts_with?: string | null
-  url_ends_with?: string | null
-  url_not_ends_with?: string | null
-  AND?: AbilityWhereInput[]
-  OR?: AbilityWhereInput[]
-  NOT?: AbilityWhereInput[]
-}
-export type AbilityWhereInputInputObject =
-  | Extract<keyof AbilityWhereInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'name_not', alias?: string  } 
-  | { name: 'name_in', alias?: string  } 
-  | { name: 'name_not_in', alias?: string  } 
-  | { name: 'name_lt', alias?: string  } 
-  | { name: 'name_lte', alias?: string  } 
-  | { name: 'name_gt', alias?: string  } 
-  | { name: 'name_gte', alias?: string  } 
-  | { name: 'name_contains', alias?: string  } 
-  | { name: 'name_not_contains', alias?: string  } 
-  | { name: 'name_starts_with', alias?: string  } 
-  | { name: 'name_not_starts_with', alias?: string  } 
-  | { name: 'name_ends_with', alias?: string  } 
-  | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  | { name: 'url_not', alias?: string  } 
-  | { name: 'url_in', alias?: string  } 
-  | { name: 'url_not_in', alias?: string  } 
-  | { name: 'url_lt', alias?: string  } 
-  | { name: 'url_lte', alias?: string  } 
-  | { name: 'url_gt', alias?: string  } 
-  | { name: 'url_gte', alias?: string  } 
-  | { name: 'url_contains', alias?: string  } 
-  | { name: 'url_not_contains', alias?: string  } 
-  | { name: 'url_starts_with', alias?: string  } 
-  | { name: 'url_not_starts_with', alias?: string  } 
-  | { name: 'url_ends_with', alias?: string  } 
-  | { name: 'url_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface FormWhereInput {
-  name?: string | null
-  name_not?: string | null
-  name_in?: string[]
-  name_not_in?: string[]
-  name_lt?: string | null
-  name_lte?: string | null
-  name_gt?: string | null
-  name_gte?: string | null
-  name_contains?: string | null
-  name_not_contains?: string | null
-  name_starts_with?: string | null
-  name_not_starts_with?: string | null
-  name_ends_with?: string | null
-  name_not_ends_with?: string | null
-  url?: string | null
-  url_not?: string | null
-  url_in?: string[]
-  url_not_in?: string[]
-  url_lt?: string | null
-  url_lte?: string | null
-  url_gt?: string | null
-  url_gte?: string | null
-  url_contains?: string | null
-  url_not_contains?: string | null
-  url_starts_with?: string | null
-  url_not_starts_with?: string | null
-  url_ends_with?: string | null
-  url_not_ends_with?: string | null
-  AND?: FormWhereInput[]
-  OR?: FormWhereInput[]
-  NOT?: FormWhereInput[]
-}
-export type FormWhereInputInputObject =
-  | Extract<keyof FormWhereInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'name_not', alias?: string  } 
-  | { name: 'name_in', alias?: string  } 
-  | { name: 'name_not_in', alias?: string  } 
-  | { name: 'name_lt', alias?: string  } 
-  | { name: 'name_lte', alias?: string  } 
-  | { name: 'name_gt', alias?: string  } 
-  | { name: 'name_gte', alias?: string  } 
-  | { name: 'name_contains', alias?: string  } 
-  | { name: 'name_not_contains', alias?: string  } 
-  | { name: 'name_starts_with', alias?: string  } 
-  | { name: 'name_not_starts_with', alias?: string  } 
-  | { name: 'name_ends_with', alias?: string  } 
-  | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  | { name: 'url_not', alias?: string  } 
-  | { name: 'url_in', alias?: string  } 
-  | { name: 'url_not_in', alias?: string  } 
-  | { name: 'url_lt', alias?: string  } 
-  | { name: 'url_lte', alias?: string  } 
-  | { name: 'url_gt', alias?: string  } 
-  | { name: 'url_gte', alias?: string  } 
-  | { name: 'url_contains', alias?: string  } 
-  | { name: 'url_not_contains', alias?: string  } 
-  | { name: 'url_starts_with', alias?: string  } 
-  | { name: 'url_not_starts_with', alias?: string  } 
-  | { name: 'url_ends_with', alias?: string  } 
-  | { name: 'url_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface GameIndexWhereInput {
-  name?: string | null
-  name_not?: string | null
-  name_in?: string[]
-  name_not_in?: string[]
-  name_lt?: string | null
-  name_lte?: string | null
-  name_gt?: string | null
-  name_gte?: string | null
-  name_contains?: string | null
-  name_not_contains?: string | null
-  name_starts_with?: string | null
-  name_not_starts_with?: string | null
-  name_ends_with?: string | null
-  name_not_ends_with?: string | null
-  url?: string | null
-  url_not?: string | null
-  url_in?: string[]
-  url_not_in?: string[]
-  url_lt?: string | null
-  url_lte?: string | null
-  url_gt?: string | null
-  url_gte?: string | null
-  url_contains?: string | null
-  url_not_contains?: string | null
-  url_starts_with?: string | null
-  url_not_starts_with?: string | null
-  url_ends_with?: string | null
-  url_not_ends_with?: string | null
-  AND?: GameIndexWhereInput[]
-  OR?: GameIndexWhereInput[]
-  NOT?: GameIndexWhereInput[]
-}
-export type GameIndexWhereInputInputObject =
-  | Extract<keyof GameIndexWhereInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'name_not', alias?: string  } 
-  | { name: 'name_in', alias?: string  } 
-  | { name: 'name_not_in', alias?: string  } 
-  | { name: 'name_lt', alias?: string  } 
-  | { name: 'name_lte', alias?: string  } 
-  | { name: 'name_gt', alias?: string  } 
-  | { name: 'name_gte', alias?: string  } 
-  | { name: 'name_contains', alias?: string  } 
-  | { name: 'name_not_contains', alias?: string  } 
-  | { name: 'name_starts_with', alias?: string  } 
-  | { name: 'name_not_starts_with', alias?: string  } 
-  | { name: 'name_ends_with', alias?: string  } 
-  | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  | { name: 'url_not', alias?: string  } 
-  | { name: 'url_in', alias?: string  } 
-  | { name: 'url_not_in', alias?: string  } 
-  | { name: 'url_lt', alias?: string  } 
-  | { name: 'url_lte', alias?: string  } 
-  | { name: 'url_gt', alias?: string  } 
-  | { name: 'url_gte', alias?: string  } 
-  | { name: 'url_contains', alias?: string  } 
-  | { name: 'url_not_contains', alias?: string  } 
-  | { name: 'url_starts_with', alias?: string  } 
-  | { name: 'url_not_starts_with', alias?: string  } 
-  | { name: 'url_ends_with', alias?: string  } 
-  | { name: 'url_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface ItemWhereInput {
-  name?: string | null
-  name_not?: string | null
-  name_in?: string[]
-  name_not_in?: string[]
-  name_lt?: string | null
-  name_lte?: string | null
-  name_gt?: string | null
-  name_gte?: string | null
-  name_contains?: string | null
-  name_not_contains?: string | null
-  name_starts_with?: string | null
-  name_not_starts_with?: string | null
-  name_ends_with?: string | null
-  name_not_ends_with?: string | null
-  url?: string | null
-  url_not?: string | null
-  url_in?: string[]
-  url_not_in?: string[]
-  url_lt?: string | null
-  url_lte?: string | null
-  url_gt?: string | null
-  url_gte?: string | null
-  url_contains?: string | null
-  url_not_contains?: string | null
-  url_starts_with?: string | null
-  url_not_starts_with?: string | null
-  url_ends_with?: string | null
-  url_not_ends_with?: string | null
-  AND?: ItemWhereInput[]
-  OR?: ItemWhereInput[]
-  NOT?: ItemWhereInput[]
-}
-export type ItemWhereInputInputObject =
-  | Extract<keyof ItemWhereInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'name_not', alias?: string  } 
-  | { name: 'name_in', alias?: string  } 
-  | { name: 'name_not_in', alias?: string  } 
-  | { name: 'name_lt', alias?: string  } 
-  | { name: 'name_lte', alias?: string  } 
-  | { name: 'name_gt', alias?: string  } 
-  | { name: 'name_gte', alias?: string  } 
-  | { name: 'name_contains', alias?: string  } 
-  | { name: 'name_not_contains', alias?: string  } 
-  | { name: 'name_starts_with', alias?: string  } 
-  | { name: 'name_not_starts_with', alias?: string  } 
-  | { name: 'name_ends_with', alias?: string  } 
-  | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  | { name: 'url_not', alias?: string  } 
-  | { name: 'url_in', alias?: string  } 
-  | { name: 'url_not_in', alias?: string  } 
-  | { name: 'url_lt', alias?: string  } 
-  | { name: 'url_lte', alias?: string  } 
-  | { name: 'url_gt', alias?: string  } 
-  | { name: 'url_gte', alias?: string  } 
-  | { name: 'url_contains', alias?: string  } 
-  | { name: 'url_not_contains', alias?: string  } 
-  | { name: 'url_starts_with', alias?: string  } 
-  | { name: 'url_not_starts_with', alias?: string  } 
-  | { name: 'url_ends_with', alias?: string  } 
-  | { name: 'url_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface MoveWhereInput {
-  name?: string | null
-  name_not?: string | null
-  name_in?: string[]
-  name_not_in?: string[]
-  name_lt?: string | null
-  name_lte?: string | null
-  name_gt?: string | null
-  name_gte?: string | null
-  name_contains?: string | null
-  name_not_contains?: string | null
-  name_starts_with?: string | null
-  name_not_starts_with?: string | null
-  name_ends_with?: string | null
-  name_not_ends_with?: string | null
-  url?: string | null
-  url_not?: string | null
-  url_in?: string[]
-  url_not_in?: string[]
-  url_lt?: string | null
-  url_lte?: string | null
-  url_gt?: string | null
-  url_gte?: string | null
-  url_contains?: string | null
-  url_not_contains?: string | null
-  url_starts_with?: string | null
-  url_not_starts_with?: string | null
-  url_ends_with?: string | null
-  url_not_ends_with?: string | null
-  AND?: MoveWhereInput[]
-  OR?: MoveWhereInput[]
-  NOT?: MoveWhereInput[]
-}
-export type MoveWhereInputInputObject =
-  | Extract<keyof MoveWhereInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'name_not', alias?: string  } 
-  | { name: 'name_in', alias?: string  } 
-  | { name: 'name_not_in', alias?: string  } 
-  | { name: 'name_lt', alias?: string  } 
-  | { name: 'name_lte', alias?: string  } 
-  | { name: 'name_gt', alias?: string  } 
-  | { name: 'name_gte', alias?: string  } 
-  | { name: 'name_contains', alias?: string  } 
-  | { name: 'name_not_contains', alias?: string  } 
-  | { name: 'name_starts_with', alias?: string  } 
-  | { name: 'name_not_starts_with', alias?: string  } 
-  | { name: 'name_ends_with', alias?: string  } 
-  | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  | { name: 'url_not', alias?: string  } 
-  | { name: 'url_in', alias?: string  } 
-  | { name: 'url_not_in', alias?: string  } 
-  | { name: 'url_lt', alias?: string  } 
-  | { name: 'url_lte', alias?: string  } 
-  | { name: 'url_gt', alias?: string  } 
-  | { name: 'url_gte', alias?: string  } 
-  | { name: 'url_contains', alias?: string  } 
-  | { name: 'url_not_contains', alias?: string  } 
-  | { name: 'url_starts_with', alias?: string  } 
-  | { name: 'url_not_starts_with', alias?: string  } 
-  | { name: 'url_ends_with', alias?: string  } 
-  | { name: 'url_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface SpeciesWhereInput {
-  name?: string | null
-  name_not?: string | null
-  name_in?: string[]
-  name_not_in?: string[]
-  name_lt?: string | null
-  name_lte?: string | null
-  name_gt?: string | null
-  name_gte?: string | null
-  name_contains?: string | null
-  name_not_contains?: string | null
-  name_starts_with?: string | null
-  name_not_starts_with?: string | null
-  name_ends_with?: string | null
-  name_not_ends_with?: string | null
-  url?: string | null
-  url_not?: string | null
-  url_in?: string[]
-  url_not_in?: string[]
-  url_lt?: string | null
-  url_lte?: string | null
-  url_gt?: string | null
-  url_gte?: string | null
-  url_contains?: string | null
-  url_not_contains?: string | null
-  url_starts_with?: string | null
-  url_not_starts_with?: string | null
-  url_ends_with?: string | null
-  url_not_ends_with?: string | null
-  AND?: SpeciesWhereInput[]
-  OR?: SpeciesWhereInput[]
-  NOT?: SpeciesWhereInput[]
-}
-export type SpeciesWhereInputInputObject =
-  | Extract<keyof SpeciesWhereInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'name_not', alias?: string  } 
-  | { name: 'name_in', alias?: string  } 
-  | { name: 'name_not_in', alias?: string  } 
-  | { name: 'name_lt', alias?: string  } 
-  | { name: 'name_lte', alias?: string  } 
-  | { name: 'name_gt', alias?: string  } 
-  | { name: 'name_gte', alias?: string  } 
-  | { name: 'name_contains', alias?: string  } 
-  | { name: 'name_not_contains', alias?: string  } 
-  | { name: 'name_starts_with', alias?: string  } 
-  | { name: 'name_not_starts_with', alias?: string  } 
-  | { name: 'name_ends_with', alias?: string  } 
-  | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  | { name: 'url_not', alias?: string  } 
-  | { name: 'url_in', alias?: string  } 
-  | { name: 'url_not_in', alias?: string  } 
-  | { name: 'url_lt', alias?: string  } 
-  | { name: 'url_lte', alias?: string  } 
-  | { name: 'url_gt', alias?: string  } 
-  | { name: 'url_gte', alias?: string  } 
-  | { name: 'url_contains', alias?: string  } 
-  | { name: 'url_not_contains', alias?: string  } 
-  | { name: 'url_starts_with', alias?: string  } 
-  | { name: 'url_not_starts_with', alias?: string  } 
-  | { name: 'url_ends_with', alias?: string  } 
-  | { name: 'url_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface SpriteWhereInput {
-  back_default?: string | null
-  back_default_not?: string | null
-  back_default_in?: string[]
-  back_default_not_in?: string[]
-  back_default_lt?: string | null
-  back_default_lte?: string | null
-  back_default_gt?: string | null
-  back_default_gte?: string | null
-  back_default_contains?: string | null
-  back_default_not_contains?: string | null
-  back_default_starts_with?: string | null
-  back_default_not_starts_with?: string | null
-  back_default_ends_with?: string | null
-  back_default_not_ends_with?: string | null
-  back_female?: string | null
-  back_female_not?: string | null
-  back_female_in?: string[]
-  back_female_not_in?: string[]
-  back_female_lt?: string | null
-  back_female_lte?: string | null
-  back_female_gt?: string | null
-  back_female_gte?: string | null
-  back_female_contains?: string | null
-  back_female_not_contains?: string | null
-  back_female_starts_with?: string | null
-  back_female_not_starts_with?: string | null
-  back_female_ends_with?: string | null
-  back_female_not_ends_with?: string | null
-  back_shiny?: string | null
-  back_shiny_not?: string | null
-  back_shiny_in?: string[]
-  back_shiny_not_in?: string[]
-  back_shiny_lt?: string | null
-  back_shiny_lte?: string | null
-  back_shiny_gt?: string | null
-  back_shiny_gte?: string | null
-  back_shiny_contains?: string | null
-  back_shiny_not_contains?: string | null
-  back_shiny_starts_with?: string | null
-  back_shiny_not_starts_with?: string | null
-  back_shiny_ends_with?: string | null
-  back_shiny_not_ends_with?: string | null
-  back_shiny_female?: string | null
-  back_shiny_female_not?: string | null
-  back_shiny_female_in?: string[]
-  back_shiny_female_not_in?: string[]
-  back_shiny_female_lt?: string | null
-  back_shiny_female_lte?: string | null
-  back_shiny_female_gt?: string | null
-  back_shiny_female_gte?: string | null
-  back_shiny_female_contains?: string | null
-  back_shiny_female_not_contains?: string | null
-  back_shiny_female_starts_with?: string | null
-  back_shiny_female_not_starts_with?: string | null
-  back_shiny_female_ends_with?: string | null
-  back_shiny_female_not_ends_with?: string | null
-  front_default?: string | null
-  front_default_not?: string | null
-  front_default_in?: string[]
-  front_default_not_in?: string[]
-  front_default_lt?: string | null
-  front_default_lte?: string | null
-  front_default_gt?: string | null
-  front_default_gte?: string | null
-  front_default_contains?: string | null
-  front_default_not_contains?: string | null
-  front_default_starts_with?: string | null
-  front_default_not_starts_with?: string | null
-  front_default_ends_with?: string | null
-  front_default_not_ends_with?: string | null
-  front_female?: string | null
-  front_female_not?: string | null
-  front_female_in?: string[]
-  front_female_not_in?: string[]
-  front_female_lt?: string | null
-  front_female_lte?: string | null
-  front_female_gt?: string | null
-  front_female_gte?: string | null
-  front_female_contains?: string | null
-  front_female_not_contains?: string | null
-  front_female_starts_with?: string | null
-  front_female_not_starts_with?: string | null
-  front_female_ends_with?: string | null
-  front_female_not_ends_with?: string | null
-  front_shiny?: string | null
-  front_shiny_not?: string | null
-  front_shiny_in?: string[]
-  front_shiny_not_in?: string[]
-  front_shiny_lt?: string | null
-  front_shiny_lte?: string | null
-  front_shiny_gt?: string | null
-  front_shiny_gte?: string | null
-  front_shiny_contains?: string | null
-  front_shiny_not_contains?: string | null
-  front_shiny_starts_with?: string | null
-  front_shiny_not_starts_with?: string | null
-  front_shiny_ends_with?: string | null
-  front_shiny_not_ends_with?: string | null
-  front_shiny_female?: string | null
-  front_shiny_female_not?: string | null
-  front_shiny_female_in?: string[]
-  front_shiny_female_not_in?: string[]
-  front_shiny_female_lt?: string | null
-  front_shiny_female_lte?: string | null
-  front_shiny_female_gt?: string | null
-  front_shiny_female_gte?: string | null
-  front_shiny_female_contains?: string | null
-  front_shiny_female_not_contains?: string | null
-  front_shiny_female_starts_with?: string | null
-  front_shiny_female_not_starts_with?: string | null
-  front_shiny_female_ends_with?: string | null
-  front_shiny_female_not_ends_with?: string | null
-  AND?: SpriteWhereInput[]
-  OR?: SpriteWhereInput[]
-  NOT?: SpriteWhereInput[]
-}
-export type SpriteWhereInputInputObject =
-  | Extract<keyof SpriteWhereInput, string>
-  | { name: 'back_default', alias?: string  } 
-  | { name: 'back_default_not', alias?: string  } 
-  | { name: 'back_default_in', alias?: string  } 
-  | { name: 'back_default_not_in', alias?: string  } 
-  | { name: 'back_default_lt', alias?: string  } 
-  | { name: 'back_default_lte', alias?: string  } 
-  | { name: 'back_default_gt', alias?: string  } 
-  | { name: 'back_default_gte', alias?: string  } 
-  | { name: 'back_default_contains', alias?: string  } 
-  | { name: 'back_default_not_contains', alias?: string  } 
-  | { name: 'back_default_starts_with', alias?: string  } 
-  | { name: 'back_default_not_starts_with', alias?: string  } 
-  | { name: 'back_default_ends_with', alias?: string  } 
-  | { name: 'back_default_not_ends_with', alias?: string  } 
-  | { name: 'back_female', alias?: string  } 
-  | { name: 'back_female_not', alias?: string  } 
-  | { name: 'back_female_in', alias?: string  } 
-  | { name: 'back_female_not_in', alias?: string  } 
-  | { name: 'back_female_lt', alias?: string  } 
-  | { name: 'back_female_lte', alias?: string  } 
-  | { name: 'back_female_gt', alias?: string  } 
-  | { name: 'back_female_gte', alias?: string  } 
-  | { name: 'back_female_contains', alias?: string  } 
-  | { name: 'back_female_not_contains', alias?: string  } 
-  | { name: 'back_female_starts_with', alias?: string  } 
-  | { name: 'back_female_not_starts_with', alias?: string  } 
-  | { name: 'back_female_ends_with', alias?: string  } 
-  | { name: 'back_female_not_ends_with', alias?: string  } 
-  | { name: 'back_shiny', alias?: string  } 
-  | { name: 'back_shiny_not', alias?: string  } 
-  | { name: 'back_shiny_in', alias?: string  } 
-  | { name: 'back_shiny_not_in', alias?: string  } 
-  | { name: 'back_shiny_lt', alias?: string  } 
-  | { name: 'back_shiny_lte', alias?: string  } 
-  | { name: 'back_shiny_gt', alias?: string  } 
-  | { name: 'back_shiny_gte', alias?: string  } 
-  | { name: 'back_shiny_contains', alias?: string  } 
-  | { name: 'back_shiny_not_contains', alias?: string  } 
-  | { name: 'back_shiny_starts_with', alias?: string  } 
-  | { name: 'back_shiny_not_starts_with', alias?: string  } 
-  | { name: 'back_shiny_ends_with', alias?: string  } 
-  | { name: 'back_shiny_not_ends_with', alias?: string  } 
-  | { name: 'back_shiny_female', alias?: string  } 
-  | { name: 'back_shiny_female_not', alias?: string  } 
-  | { name: 'back_shiny_female_in', alias?: string  } 
-  | { name: 'back_shiny_female_not_in', alias?: string  } 
-  | { name: 'back_shiny_female_lt', alias?: string  } 
-  | { name: 'back_shiny_female_lte', alias?: string  } 
-  | { name: 'back_shiny_female_gt', alias?: string  } 
-  | { name: 'back_shiny_female_gte', alias?: string  } 
-  | { name: 'back_shiny_female_contains', alias?: string  } 
-  | { name: 'back_shiny_female_not_contains', alias?: string  } 
-  | { name: 'back_shiny_female_starts_with', alias?: string  } 
-  | { name: 'back_shiny_female_not_starts_with', alias?: string  } 
-  | { name: 'back_shiny_female_ends_with', alias?: string  } 
-  | { name: 'back_shiny_female_not_ends_with', alias?: string  } 
-  | { name: 'front_default', alias?: string  } 
-  | { name: 'front_default_not', alias?: string  } 
-  | { name: 'front_default_in', alias?: string  } 
-  | { name: 'front_default_not_in', alias?: string  } 
-  | { name: 'front_default_lt', alias?: string  } 
-  | { name: 'front_default_lte', alias?: string  } 
-  | { name: 'front_default_gt', alias?: string  } 
-  | { name: 'front_default_gte', alias?: string  } 
-  | { name: 'front_default_contains', alias?: string  } 
-  | { name: 'front_default_not_contains', alias?: string  } 
-  | { name: 'front_default_starts_with', alias?: string  } 
-  | { name: 'front_default_not_starts_with', alias?: string  } 
-  | { name: 'front_default_ends_with', alias?: string  } 
-  | { name: 'front_default_not_ends_with', alias?: string  } 
-  | { name: 'front_female', alias?: string  } 
-  | { name: 'front_female_not', alias?: string  } 
-  | { name: 'front_female_in', alias?: string  } 
-  | { name: 'front_female_not_in', alias?: string  } 
-  | { name: 'front_female_lt', alias?: string  } 
-  | { name: 'front_female_lte', alias?: string  } 
-  | { name: 'front_female_gt', alias?: string  } 
-  | { name: 'front_female_gte', alias?: string  } 
-  | { name: 'front_female_contains', alias?: string  } 
-  | { name: 'front_female_not_contains', alias?: string  } 
-  | { name: 'front_female_starts_with', alias?: string  } 
-  | { name: 'front_female_not_starts_with', alias?: string  } 
-  | { name: 'front_female_ends_with', alias?: string  } 
-  | { name: 'front_female_not_ends_with', alias?: string  } 
-  | { name: 'front_shiny', alias?: string  } 
-  | { name: 'front_shiny_not', alias?: string  } 
-  | { name: 'front_shiny_in', alias?: string  } 
-  | { name: 'front_shiny_not_in', alias?: string  } 
-  | { name: 'front_shiny_lt', alias?: string  } 
-  | { name: 'front_shiny_lte', alias?: string  } 
-  | { name: 'front_shiny_gt', alias?: string  } 
-  | { name: 'front_shiny_gte', alias?: string  } 
-  | { name: 'front_shiny_contains', alias?: string  } 
-  | { name: 'front_shiny_not_contains', alias?: string  } 
-  | { name: 'front_shiny_starts_with', alias?: string  } 
-  | { name: 'front_shiny_not_starts_with', alias?: string  } 
-  | { name: 'front_shiny_ends_with', alias?: string  } 
-  | { name: 'front_shiny_not_ends_with', alias?: string  } 
-  | { name: 'front_shiny_female', alias?: string  } 
-  | { name: 'front_shiny_female_not', alias?: string  } 
-  | { name: 'front_shiny_female_in', alias?: string  } 
-  | { name: 'front_shiny_female_not_in', alias?: string  } 
-  | { name: 'front_shiny_female_lt', alias?: string  } 
-  | { name: 'front_shiny_female_lte', alias?: string  } 
-  | { name: 'front_shiny_female_gt', alias?: string  } 
-  | { name: 'front_shiny_female_gte', alias?: string  } 
-  | { name: 'front_shiny_female_contains', alias?: string  } 
-  | { name: 'front_shiny_female_not_contains', alias?: string  } 
-  | { name: 'front_shiny_female_starts_with', alias?: string  } 
-  | { name: 'front_shiny_female_not_starts_with', alias?: string  } 
-  | { name: 'front_shiny_female_ends_with', alias?: string  } 
-  | { name: 'front_shiny_female_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface StatWhereInput {
-  base_stat?: number | null
-  base_stat_not?: number | null
-  base_stat_in?: number[]
-  base_stat_not_in?: number[]
-  base_stat_lt?: number | null
-  base_stat_lte?: number | null
-  base_stat_gt?: number | null
-  base_stat_gte?: number | null
-  effort?: number | null
-  effort_not?: number | null
-  effort_in?: number[]
-  effort_not_in?: number[]
-  effort_lt?: number | null
-  effort_lte?: number | null
-  effort_gt?: number | null
-  effort_gte?: number | null
-  name?: string | null
-  name_not?: string | null
-  name_in?: string[]
-  name_not_in?: string[]
-  name_lt?: string | null
-  name_lte?: string | null
-  name_gt?: string | null
-  name_gte?: string | null
-  name_contains?: string | null
-  name_not_contains?: string | null
-  name_starts_with?: string | null
-  name_not_starts_with?: string | null
-  name_ends_with?: string | null
-  name_not_ends_with?: string | null
-  url?: string | null
-  url_not?: string | null
-  url_in?: string[]
-  url_not_in?: string[]
-  url_lt?: string | null
-  url_lte?: string | null
-  url_gt?: string | null
-  url_gte?: string | null
-  url_contains?: string | null
-  url_not_contains?: string | null
-  url_starts_with?: string | null
-  url_not_starts_with?: string | null
-  url_ends_with?: string | null
-  url_not_ends_with?: string | null
-  AND?: StatWhereInput[]
-  OR?: StatWhereInput[]
-  NOT?: StatWhereInput[]
-}
-export type StatWhereInputInputObject =
-  | Extract<keyof StatWhereInput, string>
-  | { name: 'base_stat', alias?: string  } 
-  | { name: 'base_stat_not', alias?: string  } 
-  | { name: 'base_stat_in', alias?: string  } 
-  | { name: 'base_stat_not_in', alias?: string  } 
-  | { name: 'base_stat_lt', alias?: string  } 
-  | { name: 'base_stat_lte', alias?: string  } 
-  | { name: 'base_stat_gt', alias?: string  } 
-  | { name: 'base_stat_gte', alias?: string  } 
-  | { name: 'effort', alias?: string  } 
-  | { name: 'effort_not', alias?: string  } 
-  | { name: 'effort_in', alias?: string  } 
-  | { name: 'effort_not_in', alias?: string  } 
-  | { name: 'effort_lt', alias?: string  } 
-  | { name: 'effort_lte', alias?: string  } 
-  | { name: 'effort_gt', alias?: string  } 
-  | { name: 'effort_gte', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'name_not', alias?: string  } 
-  | { name: 'name_in', alias?: string  } 
-  | { name: 'name_not_in', alias?: string  } 
-  | { name: 'name_lt', alias?: string  } 
-  | { name: 'name_lte', alias?: string  } 
-  | { name: 'name_gt', alias?: string  } 
-  | { name: 'name_gte', alias?: string  } 
-  | { name: 'name_contains', alias?: string  } 
-  | { name: 'name_not_contains', alias?: string  } 
-  | { name: 'name_starts_with', alias?: string  } 
-  | { name: 'name_not_starts_with', alias?: string  } 
-  | { name: 'name_ends_with', alias?: string  } 
-  | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  | { name: 'url_not', alias?: string  } 
-  | { name: 'url_in', alias?: string  } 
-  | { name: 'url_not_in', alias?: string  } 
-  | { name: 'url_lt', alias?: string  } 
-  | { name: 'url_lte', alias?: string  } 
-  | { name: 'url_gt', alias?: string  } 
-  | { name: 'url_gte', alias?: string  } 
-  | { name: 'url_contains', alias?: string  } 
-  | { name: 'url_not_contains', alias?: string  } 
-  | { name: 'url_starts_with', alias?: string  } 
-  | { name: 'url_not_starts_with', alias?: string  } 
-  | { name: 'url_ends_with', alias?: string  } 
-  | { name: 'url_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface TypeWhereInput {
-  slot?: number | null
-  slot_not?: number | null
-  slot_in?: number[]
-  slot_not_in?: number[]
-  slot_lt?: number | null
-  slot_lte?: number | null
-  slot_gt?: number | null
-  slot_gte?: number | null
-  name?: string | null
-  name_not?: string | null
-  name_in?: string[]
-  name_not_in?: string[]
-  name_lt?: string | null
-  name_lte?: string | null
-  name_gt?: string | null
-  name_gte?: string | null
-  name_contains?: string | null
-  name_not_contains?: string | null
-  name_starts_with?: string | null
-  name_not_starts_with?: string | null
-  name_ends_with?: string | null
-  name_not_ends_with?: string | null
-  url?: string | null
-  url_not?: string | null
-  url_in?: string[]
-  url_not_in?: string[]
-  url_lt?: string | null
-  url_lte?: string | null
-  url_gt?: string | null
-  url_gte?: string | null
-  url_contains?: string | null
-  url_not_contains?: string | null
-  url_starts_with?: string | null
-  url_not_starts_with?: string | null
-  url_ends_with?: string | null
-  url_not_ends_with?: string | null
-  AND?: TypeWhereInput[]
-  OR?: TypeWhereInput[]
-  NOT?: TypeWhereInput[]
-}
-export type TypeWhereInputInputObject =
-  | Extract<keyof TypeWhereInput, string>
-  | { name: 'slot', alias?: string  } 
-  | { name: 'slot_not', alias?: string  } 
-  | { name: 'slot_in', alias?: string  } 
-  | { name: 'slot_not_in', alias?: string  } 
-  | { name: 'slot_lt', alias?: string  } 
-  | { name: 'slot_lte', alias?: string  } 
-  | { name: 'slot_gt', alias?: string  } 
-  | { name: 'slot_gte', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'name_not', alias?: string  } 
-  | { name: 'name_in', alias?: string  } 
-  | { name: 'name_not_in', alias?: string  } 
-  | { name: 'name_lt', alias?: string  } 
-  | { name: 'name_lte', alias?: string  } 
-  | { name: 'name_gt', alias?: string  } 
-  | { name: 'name_gte', alias?: string  } 
-  | { name: 'name_contains', alias?: string  } 
-  | { name: 'name_not_contains', alias?: string  } 
-  | { name: 'name_starts_with', alias?: string  } 
-  | { name: 'name_not_starts_with', alias?: string  } 
-  | { name: 'name_ends_with', alias?: string  } 
-  | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  | { name: 'url_not', alias?: string  } 
-  | { name: 'url_in', alias?: string  } 
-  | { name: 'url_not_in', alias?: string  } 
-  | { name: 'url_lt', alias?: string  } 
-  | { name: 'url_lte', alias?: string  } 
-  | { name: 'url_gt', alias?: string  } 
-  | { name: 'url_gte', alias?: string  } 
-  | { name: 'url_contains', alias?: string  } 
-  | { name: 'url_not_contains', alias?: string  } 
-  | { name: 'url_starts_with', alias?: string  } 
-  | { name: 'url_not_starts_with', alias?: string  } 
-  | { name: 'url_ends_with', alias?: string  } 
-  | { name: 'url_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface PokemonWhereInput {
-  abilities_every?: AbilityWhereInput | null
-  abilities_some?: AbilityWhereInput | null
-  abilities_none?: AbilityWhereInput | null
-  base_experience?: number | null
-  base_experience_not?: number | null
-  base_experience_in?: number[]
-  base_experience_not_in?: number[]
-  base_experience_lt?: number | null
-  base_experience_lte?: number | null
-  base_experience_gt?: number | null
-  base_experience_gte?: number | null
-  forms_every?: FormWhereInput | null
-  forms_some?: FormWhereInput | null
-  forms_none?: FormWhereInput | null
-  game_indices_every?: GameIndexWhereInput | null
-  game_indices_some?: GameIndexWhereInput | null
-  game_indices_none?: GameIndexWhereInput | null
-  held_items_every?: ItemWhereInput | null
-  held_items_some?: ItemWhereInput | null
-  held_items_none?: ItemWhereInput | null
-  height?: number | null
-  height_not?: number | null
-  height_in?: number[]
-  height_not_in?: number[]
-  height_lt?: number | null
-  height_lte?: number | null
-  height_gt?: number | null
-  height_gte?: number | null
+export interface MovesWhereInput {
   id?: string | null
   id_not?: string | null
   id_in?: string[]
@@ -5643,25 +2282,6 @@ export interface PokemonWhereInput {
   id_not_starts_with?: string | null
   id_ends_with?: string | null
   id_not_ends_with?: string | null
-  is_default?: boolean | null
-  is_default_not?: boolean | null
-  location_area_encounters?: string | null
-  location_area_encounters_not?: string | null
-  location_area_encounters_in?: string[]
-  location_area_encounters_not_in?: string[]
-  location_area_encounters_lt?: string | null
-  location_area_encounters_lte?: string | null
-  location_area_encounters_gt?: string | null
-  location_area_encounters_gte?: string | null
-  location_area_encounters_contains?: string | null
-  location_area_encounters_not_contains?: string | null
-  location_area_encounters_starts_with?: string | null
-  location_area_encounters_not_starts_with?: string | null
-  location_area_encounters_ends_with?: string | null
-  location_area_encounters_not_ends_with?: string | null
-  moves_every?: MoveWhereInput | null
-  moves_some?: MoveWhereInput | null
-  moves_none?: MoveWhereInput | null
   name?: string | null
   name_not?: string | null
   name_in?: string[]
@@ -5676,82 +2296,111 @@ export interface PokemonWhereInput {
   name_not_starts_with?: string | null
   name_ends_with?: string | null
   name_not_ends_with?: string | null
-  order?: number | null
-  order_not?: number | null
-  order_in?: number[]
-  order_not_in?: number[]
-  order_lt?: number | null
-  order_lte?: number | null
-  order_gt?: number | null
-  order_gte?: number | null
-  species_every?: SpeciesWhereInput | null
-  species_some?: SpeciesWhereInput | null
-  species_none?: SpeciesWhereInput | null
-  sprites_every?: SpriteWhereInput | null
-  sprites_some?: SpriteWhereInput | null
-  sprites_none?: SpriteWhereInput | null
-  stats_every?: StatWhereInput | null
-  stats_some?: StatWhereInput | null
-  stats_none?: StatWhereInput | null
-  types_every?: TypeWhereInput | null
-  types_some?: TypeWhereInput | null
-  types_none?: TypeWhereInput | null
-  weight?: number | null
-  weight_not?: number | null
-  weight_in?: number[]
-  weight_not_in?: number[]
-  weight_lt?: number | null
-  weight_lte?: number | null
-  weight_gt?: number | null
-  weight_gte?: number | null
-  url?: string | null
-  url_not?: string | null
-  url_in?: string[]
-  url_not_in?: string[]
-  url_lt?: string | null
-  url_lte?: string | null
-  url_gt?: string | null
-  url_gte?: string | null
-  url_contains?: string | null
-  url_not_contains?: string | null
-  url_starts_with?: string | null
-  url_not_starts_with?: string | null
-  url_ends_with?: string | null
-  url_not_ends_with?: string | null
-  AND?: PokemonWhereInput[]
-  OR?: PokemonWhereInput[]
-  NOT?: PokemonWhereInput[]
+  user?: CharacterWhereInput | null
+  hitBoxActive?: string | null
+  hitBoxActive_not?: string | null
+  hitBoxActive_in?: string[]
+  hitBoxActive_not_in?: string[]
+  hitBoxActive_lt?: string | null
+  hitBoxActive_lte?: string | null
+  hitBoxActive_gt?: string | null
+  hitBoxActive_gte?: string | null
+  hitBoxActive_contains?: string | null
+  hitBoxActive_not_contains?: string | null
+  hitBoxActive_starts_with?: string | null
+  hitBoxActive_not_starts_with?: string | null
+  hitBoxActive_ends_with?: string | null
+  hitBoxActive_not_ends_with?: string | null
+  firstActionableFrame?: number | null
+  firstActionableFrame_not?: number | null
+  firstActionableFrame_in?: number[]
+  firstActionableFrame_not_in?: number[]
+  firstActionableFrame_lt?: number | null
+  firstActionableFrame_lte?: number | null
+  firstActionableFrame_gt?: number | null
+  firstActionableFrame_gte?: number | null
+  baseDmg?: number | null
+  baseDmg_not?: number | null
+  baseDmg_in?: number[]
+  baseDmg_not_in?: number[]
+  baseDmg_lt?: number | null
+  baseDmg_lte?: number | null
+  baseDmg_gt?: number | null
+  baseDmg_gte?: number | null
+  angle?: string | null
+  angle_not?: string | null
+  angle_in?: string[]
+  angle_not_in?: string[]
+  angle_lt?: string | null
+  angle_lte?: string | null
+  angle_gt?: string | null
+  angle_gte?: string | null
+  angle_contains?: string | null
+  angle_not_contains?: string | null
+  angle_starts_with?: string | null
+  angle_not_starts_with?: string | null
+  angle_ends_with?: string | null
+  angle_not_ends_with?: string | null
+  baseKnockBackSetKnockback?: string | null
+  baseKnockBackSetKnockback_not?: string | null
+  baseKnockBackSetKnockback_in?: string[]
+  baseKnockBackSetKnockback_not_in?: string[]
+  baseKnockBackSetKnockback_lt?: string | null
+  baseKnockBackSetKnockback_lte?: string | null
+  baseKnockBackSetKnockback_gt?: string | null
+  baseKnockBackSetKnockback_gte?: string | null
+  baseKnockBackSetKnockback_contains?: string | null
+  baseKnockBackSetKnockback_not_contains?: string | null
+  baseKnockBackSetKnockback_starts_with?: string | null
+  baseKnockBackSetKnockback_not_starts_with?: string | null
+  baseKnockBackSetKnockback_ends_with?: string | null
+  baseKnockBackSetKnockback_not_ends_with?: string | null
+  landingLag?: number | null
+  landingLag_not?: number | null
+  landingLag_in?: number[]
+  landingLag_not_in?: number[]
+  landingLag_lt?: number | null
+  landingLag_lte?: number | null
+  landingLag_gt?: number | null
+  landingLag_gte?: number | null
+  autoCancel?: number | null
+  autoCancel_not?: number | null
+  autoCancel_in?: number[]
+  autoCancel_not_in?: number[]
+  autoCancel_lt?: number | null
+  autoCancel_lte?: number | null
+  autoCancel_gt?: number | null
+  autoCancel_gte?: number | null
+  knockbackGrowth?: number | null
+  knockbackGrowth_not?: number | null
+  knockbackGrowth_in?: number[]
+  knockbackGrowth_not_in?: number[]
+  knockbackGrowth_lt?: number | null
+  knockbackGrowth_lte?: number | null
+  knockbackGrowth_gt?: number | null
+  knockbackGrowth_gte?: number | null
+  moveType?: string | null
+  moveType_not?: string | null
+  moveType_in?: string[]
+  moveType_not_in?: string[]
+  moveType_lt?: string | null
+  moveType_lte?: string | null
+  moveType_gt?: string | null
+  moveType_gte?: string | null
+  moveType_contains?: string | null
+  moveType_not_contains?: string | null
+  moveType_starts_with?: string | null
+  moveType_not_starts_with?: string | null
+  moveType_ends_with?: string | null
+  moveType_not_ends_with?: string | null
+  isWeightDependent?: boolean | null
+  isWeightDependent_not?: boolean | null
+  AND?: MovesWhereInput[]
+  OR?: MovesWhereInput[]
+  NOT?: MovesWhereInput[]
 }
-export type PokemonWhereInputInputObject =
-  | Extract<keyof PokemonWhereInput, string>
-  | { name: 'abilities_every', alias?: string  } 
-  | { name: 'abilities_some', alias?: string  } 
-  | { name: 'abilities_none', alias?: string  } 
-  | { name: 'base_experience', alias?: string  } 
-  | { name: 'base_experience_not', alias?: string  } 
-  | { name: 'base_experience_in', alias?: string  } 
-  | { name: 'base_experience_not_in', alias?: string  } 
-  | { name: 'base_experience_lt', alias?: string  } 
-  | { name: 'base_experience_lte', alias?: string  } 
-  | { name: 'base_experience_gt', alias?: string  } 
-  | { name: 'base_experience_gte', alias?: string  } 
-  | { name: 'forms_every', alias?: string  } 
-  | { name: 'forms_some', alias?: string  } 
-  | { name: 'forms_none', alias?: string  } 
-  | { name: 'game_indices_every', alias?: string  } 
-  | { name: 'game_indices_some', alias?: string  } 
-  | { name: 'game_indices_none', alias?: string  } 
-  | { name: 'held_items_every', alias?: string  } 
-  | { name: 'held_items_some', alias?: string  } 
-  | { name: 'held_items_none', alias?: string  } 
-  | { name: 'height', alias?: string  } 
-  | { name: 'height_not', alias?: string  } 
-  | { name: 'height_in', alias?: string  } 
-  | { name: 'height_not_in', alias?: string  } 
-  | { name: 'height_lt', alias?: string  } 
-  | { name: 'height_lte', alias?: string  } 
-  | { name: 'height_gt', alias?: string  } 
-  | { name: 'height_gte', alias?: string  } 
+export type MovesWhereInputInputObject =
+  | Extract<keyof MovesWhereInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'id_not', alias?: string  } 
   | { name: 'id_in', alias?: string  } 
@@ -5766,25 +2415,6 @@ export type PokemonWhereInputInputObject =
   | { name: 'id_not_starts_with', alias?: string  } 
   | { name: 'id_ends_with', alias?: string  } 
   | { name: 'id_not_ends_with', alias?: string  } 
-  | { name: 'is_default', alias?: string  } 
-  | { name: 'is_default_not', alias?: string  } 
-  | { name: 'location_area_encounters', alias?: string  } 
-  | { name: 'location_area_encounters_not', alias?: string  } 
-  | { name: 'location_area_encounters_in', alias?: string  } 
-  | { name: 'location_area_encounters_not_in', alias?: string  } 
-  | { name: 'location_area_encounters_lt', alias?: string  } 
-  | { name: 'location_area_encounters_lte', alias?: string  } 
-  | { name: 'location_area_encounters_gt', alias?: string  } 
-  | { name: 'location_area_encounters_gte', alias?: string  } 
-  | { name: 'location_area_encounters_contains', alias?: string  } 
-  | { name: 'location_area_encounters_not_contains', alias?: string  } 
-  | { name: 'location_area_encounters_starts_with', alias?: string  } 
-  | { name: 'location_area_encounters_not_starts_with', alias?: string  } 
-  | { name: 'location_area_encounters_ends_with', alias?: string  } 
-  | { name: 'location_area_encounters_not_ends_with', alias?: string  } 
-  | { name: 'moves_every', alias?: string  } 
-  | { name: 'moves_some', alias?: string  } 
-  | { name: 'moves_none', alias?: string  } 
   | { name: 'name', alias?: string  } 
   | { name: 'name_not', alias?: string  } 
   | { name: 'name_in', alias?: string  } 
@@ -5799,26 +2429,481 @@ export type PokemonWhereInputInputObject =
   | { name: 'name_not_starts_with', alias?: string  } 
   | { name: 'name_ends_with', alias?: string  } 
   | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'order', alias?: string  } 
-  | { name: 'order_not', alias?: string  } 
-  | { name: 'order_in', alias?: string  } 
-  | { name: 'order_not_in', alias?: string  } 
-  | { name: 'order_lt', alias?: string  } 
-  | { name: 'order_lte', alias?: string  } 
-  | { name: 'order_gt', alias?: string  } 
-  | { name: 'order_gte', alias?: string  } 
-  | { name: 'species_every', alias?: string  } 
-  | { name: 'species_some', alias?: string  } 
-  | { name: 'species_none', alias?: string  } 
-  | { name: 'sprites_every', alias?: string  } 
-  | { name: 'sprites_some', alias?: string  } 
-  | { name: 'sprites_none', alias?: string  } 
-  | { name: 'stats_every', alias?: string  } 
-  | { name: 'stats_some', alias?: string  } 
-  | { name: 'stats_none', alias?: string  } 
-  | { name: 'types_every', alias?: string  } 
-  | { name: 'types_some', alias?: string  } 
-  | { name: 'types_none', alias?: string  } 
+  | { name: 'user', alias?: string  } 
+  | { name: 'hitBoxActive', alias?: string  } 
+  | { name: 'hitBoxActive_not', alias?: string  } 
+  | { name: 'hitBoxActive_in', alias?: string  } 
+  | { name: 'hitBoxActive_not_in', alias?: string  } 
+  | { name: 'hitBoxActive_lt', alias?: string  } 
+  | { name: 'hitBoxActive_lte', alias?: string  } 
+  | { name: 'hitBoxActive_gt', alias?: string  } 
+  | { name: 'hitBoxActive_gte', alias?: string  } 
+  | { name: 'hitBoxActive_contains', alias?: string  } 
+  | { name: 'hitBoxActive_not_contains', alias?: string  } 
+  | { name: 'hitBoxActive_starts_with', alias?: string  } 
+  | { name: 'hitBoxActive_not_starts_with', alias?: string  } 
+  | { name: 'hitBoxActive_ends_with', alias?: string  } 
+  | { name: 'hitBoxActive_not_ends_with', alias?: string  } 
+  | { name: 'firstActionableFrame', alias?: string  } 
+  | { name: 'firstActionableFrame_not', alias?: string  } 
+  | { name: 'firstActionableFrame_in', alias?: string  } 
+  | { name: 'firstActionableFrame_not_in', alias?: string  } 
+  | { name: 'firstActionableFrame_lt', alias?: string  } 
+  | { name: 'firstActionableFrame_lte', alias?: string  } 
+  | { name: 'firstActionableFrame_gt', alias?: string  } 
+  | { name: 'firstActionableFrame_gte', alias?: string  } 
+  | { name: 'baseDmg', alias?: string  } 
+  | { name: 'baseDmg_not', alias?: string  } 
+  | { name: 'baseDmg_in', alias?: string  } 
+  | { name: 'baseDmg_not_in', alias?: string  } 
+  | { name: 'baseDmg_lt', alias?: string  } 
+  | { name: 'baseDmg_lte', alias?: string  } 
+  | { name: 'baseDmg_gt', alias?: string  } 
+  | { name: 'baseDmg_gte', alias?: string  } 
+  | { name: 'angle', alias?: string  } 
+  | { name: 'angle_not', alias?: string  } 
+  | { name: 'angle_in', alias?: string  } 
+  | { name: 'angle_not_in', alias?: string  } 
+  | { name: 'angle_lt', alias?: string  } 
+  | { name: 'angle_lte', alias?: string  } 
+  | { name: 'angle_gt', alias?: string  } 
+  | { name: 'angle_gte', alias?: string  } 
+  | { name: 'angle_contains', alias?: string  } 
+  | { name: 'angle_not_contains', alias?: string  } 
+  | { name: 'angle_starts_with', alias?: string  } 
+  | { name: 'angle_not_starts_with', alias?: string  } 
+  | { name: 'angle_ends_with', alias?: string  } 
+  | { name: 'angle_not_ends_with', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_not', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_in', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_not_in', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_lt', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_lte', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_gt', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_gte', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_contains', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_not_contains', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_starts_with', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_not_starts_with', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_ends_with', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_not_ends_with', alias?: string  } 
+  | { name: 'landingLag', alias?: string  } 
+  | { name: 'landingLag_not', alias?: string  } 
+  | { name: 'landingLag_in', alias?: string  } 
+  | { name: 'landingLag_not_in', alias?: string  } 
+  | { name: 'landingLag_lt', alias?: string  } 
+  | { name: 'landingLag_lte', alias?: string  } 
+  | { name: 'landingLag_gt', alias?: string  } 
+  | { name: 'landingLag_gte', alias?: string  } 
+  | { name: 'autoCancel', alias?: string  } 
+  | { name: 'autoCancel_not', alias?: string  } 
+  | { name: 'autoCancel_in', alias?: string  } 
+  | { name: 'autoCancel_not_in', alias?: string  } 
+  | { name: 'autoCancel_lt', alias?: string  } 
+  | { name: 'autoCancel_lte', alias?: string  } 
+  | { name: 'autoCancel_gt', alias?: string  } 
+  | { name: 'autoCancel_gte', alias?: string  } 
+  | { name: 'knockbackGrowth', alias?: string  } 
+  | { name: 'knockbackGrowth_not', alias?: string  } 
+  | { name: 'knockbackGrowth_in', alias?: string  } 
+  | { name: 'knockbackGrowth_not_in', alias?: string  } 
+  | { name: 'knockbackGrowth_lt', alias?: string  } 
+  | { name: 'knockbackGrowth_lte', alias?: string  } 
+  | { name: 'knockbackGrowth_gt', alias?: string  } 
+  | { name: 'knockbackGrowth_gte', alias?: string  } 
+  | { name: 'moveType', alias?: string  } 
+  | { name: 'moveType_not', alias?: string  } 
+  | { name: 'moveType_in', alias?: string  } 
+  | { name: 'moveType_not_in', alias?: string  } 
+  | { name: 'moveType_lt', alias?: string  } 
+  | { name: 'moveType_lte', alias?: string  } 
+  | { name: 'moveType_gt', alias?: string  } 
+  | { name: 'moveType_gte', alias?: string  } 
+  | { name: 'moveType_contains', alias?: string  } 
+  | { name: 'moveType_not_contains', alias?: string  } 
+  | { name: 'moveType_starts_with', alias?: string  } 
+  | { name: 'moveType_not_starts_with', alias?: string  } 
+  | { name: 'moveType_ends_with', alias?: string  } 
+  | { name: 'moveType_not_ends_with', alias?: string  } 
+  | { name: 'isWeightDependent', alias?: string  } 
+  | { name: 'isWeightDependent_not', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface CharacterWhereInput {
+  id?: string | null
+  id_not?: string | null
+  id_in?: string[]
+  id_not_in?: string[]
+  id_lt?: string | null
+  id_lte?: string | null
+  id_gt?: string | null
+  id_gte?: string | null
+  id_contains?: string | null
+  id_not_contains?: string | null
+  id_starts_with?: string | null
+  id_not_starts_with?: string | null
+  id_ends_with?: string | null
+  id_not_ends_with?: string | null
+  name?: string | null
+  name_not?: string | null
+  name_in?: string[]
+  name_not_in?: string[]
+  name_lt?: string | null
+  name_lte?: string | null
+  name_gt?: string | null
+  name_gte?: string | null
+  name_contains?: string | null
+  name_not_contains?: string | null
+  name_starts_with?: string | null
+  name_not_starts_with?: string | null
+  name_ends_with?: string | null
+  name_not_ends_with?: string | null
+  displayName?: string | null
+  displayName_not?: string | null
+  displayName_in?: string[]
+  displayName_not_in?: string[]
+  displayName_lt?: string | null
+  displayName_lte?: string | null
+  displayName_gt?: string | null
+  displayName_gte?: string | null
+  displayName_contains?: string | null
+  displayName_not_contains?: string | null
+  displayName_starts_with?: string | null
+  displayName_not_starts_with?: string | null
+  displayName_ends_with?: string | null
+  displayName_not_ends_with?: string | null
+  mainImgUrl?: string | null
+  mainImgUrl_not?: string | null
+  mainImgUrl_in?: string[]
+  mainImgUrl_not_in?: string[]
+  mainImgUrl_lt?: string | null
+  mainImgUrl_lte?: string | null
+  mainImgUrl_gt?: string | null
+  mainImgUrl_gte?: string | null
+  mainImgUrl_contains?: string | null
+  mainImgUrl_not_contains?: string | null
+  mainImgUrl_starts_with?: string | null
+  mainImgUrl_not_starts_with?: string | null
+  mainImgUrl_ends_with?: string | null
+  mainImgUrl_not_ends_with?: string | null
+  thumbnailImg?: string | null
+  thumbnailImg_not?: string | null
+  thumbnailImg_in?: string[]
+  thumbnailImg_not_in?: string[]
+  thumbnailImg_lt?: string | null
+  thumbnailImg_lte?: string | null
+  thumbnailImg_gt?: string | null
+  thumbnailImg_gte?: string | null
+  thumbnailImg_contains?: string | null
+  thumbnailImg_not_contains?: string | null
+  thumbnailImg_starts_with?: string | null
+  thumbnailImg_not_starts_with?: string | null
+  thumbnailImg_ends_with?: string | null
+  thumbnailImg_not_ends_with?: string | null
+  colorTheme?: string | null
+  colorTheme_not?: string | null
+  colorTheme_in?: string[]
+  colorTheme_not_in?: string[]
+  colorTheme_lt?: string | null
+  colorTheme_lte?: string | null
+  colorTheme_gt?: string | null
+  colorTheme_gte?: string | null
+  colorTheme_contains?: string | null
+  colorTheme_not_contains?: string | null
+  colorTheme_starts_with?: string | null
+  colorTheme_not_starts_with?: string | null
+  colorTheme_ends_with?: string | null
+  colorTheme_not_ends_with?: string | null
+  moveInfo_every?: MovesWhereInput | null
+  moveInfo_some?: MovesWhereInput | null
+  moveInfo_none?: MovesWhereInput | null
+  movementsInfo?: MovementsWhereInput | null
+  AND?: CharacterWhereInput[]
+  OR?: CharacterWhereInput[]
+  NOT?: CharacterWhereInput[]
+}
+export type CharacterWhereInputInputObject =
+  | Extract<keyof CharacterWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'id_contains', alias?: string  } 
+  | { name: 'id_not_contains', alias?: string  } 
+  | { name: 'id_starts_with', alias?: string  } 
+  | { name: 'id_not_starts_with', alias?: string  } 
+  | { name: 'id_ends_with', alias?: string  } 
+  | { name: 'id_not_ends_with', alias?: string  } 
+  | { name: 'name', alias?: string  } 
+  | { name: 'name_not', alias?: string  } 
+  | { name: 'name_in', alias?: string  } 
+  | { name: 'name_not_in', alias?: string  } 
+  | { name: 'name_lt', alias?: string  } 
+  | { name: 'name_lte', alias?: string  } 
+  | { name: 'name_gt', alias?: string  } 
+  | { name: 'name_gte', alias?: string  } 
+  | { name: 'name_contains', alias?: string  } 
+  | { name: 'name_not_contains', alias?: string  } 
+  | { name: 'name_starts_with', alias?: string  } 
+  | { name: 'name_not_starts_with', alias?: string  } 
+  | { name: 'name_ends_with', alias?: string  } 
+  | { name: 'name_not_ends_with', alias?: string  } 
+  | { name: 'displayName', alias?: string  } 
+  | { name: 'displayName_not', alias?: string  } 
+  | { name: 'displayName_in', alias?: string  } 
+  | { name: 'displayName_not_in', alias?: string  } 
+  | { name: 'displayName_lt', alias?: string  } 
+  | { name: 'displayName_lte', alias?: string  } 
+  | { name: 'displayName_gt', alias?: string  } 
+  | { name: 'displayName_gte', alias?: string  } 
+  | { name: 'displayName_contains', alias?: string  } 
+  | { name: 'displayName_not_contains', alias?: string  } 
+  | { name: 'displayName_starts_with', alias?: string  } 
+  | { name: 'displayName_not_starts_with', alias?: string  } 
+  | { name: 'displayName_ends_with', alias?: string  } 
+  | { name: 'displayName_not_ends_with', alias?: string  } 
+  | { name: 'mainImgUrl', alias?: string  } 
+  | { name: 'mainImgUrl_not', alias?: string  } 
+  | { name: 'mainImgUrl_in', alias?: string  } 
+  | { name: 'mainImgUrl_not_in', alias?: string  } 
+  | { name: 'mainImgUrl_lt', alias?: string  } 
+  | { name: 'mainImgUrl_lte', alias?: string  } 
+  | { name: 'mainImgUrl_gt', alias?: string  } 
+  | { name: 'mainImgUrl_gte', alias?: string  } 
+  | { name: 'mainImgUrl_contains', alias?: string  } 
+  | { name: 'mainImgUrl_not_contains', alias?: string  } 
+  | { name: 'mainImgUrl_starts_with', alias?: string  } 
+  | { name: 'mainImgUrl_not_starts_with', alias?: string  } 
+  | { name: 'mainImgUrl_ends_with', alias?: string  } 
+  | { name: 'mainImgUrl_not_ends_with', alias?: string  } 
+  | { name: 'thumbnailImg', alias?: string  } 
+  | { name: 'thumbnailImg_not', alias?: string  } 
+  | { name: 'thumbnailImg_in', alias?: string  } 
+  | { name: 'thumbnailImg_not_in', alias?: string  } 
+  | { name: 'thumbnailImg_lt', alias?: string  } 
+  | { name: 'thumbnailImg_lte', alias?: string  } 
+  | { name: 'thumbnailImg_gt', alias?: string  } 
+  | { name: 'thumbnailImg_gte', alias?: string  } 
+  | { name: 'thumbnailImg_contains', alias?: string  } 
+  | { name: 'thumbnailImg_not_contains', alias?: string  } 
+  | { name: 'thumbnailImg_starts_with', alias?: string  } 
+  | { name: 'thumbnailImg_not_starts_with', alias?: string  } 
+  | { name: 'thumbnailImg_ends_with', alias?: string  } 
+  | { name: 'thumbnailImg_not_ends_with', alias?: string  } 
+  | { name: 'colorTheme', alias?: string  } 
+  | { name: 'colorTheme_not', alias?: string  } 
+  | { name: 'colorTheme_in', alias?: string  } 
+  | { name: 'colorTheme_not_in', alias?: string  } 
+  | { name: 'colorTheme_lt', alias?: string  } 
+  | { name: 'colorTheme_lte', alias?: string  } 
+  | { name: 'colorTheme_gt', alias?: string  } 
+  | { name: 'colorTheme_gte', alias?: string  } 
+  | { name: 'colorTheme_contains', alias?: string  } 
+  | { name: 'colorTheme_not_contains', alias?: string  } 
+  | { name: 'colorTheme_starts_with', alias?: string  } 
+  | { name: 'colorTheme_not_starts_with', alias?: string  } 
+  | { name: 'colorTheme_ends_with', alias?: string  } 
+  | { name: 'colorTheme_not_ends_with', alias?: string  } 
+  | { name: 'moveInfo_every', alias?: string  } 
+  | { name: 'moveInfo_some', alias?: string  } 
+  | { name: 'moveInfo_none', alias?: string  } 
+  | { name: 'movementsInfo', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface MovementsWhereInput {
+  id?: string | null
+  id_not?: string | null
+  id_in?: string[]
+  id_not_in?: string[]
+  id_lt?: string | null
+  id_lte?: string | null
+  id_gt?: string | null
+  id_gte?: string | null
+  id_contains?: string | null
+  id_not_contains?: string | null
+  id_starts_with?: string | null
+  id_not_starts_with?: string | null
+  id_ends_with?: string | null
+  id_not_ends_with?: string | null
+  weight?: number | null
+  weight_not?: number | null
+  weight_in?: number[]
+  weight_not_in?: number[]
+  weight_lt?: number | null
+  weight_lte?: number | null
+  weight_gt?: number | null
+  weight_gte?: number | null
+  maxJumps?: number | null
+  maxJumps_not?: number | null
+  maxJumps_in?: number[]
+  maxJumps_not_in?: number[]
+  maxJumps_lt?: number | null
+  maxJumps_lte?: number | null
+  maxJumps_gt?: number | null
+  maxJumps_gte?: number | null
+  runSpeed?: number | null
+  runSpeed_not?: number | null
+  runSpeed_in?: number[]
+  runSpeed_not_in?: number[]
+  runSpeed_lt?: number | null
+  runSpeed_lte?: number | null
+  runSpeed_gt?: number | null
+  runSpeed_gte?: number | null
+  wallJump?: boolean | null
+  wallJump_not?: boolean | null
+  walkSpeed?: number | null
+  walkSpeed_not?: number | null
+  walkSpeed_in?: number[]
+  walkSpeed_not_in?: number[]
+  walkSpeed_lt?: number | null
+  walkSpeed_lte?: number | null
+  walkSpeed_gt?: number | null
+  walkSpeed_gte?: number | null
+  wallCling?: boolean | null
+  wallCling_not?: boolean | null
+  airSpeed?: number | null
+  airSpeed_not?: number | null
+  airSpeed_in?: number[]
+  airSpeed_not_in?: number[]
+  airSpeed_lt?: number | null
+  airSpeed_lte?: number | null
+  airSpeed_gt?: number | null
+  airSpeed_gte?: number | null
+  crawl?: boolean | null
+  crawl_not?: boolean | null
+  fallSpeed?: number | null
+  fallSpeed_not?: number | null
+  fallSpeed_in?: number[]
+  fallSpeed_not_in?: number[]
+  fallSpeed_lt?: number | null
+  fallSpeed_lte?: number | null
+  fallSpeed_gt?: number | null
+  fallSpeed_gte?: number | null
+  tether?: boolean | null
+  tether_not?: boolean | null
+  fastFallSpeed?: number | null
+  fastFallSpeed_not?: number | null
+  fastFallSpeed_in?: number[]
+  fastFallSpeed_not_in?: number[]
+  fastFallSpeed_lt?: number | null
+  fastFallSpeed_lte?: number | null
+  fastFallSpeed_gt?: number | null
+  fastFallSpeed_gte?: number | null
+  jumpSquat?: string | null
+  jumpSquat_not?: string | null
+  jumpSquat_in?: string[]
+  jumpSquat_not_in?: string[]
+  jumpSquat_lt?: string | null
+  jumpSquat_lte?: string | null
+  jumpSquat_gt?: string | null
+  jumpSquat_gte?: string | null
+  jumpSquat_contains?: string | null
+  jumpSquat_not_contains?: string | null
+  jumpSquat_starts_with?: string | null
+  jumpSquat_not_starts_with?: string | null
+  jumpSquat_ends_with?: string | null
+  jumpSquat_not_ends_with?: string | null
+  airAcceleration?: number | null
+  airAcceleration_not?: number | null
+  airAcceleration_in?: number[]
+  airAcceleration_not_in?: number[]
+  airAcceleration_lt?: number | null
+  airAcceleration_lte?: number | null
+  airAcceleration_gt?: number | null
+  airAcceleration_gte?: number | null
+  softLandingLag?: string | null
+  softLandingLag_not?: string | null
+  softLandingLag_in?: string[]
+  softLandingLag_not_in?: string[]
+  softLandingLag_lt?: string | null
+  softLandingLag_lte?: string | null
+  softLandingLag_gt?: string | null
+  softLandingLag_gte?: string | null
+  softLandingLag_contains?: string | null
+  softLandingLag_not_contains?: string | null
+  softLandingLag_starts_with?: string | null
+  softLandingLag_not_starts_with?: string | null
+  softLandingLag_ends_with?: string | null
+  softLandingLag_not_ends_with?: string | null
+  gravity?: number | null
+  gravity_not?: number | null
+  gravity_in?: number[]
+  gravity_not_in?: number[]
+  gravity_lt?: number | null
+  gravity_lte?: number | null
+  gravity_gt?: number | null
+  gravity_gte?: number | null
+  hardLandingLag?: string | null
+  hardLandingLag_not?: string | null
+  hardLandingLag_in?: string[]
+  hardLandingLag_not_in?: string[]
+  hardLandingLag_lt?: string | null
+  hardLandingLag_lte?: string | null
+  hardLandingLag_gt?: string | null
+  hardLandingLag_gte?: string | null
+  hardLandingLag_contains?: string | null
+  hardLandingLag_not_contains?: string | null
+  hardLandingLag_starts_with?: string | null
+  hardLandingLag_not_starts_with?: string | null
+  hardLandingLag_ends_with?: string | null
+  hardLandingLag_not_ends_with?: string | null
+  shAirTime?: string | null
+  shAirTime_not?: string | null
+  shAirTime_in?: string[]
+  shAirTime_not_in?: string[]
+  shAirTime_lt?: string | null
+  shAirTime_lte?: string | null
+  shAirTime_gt?: string | null
+  shAirTime_gte?: string | null
+  shAirTime_contains?: string | null
+  shAirTime_not_contains?: string | null
+  shAirTime_starts_with?: string | null
+  shAirTime_not_starts_with?: string | null
+  shAirTime_ends_with?: string | null
+  shAirTime_not_ends_with?: string | null
+  fhAirTime?: string | null
+  fhAirTime_not?: string | null
+  fhAirTime_in?: string[]
+  fhAirTime_not_in?: string[]
+  fhAirTime_lt?: string | null
+  fhAirTime_lte?: string | null
+  fhAirTime_gt?: string | null
+  fhAirTime_gte?: string | null
+  fhAirTime_contains?: string | null
+  fhAirTime_not_contains?: string | null
+  fhAirTime_starts_with?: string | null
+  fhAirTime_not_starts_with?: string | null
+  fhAirTime_ends_with?: string | null
+  fhAirTime_not_ends_with?: string | null
+  AND?: MovementsWhereInput[]
+  OR?: MovementsWhereInput[]
+  NOT?: MovementsWhereInput[]
+}
+export type MovementsWhereInputInputObject =
+  | Extract<keyof MovementsWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'id_contains', alias?: string  } 
+  | { name: 'id_not_contains', alias?: string  } 
+  | { name: 'id_starts_with', alias?: string  } 
+  | { name: 'id_not_starts_with', alias?: string  } 
+  | { name: 'id_ends_with', alias?: string  } 
+  | { name: 'id_not_ends_with', alias?: string  } 
   | { name: 'weight', alias?: string  } 
   | { name: 'weight_not', alias?: string  } 
   | { name: 'weight_in', alias?: string  } 
@@ -5827,1494 +2912,989 @@ export type PokemonWhereInputInputObject =
   | { name: 'weight_lte', alias?: string  } 
   | { name: 'weight_gt', alias?: string  } 
   | { name: 'weight_gte', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  | { name: 'url_not', alias?: string  } 
-  | { name: 'url_in', alias?: string  } 
-  | { name: 'url_not_in', alias?: string  } 
-  | { name: 'url_lt', alias?: string  } 
-  | { name: 'url_lte', alias?: string  } 
-  | { name: 'url_gt', alias?: string  } 
-  | { name: 'url_gte', alias?: string  } 
-  | { name: 'url_contains', alias?: string  } 
-  | { name: 'url_not_contains', alias?: string  } 
-  | { name: 'url_starts_with', alias?: string  } 
-  | { name: 'url_not_starts_with', alias?: string  } 
-  | { name: 'url_ends_with', alias?: string  } 
-  | { name: 'url_not_ends_with', alias?: string  } 
+  | { name: 'maxJumps', alias?: string  } 
+  | { name: 'maxJumps_not', alias?: string  } 
+  | { name: 'maxJumps_in', alias?: string  } 
+  | { name: 'maxJumps_not_in', alias?: string  } 
+  | { name: 'maxJumps_lt', alias?: string  } 
+  | { name: 'maxJumps_lte', alias?: string  } 
+  | { name: 'maxJumps_gt', alias?: string  } 
+  | { name: 'maxJumps_gte', alias?: string  } 
+  | { name: 'runSpeed', alias?: string  } 
+  | { name: 'runSpeed_not', alias?: string  } 
+  | { name: 'runSpeed_in', alias?: string  } 
+  | { name: 'runSpeed_not_in', alias?: string  } 
+  | { name: 'runSpeed_lt', alias?: string  } 
+  | { name: 'runSpeed_lte', alias?: string  } 
+  | { name: 'runSpeed_gt', alias?: string  } 
+  | { name: 'runSpeed_gte', alias?: string  } 
+  | { name: 'wallJump', alias?: string  } 
+  | { name: 'wallJump_not', alias?: string  } 
+  | { name: 'walkSpeed', alias?: string  } 
+  | { name: 'walkSpeed_not', alias?: string  } 
+  | { name: 'walkSpeed_in', alias?: string  } 
+  | { name: 'walkSpeed_not_in', alias?: string  } 
+  | { name: 'walkSpeed_lt', alias?: string  } 
+  | { name: 'walkSpeed_lte', alias?: string  } 
+  | { name: 'walkSpeed_gt', alias?: string  } 
+  | { name: 'walkSpeed_gte', alias?: string  } 
+  | { name: 'wallCling', alias?: string  } 
+  | { name: 'wallCling_not', alias?: string  } 
+  | { name: 'airSpeed', alias?: string  } 
+  | { name: 'airSpeed_not', alias?: string  } 
+  | { name: 'airSpeed_in', alias?: string  } 
+  | { name: 'airSpeed_not_in', alias?: string  } 
+  | { name: 'airSpeed_lt', alias?: string  } 
+  | { name: 'airSpeed_lte', alias?: string  } 
+  | { name: 'airSpeed_gt', alias?: string  } 
+  | { name: 'airSpeed_gte', alias?: string  } 
+  | { name: 'crawl', alias?: string  } 
+  | { name: 'crawl_not', alias?: string  } 
+  | { name: 'fallSpeed', alias?: string  } 
+  | { name: 'fallSpeed_not', alias?: string  } 
+  | { name: 'fallSpeed_in', alias?: string  } 
+  | { name: 'fallSpeed_not_in', alias?: string  } 
+  | { name: 'fallSpeed_lt', alias?: string  } 
+  | { name: 'fallSpeed_lte', alias?: string  } 
+  | { name: 'fallSpeed_gt', alias?: string  } 
+  | { name: 'fallSpeed_gte', alias?: string  } 
+  | { name: 'tether', alias?: string  } 
+  | { name: 'tether_not', alias?: string  } 
+  | { name: 'fastFallSpeed', alias?: string  } 
+  | { name: 'fastFallSpeed_not', alias?: string  } 
+  | { name: 'fastFallSpeed_in', alias?: string  } 
+  | { name: 'fastFallSpeed_not_in', alias?: string  } 
+  | { name: 'fastFallSpeed_lt', alias?: string  } 
+  | { name: 'fastFallSpeed_lte', alias?: string  } 
+  | { name: 'fastFallSpeed_gt', alias?: string  } 
+  | { name: 'fastFallSpeed_gte', alias?: string  } 
+  | { name: 'jumpSquat', alias?: string  } 
+  | { name: 'jumpSquat_not', alias?: string  } 
+  | { name: 'jumpSquat_in', alias?: string  } 
+  | { name: 'jumpSquat_not_in', alias?: string  } 
+  | { name: 'jumpSquat_lt', alias?: string  } 
+  | { name: 'jumpSquat_lte', alias?: string  } 
+  | { name: 'jumpSquat_gt', alias?: string  } 
+  | { name: 'jumpSquat_gte', alias?: string  } 
+  | { name: 'jumpSquat_contains', alias?: string  } 
+  | { name: 'jumpSquat_not_contains', alias?: string  } 
+  | { name: 'jumpSquat_starts_with', alias?: string  } 
+  | { name: 'jumpSquat_not_starts_with', alias?: string  } 
+  | { name: 'jumpSquat_ends_with', alias?: string  } 
+  | { name: 'jumpSquat_not_ends_with', alias?: string  } 
+  | { name: 'airAcceleration', alias?: string  } 
+  | { name: 'airAcceleration_not', alias?: string  } 
+  | { name: 'airAcceleration_in', alias?: string  } 
+  | { name: 'airAcceleration_not_in', alias?: string  } 
+  | { name: 'airAcceleration_lt', alias?: string  } 
+  | { name: 'airAcceleration_lte', alias?: string  } 
+  | { name: 'airAcceleration_gt', alias?: string  } 
+  | { name: 'airAcceleration_gte', alias?: string  } 
+  | { name: 'softLandingLag', alias?: string  } 
+  | { name: 'softLandingLag_not', alias?: string  } 
+  | { name: 'softLandingLag_in', alias?: string  } 
+  | { name: 'softLandingLag_not_in', alias?: string  } 
+  | { name: 'softLandingLag_lt', alias?: string  } 
+  | { name: 'softLandingLag_lte', alias?: string  } 
+  | { name: 'softLandingLag_gt', alias?: string  } 
+  | { name: 'softLandingLag_gte', alias?: string  } 
+  | { name: 'softLandingLag_contains', alias?: string  } 
+  | { name: 'softLandingLag_not_contains', alias?: string  } 
+  | { name: 'softLandingLag_starts_with', alias?: string  } 
+  | { name: 'softLandingLag_not_starts_with', alias?: string  } 
+  | { name: 'softLandingLag_ends_with', alias?: string  } 
+  | { name: 'softLandingLag_not_ends_with', alias?: string  } 
+  | { name: 'gravity', alias?: string  } 
+  | { name: 'gravity_not', alias?: string  } 
+  | { name: 'gravity_in', alias?: string  } 
+  | { name: 'gravity_not_in', alias?: string  } 
+  | { name: 'gravity_lt', alias?: string  } 
+  | { name: 'gravity_lte', alias?: string  } 
+  | { name: 'gravity_gt', alias?: string  } 
+  | { name: 'gravity_gte', alias?: string  } 
+  | { name: 'hardLandingLag', alias?: string  } 
+  | { name: 'hardLandingLag_not', alias?: string  } 
+  | { name: 'hardLandingLag_in', alias?: string  } 
+  | { name: 'hardLandingLag_not_in', alias?: string  } 
+  | { name: 'hardLandingLag_lt', alias?: string  } 
+  | { name: 'hardLandingLag_lte', alias?: string  } 
+  | { name: 'hardLandingLag_gt', alias?: string  } 
+  | { name: 'hardLandingLag_gte', alias?: string  } 
+  | { name: 'hardLandingLag_contains', alias?: string  } 
+  | { name: 'hardLandingLag_not_contains', alias?: string  } 
+  | { name: 'hardLandingLag_starts_with', alias?: string  } 
+  | { name: 'hardLandingLag_not_starts_with', alias?: string  } 
+  | { name: 'hardLandingLag_ends_with', alias?: string  } 
+  | { name: 'hardLandingLag_not_ends_with', alias?: string  } 
+  | { name: 'shAirTime', alias?: string  } 
+  | { name: 'shAirTime_not', alias?: string  } 
+  | { name: 'shAirTime_in', alias?: string  } 
+  | { name: 'shAirTime_not_in', alias?: string  } 
+  | { name: 'shAirTime_lt', alias?: string  } 
+  | { name: 'shAirTime_lte', alias?: string  } 
+  | { name: 'shAirTime_gt', alias?: string  } 
+  | { name: 'shAirTime_gte', alias?: string  } 
+  | { name: 'shAirTime_contains', alias?: string  } 
+  | { name: 'shAirTime_not_contains', alias?: string  } 
+  | { name: 'shAirTime_starts_with', alias?: string  } 
+  | { name: 'shAirTime_not_starts_with', alias?: string  } 
+  | { name: 'shAirTime_ends_with', alias?: string  } 
+  | { name: 'shAirTime_not_ends_with', alias?: string  } 
+  | { name: 'fhAirTime', alias?: string  } 
+  | { name: 'fhAirTime_not', alias?: string  } 
+  | { name: 'fhAirTime_in', alias?: string  } 
+  | { name: 'fhAirTime_not_in', alias?: string  } 
+  | { name: 'fhAirTime_lt', alias?: string  } 
+  | { name: 'fhAirTime_lte', alias?: string  } 
+  | { name: 'fhAirTime_gt', alias?: string  } 
+  | { name: 'fhAirTime_gte', alias?: string  } 
+  | { name: 'fhAirTime_contains', alias?: string  } 
+  | { name: 'fhAirTime_not_contains', alias?: string  } 
+  | { name: 'fhAirTime_starts_with', alias?: string  } 
+  | { name: 'fhAirTime_not_starts_with', alias?: string  } 
+  | { name: 'fhAirTime_ends_with', alias?: string  } 
+  | { name: 'fhAirTime_not_ends_with', alias?: string  } 
   | { name: 'AND', alias?: string  } 
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
   
-export interface PokemonCreateInput {
-  abilities?: AbilityCreateManyInput | null
-  base_experience?: number | null
-  forms?: FormCreateManyInput | null
-  game_indices?: GameIndexCreateManyInput | null
-  held_items?: ItemCreateManyInput | null
-  height?: number | null
-  is_default?: boolean | null
-  location_area_encounters?: string | null
-  moves?: MoveCreateManyInput | null
-  name?: string | null
-  order?: number | null
-  species?: SpeciesCreateManyInput | null
-  sprites?: SpriteCreateManyInput | null
-  stats?: StatCreateManyInput | null
-  types?: TypeCreateManyInput | null
+export interface MovesWhereUniqueInput {
+  id?: string | null
+}
+export type MovesWhereUniqueInputInputObject =
+  | Extract<keyof MovesWhereUniqueInput, string>
+  | { name: 'id', alias?: string  } 
+  
+export interface MovementsWhereUniqueInput {
+  id?: string | null
+}
+export type MovementsWhereUniqueInputInputObject =
+  | Extract<keyof MovementsWhereUniqueInput, string>
+  | { name: 'id', alias?: string  } 
+  
+export interface CharacterCreateInput {
+  name?: string
+  displayName?: string | null
+  mainImgUrl?: string | null
+  thumbnailImg?: string | null
+  colorTheme?: string | null
+  moveInfo?: MovesCreateManyWithoutUserInput | null
+  movementsInfo?: MovementsCreateOneInput | null
+}
+export type CharacterCreateInputInputObject =
+  | Extract<keyof CharacterCreateInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'displayName', alias?: string  } 
+  | { name: 'mainImgUrl', alias?: string  } 
+  | { name: 'thumbnailImg', alias?: string  } 
+  | { name: 'colorTheme', alias?: string  } 
+  | { name: 'moveInfo', alias?: string  } 
+  | { name: 'movementsInfo', alias?: string  } 
+  
+export interface MovesCreateManyWithoutUserInput {
+  create?: MovesCreateWithoutUserInput[]
+  connect?: MovesWhereUniqueInput[]
+}
+export type MovesCreateManyWithoutUserInputInputObject =
+  | Extract<keyof MovesCreateManyWithoutUserInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface MovesCreateWithoutUserInput {
+  name?: string
+  hitBoxActive?: string | null
+  firstActionableFrame?: number | null
+  baseDmg?: number | null
+  angle?: string | null
+  baseKnockBackSetKnockback?: string | null
+  landingLag?: number | null
+  autoCancel?: number | null
+  knockbackGrowth?: number | null
+  moveType?: string | null
+  isWeightDependent?: boolean | null
+}
+export type MovesCreateWithoutUserInputInputObject =
+  | Extract<keyof MovesCreateWithoutUserInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'hitBoxActive', alias?: string  } 
+  | { name: 'firstActionableFrame', alias?: string  } 
+  | { name: 'baseDmg', alias?: string  } 
+  | { name: 'angle', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback', alias?: string  } 
+  | { name: 'landingLag', alias?: string  } 
+  | { name: 'autoCancel', alias?: string  } 
+  | { name: 'knockbackGrowth', alias?: string  } 
+  | { name: 'moveType', alias?: string  } 
+  | { name: 'isWeightDependent', alias?: string  } 
+  
+export interface MovementsCreateOneInput {
+  create?: MovementsCreateInput | null
+  connect?: MovementsWhereUniqueInput | null
+}
+export type MovementsCreateOneInputInputObject =
+  | Extract<keyof MovementsCreateOneInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface MovementsCreateInput {
   weight?: number | null
-  url?: string | null
+  maxJumps?: number | null
+  runSpeed?: number | null
+  wallJump?: boolean | null
+  walkSpeed?: number | null
+  wallCling?: boolean | null
+  airSpeed?: number | null
+  crawl?: boolean | null
+  fallSpeed?: number | null
+  tether?: boolean | null
+  fastFallSpeed?: number | null
+  jumpSquat?: string | null
+  airAcceleration?: number | null
+  softLandingLag?: string | null
+  gravity?: number | null
+  hardLandingLag?: string | null
+  shAirTime?: string | null
+  fhAirTime?: string | null
 }
-export type PokemonCreateInputInputObject =
-  | Extract<keyof PokemonCreateInput, string>
-  | { name: 'abilities', alias?: string  } 
-  | { name: 'base_experience', alias?: string  } 
-  | { name: 'forms', alias?: string  } 
-  | { name: 'game_indices', alias?: string  } 
-  | { name: 'held_items', alias?: string  } 
-  | { name: 'height', alias?: string  } 
-  | { name: 'is_default', alias?: string  } 
-  | { name: 'location_area_encounters', alias?: string  } 
-  | { name: 'moves', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'order', alias?: string  } 
-  | { name: 'species', alias?: string  } 
-  | { name: 'sprites', alias?: string  } 
-  | { name: 'stats', alias?: string  } 
-  | { name: 'types', alias?: string  } 
+export type MovementsCreateInputInputObject =
+  | Extract<keyof MovementsCreateInput, string>
   | { name: 'weight', alias?: string  } 
-  | { name: 'url', alias?: string  } 
+  | { name: 'maxJumps', alias?: string  } 
+  | { name: 'runSpeed', alias?: string  } 
+  | { name: 'wallJump', alias?: string  } 
+  | { name: 'walkSpeed', alias?: string  } 
+  | { name: 'wallCling', alias?: string  } 
+  | { name: 'airSpeed', alias?: string  } 
+  | { name: 'crawl', alias?: string  } 
+  | { name: 'fallSpeed', alias?: string  } 
+  | { name: 'tether', alias?: string  } 
+  | { name: 'fastFallSpeed', alias?: string  } 
+  | { name: 'jumpSquat', alias?: string  } 
+  | { name: 'airAcceleration', alias?: string  } 
+  | { name: 'softLandingLag', alias?: string  } 
+  | { name: 'gravity', alias?: string  } 
+  | { name: 'hardLandingLag', alias?: string  } 
+  | { name: 'shAirTime', alias?: string  } 
+  | { name: 'fhAirTime', alias?: string  } 
   
-export interface AbilityCreateManyInput {
-  create?: AbilityCreateInput[]
-}
-export type AbilityCreateManyInputInputObject =
-  | Extract<keyof AbilityCreateManyInput, string>
-  | { name: 'create', alias?: string  } 
-  
-export interface AbilityCreateInput {
+export interface CharacterUpdateInput {
   name?: string | null
-  url?: string | null
+  displayName?: string | null
+  mainImgUrl?: string | null
+  thumbnailImg?: string | null
+  colorTheme?: string | null
+  moveInfo?: MovesUpdateManyWithoutUserInput | null
+  movementsInfo?: MovementsUpdateOneInput | null
 }
-export type AbilityCreateInputInputObject =
-  | Extract<keyof AbilityCreateInput, string>
+export type CharacterUpdateInputInputObject =
+  | Extract<keyof CharacterUpdateInput, string>
   | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
+  | { name: 'displayName', alias?: string  } 
+  | { name: 'mainImgUrl', alias?: string  } 
+  | { name: 'thumbnailImg', alias?: string  } 
+  | { name: 'colorTheme', alias?: string  } 
+  | { name: 'moveInfo', alias?: string  } 
+  | { name: 'movementsInfo', alias?: string  } 
   
-export interface FormCreateManyInput {
-  create?: FormCreateInput[]
+export interface MovesUpdateManyWithoutUserInput {
+  create?: MovesCreateWithoutUserInput[]
+  delete?: MovesWhereUniqueInput[]
+  connect?: MovesWhereUniqueInput[]
+  set?: MovesWhereUniqueInput[]
+  disconnect?: MovesWhereUniqueInput[]
+  update?: MovesUpdateWithWhereUniqueWithoutUserInput[]
+  upsert?: MovesUpsertWithWhereUniqueWithoutUserInput[]
+  deleteMany?: MovesScalarWhereInput[]
+  updateMany?: MovesUpdateManyWithWhereNestedInput[]
 }
-export type FormCreateManyInputInputObject =
-  | Extract<keyof FormCreateManyInput, string>
+export type MovesUpdateManyWithoutUserInputInputObject =
+  | Extract<keyof MovesUpdateManyWithoutUserInput, string>
   | { name: 'create', alias?: string  } 
+  | { name: 'delete', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  | { name: 'set', alias?: string  } 
+  | { name: 'disconnect', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'upsert', alias?: string  } 
+  | { name: 'deleteMany', alias?: string  } 
+  | { name: 'updateMany', alias?: string  } 
   
-export interface FormCreateInput {
-  name?: string | null
-  url?: string | null
+export interface MovesUpdateWithWhereUniqueWithoutUserInput {
+  where?: MovesWhereUniqueInput
+  data?: MovesUpdateWithoutUserDataInput
 }
-export type FormCreateInputInputObject =
-  | Extract<keyof FormCreateInput, string>
+export type MovesUpdateWithWhereUniqueWithoutUserInputInputObject =
+  | Extract<keyof MovesUpdateWithWhereUniqueWithoutUserInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'data', alias?: string  } 
+  
+export interface MovesUpdateWithoutUserDataInput {
+  name?: string | null
+  hitBoxActive?: string | null
+  firstActionableFrame?: number | null
+  baseDmg?: number | null
+  angle?: string | null
+  baseKnockBackSetKnockback?: string | null
+  landingLag?: number | null
+  autoCancel?: number | null
+  knockbackGrowth?: number | null
+  moveType?: string | null
+  isWeightDependent?: boolean | null
+}
+export type MovesUpdateWithoutUserDataInputInputObject =
+  | Extract<keyof MovesUpdateWithoutUserDataInput, string>
   | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
+  | { name: 'hitBoxActive', alias?: string  } 
+  | { name: 'firstActionableFrame', alias?: string  } 
+  | { name: 'baseDmg', alias?: string  } 
+  | { name: 'angle', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback', alias?: string  } 
+  | { name: 'landingLag', alias?: string  } 
+  | { name: 'autoCancel', alias?: string  } 
+  | { name: 'knockbackGrowth', alias?: string  } 
+  | { name: 'moveType', alias?: string  } 
+  | { name: 'isWeightDependent', alias?: string  } 
   
-export interface GameIndexCreateManyInput {
-  create?: GameIndexCreateInput[]
+export interface MovesUpsertWithWhereUniqueWithoutUserInput {
+  where?: MovesWhereUniqueInput
+  update?: MovesUpdateWithoutUserDataInput
+  create?: MovesCreateWithoutUserInput
 }
-export type GameIndexCreateManyInputInputObject =
-  | Extract<keyof GameIndexCreateManyInput, string>
+export type MovesUpsertWithWhereUniqueWithoutUserInputInputObject =
+  | Extract<keyof MovesUpsertWithWhereUniqueWithoutUserInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'update', alias?: string  } 
   | { name: 'create', alias?: string  } 
   
-export interface GameIndexCreateInput {
+export interface MovesScalarWhereInput {
+  id?: string | null
+  id_not?: string | null
+  id_in?: string[]
+  id_not_in?: string[]
+  id_lt?: string | null
+  id_lte?: string | null
+  id_gt?: string | null
+  id_gte?: string | null
+  id_contains?: string | null
+  id_not_contains?: string | null
+  id_starts_with?: string | null
+  id_not_starts_with?: string | null
+  id_ends_with?: string | null
+  id_not_ends_with?: string | null
   name?: string | null
-  url?: string | null
+  name_not?: string | null
+  name_in?: string[]
+  name_not_in?: string[]
+  name_lt?: string | null
+  name_lte?: string | null
+  name_gt?: string | null
+  name_gte?: string | null
+  name_contains?: string | null
+  name_not_contains?: string | null
+  name_starts_with?: string | null
+  name_not_starts_with?: string | null
+  name_ends_with?: string | null
+  name_not_ends_with?: string | null
+  hitBoxActive?: string | null
+  hitBoxActive_not?: string | null
+  hitBoxActive_in?: string[]
+  hitBoxActive_not_in?: string[]
+  hitBoxActive_lt?: string | null
+  hitBoxActive_lte?: string | null
+  hitBoxActive_gt?: string | null
+  hitBoxActive_gte?: string | null
+  hitBoxActive_contains?: string | null
+  hitBoxActive_not_contains?: string | null
+  hitBoxActive_starts_with?: string | null
+  hitBoxActive_not_starts_with?: string | null
+  hitBoxActive_ends_with?: string | null
+  hitBoxActive_not_ends_with?: string | null
+  firstActionableFrame?: number | null
+  firstActionableFrame_not?: number | null
+  firstActionableFrame_in?: number[]
+  firstActionableFrame_not_in?: number[]
+  firstActionableFrame_lt?: number | null
+  firstActionableFrame_lte?: number | null
+  firstActionableFrame_gt?: number | null
+  firstActionableFrame_gte?: number | null
+  baseDmg?: number | null
+  baseDmg_not?: number | null
+  baseDmg_in?: number[]
+  baseDmg_not_in?: number[]
+  baseDmg_lt?: number | null
+  baseDmg_lte?: number | null
+  baseDmg_gt?: number | null
+  baseDmg_gte?: number | null
+  angle?: string | null
+  angle_not?: string | null
+  angle_in?: string[]
+  angle_not_in?: string[]
+  angle_lt?: string | null
+  angle_lte?: string | null
+  angle_gt?: string | null
+  angle_gte?: string | null
+  angle_contains?: string | null
+  angle_not_contains?: string | null
+  angle_starts_with?: string | null
+  angle_not_starts_with?: string | null
+  angle_ends_with?: string | null
+  angle_not_ends_with?: string | null
+  baseKnockBackSetKnockback?: string | null
+  baseKnockBackSetKnockback_not?: string | null
+  baseKnockBackSetKnockback_in?: string[]
+  baseKnockBackSetKnockback_not_in?: string[]
+  baseKnockBackSetKnockback_lt?: string | null
+  baseKnockBackSetKnockback_lte?: string | null
+  baseKnockBackSetKnockback_gt?: string | null
+  baseKnockBackSetKnockback_gte?: string | null
+  baseKnockBackSetKnockback_contains?: string | null
+  baseKnockBackSetKnockback_not_contains?: string | null
+  baseKnockBackSetKnockback_starts_with?: string | null
+  baseKnockBackSetKnockback_not_starts_with?: string | null
+  baseKnockBackSetKnockback_ends_with?: string | null
+  baseKnockBackSetKnockback_not_ends_with?: string | null
+  landingLag?: number | null
+  landingLag_not?: number | null
+  landingLag_in?: number[]
+  landingLag_not_in?: number[]
+  landingLag_lt?: number | null
+  landingLag_lte?: number | null
+  landingLag_gt?: number | null
+  landingLag_gte?: number | null
+  autoCancel?: number | null
+  autoCancel_not?: number | null
+  autoCancel_in?: number[]
+  autoCancel_not_in?: number[]
+  autoCancel_lt?: number | null
+  autoCancel_lte?: number | null
+  autoCancel_gt?: number | null
+  autoCancel_gte?: number | null
+  knockbackGrowth?: number | null
+  knockbackGrowth_not?: number | null
+  knockbackGrowth_in?: number[]
+  knockbackGrowth_not_in?: number[]
+  knockbackGrowth_lt?: number | null
+  knockbackGrowth_lte?: number | null
+  knockbackGrowth_gt?: number | null
+  knockbackGrowth_gte?: number | null
+  moveType?: string | null
+  moveType_not?: string | null
+  moveType_in?: string[]
+  moveType_not_in?: string[]
+  moveType_lt?: string | null
+  moveType_lte?: string | null
+  moveType_gt?: string | null
+  moveType_gte?: string | null
+  moveType_contains?: string | null
+  moveType_not_contains?: string | null
+  moveType_starts_with?: string | null
+  moveType_not_starts_with?: string | null
+  moveType_ends_with?: string | null
+  moveType_not_ends_with?: string | null
+  isWeightDependent?: boolean | null
+  isWeightDependent_not?: boolean | null
+  AND?: MovesScalarWhereInput[]
+  OR?: MovesScalarWhereInput[]
+  NOT?: MovesScalarWhereInput[]
 }
-export type GameIndexCreateInputInputObject =
-  | Extract<keyof GameIndexCreateInput, string>
+export type MovesScalarWhereInputInputObject =
+  | Extract<keyof MovesScalarWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'id_contains', alias?: string  } 
+  | { name: 'id_not_contains', alias?: string  } 
+  | { name: 'id_starts_with', alias?: string  } 
+  | { name: 'id_not_starts_with', alias?: string  } 
+  | { name: 'id_ends_with', alias?: string  } 
+  | { name: 'id_not_ends_with', alias?: string  } 
   | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
+  | { name: 'name_not', alias?: string  } 
+  | { name: 'name_in', alias?: string  } 
+  | { name: 'name_not_in', alias?: string  } 
+  | { name: 'name_lt', alias?: string  } 
+  | { name: 'name_lte', alias?: string  } 
+  | { name: 'name_gt', alias?: string  } 
+  | { name: 'name_gte', alias?: string  } 
+  | { name: 'name_contains', alias?: string  } 
+  | { name: 'name_not_contains', alias?: string  } 
+  | { name: 'name_starts_with', alias?: string  } 
+  | { name: 'name_not_starts_with', alias?: string  } 
+  | { name: 'name_ends_with', alias?: string  } 
+  | { name: 'name_not_ends_with', alias?: string  } 
+  | { name: 'hitBoxActive', alias?: string  } 
+  | { name: 'hitBoxActive_not', alias?: string  } 
+  | { name: 'hitBoxActive_in', alias?: string  } 
+  | { name: 'hitBoxActive_not_in', alias?: string  } 
+  | { name: 'hitBoxActive_lt', alias?: string  } 
+  | { name: 'hitBoxActive_lte', alias?: string  } 
+  | { name: 'hitBoxActive_gt', alias?: string  } 
+  | { name: 'hitBoxActive_gte', alias?: string  } 
+  | { name: 'hitBoxActive_contains', alias?: string  } 
+  | { name: 'hitBoxActive_not_contains', alias?: string  } 
+  | { name: 'hitBoxActive_starts_with', alias?: string  } 
+  | { name: 'hitBoxActive_not_starts_with', alias?: string  } 
+  | { name: 'hitBoxActive_ends_with', alias?: string  } 
+  | { name: 'hitBoxActive_not_ends_with', alias?: string  } 
+  | { name: 'firstActionableFrame', alias?: string  } 
+  | { name: 'firstActionableFrame_not', alias?: string  } 
+  | { name: 'firstActionableFrame_in', alias?: string  } 
+  | { name: 'firstActionableFrame_not_in', alias?: string  } 
+  | { name: 'firstActionableFrame_lt', alias?: string  } 
+  | { name: 'firstActionableFrame_lte', alias?: string  } 
+  | { name: 'firstActionableFrame_gt', alias?: string  } 
+  | { name: 'firstActionableFrame_gte', alias?: string  } 
+  | { name: 'baseDmg', alias?: string  } 
+  | { name: 'baseDmg_not', alias?: string  } 
+  | { name: 'baseDmg_in', alias?: string  } 
+  | { name: 'baseDmg_not_in', alias?: string  } 
+  | { name: 'baseDmg_lt', alias?: string  } 
+  | { name: 'baseDmg_lte', alias?: string  } 
+  | { name: 'baseDmg_gt', alias?: string  } 
+  | { name: 'baseDmg_gte', alias?: string  } 
+  | { name: 'angle', alias?: string  } 
+  | { name: 'angle_not', alias?: string  } 
+  | { name: 'angle_in', alias?: string  } 
+  | { name: 'angle_not_in', alias?: string  } 
+  | { name: 'angle_lt', alias?: string  } 
+  | { name: 'angle_lte', alias?: string  } 
+  | { name: 'angle_gt', alias?: string  } 
+  | { name: 'angle_gte', alias?: string  } 
+  | { name: 'angle_contains', alias?: string  } 
+  | { name: 'angle_not_contains', alias?: string  } 
+  | { name: 'angle_starts_with', alias?: string  } 
+  | { name: 'angle_not_starts_with', alias?: string  } 
+  | { name: 'angle_ends_with', alias?: string  } 
+  | { name: 'angle_not_ends_with', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_not', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_in', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_not_in', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_lt', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_lte', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_gt', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_gte', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_contains', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_not_contains', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_starts_with', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_not_starts_with', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_ends_with', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback_not_ends_with', alias?: string  } 
+  | { name: 'landingLag', alias?: string  } 
+  | { name: 'landingLag_not', alias?: string  } 
+  | { name: 'landingLag_in', alias?: string  } 
+  | { name: 'landingLag_not_in', alias?: string  } 
+  | { name: 'landingLag_lt', alias?: string  } 
+  | { name: 'landingLag_lte', alias?: string  } 
+  | { name: 'landingLag_gt', alias?: string  } 
+  | { name: 'landingLag_gte', alias?: string  } 
+  | { name: 'autoCancel', alias?: string  } 
+  | { name: 'autoCancel_not', alias?: string  } 
+  | { name: 'autoCancel_in', alias?: string  } 
+  | { name: 'autoCancel_not_in', alias?: string  } 
+  | { name: 'autoCancel_lt', alias?: string  } 
+  | { name: 'autoCancel_lte', alias?: string  } 
+  | { name: 'autoCancel_gt', alias?: string  } 
+  | { name: 'autoCancel_gte', alias?: string  } 
+  | { name: 'knockbackGrowth', alias?: string  } 
+  | { name: 'knockbackGrowth_not', alias?: string  } 
+  | { name: 'knockbackGrowth_in', alias?: string  } 
+  | { name: 'knockbackGrowth_not_in', alias?: string  } 
+  | { name: 'knockbackGrowth_lt', alias?: string  } 
+  | { name: 'knockbackGrowth_lte', alias?: string  } 
+  | { name: 'knockbackGrowth_gt', alias?: string  } 
+  | { name: 'knockbackGrowth_gte', alias?: string  } 
+  | { name: 'moveType', alias?: string  } 
+  | { name: 'moveType_not', alias?: string  } 
+  | { name: 'moveType_in', alias?: string  } 
+  | { name: 'moveType_not_in', alias?: string  } 
+  | { name: 'moveType_lt', alias?: string  } 
+  | { name: 'moveType_lte', alias?: string  } 
+  | { name: 'moveType_gt', alias?: string  } 
+  | { name: 'moveType_gte', alias?: string  } 
+  | { name: 'moveType_contains', alias?: string  } 
+  | { name: 'moveType_not_contains', alias?: string  } 
+  | { name: 'moveType_starts_with', alias?: string  } 
+  | { name: 'moveType_not_starts_with', alias?: string  } 
+  | { name: 'moveType_ends_with', alias?: string  } 
+  | { name: 'moveType_not_ends_with', alias?: string  } 
+  | { name: 'isWeightDependent', alias?: string  } 
+  | { name: 'isWeightDependent_not', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
   
-export interface ItemCreateManyInput {
-  create?: ItemCreateInput[]
+export interface MovesUpdateManyWithWhereNestedInput {
+  where?: MovesScalarWhereInput
+  data?: MovesUpdateManyDataInput
 }
-export type ItemCreateManyInputInputObject =
-  | Extract<keyof ItemCreateManyInput, string>
-  | { name: 'create', alias?: string  } 
+export type MovesUpdateManyWithWhereNestedInputInputObject =
+  | Extract<keyof MovesUpdateManyWithWhereNestedInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'data', alias?: string  } 
   
-export interface ItemCreateInput {
+export interface MovesUpdateManyDataInput {
   name?: string | null
-  url?: string | null
+  hitBoxActive?: string | null
+  firstActionableFrame?: number | null
+  baseDmg?: number | null
+  angle?: string | null
+  baseKnockBackSetKnockback?: string | null
+  landingLag?: number | null
+  autoCancel?: number | null
+  knockbackGrowth?: number | null
+  moveType?: string | null
+  isWeightDependent?: boolean | null
 }
-export type ItemCreateInputInputObject =
-  | Extract<keyof ItemCreateInput, string>
+export type MovesUpdateManyDataInputInputObject =
+  | Extract<keyof MovesUpdateManyDataInput, string>
   | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
+  | { name: 'hitBoxActive', alias?: string  } 
+  | { name: 'firstActionableFrame', alias?: string  } 
+  | { name: 'baseDmg', alias?: string  } 
+  | { name: 'angle', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback', alias?: string  } 
+  | { name: 'landingLag', alias?: string  } 
+  | { name: 'autoCancel', alias?: string  } 
+  | { name: 'knockbackGrowth', alias?: string  } 
+  | { name: 'moveType', alias?: string  } 
+  | { name: 'isWeightDependent', alias?: string  } 
   
-export interface MoveCreateManyInput {
-  create?: MoveCreateInput[]
+export interface MovementsUpdateOneInput {
+  create?: MovementsCreateInput | null
+  update?: MovementsUpdateDataInput | null
+  upsert?: MovementsUpsertNestedInput | null
+  delete?: boolean | null
+  disconnect?: boolean | null
+  connect?: MovementsWhereUniqueInput | null
 }
-export type MoveCreateManyInputInputObject =
-  | Extract<keyof MoveCreateManyInput, string>
+export type MovementsUpdateOneInputInputObject =
+  | Extract<keyof MovementsUpdateOneInput, string>
   | { name: 'create', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'upsert', alias?: string  } 
+  | { name: 'delete', alias?: string  } 
+  | { name: 'disconnect', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
   
-export interface MoveCreateInput {
-  name?: string | null
-  url?: string | null
-}
-export type MoveCreateInputInputObject =
-  | Extract<keyof MoveCreateInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  
-export interface SpeciesCreateManyInput {
-  create?: SpeciesCreateInput[]
-}
-export type SpeciesCreateManyInputInputObject =
-  | Extract<keyof SpeciesCreateManyInput, string>
-  | { name: 'create', alias?: string  } 
-  
-export interface SpeciesCreateInput {
-  name?: string | null
-  url?: string | null
-}
-export type SpeciesCreateInputInputObject =
-  | Extract<keyof SpeciesCreateInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  
-export interface SpriteCreateManyInput {
-  create?: SpriteCreateInput[]
-}
-export type SpriteCreateManyInputInputObject =
-  | Extract<keyof SpriteCreateManyInput, string>
-  | { name: 'create', alias?: string  } 
-  
-export interface SpriteCreateInput {
-  back_default?: string | null
-  back_female?: string | null
-  back_shiny?: string | null
-  back_shiny_female?: string | null
-  front_default?: string | null
-  front_female?: string | null
-  front_shiny?: string | null
-  front_shiny_female?: string | null
-}
-export type SpriteCreateInputInputObject =
-  | Extract<keyof SpriteCreateInput, string>
-  | { name: 'back_default', alias?: string  } 
-  | { name: 'back_female', alias?: string  } 
-  | { name: 'back_shiny', alias?: string  } 
-  | { name: 'back_shiny_female', alias?: string  } 
-  | { name: 'front_default', alias?: string  } 
-  | { name: 'front_female', alias?: string  } 
-  | { name: 'front_shiny', alias?: string  } 
-  | { name: 'front_shiny_female', alias?: string  } 
-  
-export interface StatCreateManyInput {
-  create?: StatCreateInput[]
-}
-export type StatCreateManyInputInputObject =
-  | Extract<keyof StatCreateManyInput, string>
-  | { name: 'create', alias?: string  } 
-  
-export interface StatCreateInput {
-  base_stat?: number | null
-  effort?: number | null
-  name?: string | null
-  url?: string | null
-}
-export type StatCreateInputInputObject =
-  | Extract<keyof StatCreateInput, string>
-  | { name: 'base_stat', alias?: string  } 
-  | { name: 'effort', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  
-export interface TypeCreateManyInput {
-  create?: TypeCreateInput[]
-}
-export type TypeCreateManyInputInputObject =
-  | Extract<keyof TypeCreateManyInput, string>
-  | { name: 'create', alias?: string  } 
-  
-export interface TypeCreateInput {
-  slot?: number | null
-  name?: string | null
-  url?: string | null
-}
-export type TypeCreateInputInputObject =
-  | Extract<keyof TypeCreateInput, string>
-  | { name: 'slot', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  
-export interface PokemonUpdateInput {
-  abilities?: AbilityUpdateManyInput | null
-  base_experience?: number | null
-  forms?: FormUpdateManyInput | null
-  game_indices?: GameIndexUpdateManyInput | null
-  held_items?: ItemUpdateManyInput | null
-  height?: number | null
-  is_default?: boolean | null
-  location_area_encounters?: string | null
-  moves?: MoveUpdateManyInput | null
-  name?: string | null
-  order?: number | null
-  species?: SpeciesUpdateManyInput | null
-  sprites?: SpriteUpdateManyInput | null
-  stats?: StatUpdateManyInput | null
-  types?: TypeUpdateManyInput | null
+export interface MovementsUpdateDataInput {
   weight?: number | null
-  url?: string | null
+  maxJumps?: number | null
+  runSpeed?: number | null
+  wallJump?: boolean | null
+  walkSpeed?: number | null
+  wallCling?: boolean | null
+  airSpeed?: number | null
+  crawl?: boolean | null
+  fallSpeed?: number | null
+  tether?: boolean | null
+  fastFallSpeed?: number | null
+  jumpSquat?: string | null
+  airAcceleration?: number | null
+  softLandingLag?: string | null
+  gravity?: number | null
+  hardLandingLag?: string | null
+  shAirTime?: string | null
+  fhAirTime?: string | null
 }
-export type PokemonUpdateInputInputObject =
-  | Extract<keyof PokemonUpdateInput, string>
-  | { name: 'abilities', alias?: string  } 
-  | { name: 'base_experience', alias?: string  } 
-  | { name: 'forms', alias?: string  } 
-  | { name: 'game_indices', alias?: string  } 
-  | { name: 'held_items', alias?: string  } 
-  | { name: 'height', alias?: string  } 
-  | { name: 'is_default', alias?: string  } 
-  | { name: 'location_area_encounters', alias?: string  } 
-  | { name: 'moves', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'order', alias?: string  } 
-  | { name: 'species', alias?: string  } 
-  | { name: 'sprites', alias?: string  } 
-  | { name: 'stats', alias?: string  } 
-  | { name: 'types', alias?: string  } 
+export type MovementsUpdateDataInputInputObject =
+  | Extract<keyof MovementsUpdateDataInput, string>
   | { name: 'weight', alias?: string  } 
-  | { name: 'url', alias?: string  } 
+  | { name: 'maxJumps', alias?: string  } 
+  | { name: 'runSpeed', alias?: string  } 
+  | { name: 'wallJump', alias?: string  } 
+  | { name: 'walkSpeed', alias?: string  } 
+  | { name: 'wallCling', alias?: string  } 
+  | { name: 'airSpeed', alias?: string  } 
+  | { name: 'crawl', alias?: string  } 
+  | { name: 'fallSpeed', alias?: string  } 
+  | { name: 'tether', alias?: string  } 
+  | { name: 'fastFallSpeed', alias?: string  } 
+  | { name: 'jumpSquat', alias?: string  } 
+  | { name: 'airAcceleration', alias?: string  } 
+  | { name: 'softLandingLag', alias?: string  } 
+  | { name: 'gravity', alias?: string  } 
+  | { name: 'hardLandingLag', alias?: string  } 
+  | { name: 'shAirTime', alias?: string  } 
+  | { name: 'fhAirTime', alias?: string  } 
   
-export interface AbilityUpdateManyInput {
-  create?: AbilityCreateInput[]
-  deleteMany?: AbilityScalarWhereInput[]
-  updateMany?: AbilityUpdateManyWithWhereNestedInput[]
+export interface MovementsUpsertNestedInput {
+  update?: MovementsUpdateDataInput
+  create?: MovementsCreateInput
 }
-export type AbilityUpdateManyInputInputObject =
-  | Extract<keyof AbilityUpdateManyInput, string>
+export type MovementsUpsertNestedInputInputObject =
+  | Extract<keyof MovementsUpsertNestedInput, string>
+  | { name: 'update', alias?: string  } 
   | { name: 'create', alias?: string  } 
-  | { name: 'deleteMany', alias?: string  } 
-  | { name: 'updateMany', alias?: string  } 
   
-export interface AbilityScalarWhereInput {
+export interface CharacterUpdateManyMutationInput {
   name?: string | null
-  name_not?: string | null
-  name_in?: string[]
-  name_not_in?: string[]
-  name_lt?: string | null
-  name_lte?: string | null
-  name_gt?: string | null
-  name_gte?: string | null
-  name_contains?: string | null
-  name_not_contains?: string | null
-  name_starts_with?: string | null
-  name_not_starts_with?: string | null
-  name_ends_with?: string | null
-  name_not_ends_with?: string | null
-  url?: string | null
-  url_not?: string | null
-  url_in?: string[]
-  url_not_in?: string[]
-  url_lt?: string | null
-  url_lte?: string | null
-  url_gt?: string | null
-  url_gte?: string | null
-  url_contains?: string | null
-  url_not_contains?: string | null
-  url_starts_with?: string | null
-  url_not_starts_with?: string | null
-  url_ends_with?: string | null
-  url_not_ends_with?: string | null
-  AND?: AbilityScalarWhereInput[]
-  OR?: AbilityScalarWhereInput[]
-  NOT?: AbilityScalarWhereInput[]
+  displayName?: string | null
+  mainImgUrl?: string | null
+  thumbnailImg?: string | null
+  colorTheme?: string | null
 }
-export type AbilityScalarWhereInputInputObject =
-  | Extract<keyof AbilityScalarWhereInput, string>
+export type CharacterUpdateManyMutationInputInputObject =
+  | Extract<keyof CharacterUpdateManyMutationInput, string>
   | { name: 'name', alias?: string  } 
-  | { name: 'name_not', alias?: string  } 
-  | { name: 'name_in', alias?: string  } 
-  | { name: 'name_not_in', alias?: string  } 
-  | { name: 'name_lt', alias?: string  } 
-  | { name: 'name_lte', alias?: string  } 
-  | { name: 'name_gt', alias?: string  } 
-  | { name: 'name_gte', alias?: string  } 
-  | { name: 'name_contains', alias?: string  } 
-  | { name: 'name_not_contains', alias?: string  } 
-  | { name: 'name_starts_with', alias?: string  } 
-  | { name: 'name_not_starts_with', alias?: string  } 
-  | { name: 'name_ends_with', alias?: string  } 
-  | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  | { name: 'url_not', alias?: string  } 
-  | { name: 'url_in', alias?: string  } 
-  | { name: 'url_not_in', alias?: string  } 
-  | { name: 'url_lt', alias?: string  } 
-  | { name: 'url_lte', alias?: string  } 
-  | { name: 'url_gt', alias?: string  } 
-  | { name: 'url_gte', alias?: string  } 
-  | { name: 'url_contains', alias?: string  } 
-  | { name: 'url_not_contains', alias?: string  } 
-  | { name: 'url_starts_with', alias?: string  } 
-  | { name: 'url_not_starts_with', alias?: string  } 
-  | { name: 'url_ends_with', alias?: string  } 
-  | { name: 'url_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
+  | { name: 'displayName', alias?: string  } 
+  | { name: 'mainImgUrl', alias?: string  } 
+  | { name: 'thumbnailImg', alias?: string  } 
+  | { name: 'colorTheme', alias?: string  } 
   
-export interface AbilityUpdateManyWithWhereNestedInput {
-  where?: AbilityScalarWhereInput
-  data?: AbilityUpdateManyDataInput
+export interface MovesCreateInput {
+  name?: string
+  user?: CharacterCreateOneWithoutMoveInfoInput | null
+  hitBoxActive?: string | null
+  firstActionableFrame?: number | null
+  baseDmg?: number | null
+  angle?: string | null
+  baseKnockBackSetKnockback?: string | null
+  landingLag?: number | null
+  autoCancel?: number | null
+  knockbackGrowth?: number | null
+  moveType?: string | null
+  isWeightDependent?: boolean | null
 }
-export type AbilityUpdateManyWithWhereNestedInputInputObject =
-  | Extract<keyof AbilityUpdateManyWithWhereNestedInput, string>
-  | { name: 'where', alias?: string  } 
-  | { name: 'data', alias?: string  } 
-  
-export interface AbilityUpdateManyDataInput {
-  name?: string | null
-  url?: string | null
-}
-export type AbilityUpdateManyDataInputInputObject =
-  | Extract<keyof AbilityUpdateManyDataInput, string>
+export type MovesCreateInputInputObject =
+  | Extract<keyof MovesCreateInput, string>
   | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
+  | { name: 'user', alias?: string  } 
+  | { name: 'hitBoxActive', alias?: string  } 
+  | { name: 'firstActionableFrame', alias?: string  } 
+  | { name: 'baseDmg', alias?: string  } 
+  | { name: 'angle', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback', alias?: string  } 
+  | { name: 'landingLag', alias?: string  } 
+  | { name: 'autoCancel', alias?: string  } 
+  | { name: 'knockbackGrowth', alias?: string  } 
+  | { name: 'moveType', alias?: string  } 
+  | { name: 'isWeightDependent', alias?: string  } 
   
-export interface FormUpdateManyInput {
-  create?: FormCreateInput[]
-  deleteMany?: FormScalarWhereInput[]
-  updateMany?: FormUpdateManyWithWhereNestedInput[]
+export interface CharacterCreateOneWithoutMoveInfoInput {
+  create?: CharacterCreateWithoutMoveInfoInput | null
+  connect?: CharacterWhereUniqueInput | null
 }
-export type FormUpdateManyInputInputObject =
-  | Extract<keyof FormUpdateManyInput, string>
+export type CharacterCreateOneWithoutMoveInfoInputInputObject =
+  | Extract<keyof CharacterCreateOneWithoutMoveInfoInput, string>
   | { name: 'create', alias?: string  } 
-  | { name: 'deleteMany', alias?: string  } 
-  | { name: 'updateMany', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
   
-export interface FormScalarWhereInput {
-  name?: string | null
-  name_not?: string | null
-  name_in?: string[]
-  name_not_in?: string[]
-  name_lt?: string | null
-  name_lte?: string | null
-  name_gt?: string | null
-  name_gte?: string | null
-  name_contains?: string | null
-  name_not_contains?: string | null
-  name_starts_with?: string | null
-  name_not_starts_with?: string | null
-  name_ends_with?: string | null
-  name_not_ends_with?: string | null
-  url?: string | null
-  url_not?: string | null
-  url_in?: string[]
-  url_not_in?: string[]
-  url_lt?: string | null
-  url_lte?: string | null
-  url_gt?: string | null
-  url_gte?: string | null
-  url_contains?: string | null
-  url_not_contains?: string | null
-  url_starts_with?: string | null
-  url_not_starts_with?: string | null
-  url_ends_with?: string | null
-  url_not_ends_with?: string | null
-  AND?: FormScalarWhereInput[]
-  OR?: FormScalarWhereInput[]
-  NOT?: FormScalarWhereInput[]
+export interface CharacterCreateWithoutMoveInfoInput {
+  name?: string
+  displayName?: string | null
+  mainImgUrl?: string | null
+  thumbnailImg?: string | null
+  colorTheme?: string | null
+  movementsInfo?: MovementsCreateOneInput | null
 }
-export type FormScalarWhereInputInputObject =
-  | Extract<keyof FormScalarWhereInput, string>
+export type CharacterCreateWithoutMoveInfoInputInputObject =
+  | Extract<keyof CharacterCreateWithoutMoveInfoInput, string>
   | { name: 'name', alias?: string  } 
-  | { name: 'name_not', alias?: string  } 
-  | { name: 'name_in', alias?: string  } 
-  | { name: 'name_not_in', alias?: string  } 
-  | { name: 'name_lt', alias?: string  } 
-  | { name: 'name_lte', alias?: string  } 
-  | { name: 'name_gt', alias?: string  } 
-  | { name: 'name_gte', alias?: string  } 
-  | { name: 'name_contains', alias?: string  } 
-  | { name: 'name_not_contains', alias?: string  } 
-  | { name: 'name_starts_with', alias?: string  } 
-  | { name: 'name_not_starts_with', alias?: string  } 
-  | { name: 'name_ends_with', alias?: string  } 
-  | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  | { name: 'url_not', alias?: string  } 
-  | { name: 'url_in', alias?: string  } 
-  | { name: 'url_not_in', alias?: string  } 
-  | { name: 'url_lt', alias?: string  } 
-  | { name: 'url_lte', alias?: string  } 
-  | { name: 'url_gt', alias?: string  } 
-  | { name: 'url_gte', alias?: string  } 
-  | { name: 'url_contains', alias?: string  } 
-  | { name: 'url_not_contains', alias?: string  } 
-  | { name: 'url_starts_with', alias?: string  } 
-  | { name: 'url_not_starts_with', alias?: string  } 
-  | { name: 'url_ends_with', alias?: string  } 
-  | { name: 'url_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
+  | { name: 'displayName', alias?: string  } 
+  | { name: 'mainImgUrl', alias?: string  } 
+  | { name: 'thumbnailImg', alias?: string  } 
+  | { name: 'colorTheme', alias?: string  } 
+  | { name: 'movementsInfo', alias?: string  } 
   
-export interface FormUpdateManyWithWhereNestedInput {
-  where?: FormScalarWhereInput
-  data?: FormUpdateManyDataInput
-}
-export type FormUpdateManyWithWhereNestedInputInputObject =
-  | Extract<keyof FormUpdateManyWithWhereNestedInput, string>
-  | { name: 'where', alias?: string  } 
-  | { name: 'data', alias?: string  } 
-  
-export interface FormUpdateManyDataInput {
+export interface MovesUpdateInput {
   name?: string | null
-  url?: string | null
+  user?: CharacterUpdateOneWithoutMoveInfoInput | null
+  hitBoxActive?: string | null
+  firstActionableFrame?: number | null
+  baseDmg?: number | null
+  angle?: string | null
+  baseKnockBackSetKnockback?: string | null
+  landingLag?: number | null
+  autoCancel?: number | null
+  knockbackGrowth?: number | null
+  moveType?: string | null
+  isWeightDependent?: boolean | null
 }
-export type FormUpdateManyDataInputInputObject =
-  | Extract<keyof FormUpdateManyDataInput, string>
+export type MovesUpdateInputInputObject =
+  | Extract<keyof MovesUpdateInput, string>
   | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
+  | { name: 'user', alias?: string  } 
+  | { name: 'hitBoxActive', alias?: string  } 
+  | { name: 'firstActionableFrame', alias?: string  } 
+  | { name: 'baseDmg', alias?: string  } 
+  | { name: 'angle', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback', alias?: string  } 
+  | { name: 'landingLag', alias?: string  } 
+  | { name: 'autoCancel', alias?: string  } 
+  | { name: 'knockbackGrowth', alias?: string  } 
+  | { name: 'moveType', alias?: string  } 
+  | { name: 'isWeightDependent', alias?: string  } 
   
-export interface GameIndexUpdateManyInput {
-  create?: GameIndexCreateInput[]
-  deleteMany?: GameIndexScalarWhereInput[]
-  updateMany?: GameIndexUpdateManyWithWhereNestedInput[]
+export interface CharacterUpdateOneWithoutMoveInfoInput {
+  create?: CharacterCreateWithoutMoveInfoInput | null
+  update?: CharacterUpdateWithoutMoveInfoDataInput | null
+  upsert?: CharacterUpsertWithoutMoveInfoInput | null
+  delete?: boolean | null
+  disconnect?: boolean | null
+  connect?: CharacterWhereUniqueInput | null
 }
-export type GameIndexUpdateManyInputInputObject =
-  | Extract<keyof GameIndexUpdateManyInput, string>
+export type CharacterUpdateOneWithoutMoveInfoInputInputObject =
+  | Extract<keyof CharacterUpdateOneWithoutMoveInfoInput, string>
   | { name: 'create', alias?: string  } 
-  | { name: 'deleteMany', alias?: string  } 
-  | { name: 'updateMany', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'upsert', alias?: string  } 
+  | { name: 'delete', alias?: string  } 
+  | { name: 'disconnect', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
   
-export interface GameIndexScalarWhereInput {
+export interface CharacterUpdateWithoutMoveInfoDataInput {
   name?: string | null
-  name_not?: string | null
-  name_in?: string[]
-  name_not_in?: string[]
-  name_lt?: string | null
-  name_lte?: string | null
-  name_gt?: string | null
-  name_gte?: string | null
-  name_contains?: string | null
-  name_not_contains?: string | null
-  name_starts_with?: string | null
-  name_not_starts_with?: string | null
-  name_ends_with?: string | null
-  name_not_ends_with?: string | null
-  url?: string | null
-  url_not?: string | null
-  url_in?: string[]
-  url_not_in?: string[]
-  url_lt?: string | null
-  url_lte?: string | null
-  url_gt?: string | null
-  url_gte?: string | null
-  url_contains?: string | null
-  url_not_contains?: string | null
-  url_starts_with?: string | null
-  url_not_starts_with?: string | null
-  url_ends_with?: string | null
-  url_not_ends_with?: string | null
-  AND?: GameIndexScalarWhereInput[]
-  OR?: GameIndexScalarWhereInput[]
-  NOT?: GameIndexScalarWhereInput[]
+  displayName?: string | null
+  mainImgUrl?: string | null
+  thumbnailImg?: string | null
+  colorTheme?: string | null
+  movementsInfo?: MovementsUpdateOneInput | null
 }
-export type GameIndexScalarWhereInputInputObject =
-  | Extract<keyof GameIndexScalarWhereInput, string>
+export type CharacterUpdateWithoutMoveInfoDataInputInputObject =
+  | Extract<keyof CharacterUpdateWithoutMoveInfoDataInput, string>
   | { name: 'name', alias?: string  } 
-  | { name: 'name_not', alias?: string  } 
-  | { name: 'name_in', alias?: string  } 
-  | { name: 'name_not_in', alias?: string  } 
-  | { name: 'name_lt', alias?: string  } 
-  | { name: 'name_lte', alias?: string  } 
-  | { name: 'name_gt', alias?: string  } 
-  | { name: 'name_gte', alias?: string  } 
-  | { name: 'name_contains', alias?: string  } 
-  | { name: 'name_not_contains', alias?: string  } 
-  | { name: 'name_starts_with', alias?: string  } 
-  | { name: 'name_not_starts_with', alias?: string  } 
-  | { name: 'name_ends_with', alias?: string  } 
-  | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  | { name: 'url_not', alias?: string  } 
-  | { name: 'url_in', alias?: string  } 
-  | { name: 'url_not_in', alias?: string  } 
-  | { name: 'url_lt', alias?: string  } 
-  | { name: 'url_lte', alias?: string  } 
-  | { name: 'url_gt', alias?: string  } 
-  | { name: 'url_gte', alias?: string  } 
-  | { name: 'url_contains', alias?: string  } 
-  | { name: 'url_not_contains', alias?: string  } 
-  | { name: 'url_starts_with', alias?: string  } 
-  | { name: 'url_not_starts_with', alias?: string  } 
-  | { name: 'url_ends_with', alias?: string  } 
-  | { name: 'url_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
+  | { name: 'displayName', alias?: string  } 
+  | { name: 'mainImgUrl', alias?: string  } 
+  | { name: 'thumbnailImg', alias?: string  } 
+  | { name: 'colorTheme', alias?: string  } 
+  | { name: 'movementsInfo', alias?: string  } 
   
-export interface GameIndexUpdateManyWithWhereNestedInput {
-  where?: GameIndexScalarWhereInput
-  data?: GameIndexUpdateManyDataInput
+export interface CharacterUpsertWithoutMoveInfoInput {
+  update?: CharacterUpdateWithoutMoveInfoDataInput
+  create?: CharacterCreateWithoutMoveInfoInput
 }
-export type GameIndexUpdateManyWithWhereNestedInputInputObject =
-  | Extract<keyof GameIndexUpdateManyWithWhereNestedInput, string>
-  | { name: 'where', alias?: string  } 
-  | { name: 'data', alias?: string  } 
-  
-export interface GameIndexUpdateManyDataInput {
-  name?: string | null
-  url?: string | null
-}
-export type GameIndexUpdateManyDataInputInputObject =
-  | Extract<keyof GameIndexUpdateManyDataInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  
-export interface ItemUpdateManyInput {
-  create?: ItemCreateInput[]
-  deleteMany?: ItemScalarWhereInput[]
-  updateMany?: ItemUpdateManyWithWhereNestedInput[]
-}
-export type ItemUpdateManyInputInputObject =
-  | Extract<keyof ItemUpdateManyInput, string>
+export type CharacterUpsertWithoutMoveInfoInputInputObject =
+  | Extract<keyof CharacterUpsertWithoutMoveInfoInput, string>
+  | { name: 'update', alias?: string  } 
   | { name: 'create', alias?: string  } 
-  | { name: 'deleteMany', alias?: string  } 
-  | { name: 'updateMany', alias?: string  } 
   
-export interface ItemScalarWhereInput {
+export interface MovesUpdateManyMutationInput {
   name?: string | null
-  name_not?: string | null
-  name_in?: string[]
-  name_not_in?: string[]
-  name_lt?: string | null
-  name_lte?: string | null
-  name_gt?: string | null
-  name_gte?: string | null
-  name_contains?: string | null
-  name_not_contains?: string | null
-  name_starts_with?: string | null
-  name_not_starts_with?: string | null
-  name_ends_with?: string | null
-  name_not_ends_with?: string | null
-  url?: string | null
-  url_not?: string | null
-  url_in?: string[]
-  url_not_in?: string[]
-  url_lt?: string | null
-  url_lte?: string | null
-  url_gt?: string | null
-  url_gte?: string | null
-  url_contains?: string | null
-  url_not_contains?: string | null
-  url_starts_with?: string | null
-  url_not_starts_with?: string | null
-  url_ends_with?: string | null
-  url_not_ends_with?: string | null
-  AND?: ItemScalarWhereInput[]
-  OR?: ItemScalarWhereInput[]
-  NOT?: ItemScalarWhereInput[]
+  hitBoxActive?: string | null
+  firstActionableFrame?: number | null
+  baseDmg?: number | null
+  angle?: string | null
+  baseKnockBackSetKnockback?: string | null
+  landingLag?: number | null
+  autoCancel?: number | null
+  knockbackGrowth?: number | null
+  moveType?: string | null
+  isWeightDependent?: boolean | null
 }
-export type ItemScalarWhereInputInputObject =
-  | Extract<keyof ItemScalarWhereInput, string>
+export type MovesUpdateManyMutationInputInputObject =
+  | Extract<keyof MovesUpdateManyMutationInput, string>
   | { name: 'name', alias?: string  } 
-  | { name: 'name_not', alias?: string  } 
-  | { name: 'name_in', alias?: string  } 
-  | { name: 'name_not_in', alias?: string  } 
-  | { name: 'name_lt', alias?: string  } 
-  | { name: 'name_lte', alias?: string  } 
-  | { name: 'name_gt', alias?: string  } 
-  | { name: 'name_gte', alias?: string  } 
-  | { name: 'name_contains', alias?: string  } 
-  | { name: 'name_not_contains', alias?: string  } 
-  | { name: 'name_starts_with', alias?: string  } 
-  | { name: 'name_not_starts_with', alias?: string  } 
-  | { name: 'name_ends_with', alias?: string  } 
-  | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  | { name: 'url_not', alias?: string  } 
-  | { name: 'url_in', alias?: string  } 
-  | { name: 'url_not_in', alias?: string  } 
-  | { name: 'url_lt', alias?: string  } 
-  | { name: 'url_lte', alias?: string  } 
-  | { name: 'url_gt', alias?: string  } 
-  | { name: 'url_gte', alias?: string  } 
-  | { name: 'url_contains', alias?: string  } 
-  | { name: 'url_not_contains', alias?: string  } 
-  | { name: 'url_starts_with', alias?: string  } 
-  | { name: 'url_not_starts_with', alias?: string  } 
-  | { name: 'url_ends_with', alias?: string  } 
-  | { name: 'url_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
+  | { name: 'hitBoxActive', alias?: string  } 
+  | { name: 'firstActionableFrame', alias?: string  } 
+  | { name: 'baseDmg', alias?: string  } 
+  | { name: 'angle', alias?: string  } 
+  | { name: 'baseKnockBackSetKnockback', alias?: string  } 
+  | { name: 'landingLag', alias?: string  } 
+  | { name: 'autoCancel', alias?: string  } 
+  | { name: 'knockbackGrowth', alias?: string  } 
+  | { name: 'moveType', alias?: string  } 
+  | { name: 'isWeightDependent', alias?: string  } 
   
-export interface ItemUpdateManyWithWhereNestedInput {
-  where?: ItemScalarWhereInput
-  data?: ItemUpdateManyDataInput
-}
-export type ItemUpdateManyWithWhereNestedInputInputObject =
-  | Extract<keyof ItemUpdateManyWithWhereNestedInput, string>
-  | { name: 'where', alias?: string  } 
-  | { name: 'data', alias?: string  } 
-  
-export interface ItemUpdateManyDataInput {
-  name?: string | null
-  url?: string | null
-}
-export type ItemUpdateManyDataInputInputObject =
-  | Extract<keyof ItemUpdateManyDataInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  
-export interface MoveUpdateManyInput {
-  create?: MoveCreateInput[]
-  deleteMany?: MoveScalarWhereInput[]
-  updateMany?: MoveUpdateManyWithWhereNestedInput[]
-}
-export type MoveUpdateManyInputInputObject =
-  | Extract<keyof MoveUpdateManyInput, string>
-  | { name: 'create', alias?: string  } 
-  | { name: 'deleteMany', alias?: string  } 
-  | { name: 'updateMany', alias?: string  } 
-  
-export interface MoveScalarWhereInput {
-  name?: string | null
-  name_not?: string | null
-  name_in?: string[]
-  name_not_in?: string[]
-  name_lt?: string | null
-  name_lte?: string | null
-  name_gt?: string | null
-  name_gte?: string | null
-  name_contains?: string | null
-  name_not_contains?: string | null
-  name_starts_with?: string | null
-  name_not_starts_with?: string | null
-  name_ends_with?: string | null
-  name_not_ends_with?: string | null
-  url?: string | null
-  url_not?: string | null
-  url_in?: string[]
-  url_not_in?: string[]
-  url_lt?: string | null
-  url_lte?: string | null
-  url_gt?: string | null
-  url_gte?: string | null
-  url_contains?: string | null
-  url_not_contains?: string | null
-  url_starts_with?: string | null
-  url_not_starts_with?: string | null
-  url_ends_with?: string | null
-  url_not_ends_with?: string | null
-  AND?: MoveScalarWhereInput[]
-  OR?: MoveScalarWhereInput[]
-  NOT?: MoveScalarWhereInput[]
-}
-export type MoveScalarWhereInputInputObject =
-  | Extract<keyof MoveScalarWhereInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'name_not', alias?: string  } 
-  | { name: 'name_in', alias?: string  } 
-  | { name: 'name_not_in', alias?: string  } 
-  | { name: 'name_lt', alias?: string  } 
-  | { name: 'name_lte', alias?: string  } 
-  | { name: 'name_gt', alias?: string  } 
-  | { name: 'name_gte', alias?: string  } 
-  | { name: 'name_contains', alias?: string  } 
-  | { name: 'name_not_contains', alias?: string  } 
-  | { name: 'name_starts_with', alias?: string  } 
-  | { name: 'name_not_starts_with', alias?: string  } 
-  | { name: 'name_ends_with', alias?: string  } 
-  | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  | { name: 'url_not', alias?: string  } 
-  | { name: 'url_in', alias?: string  } 
-  | { name: 'url_not_in', alias?: string  } 
-  | { name: 'url_lt', alias?: string  } 
-  | { name: 'url_lte', alias?: string  } 
-  | { name: 'url_gt', alias?: string  } 
-  | { name: 'url_gte', alias?: string  } 
-  | { name: 'url_contains', alias?: string  } 
-  | { name: 'url_not_contains', alias?: string  } 
-  | { name: 'url_starts_with', alias?: string  } 
-  | { name: 'url_not_starts_with', alias?: string  } 
-  | { name: 'url_ends_with', alias?: string  } 
-  | { name: 'url_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface MoveUpdateManyWithWhereNestedInput {
-  where?: MoveScalarWhereInput
-  data?: MoveUpdateManyDataInput
-}
-export type MoveUpdateManyWithWhereNestedInputInputObject =
-  | Extract<keyof MoveUpdateManyWithWhereNestedInput, string>
-  | { name: 'where', alias?: string  } 
-  | { name: 'data', alias?: string  } 
-  
-export interface MoveUpdateManyDataInput {
-  name?: string | null
-  url?: string | null
-}
-export type MoveUpdateManyDataInputInputObject =
-  | Extract<keyof MoveUpdateManyDataInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  
-export interface SpeciesUpdateManyInput {
-  create?: SpeciesCreateInput[]
-  deleteMany?: SpeciesScalarWhereInput[]
-  updateMany?: SpeciesUpdateManyWithWhereNestedInput[]
-}
-export type SpeciesUpdateManyInputInputObject =
-  | Extract<keyof SpeciesUpdateManyInput, string>
-  | { name: 'create', alias?: string  } 
-  | { name: 'deleteMany', alias?: string  } 
-  | { name: 'updateMany', alias?: string  } 
-  
-export interface SpeciesScalarWhereInput {
-  name?: string | null
-  name_not?: string | null
-  name_in?: string[]
-  name_not_in?: string[]
-  name_lt?: string | null
-  name_lte?: string | null
-  name_gt?: string | null
-  name_gte?: string | null
-  name_contains?: string | null
-  name_not_contains?: string | null
-  name_starts_with?: string | null
-  name_not_starts_with?: string | null
-  name_ends_with?: string | null
-  name_not_ends_with?: string | null
-  url?: string | null
-  url_not?: string | null
-  url_in?: string[]
-  url_not_in?: string[]
-  url_lt?: string | null
-  url_lte?: string | null
-  url_gt?: string | null
-  url_gte?: string | null
-  url_contains?: string | null
-  url_not_contains?: string | null
-  url_starts_with?: string | null
-  url_not_starts_with?: string | null
-  url_ends_with?: string | null
-  url_not_ends_with?: string | null
-  AND?: SpeciesScalarWhereInput[]
-  OR?: SpeciesScalarWhereInput[]
-  NOT?: SpeciesScalarWhereInput[]
-}
-export type SpeciesScalarWhereInputInputObject =
-  | Extract<keyof SpeciesScalarWhereInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'name_not', alias?: string  } 
-  | { name: 'name_in', alias?: string  } 
-  | { name: 'name_not_in', alias?: string  } 
-  | { name: 'name_lt', alias?: string  } 
-  | { name: 'name_lte', alias?: string  } 
-  | { name: 'name_gt', alias?: string  } 
-  | { name: 'name_gte', alias?: string  } 
-  | { name: 'name_contains', alias?: string  } 
-  | { name: 'name_not_contains', alias?: string  } 
-  | { name: 'name_starts_with', alias?: string  } 
-  | { name: 'name_not_starts_with', alias?: string  } 
-  | { name: 'name_ends_with', alias?: string  } 
-  | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  | { name: 'url_not', alias?: string  } 
-  | { name: 'url_in', alias?: string  } 
-  | { name: 'url_not_in', alias?: string  } 
-  | { name: 'url_lt', alias?: string  } 
-  | { name: 'url_lte', alias?: string  } 
-  | { name: 'url_gt', alias?: string  } 
-  | { name: 'url_gte', alias?: string  } 
-  | { name: 'url_contains', alias?: string  } 
-  | { name: 'url_not_contains', alias?: string  } 
-  | { name: 'url_starts_with', alias?: string  } 
-  | { name: 'url_not_starts_with', alias?: string  } 
-  | { name: 'url_ends_with', alias?: string  } 
-  | { name: 'url_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface SpeciesUpdateManyWithWhereNestedInput {
-  where?: SpeciesScalarWhereInput
-  data?: SpeciesUpdateManyDataInput
-}
-export type SpeciesUpdateManyWithWhereNestedInputInputObject =
-  | Extract<keyof SpeciesUpdateManyWithWhereNestedInput, string>
-  | { name: 'where', alias?: string  } 
-  | { name: 'data', alias?: string  } 
-  
-export interface SpeciesUpdateManyDataInput {
-  name?: string | null
-  url?: string | null
-}
-export type SpeciesUpdateManyDataInputInputObject =
-  | Extract<keyof SpeciesUpdateManyDataInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  
-export interface SpriteUpdateManyInput {
-  create?: SpriteCreateInput[]
-  deleteMany?: SpriteScalarWhereInput[]
-  updateMany?: SpriteUpdateManyWithWhereNestedInput[]
-}
-export type SpriteUpdateManyInputInputObject =
-  | Extract<keyof SpriteUpdateManyInput, string>
-  | { name: 'create', alias?: string  } 
-  | { name: 'deleteMany', alias?: string  } 
-  | { name: 'updateMany', alias?: string  } 
-  
-export interface SpriteScalarWhereInput {
-  back_default?: string | null
-  back_default_not?: string | null
-  back_default_in?: string[]
-  back_default_not_in?: string[]
-  back_default_lt?: string | null
-  back_default_lte?: string | null
-  back_default_gt?: string | null
-  back_default_gte?: string | null
-  back_default_contains?: string | null
-  back_default_not_contains?: string | null
-  back_default_starts_with?: string | null
-  back_default_not_starts_with?: string | null
-  back_default_ends_with?: string | null
-  back_default_not_ends_with?: string | null
-  back_female?: string | null
-  back_female_not?: string | null
-  back_female_in?: string[]
-  back_female_not_in?: string[]
-  back_female_lt?: string | null
-  back_female_lte?: string | null
-  back_female_gt?: string | null
-  back_female_gte?: string | null
-  back_female_contains?: string | null
-  back_female_not_contains?: string | null
-  back_female_starts_with?: string | null
-  back_female_not_starts_with?: string | null
-  back_female_ends_with?: string | null
-  back_female_not_ends_with?: string | null
-  back_shiny?: string | null
-  back_shiny_not?: string | null
-  back_shiny_in?: string[]
-  back_shiny_not_in?: string[]
-  back_shiny_lt?: string | null
-  back_shiny_lte?: string | null
-  back_shiny_gt?: string | null
-  back_shiny_gte?: string | null
-  back_shiny_contains?: string | null
-  back_shiny_not_contains?: string | null
-  back_shiny_starts_with?: string | null
-  back_shiny_not_starts_with?: string | null
-  back_shiny_ends_with?: string | null
-  back_shiny_not_ends_with?: string | null
-  back_shiny_female?: string | null
-  back_shiny_female_not?: string | null
-  back_shiny_female_in?: string[]
-  back_shiny_female_not_in?: string[]
-  back_shiny_female_lt?: string | null
-  back_shiny_female_lte?: string | null
-  back_shiny_female_gt?: string | null
-  back_shiny_female_gte?: string | null
-  back_shiny_female_contains?: string | null
-  back_shiny_female_not_contains?: string | null
-  back_shiny_female_starts_with?: string | null
-  back_shiny_female_not_starts_with?: string | null
-  back_shiny_female_ends_with?: string | null
-  back_shiny_female_not_ends_with?: string | null
-  front_default?: string | null
-  front_default_not?: string | null
-  front_default_in?: string[]
-  front_default_not_in?: string[]
-  front_default_lt?: string | null
-  front_default_lte?: string | null
-  front_default_gt?: string | null
-  front_default_gte?: string | null
-  front_default_contains?: string | null
-  front_default_not_contains?: string | null
-  front_default_starts_with?: string | null
-  front_default_not_starts_with?: string | null
-  front_default_ends_with?: string | null
-  front_default_not_ends_with?: string | null
-  front_female?: string | null
-  front_female_not?: string | null
-  front_female_in?: string[]
-  front_female_not_in?: string[]
-  front_female_lt?: string | null
-  front_female_lte?: string | null
-  front_female_gt?: string | null
-  front_female_gte?: string | null
-  front_female_contains?: string | null
-  front_female_not_contains?: string | null
-  front_female_starts_with?: string | null
-  front_female_not_starts_with?: string | null
-  front_female_ends_with?: string | null
-  front_female_not_ends_with?: string | null
-  front_shiny?: string | null
-  front_shiny_not?: string | null
-  front_shiny_in?: string[]
-  front_shiny_not_in?: string[]
-  front_shiny_lt?: string | null
-  front_shiny_lte?: string | null
-  front_shiny_gt?: string | null
-  front_shiny_gte?: string | null
-  front_shiny_contains?: string | null
-  front_shiny_not_contains?: string | null
-  front_shiny_starts_with?: string | null
-  front_shiny_not_starts_with?: string | null
-  front_shiny_ends_with?: string | null
-  front_shiny_not_ends_with?: string | null
-  front_shiny_female?: string | null
-  front_shiny_female_not?: string | null
-  front_shiny_female_in?: string[]
-  front_shiny_female_not_in?: string[]
-  front_shiny_female_lt?: string | null
-  front_shiny_female_lte?: string | null
-  front_shiny_female_gt?: string | null
-  front_shiny_female_gte?: string | null
-  front_shiny_female_contains?: string | null
-  front_shiny_female_not_contains?: string | null
-  front_shiny_female_starts_with?: string | null
-  front_shiny_female_not_starts_with?: string | null
-  front_shiny_female_ends_with?: string | null
-  front_shiny_female_not_ends_with?: string | null
-  AND?: SpriteScalarWhereInput[]
-  OR?: SpriteScalarWhereInput[]
-  NOT?: SpriteScalarWhereInput[]
-}
-export type SpriteScalarWhereInputInputObject =
-  | Extract<keyof SpriteScalarWhereInput, string>
-  | { name: 'back_default', alias?: string  } 
-  | { name: 'back_default_not', alias?: string  } 
-  | { name: 'back_default_in', alias?: string  } 
-  | { name: 'back_default_not_in', alias?: string  } 
-  | { name: 'back_default_lt', alias?: string  } 
-  | { name: 'back_default_lte', alias?: string  } 
-  | { name: 'back_default_gt', alias?: string  } 
-  | { name: 'back_default_gte', alias?: string  } 
-  | { name: 'back_default_contains', alias?: string  } 
-  | { name: 'back_default_not_contains', alias?: string  } 
-  | { name: 'back_default_starts_with', alias?: string  } 
-  | { name: 'back_default_not_starts_with', alias?: string  } 
-  | { name: 'back_default_ends_with', alias?: string  } 
-  | { name: 'back_default_not_ends_with', alias?: string  } 
-  | { name: 'back_female', alias?: string  } 
-  | { name: 'back_female_not', alias?: string  } 
-  | { name: 'back_female_in', alias?: string  } 
-  | { name: 'back_female_not_in', alias?: string  } 
-  | { name: 'back_female_lt', alias?: string  } 
-  | { name: 'back_female_lte', alias?: string  } 
-  | { name: 'back_female_gt', alias?: string  } 
-  | { name: 'back_female_gte', alias?: string  } 
-  | { name: 'back_female_contains', alias?: string  } 
-  | { name: 'back_female_not_contains', alias?: string  } 
-  | { name: 'back_female_starts_with', alias?: string  } 
-  | { name: 'back_female_not_starts_with', alias?: string  } 
-  | { name: 'back_female_ends_with', alias?: string  } 
-  | { name: 'back_female_not_ends_with', alias?: string  } 
-  | { name: 'back_shiny', alias?: string  } 
-  | { name: 'back_shiny_not', alias?: string  } 
-  | { name: 'back_shiny_in', alias?: string  } 
-  | { name: 'back_shiny_not_in', alias?: string  } 
-  | { name: 'back_shiny_lt', alias?: string  } 
-  | { name: 'back_shiny_lte', alias?: string  } 
-  | { name: 'back_shiny_gt', alias?: string  } 
-  | { name: 'back_shiny_gte', alias?: string  } 
-  | { name: 'back_shiny_contains', alias?: string  } 
-  | { name: 'back_shiny_not_contains', alias?: string  } 
-  | { name: 'back_shiny_starts_with', alias?: string  } 
-  | { name: 'back_shiny_not_starts_with', alias?: string  } 
-  | { name: 'back_shiny_ends_with', alias?: string  } 
-  | { name: 'back_shiny_not_ends_with', alias?: string  } 
-  | { name: 'back_shiny_female', alias?: string  } 
-  | { name: 'back_shiny_female_not', alias?: string  } 
-  | { name: 'back_shiny_female_in', alias?: string  } 
-  | { name: 'back_shiny_female_not_in', alias?: string  } 
-  | { name: 'back_shiny_female_lt', alias?: string  } 
-  | { name: 'back_shiny_female_lte', alias?: string  } 
-  | { name: 'back_shiny_female_gt', alias?: string  } 
-  | { name: 'back_shiny_female_gte', alias?: string  } 
-  | { name: 'back_shiny_female_contains', alias?: string  } 
-  | { name: 'back_shiny_female_not_contains', alias?: string  } 
-  | { name: 'back_shiny_female_starts_with', alias?: string  } 
-  | { name: 'back_shiny_female_not_starts_with', alias?: string  } 
-  | { name: 'back_shiny_female_ends_with', alias?: string  } 
-  | { name: 'back_shiny_female_not_ends_with', alias?: string  } 
-  | { name: 'front_default', alias?: string  } 
-  | { name: 'front_default_not', alias?: string  } 
-  | { name: 'front_default_in', alias?: string  } 
-  | { name: 'front_default_not_in', alias?: string  } 
-  | { name: 'front_default_lt', alias?: string  } 
-  | { name: 'front_default_lte', alias?: string  } 
-  | { name: 'front_default_gt', alias?: string  } 
-  | { name: 'front_default_gte', alias?: string  } 
-  | { name: 'front_default_contains', alias?: string  } 
-  | { name: 'front_default_not_contains', alias?: string  } 
-  | { name: 'front_default_starts_with', alias?: string  } 
-  | { name: 'front_default_not_starts_with', alias?: string  } 
-  | { name: 'front_default_ends_with', alias?: string  } 
-  | { name: 'front_default_not_ends_with', alias?: string  } 
-  | { name: 'front_female', alias?: string  } 
-  | { name: 'front_female_not', alias?: string  } 
-  | { name: 'front_female_in', alias?: string  } 
-  | { name: 'front_female_not_in', alias?: string  } 
-  | { name: 'front_female_lt', alias?: string  } 
-  | { name: 'front_female_lte', alias?: string  } 
-  | { name: 'front_female_gt', alias?: string  } 
-  | { name: 'front_female_gte', alias?: string  } 
-  | { name: 'front_female_contains', alias?: string  } 
-  | { name: 'front_female_not_contains', alias?: string  } 
-  | { name: 'front_female_starts_with', alias?: string  } 
-  | { name: 'front_female_not_starts_with', alias?: string  } 
-  | { name: 'front_female_ends_with', alias?: string  } 
-  | { name: 'front_female_not_ends_with', alias?: string  } 
-  | { name: 'front_shiny', alias?: string  } 
-  | { name: 'front_shiny_not', alias?: string  } 
-  | { name: 'front_shiny_in', alias?: string  } 
-  | { name: 'front_shiny_not_in', alias?: string  } 
-  | { name: 'front_shiny_lt', alias?: string  } 
-  | { name: 'front_shiny_lte', alias?: string  } 
-  | { name: 'front_shiny_gt', alias?: string  } 
-  | { name: 'front_shiny_gte', alias?: string  } 
-  | { name: 'front_shiny_contains', alias?: string  } 
-  | { name: 'front_shiny_not_contains', alias?: string  } 
-  | { name: 'front_shiny_starts_with', alias?: string  } 
-  | { name: 'front_shiny_not_starts_with', alias?: string  } 
-  | { name: 'front_shiny_ends_with', alias?: string  } 
-  | { name: 'front_shiny_not_ends_with', alias?: string  } 
-  | { name: 'front_shiny_female', alias?: string  } 
-  | { name: 'front_shiny_female_not', alias?: string  } 
-  | { name: 'front_shiny_female_in', alias?: string  } 
-  | { name: 'front_shiny_female_not_in', alias?: string  } 
-  | { name: 'front_shiny_female_lt', alias?: string  } 
-  | { name: 'front_shiny_female_lte', alias?: string  } 
-  | { name: 'front_shiny_female_gt', alias?: string  } 
-  | { name: 'front_shiny_female_gte', alias?: string  } 
-  | { name: 'front_shiny_female_contains', alias?: string  } 
-  | { name: 'front_shiny_female_not_contains', alias?: string  } 
-  | { name: 'front_shiny_female_starts_with', alias?: string  } 
-  | { name: 'front_shiny_female_not_starts_with', alias?: string  } 
-  | { name: 'front_shiny_female_ends_with', alias?: string  } 
-  | { name: 'front_shiny_female_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface SpriteUpdateManyWithWhereNestedInput {
-  where?: SpriteScalarWhereInput
-  data?: SpriteUpdateManyDataInput
-}
-export type SpriteUpdateManyWithWhereNestedInputInputObject =
-  | Extract<keyof SpriteUpdateManyWithWhereNestedInput, string>
-  | { name: 'where', alias?: string  } 
-  | { name: 'data', alias?: string  } 
-  
-export interface SpriteUpdateManyDataInput {
-  back_default?: string | null
-  back_female?: string | null
-  back_shiny?: string | null
-  back_shiny_female?: string | null
-  front_default?: string | null
-  front_female?: string | null
-  front_shiny?: string | null
-  front_shiny_female?: string | null
-}
-export type SpriteUpdateManyDataInputInputObject =
-  | Extract<keyof SpriteUpdateManyDataInput, string>
-  | { name: 'back_default', alias?: string  } 
-  | { name: 'back_female', alias?: string  } 
-  | { name: 'back_shiny', alias?: string  } 
-  | { name: 'back_shiny_female', alias?: string  } 
-  | { name: 'front_default', alias?: string  } 
-  | { name: 'front_female', alias?: string  } 
-  | { name: 'front_shiny', alias?: string  } 
-  | { name: 'front_shiny_female', alias?: string  } 
-  
-export interface StatUpdateManyInput {
-  create?: StatCreateInput[]
-  deleteMany?: StatScalarWhereInput[]
-  updateMany?: StatUpdateManyWithWhereNestedInput[]
-}
-export type StatUpdateManyInputInputObject =
-  | Extract<keyof StatUpdateManyInput, string>
-  | { name: 'create', alias?: string  } 
-  | { name: 'deleteMany', alias?: string  } 
-  | { name: 'updateMany', alias?: string  } 
-  
-export interface StatScalarWhereInput {
-  base_stat?: number | null
-  base_stat_not?: number | null
-  base_stat_in?: number[]
-  base_stat_not_in?: number[]
-  base_stat_lt?: number | null
-  base_stat_lte?: number | null
-  base_stat_gt?: number | null
-  base_stat_gte?: number | null
-  effort?: number | null
-  effort_not?: number | null
-  effort_in?: number[]
-  effort_not_in?: number[]
-  effort_lt?: number | null
-  effort_lte?: number | null
-  effort_gt?: number | null
-  effort_gte?: number | null
-  name?: string | null
-  name_not?: string | null
-  name_in?: string[]
-  name_not_in?: string[]
-  name_lt?: string | null
-  name_lte?: string | null
-  name_gt?: string | null
-  name_gte?: string | null
-  name_contains?: string | null
-  name_not_contains?: string | null
-  name_starts_with?: string | null
-  name_not_starts_with?: string | null
-  name_ends_with?: string | null
-  name_not_ends_with?: string | null
-  url?: string | null
-  url_not?: string | null
-  url_in?: string[]
-  url_not_in?: string[]
-  url_lt?: string | null
-  url_lte?: string | null
-  url_gt?: string | null
-  url_gte?: string | null
-  url_contains?: string | null
-  url_not_contains?: string | null
-  url_starts_with?: string | null
-  url_not_starts_with?: string | null
-  url_ends_with?: string | null
-  url_not_ends_with?: string | null
-  AND?: StatScalarWhereInput[]
-  OR?: StatScalarWhereInput[]
-  NOT?: StatScalarWhereInput[]
-}
-export type StatScalarWhereInputInputObject =
-  | Extract<keyof StatScalarWhereInput, string>
-  | { name: 'base_stat', alias?: string  } 
-  | { name: 'base_stat_not', alias?: string  } 
-  | { name: 'base_stat_in', alias?: string  } 
-  | { name: 'base_stat_not_in', alias?: string  } 
-  | { name: 'base_stat_lt', alias?: string  } 
-  | { name: 'base_stat_lte', alias?: string  } 
-  | { name: 'base_stat_gt', alias?: string  } 
-  | { name: 'base_stat_gte', alias?: string  } 
-  | { name: 'effort', alias?: string  } 
-  | { name: 'effort_not', alias?: string  } 
-  | { name: 'effort_in', alias?: string  } 
-  | { name: 'effort_not_in', alias?: string  } 
-  | { name: 'effort_lt', alias?: string  } 
-  | { name: 'effort_lte', alias?: string  } 
-  | { name: 'effort_gt', alias?: string  } 
-  | { name: 'effort_gte', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'name_not', alias?: string  } 
-  | { name: 'name_in', alias?: string  } 
-  | { name: 'name_not_in', alias?: string  } 
-  | { name: 'name_lt', alias?: string  } 
-  | { name: 'name_lte', alias?: string  } 
-  | { name: 'name_gt', alias?: string  } 
-  | { name: 'name_gte', alias?: string  } 
-  | { name: 'name_contains', alias?: string  } 
-  | { name: 'name_not_contains', alias?: string  } 
-  | { name: 'name_starts_with', alias?: string  } 
-  | { name: 'name_not_starts_with', alias?: string  } 
-  | { name: 'name_ends_with', alias?: string  } 
-  | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  | { name: 'url_not', alias?: string  } 
-  | { name: 'url_in', alias?: string  } 
-  | { name: 'url_not_in', alias?: string  } 
-  | { name: 'url_lt', alias?: string  } 
-  | { name: 'url_lte', alias?: string  } 
-  | { name: 'url_gt', alias?: string  } 
-  | { name: 'url_gte', alias?: string  } 
-  | { name: 'url_contains', alias?: string  } 
-  | { name: 'url_not_contains', alias?: string  } 
-  | { name: 'url_starts_with', alias?: string  } 
-  | { name: 'url_not_starts_with', alias?: string  } 
-  | { name: 'url_ends_with', alias?: string  } 
-  | { name: 'url_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface StatUpdateManyWithWhereNestedInput {
-  where?: StatScalarWhereInput
-  data?: StatUpdateManyDataInput
-}
-export type StatUpdateManyWithWhereNestedInputInputObject =
-  | Extract<keyof StatUpdateManyWithWhereNestedInput, string>
-  | { name: 'where', alias?: string  } 
-  | { name: 'data', alias?: string  } 
-  
-export interface StatUpdateManyDataInput {
-  base_stat?: number | null
-  effort?: number | null
-  name?: string | null
-  url?: string | null
-}
-export type StatUpdateManyDataInputInputObject =
-  | Extract<keyof StatUpdateManyDataInput, string>
-  | { name: 'base_stat', alias?: string  } 
-  | { name: 'effort', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  
-export interface TypeUpdateManyInput {
-  create?: TypeCreateInput[]
-  deleteMany?: TypeScalarWhereInput[]
-  updateMany?: TypeUpdateManyWithWhereNestedInput[]
-}
-export type TypeUpdateManyInputInputObject =
-  | Extract<keyof TypeUpdateManyInput, string>
-  | { name: 'create', alias?: string  } 
-  | { name: 'deleteMany', alias?: string  } 
-  | { name: 'updateMany', alias?: string  } 
-  
-export interface TypeScalarWhereInput {
-  slot?: number | null
-  slot_not?: number | null
-  slot_in?: number[]
-  slot_not_in?: number[]
-  slot_lt?: number | null
-  slot_lte?: number | null
-  slot_gt?: number | null
-  slot_gte?: number | null
-  name?: string | null
-  name_not?: string | null
-  name_in?: string[]
-  name_not_in?: string[]
-  name_lt?: string | null
-  name_lte?: string | null
-  name_gt?: string | null
-  name_gte?: string | null
-  name_contains?: string | null
-  name_not_contains?: string | null
-  name_starts_with?: string | null
-  name_not_starts_with?: string | null
-  name_ends_with?: string | null
-  name_not_ends_with?: string | null
-  url?: string | null
-  url_not?: string | null
-  url_in?: string[]
-  url_not_in?: string[]
-  url_lt?: string | null
-  url_lte?: string | null
-  url_gt?: string | null
-  url_gte?: string | null
-  url_contains?: string | null
-  url_not_contains?: string | null
-  url_starts_with?: string | null
-  url_not_starts_with?: string | null
-  url_ends_with?: string | null
-  url_not_ends_with?: string | null
-  AND?: TypeScalarWhereInput[]
-  OR?: TypeScalarWhereInput[]
-  NOT?: TypeScalarWhereInput[]
-}
-export type TypeScalarWhereInputInputObject =
-  | Extract<keyof TypeScalarWhereInput, string>
-  | { name: 'slot', alias?: string  } 
-  | { name: 'slot_not', alias?: string  } 
-  | { name: 'slot_in', alias?: string  } 
-  | { name: 'slot_not_in', alias?: string  } 
-  | { name: 'slot_lt', alias?: string  } 
-  | { name: 'slot_lte', alias?: string  } 
-  | { name: 'slot_gt', alias?: string  } 
-  | { name: 'slot_gte', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'name_not', alias?: string  } 
-  | { name: 'name_in', alias?: string  } 
-  | { name: 'name_not_in', alias?: string  } 
-  | { name: 'name_lt', alias?: string  } 
-  | { name: 'name_lte', alias?: string  } 
-  | { name: 'name_gt', alias?: string  } 
-  | { name: 'name_gte', alias?: string  } 
-  | { name: 'name_contains', alias?: string  } 
-  | { name: 'name_not_contains', alias?: string  } 
-  | { name: 'name_starts_with', alias?: string  } 
-  | { name: 'name_not_starts_with', alias?: string  } 
-  | { name: 'name_ends_with', alias?: string  } 
-  | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  | { name: 'url_not', alias?: string  } 
-  | { name: 'url_in', alias?: string  } 
-  | { name: 'url_not_in', alias?: string  } 
-  | { name: 'url_lt', alias?: string  } 
-  | { name: 'url_lte', alias?: string  } 
-  | { name: 'url_gt', alias?: string  } 
-  | { name: 'url_gte', alias?: string  } 
-  | { name: 'url_contains', alias?: string  } 
-  | { name: 'url_not_contains', alias?: string  } 
-  | { name: 'url_starts_with', alias?: string  } 
-  | { name: 'url_not_starts_with', alias?: string  } 
-  | { name: 'url_ends_with', alias?: string  } 
-  | { name: 'url_not_ends_with', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface TypeUpdateManyWithWhereNestedInput {
-  where?: TypeScalarWhereInput
-  data?: TypeUpdateManyDataInput
-}
-export type TypeUpdateManyWithWhereNestedInputInputObject =
-  | Extract<keyof TypeUpdateManyWithWhereNestedInput, string>
-  | { name: 'where', alias?: string  } 
-  | { name: 'data', alias?: string  } 
-  
-export interface TypeUpdateManyDataInput {
-  slot?: number | null
-  name?: string | null
-  url?: string | null
-}
-export type TypeUpdateManyDataInputInputObject =
-  | Extract<keyof TypeUpdateManyDataInput, string>
-  | { name: 'slot', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  
-export interface PokemonUpdateManyMutationInput {
-  base_experience?: number | null
-  height?: number | null
-  is_default?: boolean | null
-  location_area_encounters?: string | null
-  name?: string | null
-  order?: number | null
+export interface MovementsUpdateInput {
   weight?: number | null
-  url?: string | null
+  maxJumps?: number | null
+  runSpeed?: number | null
+  wallJump?: boolean | null
+  walkSpeed?: number | null
+  wallCling?: boolean | null
+  airSpeed?: number | null
+  crawl?: boolean | null
+  fallSpeed?: number | null
+  tether?: boolean | null
+  fastFallSpeed?: number | null
+  jumpSquat?: string | null
+  airAcceleration?: number | null
+  softLandingLag?: string | null
+  gravity?: number | null
+  hardLandingLag?: string | null
+  shAirTime?: string | null
+  fhAirTime?: string | null
 }
-export type PokemonUpdateManyMutationInputInputObject =
-  | Extract<keyof PokemonUpdateManyMutationInput, string>
-  | { name: 'base_experience', alias?: string  } 
-  | { name: 'height', alias?: string  } 
-  | { name: 'is_default', alias?: string  } 
-  | { name: 'location_area_encounters', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'order', alias?: string  } 
+export type MovementsUpdateInputInputObject =
+  | Extract<keyof MovementsUpdateInput, string>
   | { name: 'weight', alias?: string  } 
-  | { name: 'url', alias?: string  } 
+  | { name: 'maxJumps', alias?: string  } 
+  | { name: 'runSpeed', alias?: string  } 
+  | { name: 'wallJump', alias?: string  } 
+  | { name: 'walkSpeed', alias?: string  } 
+  | { name: 'wallCling', alias?: string  } 
+  | { name: 'airSpeed', alias?: string  } 
+  | { name: 'crawl', alias?: string  } 
+  | { name: 'fallSpeed', alias?: string  } 
+  | { name: 'tether', alias?: string  } 
+  | { name: 'fastFallSpeed', alias?: string  } 
+  | { name: 'jumpSquat', alias?: string  } 
+  | { name: 'airAcceleration', alias?: string  } 
+  | { name: 'softLandingLag', alias?: string  } 
+  | { name: 'gravity', alias?: string  } 
+  | { name: 'hardLandingLag', alias?: string  } 
+  | { name: 'shAirTime', alias?: string  } 
+  | { name: 'fhAirTime', alias?: string  } 
   
-export interface AbilityUpdateManyMutationInput {
-  name?: string | null
-  url?: string | null
+export interface MovementsUpdateManyMutationInput {
+  weight?: number | null
+  maxJumps?: number | null
+  runSpeed?: number | null
+  wallJump?: boolean | null
+  walkSpeed?: number | null
+  wallCling?: boolean | null
+  airSpeed?: number | null
+  crawl?: boolean | null
+  fallSpeed?: number | null
+  tether?: boolean | null
+  fastFallSpeed?: number | null
+  jumpSquat?: string | null
+  airAcceleration?: number | null
+  softLandingLag?: string | null
+  gravity?: number | null
+  hardLandingLag?: string | null
+  shAirTime?: string | null
+  fhAirTime?: string | null
 }
-export type AbilityUpdateManyMutationInputInputObject =
-  | Extract<keyof AbilityUpdateManyMutationInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
+export type MovementsUpdateManyMutationInputInputObject =
+  | Extract<keyof MovementsUpdateManyMutationInput, string>
+  | { name: 'weight', alias?: string  } 
+  | { name: 'maxJumps', alias?: string  } 
+  | { name: 'runSpeed', alias?: string  } 
+  | { name: 'wallJump', alias?: string  } 
+  | { name: 'walkSpeed', alias?: string  } 
+  | { name: 'wallCling', alias?: string  } 
+  | { name: 'airSpeed', alias?: string  } 
+  | { name: 'crawl', alias?: string  } 
+  | { name: 'fallSpeed', alias?: string  } 
+  | { name: 'tether', alias?: string  } 
+  | { name: 'fastFallSpeed', alias?: string  } 
+  | { name: 'jumpSquat', alias?: string  } 
+  | { name: 'airAcceleration', alias?: string  } 
+  | { name: 'softLandingLag', alias?: string  } 
+  | { name: 'gravity', alias?: string  } 
+  | { name: 'hardLandingLag', alias?: string  } 
+  | { name: 'shAirTime', alias?: string  } 
+  | { name: 'fhAirTime', alias?: string  } 
   
-export interface FormUpdateManyMutationInput {
-  name?: string | null
-  url?: string | null
-}
-export type FormUpdateManyMutationInputInputObject =
-  | Extract<keyof FormUpdateManyMutationInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  
-export interface GameIndexUpdateManyMutationInput {
-  name?: string | null
-  url?: string | null
-}
-export type GameIndexUpdateManyMutationInputInputObject =
-  | Extract<keyof GameIndexUpdateManyMutationInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  
-export interface ItemUpdateManyMutationInput {
-  name?: string | null
-  url?: string | null
-}
-export type ItemUpdateManyMutationInputInputObject =
-  | Extract<keyof ItemUpdateManyMutationInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  
-export interface MoveUpdateManyMutationInput {
-  name?: string | null
-  url?: string | null
-}
-export type MoveUpdateManyMutationInputInputObject =
-  | Extract<keyof MoveUpdateManyMutationInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  
-export interface SpeciesUpdateManyMutationInput {
-  name?: string | null
-  url?: string | null
-}
-export type SpeciesUpdateManyMutationInputInputObject =
-  | Extract<keyof SpeciesUpdateManyMutationInput, string>
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  
-export interface SpriteUpdateManyMutationInput {
-  back_default?: string | null
-  back_female?: string | null
-  back_shiny?: string | null
-  back_shiny_female?: string | null
-  front_default?: string | null
-  front_female?: string | null
-  front_shiny?: string | null
-  front_shiny_female?: string | null
-}
-export type SpriteUpdateManyMutationInputInputObject =
-  | Extract<keyof SpriteUpdateManyMutationInput, string>
-  | { name: 'back_default', alias?: string  } 
-  | { name: 'back_female', alias?: string  } 
-  | { name: 'back_shiny', alias?: string  } 
-  | { name: 'back_shiny_female', alias?: string  } 
-  | { name: 'front_default', alias?: string  } 
-  | { name: 'front_female', alias?: string  } 
-  | { name: 'front_shiny', alias?: string  } 
-  | { name: 'front_shiny_female', alias?: string  } 
-  
-export interface StatUpdateManyMutationInput {
-  base_stat?: number | null
-  effort?: number | null
-  name?: string | null
-  url?: string | null
-}
-export type StatUpdateManyMutationInputInputObject =
-  | Extract<keyof StatUpdateManyMutationInput, string>
-  | { name: 'base_stat', alias?: string  } 
-  | { name: 'effort', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  
-export interface TypeUpdateManyMutationInput {
-  slot?: number | null
-  name?: string | null
-  url?: string | null
-}
-export type TypeUpdateManyMutationInputInputObject =
-  | Extract<keyof TypeUpdateManyMutationInput, string>
-  | { name: 'slot', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'url', alias?: string  } 
-  
-export interface PokemonSubscriptionWhereInput {
+export interface CharacterSubscriptionWhereInput {
   mutation_in?: prisma.MutationType[]
   updatedFields_contains?: string | null
   updatedFields_contains_every?: string[]
   updatedFields_contains_some?: string[]
-  node?: PokemonWhereInput | null
-  AND?: PokemonSubscriptionWhereInput[]
-  OR?: PokemonSubscriptionWhereInput[]
-  NOT?: PokemonSubscriptionWhereInput[]
+  node?: CharacterWhereInput | null
+  AND?: CharacterSubscriptionWhereInput[]
+  OR?: CharacterSubscriptionWhereInput[]
+  NOT?: CharacterSubscriptionWhereInput[]
 }
-export type PokemonSubscriptionWhereInputInputObject =
-  | Extract<keyof PokemonSubscriptionWhereInput, string>
+export type CharacterSubscriptionWhereInputInputObject =
+  | Extract<keyof CharacterSubscriptionWhereInput, string>
   | { name: 'mutation_in', alias?: string  } 
   | { name: 'updatedFields_contains', alias?: string  } 
   | { name: 'updatedFields_contains_every', alias?: string  } 
@@ -7324,18 +3904,18 @@ export type PokemonSubscriptionWhereInputInputObject =
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
   
-export interface AbilitySubscriptionWhereInput {
+export interface MovesSubscriptionWhereInput {
   mutation_in?: prisma.MutationType[]
   updatedFields_contains?: string | null
   updatedFields_contains_every?: string[]
   updatedFields_contains_some?: string[]
-  node?: AbilityWhereInput | null
-  AND?: AbilitySubscriptionWhereInput[]
-  OR?: AbilitySubscriptionWhereInput[]
-  NOT?: AbilitySubscriptionWhereInput[]
+  node?: MovesWhereInput | null
+  AND?: MovesSubscriptionWhereInput[]
+  OR?: MovesSubscriptionWhereInput[]
+  NOT?: MovesSubscriptionWhereInput[]
 }
-export type AbilitySubscriptionWhereInputInputObject =
-  | Extract<keyof AbilitySubscriptionWhereInput, string>
+export type MovesSubscriptionWhereInputInputObject =
+  | Extract<keyof MovesSubscriptionWhereInput, string>
   | { name: 'mutation_in', alias?: string  } 
   | { name: 'updatedFields_contains', alias?: string  } 
   | { name: 'updatedFields_contains_every', alias?: string  } 
@@ -7345,165 +3925,18 @@ export type AbilitySubscriptionWhereInputInputObject =
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
   
-export interface FormSubscriptionWhereInput {
+export interface MovementsSubscriptionWhereInput {
   mutation_in?: prisma.MutationType[]
   updatedFields_contains?: string | null
   updatedFields_contains_every?: string[]
   updatedFields_contains_some?: string[]
-  node?: FormWhereInput | null
-  AND?: FormSubscriptionWhereInput[]
-  OR?: FormSubscriptionWhereInput[]
-  NOT?: FormSubscriptionWhereInput[]
+  node?: MovementsWhereInput | null
+  AND?: MovementsSubscriptionWhereInput[]
+  OR?: MovementsSubscriptionWhereInput[]
+  NOT?: MovementsSubscriptionWhereInput[]
 }
-export type FormSubscriptionWhereInputInputObject =
-  | Extract<keyof FormSubscriptionWhereInput, string>
-  | { name: 'mutation_in', alias?: string  } 
-  | { name: 'updatedFields_contains', alias?: string  } 
-  | { name: 'updatedFields_contains_every', alias?: string  } 
-  | { name: 'updatedFields_contains_some', alias?: string  } 
-  | { name: 'node', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface GameIndexSubscriptionWhereInput {
-  mutation_in?: prisma.MutationType[]
-  updatedFields_contains?: string | null
-  updatedFields_contains_every?: string[]
-  updatedFields_contains_some?: string[]
-  node?: GameIndexWhereInput | null
-  AND?: GameIndexSubscriptionWhereInput[]
-  OR?: GameIndexSubscriptionWhereInput[]
-  NOT?: GameIndexSubscriptionWhereInput[]
-}
-export type GameIndexSubscriptionWhereInputInputObject =
-  | Extract<keyof GameIndexSubscriptionWhereInput, string>
-  | { name: 'mutation_in', alias?: string  } 
-  | { name: 'updatedFields_contains', alias?: string  } 
-  | { name: 'updatedFields_contains_every', alias?: string  } 
-  | { name: 'updatedFields_contains_some', alias?: string  } 
-  | { name: 'node', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface ItemSubscriptionWhereInput {
-  mutation_in?: prisma.MutationType[]
-  updatedFields_contains?: string | null
-  updatedFields_contains_every?: string[]
-  updatedFields_contains_some?: string[]
-  node?: ItemWhereInput | null
-  AND?: ItemSubscriptionWhereInput[]
-  OR?: ItemSubscriptionWhereInput[]
-  NOT?: ItemSubscriptionWhereInput[]
-}
-export type ItemSubscriptionWhereInputInputObject =
-  | Extract<keyof ItemSubscriptionWhereInput, string>
-  | { name: 'mutation_in', alias?: string  } 
-  | { name: 'updatedFields_contains', alias?: string  } 
-  | { name: 'updatedFields_contains_every', alias?: string  } 
-  | { name: 'updatedFields_contains_some', alias?: string  } 
-  | { name: 'node', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface MoveSubscriptionWhereInput {
-  mutation_in?: prisma.MutationType[]
-  updatedFields_contains?: string | null
-  updatedFields_contains_every?: string[]
-  updatedFields_contains_some?: string[]
-  node?: MoveWhereInput | null
-  AND?: MoveSubscriptionWhereInput[]
-  OR?: MoveSubscriptionWhereInput[]
-  NOT?: MoveSubscriptionWhereInput[]
-}
-export type MoveSubscriptionWhereInputInputObject =
-  | Extract<keyof MoveSubscriptionWhereInput, string>
-  | { name: 'mutation_in', alias?: string  } 
-  | { name: 'updatedFields_contains', alias?: string  } 
-  | { name: 'updatedFields_contains_every', alias?: string  } 
-  | { name: 'updatedFields_contains_some', alias?: string  } 
-  | { name: 'node', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface SpeciesSubscriptionWhereInput {
-  mutation_in?: prisma.MutationType[]
-  updatedFields_contains?: string | null
-  updatedFields_contains_every?: string[]
-  updatedFields_contains_some?: string[]
-  node?: SpeciesWhereInput | null
-  AND?: SpeciesSubscriptionWhereInput[]
-  OR?: SpeciesSubscriptionWhereInput[]
-  NOT?: SpeciesSubscriptionWhereInput[]
-}
-export type SpeciesSubscriptionWhereInputInputObject =
-  | Extract<keyof SpeciesSubscriptionWhereInput, string>
-  | { name: 'mutation_in', alias?: string  } 
-  | { name: 'updatedFields_contains', alias?: string  } 
-  | { name: 'updatedFields_contains_every', alias?: string  } 
-  | { name: 'updatedFields_contains_some', alias?: string  } 
-  | { name: 'node', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface SpriteSubscriptionWhereInput {
-  mutation_in?: prisma.MutationType[]
-  updatedFields_contains?: string | null
-  updatedFields_contains_every?: string[]
-  updatedFields_contains_some?: string[]
-  node?: SpriteWhereInput | null
-  AND?: SpriteSubscriptionWhereInput[]
-  OR?: SpriteSubscriptionWhereInput[]
-  NOT?: SpriteSubscriptionWhereInput[]
-}
-export type SpriteSubscriptionWhereInputInputObject =
-  | Extract<keyof SpriteSubscriptionWhereInput, string>
-  | { name: 'mutation_in', alias?: string  } 
-  | { name: 'updatedFields_contains', alias?: string  } 
-  | { name: 'updatedFields_contains_every', alias?: string  } 
-  | { name: 'updatedFields_contains_some', alias?: string  } 
-  | { name: 'node', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface StatSubscriptionWhereInput {
-  mutation_in?: prisma.MutationType[]
-  updatedFields_contains?: string | null
-  updatedFields_contains_every?: string[]
-  updatedFields_contains_some?: string[]
-  node?: StatWhereInput | null
-  AND?: StatSubscriptionWhereInput[]
-  OR?: StatSubscriptionWhereInput[]
-  NOT?: StatSubscriptionWhereInput[]
-}
-export type StatSubscriptionWhereInputInputObject =
-  | Extract<keyof StatSubscriptionWhereInput, string>
-  | { name: 'mutation_in', alias?: string  } 
-  | { name: 'updatedFields_contains', alias?: string  } 
-  | { name: 'updatedFields_contains_every', alias?: string  } 
-  | { name: 'updatedFields_contains_some', alias?: string  } 
-  | { name: 'node', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface TypeSubscriptionWhereInput {
-  mutation_in?: prisma.MutationType[]
-  updatedFields_contains?: string | null
-  updatedFields_contains_every?: string[]
-  updatedFields_contains_some?: string[]
-  node?: TypeWhereInput | null
-  AND?: TypeSubscriptionWhereInput[]
-  OR?: TypeSubscriptionWhereInput[]
-  NOT?: TypeSubscriptionWhereInput[]
-}
-export type TypeSubscriptionWhereInputInputObject =
-  | Extract<keyof TypeSubscriptionWhereInput, string>
+export type MovementsSubscriptionWhereInputInputObject =
+  | Extract<keyof MovementsSubscriptionWhereInput, string>
   | { name: 'mutation_in', alias?: string  } 
   | { name: 'updatedFields_contains', alias?: string  } 
   | { name: 'updatedFields_contains_every', alias?: string  } 
@@ -7514,151 +3947,93 @@ export type TypeSubscriptionWhereInputInputObject =
   | { name: 'NOT', alias?: string  } 
   
 
-export type AbilityOrderByInputValues =
-  | 'name_ASC'
-  | 'name_DESC'
-  | 'url_ASC'
-  | 'url_DESC'
+export type MovesOrderByInputValues =
   | 'id_ASC'
   | 'id_DESC'
+  | 'name_ASC'
+  | 'name_DESC'
+  | 'hitBoxActive_ASC'
+  | 'hitBoxActive_DESC'
+  | 'firstActionableFrame_ASC'
+  | 'firstActionableFrame_DESC'
+  | 'baseDmg_ASC'
+  | 'baseDmg_DESC'
+  | 'angle_ASC'
+  | 'angle_DESC'
+  | 'baseKnockBackSetKnockback_ASC'
+  | 'baseKnockBackSetKnockback_DESC'
+  | 'landingLag_ASC'
+  | 'landingLag_DESC'
+  | 'autoCancel_ASC'
+  | 'autoCancel_DESC'
+  | 'knockbackGrowth_ASC'
+  | 'knockbackGrowth_DESC'
+  | 'moveType_ASC'
+  | 'moveType_DESC'
+  | 'isWeightDependent_ASC'
+  | 'isWeightDependent_DESC'
   | 'createdAt_ASC'
   | 'createdAt_DESC'
   | 'updatedAt_ASC'
   | 'updatedAt_DESC'
   
-export type FormOrderByInputValues =
-  | 'name_ASC'
-  | 'name_DESC'
-  | 'url_ASC'
-  | 'url_DESC'
+export type CharacterOrderByInputValues =
   | 'id_ASC'
   | 'id_DESC'
+  | 'name_ASC'
+  | 'name_DESC'
+  | 'displayName_ASC'
+  | 'displayName_DESC'
+  | 'mainImgUrl_ASC'
+  | 'mainImgUrl_DESC'
+  | 'thumbnailImg_ASC'
+  | 'thumbnailImg_DESC'
+  | 'colorTheme_ASC'
+  | 'colorTheme_DESC'
   | 'createdAt_ASC'
   | 'createdAt_DESC'
   | 'updatedAt_ASC'
   | 'updatedAt_DESC'
   
-export type GameIndexOrderByInputValues =
-  | 'name_ASC'
-  | 'name_DESC'
-  | 'url_ASC'
-  | 'url_DESC'
+export type MovementsOrderByInputValues =
   | 'id_ASC'
   | 'id_DESC'
-  | 'createdAt_ASC'
-  | 'createdAt_DESC'
-  | 'updatedAt_ASC'
-  | 'updatedAt_DESC'
-  
-export type ItemOrderByInputValues =
-  | 'name_ASC'
-  | 'name_DESC'
-  | 'url_ASC'
-  | 'url_DESC'
-  | 'id_ASC'
-  | 'id_DESC'
-  | 'createdAt_ASC'
-  | 'createdAt_DESC'
-  | 'updatedAt_ASC'
-  | 'updatedAt_DESC'
-  
-export type MoveOrderByInputValues =
-  | 'name_ASC'
-  | 'name_DESC'
-  | 'url_ASC'
-  | 'url_DESC'
-  | 'id_ASC'
-  | 'id_DESC'
-  | 'createdAt_ASC'
-  | 'createdAt_DESC'
-  | 'updatedAt_ASC'
-  | 'updatedAt_DESC'
-  
-export type SpeciesOrderByInputValues =
-  | 'name_ASC'
-  | 'name_DESC'
-  | 'url_ASC'
-  | 'url_DESC'
-  | 'id_ASC'
-  | 'id_DESC'
-  | 'createdAt_ASC'
-  | 'createdAt_DESC'
-  | 'updatedAt_ASC'
-  | 'updatedAt_DESC'
-  
-export type SpriteOrderByInputValues =
-  | 'back_default_ASC'
-  | 'back_default_DESC'
-  | 'back_female_ASC'
-  | 'back_female_DESC'
-  | 'back_shiny_ASC'
-  | 'back_shiny_DESC'
-  | 'back_shiny_female_ASC'
-  | 'back_shiny_female_DESC'
-  | 'front_default_ASC'
-  | 'front_default_DESC'
-  | 'front_female_ASC'
-  | 'front_female_DESC'
-  | 'front_shiny_ASC'
-  | 'front_shiny_DESC'
-  | 'front_shiny_female_ASC'
-  | 'front_shiny_female_DESC'
-  | 'id_ASC'
-  | 'id_DESC'
-  | 'createdAt_ASC'
-  | 'createdAt_DESC'
-  | 'updatedAt_ASC'
-  | 'updatedAt_DESC'
-  
-export type StatOrderByInputValues =
-  | 'base_stat_ASC'
-  | 'base_stat_DESC'
-  | 'effort_ASC'
-  | 'effort_DESC'
-  | 'name_ASC'
-  | 'name_DESC'
-  | 'url_ASC'
-  | 'url_DESC'
-  | 'id_ASC'
-  | 'id_DESC'
-  | 'createdAt_ASC'
-  | 'createdAt_DESC'
-  | 'updatedAt_ASC'
-  | 'updatedAt_DESC'
-  
-export type TypeOrderByInputValues =
-  | 'slot_ASC'
-  | 'slot_DESC'
-  | 'name_ASC'
-  | 'name_DESC'
-  | 'url_ASC'
-  | 'url_DESC'
-  | 'id_ASC'
-  | 'id_DESC'
-  | 'createdAt_ASC'
-  | 'createdAt_DESC'
-  | 'updatedAt_ASC'
-  | 'updatedAt_DESC'
-  
-export type PokemonOrderByInputValues =
-  | 'base_experience_ASC'
-  | 'base_experience_DESC'
-  | 'height_ASC'
-  | 'height_DESC'
-  | 'id_ASC'
-  | 'id_DESC'
-  | 'is_default_ASC'
-  | 'is_default_DESC'
-  | 'location_area_encounters_ASC'
-  | 'location_area_encounters_DESC'
-  | 'name_ASC'
-  | 'name_DESC'
-  | 'order_ASC'
-  | 'order_DESC'
   | 'weight_ASC'
   | 'weight_DESC'
-  | 'url_ASC'
-  | 'url_DESC'
+  | 'maxJumps_ASC'
+  | 'maxJumps_DESC'
+  | 'runSpeed_ASC'
+  | 'runSpeed_DESC'
+  | 'wallJump_ASC'
+  | 'wallJump_DESC'
+  | 'walkSpeed_ASC'
+  | 'walkSpeed_DESC'
+  | 'wallCling_ASC'
+  | 'wallCling_DESC'
+  | 'airSpeed_ASC'
+  | 'airSpeed_DESC'
+  | 'crawl_ASC'
+  | 'crawl_DESC'
+  | 'fallSpeed_ASC'
+  | 'fallSpeed_DESC'
+  | 'tether_ASC'
+  | 'tether_DESC'
+  | 'fastFallSpeed_ASC'
+  | 'fastFallSpeed_DESC'
+  | 'jumpSquat_ASC'
+  | 'jumpSquat_DESC'
+  | 'airAcceleration_ASC'
+  | 'airAcceleration_DESC'
+  | 'softLandingLag_ASC'
+  | 'softLandingLag_DESC'
+  | 'gravity_ASC'
+  | 'gravity_DESC'
+  | 'hardLandingLag_ASC'
+  | 'hardLandingLag_DESC'
+  | 'shAirTime_ASC'
+  | 'shAirTime_DESC'
+  | 'fhAirTime_ASC'
+  | 'fhAirTime_DESC'
   | 'createdAt_ASC'
   | 'createdAt_DESC'
   | 'updatedAt_ASC'

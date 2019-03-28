@@ -5,49 +5,21 @@ var typeDefs = require("./prisma-schema").typeDefs;
 
 var models = [
   {
-    name: "Pokemon",
+    name: "Character",
     embedded: false
   },
   {
-    name: "Ability",
+    name: "Moves",
     embedded: false
   },
   {
-    name: "Form",
-    embedded: false
-  },
-  {
-    name: "GameIndex",
-    embedded: false
-  },
-  {
-    name: "Item",
-    embedded: false
-  },
-  {
-    name: "Move",
-    embedded: false
-  },
-  {
-    name: "Species",
-    embedded: false
-  },
-  {
-    name: "Sprite",
-    embedded: false
-  },
-  {
-    name: "Stat",
-    embedded: false
-  },
-  {
-    name: "Type",
+    name: "Movements",
     embedded: false
   }
 ];
 exports.Prisma = prisma_lib_1.makePrismaClientClass({
   typeDefs,
   models,
-  endpoint: `http://localhost:4466`
+  endpoint: `http://192.168.99.100:4499/`
 });
 exports.prisma = new exports.Prisma();

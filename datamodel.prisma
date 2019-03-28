@@ -22,7 +22,7 @@ type Moves {
   autoCancel: Int
   knockbackGrowth: Int
   moveType: String
-  isWeightDependent: boolean
+  isWeightDependent: Boolean
 }
 
 type Movements {
@@ -30,13 +30,13 @@ type Movements {
   weight: Int
   maxJumps: Int
   runSpeed: Int
-  wallJump: boolean
+  wallJump: Boolean
   walkSpeed: Int
-  wallCling: boolean
+  wallCling: Boolean
   airSpeed: Int
-  crawl: boolean
+  crawl: Boolean
   fallSpeed: Int
-  tether: boolean
+  tether: Boolean
   fastFallSpeed: Int
   jumpSquat: String
   airAcceleration: Int
