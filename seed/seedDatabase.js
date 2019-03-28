@@ -1,6 +1,8 @@
 const fs = require('fs')
 const { GraphQLClient } = require('graphql-request')
+import characterList from './characterList';
 
+const API_URL = "http://beta-api-kuroganehammer.azurewebsites.net/api/characters/name/"
 const client = new GraphQLClient('http://localhost:4466')
 
 const mutation = `mutation createPokemon(
