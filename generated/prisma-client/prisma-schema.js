@@ -43,11 +43,16 @@ input CharacterCreateInput {
   thumbnailImg: String
   colorTheme: String
   moveInfo: MovesCreateManyWithoutUserInput
-  movementsInfo: MovementsCreateOneInput
+  movementsInfo: MovementsCreateOneWithoutUserInput
 }
 
 input CharacterCreateOneWithoutMoveInfoInput {
   create: CharacterCreateWithoutMoveInfoInput
+  connect: CharacterWhereUniqueInput
+}
+
+input CharacterCreateOneWithoutMovementsInfoInput {
+  create: CharacterCreateWithoutMovementsInfoInput
   connect: CharacterWhereUniqueInput
 }
 
@@ -57,7 +62,16 @@ input CharacterCreateWithoutMoveInfoInput {
   mainImgUrl: String
   thumbnailImg: String
   colorTheme: String
-  movementsInfo: MovementsCreateOneInput
+  movementsInfo: MovementsCreateOneWithoutUserInput
+}
+
+input CharacterCreateWithoutMovementsInfoInput {
+  name: String!
+  displayName: String
+  mainImgUrl: String
+  thumbnailImg: String
+  colorTheme: String
+  moveInfo: MovesCreateManyWithoutUserInput
 }
 
 type CharacterEdge {
@@ -118,7 +132,7 @@ input CharacterUpdateInput {
   thumbnailImg: String
   colorTheme: String
   moveInfo: MovesUpdateManyWithoutUserInput
-  movementsInfo: MovementsUpdateOneInput
+  movementsInfo: MovementsUpdateOneWithoutUserInput
 }
 
 input CharacterUpdateManyMutationInput {
@@ -129,12 +143,17 @@ input CharacterUpdateManyMutationInput {
   colorTheme: String
 }
 
-input CharacterUpdateOneWithoutMoveInfoInput {
+input CharacterUpdateOneRequiredWithoutMoveInfoInput {
   create: CharacterCreateWithoutMoveInfoInput
   update: CharacterUpdateWithoutMoveInfoDataInput
   upsert: CharacterUpsertWithoutMoveInfoInput
-  delete: Boolean
-  disconnect: Boolean
+  connect: CharacterWhereUniqueInput
+}
+
+input CharacterUpdateOneRequiredWithoutMovementsInfoInput {
+  create: CharacterCreateWithoutMovementsInfoInput
+  update: CharacterUpdateWithoutMovementsInfoDataInput
+  upsert: CharacterUpsertWithoutMovementsInfoInput
   connect: CharacterWhereUniqueInput
 }
 
@@ -144,12 +163,26 @@ input CharacterUpdateWithoutMoveInfoDataInput {
   mainImgUrl: String
   thumbnailImg: String
   colorTheme: String
-  movementsInfo: MovementsUpdateOneInput
+  movementsInfo: MovementsUpdateOneWithoutUserInput
+}
+
+input CharacterUpdateWithoutMovementsInfoDataInput {
+  name: String
+  displayName: String
+  mainImgUrl: String
+  thumbnailImg: String
+  colorTheme: String
+  moveInfo: MovesUpdateManyWithoutUserInput
 }
 
 input CharacterUpsertWithoutMoveInfoInput {
   update: CharacterUpdateWithoutMoveInfoDataInput!
   create: CharacterCreateWithoutMoveInfoInput!
+}
+
+input CharacterUpsertWithoutMovementsInfoInput {
+  update: CharacterUpdateWithoutMovementsInfoDataInput!
+  create: CharacterCreateWithoutMovementsInfoInput!
 }
 
 input CharacterWhereInput {
@@ -248,12 +281,14 @@ input CharacterWhereInput {
 
 input CharacterWhereUniqueInput {
   id: ID
+  name: String
 }
 
 scalar Long
 
 type Movements {
   id: ID!
+  user: Character!
   weight: Int
   maxJumps: Int
   runSpeed: Int
@@ -281,6 +316,7 @@ type MovementsConnection {
 }
 
 input MovementsCreateInput {
+  user: CharacterCreateOneWithoutMovementsInfoInput!
   weight: Int
   maxJumps: Int
   runSpeed: Int
@@ -301,9 +337,30 @@ input MovementsCreateInput {
   fhAirTime: String
 }
 
-input MovementsCreateOneInput {
-  create: MovementsCreateInput
+input MovementsCreateOneWithoutUserInput {
+  create: MovementsCreateWithoutUserInput
   connect: MovementsWhereUniqueInput
+}
+
+input MovementsCreateWithoutUserInput {
+  weight: Int
+  maxJumps: Int
+  runSpeed: Int
+  wallJump: Boolean
+  walkSpeed: Int
+  wallCling: Boolean
+  airSpeed: Int
+  crawl: Boolean
+  fallSpeed: Int
+  tether: Boolean
+  fastFallSpeed: Int
+  jumpSquat: String
+  airAcceleration: Int
+  softLandingLag: String
+  gravity: Int
+  hardLandingLag: String
+  shAirTime: String
+  fhAirTime: String
 }
 
 type MovementsEdge {
@@ -396,28 +453,8 @@ input MovementsSubscriptionWhereInput {
   NOT: [MovementsSubscriptionWhereInput!]
 }
 
-input MovementsUpdateDataInput {
-  weight: Int
-  maxJumps: Int
-  runSpeed: Int
-  wallJump: Boolean
-  walkSpeed: Int
-  wallCling: Boolean
-  airSpeed: Int
-  crawl: Boolean
-  fallSpeed: Int
-  tether: Boolean
-  fastFallSpeed: Int
-  jumpSquat: String
-  airAcceleration: Int
-  softLandingLag: String
-  gravity: Int
-  hardLandingLag: String
-  shAirTime: String
-  fhAirTime: String
-}
-
 input MovementsUpdateInput {
+  user: CharacterUpdateOneRequiredWithoutMovementsInfoInput
   weight: Int
   maxJumps: Int
   runSpeed: Int
@@ -459,18 +496,39 @@ input MovementsUpdateManyMutationInput {
   fhAirTime: String
 }
 
-input MovementsUpdateOneInput {
-  create: MovementsCreateInput
-  update: MovementsUpdateDataInput
-  upsert: MovementsUpsertNestedInput
+input MovementsUpdateOneWithoutUserInput {
+  create: MovementsCreateWithoutUserInput
+  update: MovementsUpdateWithoutUserDataInput
+  upsert: MovementsUpsertWithoutUserInput
   delete: Boolean
   disconnect: Boolean
   connect: MovementsWhereUniqueInput
 }
 
-input MovementsUpsertNestedInput {
-  update: MovementsUpdateDataInput!
-  create: MovementsCreateInput!
+input MovementsUpdateWithoutUserDataInput {
+  weight: Int
+  maxJumps: Int
+  runSpeed: Int
+  wallJump: Boolean
+  walkSpeed: Int
+  wallCling: Boolean
+  airSpeed: Int
+  crawl: Boolean
+  fallSpeed: Int
+  tether: Boolean
+  fastFallSpeed: Int
+  jumpSquat: String
+  airAcceleration: Int
+  softLandingLag: String
+  gravity: Int
+  hardLandingLag: String
+  shAirTime: String
+  fhAirTime: String
+}
+
+input MovementsUpsertWithoutUserInput {
+  update: MovementsUpdateWithoutUserDataInput!
+  create: MovementsCreateWithoutUserInput!
 }
 
 input MovementsWhereInput {
@@ -488,6 +546,7 @@ input MovementsWhereInput {
   id_not_starts_with: ID
   id_ends_with: ID
   id_not_ends_with: ID
+  user: CharacterWhereInput
   weight: Int
   weight_not: Int
   weight_in: [Int!]
@@ -650,14 +709,14 @@ input MovementsWhereUniqueInput {
 type Moves {
   id: ID!
   name: String!
-  user: Character
+  user: Character!
   hitBoxActive: String
   firstActionableFrame: Int
   baseDmg: Int
-  angle: String
-  baseKnockBackSetKnockback: String
+  angle: Int
+  baseKnockBackSetKnockback: Int
   landingLag: Int
-  autoCancel: Int
+  autoCancel: String
   knockbackGrowth: Int
   moveType: String
   isWeightDependent: Boolean
@@ -671,14 +730,14 @@ type MovesConnection {
 
 input MovesCreateInput {
   name: String!
-  user: CharacterCreateOneWithoutMoveInfoInput
+  user: CharacterCreateOneWithoutMoveInfoInput!
   hitBoxActive: String
   firstActionableFrame: Int
   baseDmg: Int
-  angle: String
-  baseKnockBackSetKnockback: String
+  angle: Int
+  baseKnockBackSetKnockback: Int
   landingLag: Int
-  autoCancel: Int
+  autoCancel: String
   knockbackGrowth: Int
   moveType: String
   isWeightDependent: Boolean
@@ -694,10 +753,10 @@ input MovesCreateWithoutUserInput {
   hitBoxActive: String
   firstActionableFrame: Int
   baseDmg: Int
-  angle: String
-  baseKnockBackSetKnockback: String
+  angle: Int
+  baseKnockBackSetKnockback: Int
   landingLag: Int
-  autoCancel: Int
+  autoCancel: String
   knockbackGrowth: Int
   moveType: String
   isWeightDependent: Boolean
@@ -745,10 +804,10 @@ type MovesPreviousValues {
   hitBoxActive: String
   firstActionableFrame: Int
   baseDmg: Int
-  angle: String
-  baseKnockBackSetKnockback: String
+  angle: Int
+  baseKnockBackSetKnockback: Int
   landingLag: Int
-  autoCancel: Int
+  autoCancel: String
   knockbackGrowth: Int
   moveType: String
   isWeightDependent: Boolean
@@ -813,34 +872,22 @@ input MovesScalarWhereInput {
   baseDmg_lte: Int
   baseDmg_gt: Int
   baseDmg_gte: Int
-  angle: String
-  angle_not: String
-  angle_in: [String!]
-  angle_not_in: [String!]
-  angle_lt: String
-  angle_lte: String
-  angle_gt: String
-  angle_gte: String
-  angle_contains: String
-  angle_not_contains: String
-  angle_starts_with: String
-  angle_not_starts_with: String
-  angle_ends_with: String
-  angle_not_ends_with: String
-  baseKnockBackSetKnockback: String
-  baseKnockBackSetKnockback_not: String
-  baseKnockBackSetKnockback_in: [String!]
-  baseKnockBackSetKnockback_not_in: [String!]
-  baseKnockBackSetKnockback_lt: String
-  baseKnockBackSetKnockback_lte: String
-  baseKnockBackSetKnockback_gt: String
-  baseKnockBackSetKnockback_gte: String
-  baseKnockBackSetKnockback_contains: String
-  baseKnockBackSetKnockback_not_contains: String
-  baseKnockBackSetKnockback_starts_with: String
-  baseKnockBackSetKnockback_not_starts_with: String
-  baseKnockBackSetKnockback_ends_with: String
-  baseKnockBackSetKnockback_not_ends_with: String
+  angle: Int
+  angle_not: Int
+  angle_in: [Int!]
+  angle_not_in: [Int!]
+  angle_lt: Int
+  angle_lte: Int
+  angle_gt: Int
+  angle_gte: Int
+  baseKnockBackSetKnockback: Int
+  baseKnockBackSetKnockback_not: Int
+  baseKnockBackSetKnockback_in: [Int!]
+  baseKnockBackSetKnockback_not_in: [Int!]
+  baseKnockBackSetKnockback_lt: Int
+  baseKnockBackSetKnockback_lte: Int
+  baseKnockBackSetKnockback_gt: Int
+  baseKnockBackSetKnockback_gte: Int
   landingLag: Int
   landingLag_not: Int
   landingLag_in: [Int!]
@@ -849,14 +896,20 @@ input MovesScalarWhereInput {
   landingLag_lte: Int
   landingLag_gt: Int
   landingLag_gte: Int
-  autoCancel: Int
-  autoCancel_not: Int
-  autoCancel_in: [Int!]
-  autoCancel_not_in: [Int!]
-  autoCancel_lt: Int
-  autoCancel_lte: Int
-  autoCancel_gt: Int
-  autoCancel_gte: Int
+  autoCancel: String
+  autoCancel_not: String
+  autoCancel_in: [String!]
+  autoCancel_not_in: [String!]
+  autoCancel_lt: String
+  autoCancel_lte: String
+  autoCancel_gt: String
+  autoCancel_gte: String
+  autoCancel_contains: String
+  autoCancel_not_contains: String
+  autoCancel_starts_with: String
+  autoCancel_not_starts_with: String
+  autoCancel_ends_with: String
+  autoCancel_not_ends_with: String
   knockbackGrowth: Int
   knockbackGrowth_not: Int
   knockbackGrowth_in: [Int!]
@@ -906,14 +959,14 @@ input MovesSubscriptionWhereInput {
 
 input MovesUpdateInput {
   name: String
-  user: CharacterUpdateOneWithoutMoveInfoInput
+  user: CharacterUpdateOneRequiredWithoutMoveInfoInput
   hitBoxActive: String
   firstActionableFrame: Int
   baseDmg: Int
-  angle: String
-  baseKnockBackSetKnockback: String
+  angle: Int
+  baseKnockBackSetKnockback: Int
   landingLag: Int
-  autoCancel: Int
+  autoCancel: String
   knockbackGrowth: Int
   moveType: String
   isWeightDependent: Boolean
@@ -924,10 +977,10 @@ input MovesUpdateManyDataInput {
   hitBoxActive: String
   firstActionableFrame: Int
   baseDmg: Int
-  angle: String
-  baseKnockBackSetKnockback: String
+  angle: Int
+  baseKnockBackSetKnockback: Int
   landingLag: Int
-  autoCancel: Int
+  autoCancel: String
   knockbackGrowth: Int
   moveType: String
   isWeightDependent: Boolean
@@ -938,10 +991,10 @@ input MovesUpdateManyMutationInput {
   hitBoxActive: String
   firstActionableFrame: Int
   baseDmg: Int
-  angle: String
-  baseKnockBackSetKnockback: String
+  angle: Int
+  baseKnockBackSetKnockback: Int
   landingLag: Int
-  autoCancel: Int
+  autoCancel: String
   knockbackGrowth: Int
   moveType: String
   isWeightDependent: Boolean
@@ -969,10 +1022,10 @@ input MovesUpdateWithoutUserDataInput {
   hitBoxActive: String
   firstActionableFrame: Int
   baseDmg: Int
-  angle: String
-  baseKnockBackSetKnockback: String
+  angle: Int
+  baseKnockBackSetKnockback: Int
   landingLag: Int
-  autoCancel: Int
+  autoCancel: String
   knockbackGrowth: Int
   moveType: String
   isWeightDependent: Boolean
@@ -1049,34 +1102,22 @@ input MovesWhereInput {
   baseDmg_lte: Int
   baseDmg_gt: Int
   baseDmg_gte: Int
-  angle: String
-  angle_not: String
-  angle_in: [String!]
-  angle_not_in: [String!]
-  angle_lt: String
-  angle_lte: String
-  angle_gt: String
-  angle_gte: String
-  angle_contains: String
-  angle_not_contains: String
-  angle_starts_with: String
-  angle_not_starts_with: String
-  angle_ends_with: String
-  angle_not_ends_with: String
-  baseKnockBackSetKnockback: String
-  baseKnockBackSetKnockback_not: String
-  baseKnockBackSetKnockback_in: [String!]
-  baseKnockBackSetKnockback_not_in: [String!]
-  baseKnockBackSetKnockback_lt: String
-  baseKnockBackSetKnockback_lte: String
-  baseKnockBackSetKnockback_gt: String
-  baseKnockBackSetKnockback_gte: String
-  baseKnockBackSetKnockback_contains: String
-  baseKnockBackSetKnockback_not_contains: String
-  baseKnockBackSetKnockback_starts_with: String
-  baseKnockBackSetKnockback_not_starts_with: String
-  baseKnockBackSetKnockback_ends_with: String
-  baseKnockBackSetKnockback_not_ends_with: String
+  angle: Int
+  angle_not: Int
+  angle_in: [Int!]
+  angle_not_in: [Int!]
+  angle_lt: Int
+  angle_lte: Int
+  angle_gt: Int
+  angle_gte: Int
+  baseKnockBackSetKnockback: Int
+  baseKnockBackSetKnockback_not: Int
+  baseKnockBackSetKnockback_in: [Int!]
+  baseKnockBackSetKnockback_not_in: [Int!]
+  baseKnockBackSetKnockback_lt: Int
+  baseKnockBackSetKnockback_lte: Int
+  baseKnockBackSetKnockback_gt: Int
+  baseKnockBackSetKnockback_gte: Int
   landingLag: Int
   landingLag_not: Int
   landingLag_in: [Int!]
@@ -1085,14 +1126,20 @@ input MovesWhereInput {
   landingLag_lte: Int
   landingLag_gt: Int
   landingLag_gte: Int
-  autoCancel: Int
-  autoCancel_not: Int
-  autoCancel_in: [Int!]
-  autoCancel_not_in: [Int!]
-  autoCancel_lt: Int
-  autoCancel_lte: Int
-  autoCancel_gt: Int
-  autoCancel_gte: Int
+  autoCancel: String
+  autoCancel_not: String
+  autoCancel_in: [String!]
+  autoCancel_not_in: [String!]
+  autoCancel_lt: String
+  autoCancel_lte: String
+  autoCancel_gt: String
+  autoCancel_gte: String
+  autoCancel_contains: String
+  autoCancel_not_contains: String
+  autoCancel_starts_with: String
+  autoCancel_not_starts_with: String
+  autoCancel_ends_with: String
+  autoCancel_not_ends_with: String
   knockbackGrowth: Int
   knockbackGrowth_not: Int
   knockbackGrowth_in: [Int!]

@@ -75,8 +75,8 @@ export interface NexusPrismaTypes {
       CharacterCreateInput: CharacterCreateInputInputObject
       MovesCreateManyWithoutUserInput: MovesCreateManyWithoutUserInputInputObject
       MovesCreateWithoutUserInput: MovesCreateWithoutUserInputInputObject
-      MovementsCreateOneInput: MovementsCreateOneInputInputObject
-      MovementsCreateInput: MovementsCreateInputInputObject
+      MovementsCreateOneWithoutUserInput: MovementsCreateOneWithoutUserInputInputObject
+      MovementsCreateWithoutUserInput: MovementsCreateWithoutUserInputInputObject
       CharacterUpdateInput: CharacterUpdateInputInputObject
       MovesUpdateManyWithoutUserInput: MovesUpdateManyWithoutUserInputInputObject
       MovesUpdateWithWhereUniqueWithoutUserInput: MovesUpdateWithWhereUniqueWithoutUserInputInputObject
@@ -85,19 +85,25 @@ export interface NexusPrismaTypes {
       MovesScalarWhereInput: MovesScalarWhereInputInputObject
       MovesUpdateManyWithWhereNestedInput: MovesUpdateManyWithWhereNestedInputInputObject
       MovesUpdateManyDataInput: MovesUpdateManyDataInputInputObject
-      MovementsUpdateOneInput: MovementsUpdateOneInputInputObject
-      MovementsUpdateDataInput: MovementsUpdateDataInputInputObject
-      MovementsUpsertNestedInput: MovementsUpsertNestedInputInputObject
+      MovementsUpdateOneWithoutUserInput: MovementsUpdateOneWithoutUserInputInputObject
+      MovementsUpdateWithoutUserDataInput: MovementsUpdateWithoutUserDataInputInputObject
+      MovementsUpsertWithoutUserInput: MovementsUpsertWithoutUserInputInputObject
       CharacterUpdateManyMutationInput: CharacterUpdateManyMutationInputInputObject
       MovesCreateInput: MovesCreateInputInputObject
       CharacterCreateOneWithoutMoveInfoInput: CharacterCreateOneWithoutMoveInfoInputInputObject
       CharacterCreateWithoutMoveInfoInput: CharacterCreateWithoutMoveInfoInputInputObject
       MovesUpdateInput: MovesUpdateInputInputObject
-      CharacterUpdateOneWithoutMoveInfoInput: CharacterUpdateOneWithoutMoveInfoInputInputObject
+      CharacterUpdateOneRequiredWithoutMoveInfoInput: CharacterUpdateOneRequiredWithoutMoveInfoInputInputObject
       CharacterUpdateWithoutMoveInfoDataInput: CharacterUpdateWithoutMoveInfoDataInputInputObject
       CharacterUpsertWithoutMoveInfoInput: CharacterUpsertWithoutMoveInfoInputInputObject
       MovesUpdateManyMutationInput: MovesUpdateManyMutationInputInputObject
+      MovementsCreateInput: MovementsCreateInputInputObject
+      CharacterCreateOneWithoutMovementsInfoInput: CharacterCreateOneWithoutMovementsInfoInputInputObject
+      CharacterCreateWithoutMovementsInfoInput: CharacterCreateWithoutMovementsInfoInputInputObject
       MovementsUpdateInput: MovementsUpdateInputInputObject
+      CharacterUpdateOneRequiredWithoutMovementsInfoInput: CharacterUpdateOneRequiredWithoutMovementsInfoInputInputObject
+      CharacterUpdateWithoutMovementsInfoDataInput: CharacterUpdateWithoutMovementsInfoDataInputInputObject
+      CharacterUpsertWithoutMovementsInfoInput: CharacterUpsertWithoutMovementsInfoInputInputObject
       MovementsUpdateManyMutationInput: MovementsUpdateManyMutationInputInputObject
       CharacterSubscriptionWhereInput: CharacterSubscriptionWhereInputInputObject
       MovesSubscriptionWhereInput: MovesSubscriptionWhereInputInputObject
@@ -486,13 +492,13 @@ export interface MovesFieldDetails {
     args: {}
     description: string
     list: undefined
-    nullable: true
+    nullable: false
     resolve: (
       root: core.RootValue<"Moves">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Character | null> | prisma.Character | null
+    ) => Promise<prisma.Character> | prisma.Character
   }
   hitBoxActive: {
     type: 'String'
@@ -519,7 +525,7 @@ export interface MovesFieldDetails {
     resolve: undefined
   }
   angle: {
-    type: 'String'
+    type: 'Int'
     args: {}
     description: string
     list: undefined
@@ -527,7 +533,7 @@ export interface MovesFieldDetails {
     resolve: undefined
   }
   baseKnockBackSetKnockback: {
-    type: 'String'
+    type: 'Int'
     args: {}
     description: string
     list: undefined
@@ -543,7 +549,7 @@ export interface MovesFieldDetails {
     resolve: undefined
   }
   autoCancel: {
-    type: 'Int'
+    type: 'String'
     args: {}
     description: string
     list: undefined
@@ -582,6 +588,7 @@ export interface MovesFieldDetails {
 type MovementsObject =
   | MovementsFields
   | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'user', args?: [] | false, alias?: string  } 
   | { name: 'weight', args?: [] | false, alias?: string  } 
   | { name: 'maxJumps', args?: [] | false, alias?: string  } 
   | { name: 'runSpeed', args?: [] | false, alias?: string  } 
@@ -603,6 +610,7 @@ type MovementsObject =
 
 type MovementsFields =
   | 'id'
+  | 'user'
   | 'weight'
   | 'maxJumps'
   | 'runSpeed'
@@ -634,6 +642,19 @@ export interface MovementsFieldDetails {
     list: undefined
     nullable: false
     resolve: undefined
+  }
+  user: {
+    type: 'Character'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Movements">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.Character> | prisma.Character
   }
   weight: {
     type: 'Int'
@@ -1926,7 +1947,7 @@ export interface MovesPreviousValuesFieldDetails {
     resolve: undefined
   }
   angle: {
-    type: 'String'
+    type: 'Int'
     args: {}
     description: string
     list: undefined
@@ -1934,7 +1955,7 @@ export interface MovesPreviousValuesFieldDetails {
     resolve: undefined
   }
   baseKnockBackSetKnockback: {
-    type: 'String'
+    type: 'Int'
     args: {}
     description: string
     list: undefined
@@ -1950,7 +1971,7 @@ export interface MovesPreviousValuesFieldDetails {
     resolve: undefined
   }
   autoCancel: {
-    type: 'Int'
+    type: 'String'
     args: {}
     description: string
     list: undefined
@@ -2262,10 +2283,12 @@ export interface MovementsPreviousValuesFieldDetails {
 
 export interface CharacterWhereUniqueInput {
   id?: string | null
+  name?: string | null
 }
 export type CharacterWhereUniqueInputInputObject =
   | Extract<keyof CharacterWhereUniqueInput, string>
   | { name: 'id', alias?: string  } 
+  | { name: 'name', alias?: string  } 
   
 export interface MovesWhereInput {
   id?: string | null
@@ -2327,34 +2350,22 @@ export interface MovesWhereInput {
   baseDmg_lte?: number | null
   baseDmg_gt?: number | null
   baseDmg_gte?: number | null
-  angle?: string | null
-  angle_not?: string | null
-  angle_in?: string[]
-  angle_not_in?: string[]
-  angle_lt?: string | null
-  angle_lte?: string | null
-  angle_gt?: string | null
-  angle_gte?: string | null
-  angle_contains?: string | null
-  angle_not_contains?: string | null
-  angle_starts_with?: string | null
-  angle_not_starts_with?: string | null
-  angle_ends_with?: string | null
-  angle_not_ends_with?: string | null
-  baseKnockBackSetKnockback?: string | null
-  baseKnockBackSetKnockback_not?: string | null
-  baseKnockBackSetKnockback_in?: string[]
-  baseKnockBackSetKnockback_not_in?: string[]
-  baseKnockBackSetKnockback_lt?: string | null
-  baseKnockBackSetKnockback_lte?: string | null
-  baseKnockBackSetKnockback_gt?: string | null
-  baseKnockBackSetKnockback_gte?: string | null
-  baseKnockBackSetKnockback_contains?: string | null
-  baseKnockBackSetKnockback_not_contains?: string | null
-  baseKnockBackSetKnockback_starts_with?: string | null
-  baseKnockBackSetKnockback_not_starts_with?: string | null
-  baseKnockBackSetKnockback_ends_with?: string | null
-  baseKnockBackSetKnockback_not_ends_with?: string | null
+  angle?: number | null
+  angle_not?: number | null
+  angle_in?: number[]
+  angle_not_in?: number[]
+  angle_lt?: number | null
+  angle_lte?: number | null
+  angle_gt?: number | null
+  angle_gte?: number | null
+  baseKnockBackSetKnockback?: number | null
+  baseKnockBackSetKnockback_not?: number | null
+  baseKnockBackSetKnockback_in?: number[]
+  baseKnockBackSetKnockback_not_in?: number[]
+  baseKnockBackSetKnockback_lt?: number | null
+  baseKnockBackSetKnockback_lte?: number | null
+  baseKnockBackSetKnockback_gt?: number | null
+  baseKnockBackSetKnockback_gte?: number | null
   landingLag?: number | null
   landingLag_not?: number | null
   landingLag_in?: number[]
@@ -2363,14 +2374,20 @@ export interface MovesWhereInput {
   landingLag_lte?: number | null
   landingLag_gt?: number | null
   landingLag_gte?: number | null
-  autoCancel?: number | null
-  autoCancel_not?: number | null
-  autoCancel_in?: number[]
-  autoCancel_not_in?: number[]
-  autoCancel_lt?: number | null
-  autoCancel_lte?: number | null
-  autoCancel_gt?: number | null
-  autoCancel_gte?: number | null
+  autoCancel?: string | null
+  autoCancel_not?: string | null
+  autoCancel_in?: string[]
+  autoCancel_not_in?: string[]
+  autoCancel_lt?: string | null
+  autoCancel_lte?: string | null
+  autoCancel_gt?: string | null
+  autoCancel_gte?: string | null
+  autoCancel_contains?: string | null
+  autoCancel_not_contains?: string | null
+  autoCancel_starts_with?: string | null
+  autoCancel_not_starts_with?: string | null
+  autoCancel_ends_with?: string | null
+  autoCancel_not_ends_with?: string | null
   knockbackGrowth?: number | null
   knockbackGrowth_not?: number | null
   knockbackGrowth_in?: number[]
@@ -2468,12 +2485,6 @@ export type MovesWhereInputInputObject =
   | { name: 'angle_lte', alias?: string  } 
   | { name: 'angle_gt', alias?: string  } 
   | { name: 'angle_gte', alias?: string  } 
-  | { name: 'angle_contains', alias?: string  } 
-  | { name: 'angle_not_contains', alias?: string  } 
-  | { name: 'angle_starts_with', alias?: string  } 
-  | { name: 'angle_not_starts_with', alias?: string  } 
-  | { name: 'angle_ends_with', alias?: string  } 
-  | { name: 'angle_not_ends_with', alias?: string  } 
   | { name: 'baseKnockBackSetKnockback', alias?: string  } 
   | { name: 'baseKnockBackSetKnockback_not', alias?: string  } 
   | { name: 'baseKnockBackSetKnockback_in', alias?: string  } 
@@ -2482,12 +2493,6 @@ export type MovesWhereInputInputObject =
   | { name: 'baseKnockBackSetKnockback_lte', alias?: string  } 
   | { name: 'baseKnockBackSetKnockback_gt', alias?: string  } 
   | { name: 'baseKnockBackSetKnockback_gte', alias?: string  } 
-  | { name: 'baseKnockBackSetKnockback_contains', alias?: string  } 
-  | { name: 'baseKnockBackSetKnockback_not_contains', alias?: string  } 
-  | { name: 'baseKnockBackSetKnockback_starts_with', alias?: string  } 
-  | { name: 'baseKnockBackSetKnockback_not_starts_with', alias?: string  } 
-  | { name: 'baseKnockBackSetKnockback_ends_with', alias?: string  } 
-  | { name: 'baseKnockBackSetKnockback_not_ends_with', alias?: string  } 
   | { name: 'landingLag', alias?: string  } 
   | { name: 'landingLag_not', alias?: string  } 
   | { name: 'landingLag_in', alias?: string  } 
@@ -2504,6 +2509,12 @@ export type MovesWhereInputInputObject =
   | { name: 'autoCancel_lte', alias?: string  } 
   | { name: 'autoCancel_gt', alias?: string  } 
   | { name: 'autoCancel_gte', alias?: string  } 
+  | { name: 'autoCancel_contains', alias?: string  } 
+  | { name: 'autoCancel_not_contains', alias?: string  } 
+  | { name: 'autoCancel_starts_with', alias?: string  } 
+  | { name: 'autoCancel_not_starts_with', alias?: string  } 
+  | { name: 'autoCancel_ends_with', alias?: string  } 
+  | { name: 'autoCancel_not_ends_with', alias?: string  } 
   | { name: 'knockbackGrowth', alias?: string  } 
   | { name: 'knockbackGrowth_not', alias?: string  } 
   | { name: 'knockbackGrowth_in', alias?: string  } 
@@ -2734,6 +2745,7 @@ export interface MovementsWhereInput {
   id_not_starts_with?: string | null
   id_ends_with?: string | null
   id_not_ends_with?: string | null
+  user?: CharacterWhereInput | null
   weight?: number | null
   weight_not?: number | null
   weight_in?: number[]
@@ -2904,6 +2916,7 @@ export type MovementsWhereInputInputObject =
   | { name: 'id_not_starts_with', alias?: string  } 
   | { name: 'id_ends_with', alias?: string  } 
   | { name: 'id_not_ends_with', alias?: string  } 
+  | { name: 'user', alias?: string  } 
   | { name: 'weight', alias?: string  } 
   | { name: 'weight_not', alias?: string  } 
   | { name: 'weight_in', alias?: string  } 
@@ -3079,7 +3092,7 @@ export interface CharacterCreateInput {
   thumbnailImg?: string | null
   colorTheme?: string | null
   moveInfo?: MovesCreateManyWithoutUserInput | null
-  movementsInfo?: MovementsCreateOneInput | null
+  movementsInfo?: MovementsCreateOneWithoutUserInput | null
 }
 export type CharacterCreateInputInputObject =
   | Extract<keyof CharacterCreateInput, string>
@@ -3105,10 +3118,10 @@ export interface MovesCreateWithoutUserInput {
   hitBoxActive?: string | null
   firstActionableFrame?: number | null
   baseDmg?: number | null
-  angle?: string | null
-  baseKnockBackSetKnockback?: string | null
+  angle?: number | null
+  baseKnockBackSetKnockback?: number | null
   landingLag?: number | null
-  autoCancel?: number | null
+  autoCancel?: string | null
   knockbackGrowth?: number | null
   moveType?: string | null
   isWeightDependent?: boolean | null
@@ -3127,16 +3140,16 @@ export type MovesCreateWithoutUserInputInputObject =
   | { name: 'moveType', alias?: string  } 
   | { name: 'isWeightDependent', alias?: string  } 
   
-export interface MovementsCreateOneInput {
-  create?: MovementsCreateInput | null
+export interface MovementsCreateOneWithoutUserInput {
+  create?: MovementsCreateWithoutUserInput | null
   connect?: MovementsWhereUniqueInput | null
 }
-export type MovementsCreateOneInputInputObject =
-  | Extract<keyof MovementsCreateOneInput, string>
+export type MovementsCreateOneWithoutUserInputInputObject =
+  | Extract<keyof MovementsCreateOneWithoutUserInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface MovementsCreateInput {
+export interface MovementsCreateWithoutUserInput {
   weight?: number | null
   maxJumps?: number | null
   runSpeed?: number | null
@@ -3156,8 +3169,8 @@ export interface MovementsCreateInput {
   shAirTime?: string | null
   fhAirTime?: string | null
 }
-export type MovementsCreateInputInputObject =
-  | Extract<keyof MovementsCreateInput, string>
+export type MovementsCreateWithoutUserInputInputObject =
+  | Extract<keyof MovementsCreateWithoutUserInput, string>
   | { name: 'weight', alias?: string  } 
   | { name: 'maxJumps', alias?: string  } 
   | { name: 'runSpeed', alias?: string  } 
@@ -3184,7 +3197,7 @@ export interface CharacterUpdateInput {
   thumbnailImg?: string | null
   colorTheme?: string | null
   moveInfo?: MovesUpdateManyWithoutUserInput | null
-  movementsInfo?: MovementsUpdateOneInput | null
+  movementsInfo?: MovementsUpdateOneWithoutUserInput | null
 }
 export type CharacterUpdateInputInputObject =
   | Extract<keyof CharacterUpdateInput, string>
@@ -3233,10 +3246,10 @@ export interface MovesUpdateWithoutUserDataInput {
   hitBoxActive?: string | null
   firstActionableFrame?: number | null
   baseDmg?: number | null
-  angle?: string | null
-  baseKnockBackSetKnockback?: string | null
+  angle?: number | null
+  baseKnockBackSetKnockback?: number | null
   landingLag?: number | null
-  autoCancel?: number | null
+  autoCancel?: string | null
   knockbackGrowth?: number | null
   moveType?: string | null
   isWeightDependent?: boolean | null
@@ -3325,34 +3338,22 @@ export interface MovesScalarWhereInput {
   baseDmg_lte?: number | null
   baseDmg_gt?: number | null
   baseDmg_gte?: number | null
-  angle?: string | null
-  angle_not?: string | null
-  angle_in?: string[]
-  angle_not_in?: string[]
-  angle_lt?: string | null
-  angle_lte?: string | null
-  angle_gt?: string | null
-  angle_gte?: string | null
-  angle_contains?: string | null
-  angle_not_contains?: string | null
-  angle_starts_with?: string | null
-  angle_not_starts_with?: string | null
-  angle_ends_with?: string | null
-  angle_not_ends_with?: string | null
-  baseKnockBackSetKnockback?: string | null
-  baseKnockBackSetKnockback_not?: string | null
-  baseKnockBackSetKnockback_in?: string[]
-  baseKnockBackSetKnockback_not_in?: string[]
-  baseKnockBackSetKnockback_lt?: string | null
-  baseKnockBackSetKnockback_lte?: string | null
-  baseKnockBackSetKnockback_gt?: string | null
-  baseKnockBackSetKnockback_gte?: string | null
-  baseKnockBackSetKnockback_contains?: string | null
-  baseKnockBackSetKnockback_not_contains?: string | null
-  baseKnockBackSetKnockback_starts_with?: string | null
-  baseKnockBackSetKnockback_not_starts_with?: string | null
-  baseKnockBackSetKnockback_ends_with?: string | null
-  baseKnockBackSetKnockback_not_ends_with?: string | null
+  angle?: number | null
+  angle_not?: number | null
+  angle_in?: number[]
+  angle_not_in?: number[]
+  angle_lt?: number | null
+  angle_lte?: number | null
+  angle_gt?: number | null
+  angle_gte?: number | null
+  baseKnockBackSetKnockback?: number | null
+  baseKnockBackSetKnockback_not?: number | null
+  baseKnockBackSetKnockback_in?: number[]
+  baseKnockBackSetKnockback_not_in?: number[]
+  baseKnockBackSetKnockback_lt?: number | null
+  baseKnockBackSetKnockback_lte?: number | null
+  baseKnockBackSetKnockback_gt?: number | null
+  baseKnockBackSetKnockback_gte?: number | null
   landingLag?: number | null
   landingLag_not?: number | null
   landingLag_in?: number[]
@@ -3361,14 +3362,20 @@ export interface MovesScalarWhereInput {
   landingLag_lte?: number | null
   landingLag_gt?: number | null
   landingLag_gte?: number | null
-  autoCancel?: number | null
-  autoCancel_not?: number | null
-  autoCancel_in?: number[]
-  autoCancel_not_in?: number[]
-  autoCancel_lt?: number | null
-  autoCancel_lte?: number | null
-  autoCancel_gt?: number | null
-  autoCancel_gte?: number | null
+  autoCancel?: string | null
+  autoCancel_not?: string | null
+  autoCancel_in?: string[]
+  autoCancel_not_in?: string[]
+  autoCancel_lt?: string | null
+  autoCancel_lte?: string | null
+  autoCancel_gt?: string | null
+  autoCancel_gte?: string | null
+  autoCancel_contains?: string | null
+  autoCancel_not_contains?: string | null
+  autoCancel_starts_with?: string | null
+  autoCancel_not_starts_with?: string | null
+  autoCancel_ends_with?: string | null
+  autoCancel_not_ends_with?: string | null
   knockbackGrowth?: number | null
   knockbackGrowth_not?: number | null
   knockbackGrowth_in?: number[]
@@ -3465,12 +3472,6 @@ export type MovesScalarWhereInputInputObject =
   | { name: 'angle_lte', alias?: string  } 
   | { name: 'angle_gt', alias?: string  } 
   | { name: 'angle_gte', alias?: string  } 
-  | { name: 'angle_contains', alias?: string  } 
-  | { name: 'angle_not_contains', alias?: string  } 
-  | { name: 'angle_starts_with', alias?: string  } 
-  | { name: 'angle_not_starts_with', alias?: string  } 
-  | { name: 'angle_ends_with', alias?: string  } 
-  | { name: 'angle_not_ends_with', alias?: string  } 
   | { name: 'baseKnockBackSetKnockback', alias?: string  } 
   | { name: 'baseKnockBackSetKnockback_not', alias?: string  } 
   | { name: 'baseKnockBackSetKnockback_in', alias?: string  } 
@@ -3479,12 +3480,6 @@ export type MovesScalarWhereInputInputObject =
   | { name: 'baseKnockBackSetKnockback_lte', alias?: string  } 
   | { name: 'baseKnockBackSetKnockback_gt', alias?: string  } 
   | { name: 'baseKnockBackSetKnockback_gte', alias?: string  } 
-  | { name: 'baseKnockBackSetKnockback_contains', alias?: string  } 
-  | { name: 'baseKnockBackSetKnockback_not_contains', alias?: string  } 
-  | { name: 'baseKnockBackSetKnockback_starts_with', alias?: string  } 
-  | { name: 'baseKnockBackSetKnockback_not_starts_with', alias?: string  } 
-  | { name: 'baseKnockBackSetKnockback_ends_with', alias?: string  } 
-  | { name: 'baseKnockBackSetKnockback_not_ends_with', alias?: string  } 
   | { name: 'landingLag', alias?: string  } 
   | { name: 'landingLag_not', alias?: string  } 
   | { name: 'landingLag_in', alias?: string  } 
@@ -3501,6 +3496,12 @@ export type MovesScalarWhereInputInputObject =
   | { name: 'autoCancel_lte', alias?: string  } 
   | { name: 'autoCancel_gt', alias?: string  } 
   | { name: 'autoCancel_gte', alias?: string  } 
+  | { name: 'autoCancel_contains', alias?: string  } 
+  | { name: 'autoCancel_not_contains', alias?: string  } 
+  | { name: 'autoCancel_starts_with', alias?: string  } 
+  | { name: 'autoCancel_not_starts_with', alias?: string  } 
+  | { name: 'autoCancel_ends_with', alias?: string  } 
+  | { name: 'autoCancel_not_ends_with', alias?: string  } 
   | { name: 'knockbackGrowth', alias?: string  } 
   | { name: 'knockbackGrowth_not', alias?: string  } 
   | { name: 'knockbackGrowth_in', alias?: string  } 
@@ -3543,10 +3544,10 @@ export interface MovesUpdateManyDataInput {
   hitBoxActive?: string | null
   firstActionableFrame?: number | null
   baseDmg?: number | null
-  angle?: string | null
-  baseKnockBackSetKnockback?: string | null
+  angle?: number | null
+  baseKnockBackSetKnockback?: number | null
   landingLag?: number | null
-  autoCancel?: number | null
+  autoCancel?: string | null
   knockbackGrowth?: number | null
   moveType?: string | null
   isWeightDependent?: boolean | null
@@ -3565,16 +3566,16 @@ export type MovesUpdateManyDataInputInputObject =
   | { name: 'moveType', alias?: string  } 
   | { name: 'isWeightDependent', alias?: string  } 
   
-export interface MovementsUpdateOneInput {
-  create?: MovementsCreateInput | null
-  update?: MovementsUpdateDataInput | null
-  upsert?: MovementsUpsertNestedInput | null
+export interface MovementsUpdateOneWithoutUserInput {
+  create?: MovementsCreateWithoutUserInput | null
+  update?: MovementsUpdateWithoutUserDataInput | null
+  upsert?: MovementsUpsertWithoutUserInput | null
   delete?: boolean | null
   disconnect?: boolean | null
   connect?: MovementsWhereUniqueInput | null
 }
-export type MovementsUpdateOneInputInputObject =
-  | Extract<keyof MovementsUpdateOneInput, string>
+export type MovementsUpdateOneWithoutUserInputInputObject =
+  | Extract<keyof MovementsUpdateOneWithoutUserInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'update', alias?: string  } 
   | { name: 'upsert', alias?: string  } 
@@ -3582,7 +3583,7 @@ export type MovementsUpdateOneInputInputObject =
   | { name: 'disconnect', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
-export interface MovementsUpdateDataInput {
+export interface MovementsUpdateWithoutUserDataInput {
   weight?: number | null
   maxJumps?: number | null
   runSpeed?: number | null
@@ -3602,8 +3603,8 @@ export interface MovementsUpdateDataInput {
   shAirTime?: string | null
   fhAirTime?: string | null
 }
-export type MovementsUpdateDataInputInputObject =
-  | Extract<keyof MovementsUpdateDataInput, string>
+export type MovementsUpdateWithoutUserDataInputInputObject =
+  | Extract<keyof MovementsUpdateWithoutUserDataInput, string>
   | { name: 'weight', alias?: string  } 
   | { name: 'maxJumps', alias?: string  } 
   | { name: 'runSpeed', alias?: string  } 
@@ -3623,12 +3624,12 @@ export type MovementsUpdateDataInputInputObject =
   | { name: 'shAirTime', alias?: string  } 
   | { name: 'fhAirTime', alias?: string  } 
   
-export interface MovementsUpsertNestedInput {
-  update?: MovementsUpdateDataInput
-  create?: MovementsCreateInput
+export interface MovementsUpsertWithoutUserInput {
+  update?: MovementsUpdateWithoutUserDataInput
+  create?: MovementsCreateWithoutUserInput
 }
-export type MovementsUpsertNestedInputInputObject =
-  | Extract<keyof MovementsUpsertNestedInput, string>
+export type MovementsUpsertWithoutUserInputInputObject =
+  | Extract<keyof MovementsUpsertWithoutUserInput, string>
   | { name: 'update', alias?: string  } 
   | { name: 'create', alias?: string  } 
   
@@ -3649,14 +3650,14 @@ export type CharacterUpdateManyMutationInputInputObject =
   
 export interface MovesCreateInput {
   name?: string
-  user?: CharacterCreateOneWithoutMoveInfoInput | null
+  user?: CharacterCreateOneWithoutMoveInfoInput
   hitBoxActive?: string | null
   firstActionableFrame?: number | null
   baseDmg?: number | null
-  angle?: string | null
-  baseKnockBackSetKnockback?: string | null
+  angle?: number | null
+  baseKnockBackSetKnockback?: number | null
   landingLag?: number | null
-  autoCancel?: number | null
+  autoCancel?: string | null
   knockbackGrowth?: number | null
   moveType?: string | null
   isWeightDependent?: boolean | null
@@ -3691,7 +3692,7 @@ export interface CharacterCreateWithoutMoveInfoInput {
   mainImgUrl?: string | null
   thumbnailImg?: string | null
   colorTheme?: string | null
-  movementsInfo?: MovementsCreateOneInput | null
+  movementsInfo?: MovementsCreateOneWithoutUserInput | null
 }
 export type CharacterCreateWithoutMoveInfoInputInputObject =
   | Extract<keyof CharacterCreateWithoutMoveInfoInput, string>
@@ -3704,14 +3705,14 @@ export type CharacterCreateWithoutMoveInfoInputInputObject =
   
 export interface MovesUpdateInput {
   name?: string | null
-  user?: CharacterUpdateOneWithoutMoveInfoInput | null
+  user?: CharacterUpdateOneRequiredWithoutMoveInfoInput | null
   hitBoxActive?: string | null
   firstActionableFrame?: number | null
   baseDmg?: number | null
-  angle?: string | null
-  baseKnockBackSetKnockback?: string | null
+  angle?: number | null
+  baseKnockBackSetKnockback?: number | null
   landingLag?: number | null
-  autoCancel?: number | null
+  autoCancel?: string | null
   knockbackGrowth?: number | null
   moveType?: string | null
   isWeightDependent?: boolean | null
@@ -3731,21 +3732,17 @@ export type MovesUpdateInputInputObject =
   | { name: 'moveType', alias?: string  } 
   | { name: 'isWeightDependent', alias?: string  } 
   
-export interface CharacterUpdateOneWithoutMoveInfoInput {
+export interface CharacterUpdateOneRequiredWithoutMoveInfoInput {
   create?: CharacterCreateWithoutMoveInfoInput | null
   update?: CharacterUpdateWithoutMoveInfoDataInput | null
   upsert?: CharacterUpsertWithoutMoveInfoInput | null
-  delete?: boolean | null
-  disconnect?: boolean | null
   connect?: CharacterWhereUniqueInput | null
 }
-export type CharacterUpdateOneWithoutMoveInfoInputInputObject =
-  | Extract<keyof CharacterUpdateOneWithoutMoveInfoInput, string>
+export type CharacterUpdateOneRequiredWithoutMoveInfoInputInputObject =
+  | Extract<keyof CharacterUpdateOneRequiredWithoutMoveInfoInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'update', alias?: string  } 
   | { name: 'upsert', alias?: string  } 
-  | { name: 'delete', alias?: string  } 
-  | { name: 'disconnect', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
 export interface CharacterUpdateWithoutMoveInfoDataInput {
@@ -3754,7 +3751,7 @@ export interface CharacterUpdateWithoutMoveInfoDataInput {
   mainImgUrl?: string | null
   thumbnailImg?: string | null
   colorTheme?: string | null
-  movementsInfo?: MovementsUpdateOneInput | null
+  movementsInfo?: MovementsUpdateOneWithoutUserInput | null
 }
 export type CharacterUpdateWithoutMoveInfoDataInputInputObject =
   | Extract<keyof CharacterUpdateWithoutMoveInfoDataInput, string>
@@ -3779,10 +3776,10 @@ export interface MovesUpdateManyMutationInput {
   hitBoxActive?: string | null
   firstActionableFrame?: number | null
   baseDmg?: number | null
-  angle?: string | null
-  baseKnockBackSetKnockback?: string | null
+  angle?: number | null
+  baseKnockBackSetKnockback?: number | null
   landingLag?: number | null
-  autoCancel?: number | null
+  autoCancel?: string | null
   knockbackGrowth?: number | null
   moveType?: string | null
   isWeightDependent?: boolean | null
@@ -3801,7 +3798,77 @@ export type MovesUpdateManyMutationInputInputObject =
   | { name: 'moveType', alias?: string  } 
   | { name: 'isWeightDependent', alias?: string  } 
   
+export interface MovementsCreateInput {
+  user?: CharacterCreateOneWithoutMovementsInfoInput
+  weight?: number | null
+  maxJumps?: number | null
+  runSpeed?: number | null
+  wallJump?: boolean | null
+  walkSpeed?: number | null
+  wallCling?: boolean | null
+  airSpeed?: number | null
+  crawl?: boolean | null
+  fallSpeed?: number | null
+  tether?: boolean | null
+  fastFallSpeed?: number | null
+  jumpSquat?: string | null
+  airAcceleration?: number | null
+  softLandingLag?: string | null
+  gravity?: number | null
+  hardLandingLag?: string | null
+  shAirTime?: string | null
+  fhAirTime?: string | null
+}
+export type MovementsCreateInputInputObject =
+  | Extract<keyof MovementsCreateInput, string>
+  | { name: 'user', alias?: string  } 
+  | { name: 'weight', alias?: string  } 
+  | { name: 'maxJumps', alias?: string  } 
+  | { name: 'runSpeed', alias?: string  } 
+  | { name: 'wallJump', alias?: string  } 
+  | { name: 'walkSpeed', alias?: string  } 
+  | { name: 'wallCling', alias?: string  } 
+  | { name: 'airSpeed', alias?: string  } 
+  | { name: 'crawl', alias?: string  } 
+  | { name: 'fallSpeed', alias?: string  } 
+  | { name: 'tether', alias?: string  } 
+  | { name: 'fastFallSpeed', alias?: string  } 
+  | { name: 'jumpSquat', alias?: string  } 
+  | { name: 'airAcceleration', alias?: string  } 
+  | { name: 'softLandingLag', alias?: string  } 
+  | { name: 'gravity', alias?: string  } 
+  | { name: 'hardLandingLag', alias?: string  } 
+  | { name: 'shAirTime', alias?: string  } 
+  | { name: 'fhAirTime', alias?: string  } 
+  
+export interface CharacterCreateOneWithoutMovementsInfoInput {
+  create?: CharacterCreateWithoutMovementsInfoInput | null
+  connect?: CharacterWhereUniqueInput | null
+}
+export type CharacterCreateOneWithoutMovementsInfoInputInputObject =
+  | Extract<keyof CharacterCreateOneWithoutMovementsInfoInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface CharacterCreateWithoutMovementsInfoInput {
+  name?: string
+  displayName?: string | null
+  mainImgUrl?: string | null
+  thumbnailImg?: string | null
+  colorTheme?: string | null
+  moveInfo?: MovesCreateManyWithoutUserInput | null
+}
+export type CharacterCreateWithoutMovementsInfoInputInputObject =
+  | Extract<keyof CharacterCreateWithoutMovementsInfoInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'displayName', alias?: string  } 
+  | { name: 'mainImgUrl', alias?: string  } 
+  | { name: 'thumbnailImg', alias?: string  } 
+  | { name: 'colorTheme', alias?: string  } 
+  | { name: 'moveInfo', alias?: string  } 
+  
 export interface MovementsUpdateInput {
+  user?: CharacterUpdateOneRequiredWithoutMovementsInfoInput | null
   weight?: number | null
   maxJumps?: number | null
   runSpeed?: number | null
@@ -3823,6 +3890,7 @@ export interface MovementsUpdateInput {
 }
 export type MovementsUpdateInputInputObject =
   | Extract<keyof MovementsUpdateInput, string>
+  | { name: 'user', alias?: string  } 
   | { name: 'weight', alias?: string  } 
   | { name: 'maxJumps', alias?: string  } 
   | { name: 'runSpeed', alias?: string  } 
@@ -3841,6 +3909,45 @@ export type MovementsUpdateInputInputObject =
   | { name: 'hardLandingLag', alias?: string  } 
   | { name: 'shAirTime', alias?: string  } 
   | { name: 'fhAirTime', alias?: string  } 
+  
+export interface CharacterUpdateOneRequiredWithoutMovementsInfoInput {
+  create?: CharacterCreateWithoutMovementsInfoInput | null
+  update?: CharacterUpdateWithoutMovementsInfoDataInput | null
+  upsert?: CharacterUpsertWithoutMovementsInfoInput | null
+  connect?: CharacterWhereUniqueInput | null
+}
+export type CharacterUpdateOneRequiredWithoutMovementsInfoInputInputObject =
+  | Extract<keyof CharacterUpdateOneRequiredWithoutMovementsInfoInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'upsert', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface CharacterUpdateWithoutMovementsInfoDataInput {
+  name?: string | null
+  displayName?: string | null
+  mainImgUrl?: string | null
+  thumbnailImg?: string | null
+  colorTheme?: string | null
+  moveInfo?: MovesUpdateManyWithoutUserInput | null
+}
+export type CharacterUpdateWithoutMovementsInfoDataInputInputObject =
+  | Extract<keyof CharacterUpdateWithoutMovementsInfoDataInput, string>
+  | { name: 'name', alias?: string  } 
+  | { name: 'displayName', alias?: string  } 
+  | { name: 'mainImgUrl', alias?: string  } 
+  | { name: 'thumbnailImg', alias?: string  } 
+  | { name: 'colorTheme', alias?: string  } 
+  | { name: 'moveInfo', alias?: string  } 
+  
+export interface CharacterUpsertWithoutMovementsInfoInput {
+  update?: CharacterUpdateWithoutMovementsInfoDataInput
+  create?: CharacterCreateWithoutMovementsInfoInput
+}
+export type CharacterUpsertWithoutMovementsInfoInputInputObject =
+  | Extract<keyof CharacterUpsertWithoutMovementsInfoInput, string>
+  | { name: 'update', alias?: string  } 
+  | { name: 'create', alias?: string  } 
   
 export interface MovementsUpdateManyMutationInput {
   weight?: number | null

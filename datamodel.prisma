@@ -1,6 +1,6 @@
 type Character {
   id: ID! @unique
-  name: String!
+  name: String! @unique
   displayName: String
   mainImgUrl: String
   thumbnailImg: String
@@ -12,14 +12,14 @@ type Character {
 type Moves {
   id: ID! @unique
   name: String!
-  user: Character
+  user: Character!
   hitBoxActive: String
   firstActionableFrame: Int
   baseDmg: Int
-  angle: String
-  baseKnockBackSetKnockback: String
+  angle: Int
+  baseKnockBackSetKnockback: Int
   landingLag: Int
-  autoCancel: Int
+  autoCancel: String
   knockbackGrowth: Int
   moveType: String
   isWeightDependent: Boolean
@@ -27,6 +27,7 @@ type Moves {
 
 type Movements {
   id: ID! @unique
+  user: Character!
   weight: Int
   maxJumps: Int
   runSpeed: Int
