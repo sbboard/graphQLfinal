@@ -1,7 +1,6 @@
 const { GraphQLClient } = require('graphql-request')
-const characterList = require('./characterList.js')
 const http = require("http");
-const API_URL = "http://beta-api-kuroganehammer.azurewebsites.net/api/characters/name/"
+const API_URL = "http://beta-api-kuroganehammer.azurewebsites.net/api/characters/"
 
 const client = new GraphQLClient('http://192.168.99.100:4499/')
 
@@ -21,12 +20,13 @@ const mutation = `mutation createCharacter(
     })
     {
       id
+      name
     }
   }
 `
 
-async function main(character) {
-      http.get(`${API_URL}${character}`, function (response) {  
+async function main() {
+      http.get(API_URL, function (response) {  
         var buffer = "", 
             data;
     
@@ -35,21 +35,24 @@ async function main(character) {
         }); 
         response.on("end", async function (err) {
           const variables = {
-              name: character,
+              name: "",
               displayName: "",
               mainImgUrl: "",
               thumbnailImg: "",
               colorTheme: ""
             }
           data = JSON.parse(buffer);
-          variables.displayName = data.DisplayName
-          variables.mainImgUrl = imgFix(data.MainImageUrl)
-          variables.thumbnailImg = imgFix(data.ThumbnailUrl)
-          variables.colorTheme = data.ColorTheme
-          await client
-            .request(mutation, variables)
-            .then(data => console.log(data))
-            .catch(err => console.log(`${err}`))
+          for(let key in data) {
+            variables.name = data[key].Name
+            variables.displayName = data[key].DisplayName
+            variables.mainImgUrl = imgFix(data[key].MainImageUrl)
+            variables.thumbnailImg = imgFix(data[key].ThumbnailUrl)
+            variables.colorTheme = data[key].ColorTheme
+            await client
+              .request(mutation, variables)
+              .then(data => console.log(data))
+              .catch(err => console.log(`${err}`))
+          }
         }); 
       })
 }
@@ -59,6 +62,4 @@ function imgFix(img){
   return `http://kuroganehammer.com/images/${splitString[1]}`
 }
 
-for (let i=0;i<1;i++) {
-    main(characterList[i]).catch(e => console.error(e))
-}
+main().catch(e => console.error(e))
