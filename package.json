@@ -2,7 +2,7 @@
   "name": "grapql-server-practice",
   "version": "1.0.0",
   "description": "This is my graphql server practice project",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "dockerStart": "docker-compose -f ./docker-compose.yml up -d",
     "deploy": "prisma deploy",
