@@ -31,4 +31,4 @@ const server = new GraphQLServer({
   schema,
   context: { prisma }
 })
-server.start(() => console.log(`Server is running on http://localhost:5555`))
+server.start(() => console.log(`Server is running on http://192.168.99.100:4499/`))

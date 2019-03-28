@@ -26,4 +26,4 @@ const characterList = [
 "megaman",
 ]
 
-export default characterList
+module.exports=characterList

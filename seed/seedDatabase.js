@@ -1,21 +1,23 @@
-const fs = require('fs')
 const { GraphQLClient } = require('graphql-request')
-import characterList from './characterList';
-
+const characterList = require('./characterList.js')
+const http = require("http");
 const API_URL = "http://beta-api-kuroganehammer.azurewebsites.net/api/characters/name/"
-const client = new GraphQLClient('http://localhost:4466')
 
-const mutation = `mutation createPokemon(
-    $name: String,
-    $height: Int,
-    $weight: Int,
-    $url: String
+const client = new GraphQLClient('http://192.168.99.100:4499/')
+
+const mutation = `mutation createCharacter(
+    $name: String!,
+    $displayName: String,
+    $mainImgUrl: String,
+    $thumbnailImg: String,
+    $colorTheme: String
 ) {
-    createPokemon(data: {
+    createCharacter(data: {
       name: $name
-      height: $height
-      weight: $weight
-      url: $url
+      displayName: $displayName
+      mainImgUrl: $mainImgUrl
+      thumbnailImg: $thumbnailImg
+      colorTheme: $colorTheme
     })
     {
       id
@@ -23,28 +25,40 @@ const mutation = `mutation createPokemon(
   }
 `
 
-const sampleFiles = ['pokemon-data.json']
-
-async function main(inputFile) {
-  const content = fs.readFileSync(`./seed/${inputFile}`)
-  const allPokemon = JSON.parse(content)
-
-  allPokemon.forEach(async item => {
-    const variables = {
-        name: item.name,
-        height: item.height,
-        weight: item.weight,
-        url: item.url,
-      }
+async function main(character) {
+      http.get(`${API_URL}${character}`, function (response) {  
+        var buffer = "", 
+            data;
     
-      await client
-        .request(mutation, variables)
-        .then(data => console.log(data))
-        .catch(err => console.log(`${err}`))
-  })
-  
+        response.on("data", function (chunk) {
+            buffer += chunk;
+        }); 
+        response.on("end", async function (err) {
+          const variables = {
+              name: character,
+              displayName: "",
+              mainImgUrl: "",
+              thumbnailImg: "",
+              colorTheme: ""
+            }
+          data = JSON.parse(buffer);
+          variables.displayName = data.DisplayName
+          variables.mainImgUrl = imgFix(data.MainImageUrl)
+          variables.thumbnailImg = imgFix(data.ThumbnailUrl)
+          variables.colorTheme = data.ColorTheme
+          await client
+            .request(mutation, variables)
+            .then(data => console.log(data))
+            .catch(err => console.log(`${err}`))
+        }); 
+      })
 }
 
-for (let fileName of sampleFiles) {
-    main(fileName).catch(e => console.error(e))
+function imgFix(img){
+  const splitString = img.split("http://kuroganehammer.com/")
+  return `http://kuroganehammer.com/images/${splitString[1]}`
+}
+
+for (let i=0;i<1;i++) {
+    main(characterList[i]).catch(e => console.error(e))
 }
