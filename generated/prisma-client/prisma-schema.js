@@ -27,7 +27,7 @@ type Character {
   thumbnailImg: String
   colorTheme: String
   moveInfo(where: MovesWhereInput, orderBy: MovesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Moves!]
-  movementsInfo: Movements
+  movementsInfo(where: MovementsWhereInput, orderBy: MovementsOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Movements!]
 }
 
 type CharacterConnection {
@@ -43,7 +43,7 @@ input CharacterCreateInput {
   thumbnailImg: String
   colorTheme: String
   moveInfo: MovesCreateManyWithoutUserInput
-  movementsInfo: MovementsCreateOneWithoutUserInput
+  movementsInfo: MovementsCreateManyWithoutUserInput
 }
 
 input CharacterCreateOneWithoutMoveInfoInput {
@@ -62,7 +62,7 @@ input CharacterCreateWithoutMoveInfoInput {
   mainImgUrl: String
   thumbnailImg: String
   colorTheme: String
-  movementsInfo: MovementsCreateOneWithoutUserInput
+  movementsInfo: MovementsCreateManyWithoutUserInput
 }
 
 input CharacterCreateWithoutMovementsInfoInput {
@@ -132,7 +132,7 @@ input CharacterUpdateInput {
   thumbnailImg: String
   colorTheme: String
   moveInfo: MovesUpdateManyWithoutUserInput
-  movementsInfo: MovementsUpdateOneWithoutUserInput
+  movementsInfo: MovementsUpdateManyWithoutUserInput
 }
 
 input CharacterUpdateManyMutationInput {
@@ -163,7 +163,7 @@ input CharacterUpdateWithoutMoveInfoDataInput {
   mainImgUrl: String
   thumbnailImg: String
   colorTheme: String
-  movementsInfo: MovementsUpdateOneWithoutUserInput
+  movementsInfo: MovementsUpdateManyWithoutUserInput
 }
 
 input CharacterUpdateWithoutMovementsInfoDataInput {
@@ -273,7 +273,9 @@ input CharacterWhereInput {
   moveInfo_every: MovesWhereInput
   moveInfo_some: MovesWhereInput
   moveInfo_none: MovesWhereInput
-  movementsInfo: MovementsWhereInput
+  movementsInfo_every: MovementsWhereInput
+  movementsInfo_some: MovementsWhereInput
+  movementsInfo_none: MovementsWhereInput
   AND: [CharacterWhereInput!]
   OR: [CharacterWhereInput!]
   NOT: [CharacterWhereInput!]
@@ -289,24 +291,12 @@ scalar Long
 type Movements {
   id: ID!
   user: Character!
-  weight: Int
-  maxJumps: Int
-  runSpeed: Int
-  wallJump: Boolean
-  walkSpeed: Int
-  wallCling: Boolean
-  airSpeed: Int
-  crawl: Boolean
-  fallSpeed: Int
-  tether: Boolean
-  fastFallSpeed: Int
-  jumpSquat: String
-  airAcceleration: Int
-  softLandingLag: String
-  gravity: Int
-  hardLandingLag: String
-  shAirTime: String
-  fhAirTime: String
+  weight: String
+  maxJumps: String
+  wallJump: String
+  wallCling: String
+  crawl: String
+  airSpeed: String
 }
 
 type MovementsConnection {
@@ -317,50 +307,26 @@ type MovementsConnection {
 
 input MovementsCreateInput {
   user: CharacterCreateOneWithoutMovementsInfoInput!
-  weight: Int
-  maxJumps: Int
-  runSpeed: Int
-  wallJump: Boolean
-  walkSpeed: Int
-  wallCling: Boolean
-  airSpeed: Int
-  crawl: Boolean
-  fallSpeed: Int
-  tether: Boolean
-  fastFallSpeed: Int
-  jumpSquat: String
-  airAcceleration: Int
-  softLandingLag: String
-  gravity: Int
-  hardLandingLag: String
-  shAirTime: String
-  fhAirTime: String
+  weight: String
+  maxJumps: String
+  wallJump: String
+  wallCling: String
+  crawl: String
+  airSpeed: String
 }
 
-input MovementsCreateOneWithoutUserInput {
-  create: MovementsCreateWithoutUserInput
-  connect: MovementsWhereUniqueInput
+input MovementsCreateManyWithoutUserInput {
+  create: [MovementsCreateWithoutUserInput!]
+  connect: [MovementsWhereUniqueInput!]
 }
 
 input MovementsCreateWithoutUserInput {
-  weight: Int
-  maxJumps: Int
-  runSpeed: Int
-  wallJump: Boolean
-  walkSpeed: Int
-  wallCling: Boolean
-  airSpeed: Int
-  crawl: Boolean
-  fallSpeed: Int
-  tether: Boolean
-  fastFallSpeed: Int
-  jumpSquat: String
-  airAcceleration: Int
-  softLandingLag: String
-  gravity: Int
-  hardLandingLag: String
-  shAirTime: String
-  fhAirTime: String
+  weight: String
+  maxJumps: String
+  wallJump: String
+  wallCling: String
+  crawl: String
+  airSpeed: String
 }
 
 type MovementsEdge {
@@ -375,38 +341,14 @@ enum MovementsOrderByInput {
   weight_DESC
   maxJumps_ASC
   maxJumps_DESC
-  runSpeed_ASC
-  runSpeed_DESC
   wallJump_ASC
   wallJump_DESC
-  walkSpeed_ASC
-  walkSpeed_DESC
   wallCling_ASC
   wallCling_DESC
-  airSpeed_ASC
-  airSpeed_DESC
   crawl_ASC
   crawl_DESC
-  fallSpeed_ASC
-  fallSpeed_DESC
-  tether_ASC
-  tether_DESC
-  fastFallSpeed_ASC
-  fastFallSpeed_DESC
-  jumpSquat_ASC
-  jumpSquat_DESC
-  airAcceleration_ASC
-  airAcceleration_DESC
-  softLandingLag_ASC
-  softLandingLag_DESC
-  gravity_ASC
-  gravity_DESC
-  hardLandingLag_ASC
-  hardLandingLag_DESC
-  shAirTime_ASC
-  shAirTime_DESC
-  fhAirTime_ASC
-  fhAirTime_DESC
+  airSpeed_ASC
+  airSpeed_DESC
   createdAt_ASC
   createdAt_DESC
   updatedAt_ASC
@@ -415,24 +357,116 @@ enum MovementsOrderByInput {
 
 type MovementsPreviousValues {
   id: ID!
-  weight: Int
-  maxJumps: Int
-  runSpeed: Int
-  wallJump: Boolean
-  walkSpeed: Int
-  wallCling: Boolean
-  airSpeed: Int
-  crawl: Boolean
-  fallSpeed: Int
-  tether: Boolean
-  fastFallSpeed: Int
-  jumpSquat: String
-  airAcceleration: Int
-  softLandingLag: String
-  gravity: Int
-  hardLandingLag: String
-  shAirTime: String
-  fhAirTime: String
+  weight: String
+  maxJumps: String
+  wallJump: String
+  wallCling: String
+  crawl: String
+  airSpeed: String
+}
+
+input MovementsScalarWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  weight: String
+  weight_not: String
+  weight_in: [String!]
+  weight_not_in: [String!]
+  weight_lt: String
+  weight_lte: String
+  weight_gt: String
+  weight_gte: String
+  weight_contains: String
+  weight_not_contains: String
+  weight_starts_with: String
+  weight_not_starts_with: String
+  weight_ends_with: String
+  weight_not_ends_with: String
+  maxJumps: String
+  maxJumps_not: String
+  maxJumps_in: [String!]
+  maxJumps_not_in: [String!]
+  maxJumps_lt: String
+  maxJumps_lte: String
+  maxJumps_gt: String
+  maxJumps_gte: String
+  maxJumps_contains: String
+  maxJumps_not_contains: String
+  maxJumps_starts_with: String
+  maxJumps_not_starts_with: String
+  maxJumps_ends_with: String
+  maxJumps_not_ends_with: String
+  wallJump: String
+  wallJump_not: String
+  wallJump_in: [String!]
+  wallJump_not_in: [String!]
+  wallJump_lt: String
+  wallJump_lte: String
+  wallJump_gt: String
+  wallJump_gte: String
+  wallJump_contains: String
+  wallJump_not_contains: String
+  wallJump_starts_with: String
+  wallJump_not_starts_with: String
+  wallJump_ends_with: String
+  wallJump_not_ends_with: String
+  wallCling: String
+  wallCling_not: String
+  wallCling_in: [String!]
+  wallCling_not_in: [String!]
+  wallCling_lt: String
+  wallCling_lte: String
+  wallCling_gt: String
+  wallCling_gte: String
+  wallCling_contains: String
+  wallCling_not_contains: String
+  wallCling_starts_with: String
+  wallCling_not_starts_with: String
+  wallCling_ends_with: String
+  wallCling_not_ends_with: String
+  crawl: String
+  crawl_not: String
+  crawl_in: [String!]
+  crawl_not_in: [String!]
+  crawl_lt: String
+  crawl_lte: String
+  crawl_gt: String
+  crawl_gte: String
+  crawl_contains: String
+  crawl_not_contains: String
+  crawl_starts_with: String
+  crawl_not_starts_with: String
+  crawl_ends_with: String
+  crawl_not_ends_with: String
+  airSpeed: String
+  airSpeed_not: String
+  airSpeed_in: [String!]
+  airSpeed_not_in: [String!]
+  airSpeed_lt: String
+  airSpeed_lte: String
+  airSpeed_gt: String
+  airSpeed_gte: String
+  airSpeed_contains: String
+  airSpeed_not_contains: String
+  airSpeed_starts_with: String
+  airSpeed_not_starts_with: String
+  airSpeed_ends_with: String
+  airSpeed_not_ends_with: String
+  AND: [MovementsScalarWhereInput!]
+  OR: [MovementsScalarWhereInput!]
+  NOT: [MovementsScalarWhereInput!]
 }
 
 type MovementsSubscriptionPayload {
@@ -455,78 +489,65 @@ input MovementsSubscriptionWhereInput {
 
 input MovementsUpdateInput {
   user: CharacterUpdateOneRequiredWithoutMovementsInfoInput
-  weight: Int
-  maxJumps: Int
-  runSpeed: Int
-  wallJump: Boolean
-  walkSpeed: Int
-  wallCling: Boolean
-  airSpeed: Int
-  crawl: Boolean
-  fallSpeed: Int
-  tether: Boolean
-  fastFallSpeed: Int
-  jumpSquat: String
-  airAcceleration: Int
-  softLandingLag: String
-  gravity: Int
-  hardLandingLag: String
-  shAirTime: String
-  fhAirTime: String
+  weight: String
+  maxJumps: String
+  wallJump: String
+  wallCling: String
+  crawl: String
+  airSpeed: String
+}
+
+input MovementsUpdateManyDataInput {
+  weight: String
+  maxJumps: String
+  wallJump: String
+  wallCling: String
+  crawl: String
+  airSpeed: String
 }
 
 input MovementsUpdateManyMutationInput {
-  weight: Int
-  maxJumps: Int
-  runSpeed: Int
-  wallJump: Boolean
-  walkSpeed: Int
-  wallCling: Boolean
-  airSpeed: Int
-  crawl: Boolean
-  fallSpeed: Int
-  tether: Boolean
-  fastFallSpeed: Int
-  jumpSquat: String
-  airAcceleration: Int
-  softLandingLag: String
-  gravity: Int
-  hardLandingLag: String
-  shAirTime: String
-  fhAirTime: String
+  weight: String
+  maxJumps: String
+  wallJump: String
+  wallCling: String
+  crawl: String
+  airSpeed: String
 }
 
-input MovementsUpdateOneWithoutUserInput {
-  create: MovementsCreateWithoutUserInput
-  update: MovementsUpdateWithoutUserDataInput
-  upsert: MovementsUpsertWithoutUserInput
-  delete: Boolean
-  disconnect: Boolean
-  connect: MovementsWhereUniqueInput
+input MovementsUpdateManyWithoutUserInput {
+  create: [MovementsCreateWithoutUserInput!]
+  delete: [MovementsWhereUniqueInput!]
+  connect: [MovementsWhereUniqueInput!]
+  set: [MovementsWhereUniqueInput!]
+  disconnect: [MovementsWhereUniqueInput!]
+  update: [MovementsUpdateWithWhereUniqueWithoutUserInput!]
+  upsert: [MovementsUpsertWithWhereUniqueWithoutUserInput!]
+  deleteMany: [MovementsScalarWhereInput!]
+  updateMany: [MovementsUpdateManyWithWhereNestedInput!]
+}
+
+input MovementsUpdateManyWithWhereNestedInput {
+  where: MovementsScalarWhereInput!
+  data: MovementsUpdateManyDataInput!
 }
 
 input MovementsUpdateWithoutUserDataInput {
-  weight: Int
-  maxJumps: Int
-  runSpeed: Int
-  wallJump: Boolean
-  walkSpeed: Int
-  wallCling: Boolean
-  airSpeed: Int
-  crawl: Boolean
-  fallSpeed: Int
-  tether: Boolean
-  fastFallSpeed: Int
-  jumpSquat: String
-  airAcceleration: Int
-  softLandingLag: String
-  gravity: Int
-  hardLandingLag: String
-  shAirTime: String
-  fhAirTime: String
+  weight: String
+  maxJumps: String
+  wallJump: String
+  wallCling: String
+  crawl: String
+  airSpeed: String
 }
 
-input MovementsUpsertWithoutUserInput {
+input MovementsUpdateWithWhereUniqueWithoutUserInput {
+  where: MovementsWhereUniqueInput!
+  data: MovementsUpdateWithoutUserDataInput!
+}
+
+input MovementsUpsertWithWhereUniqueWithoutUserInput {
+  where: MovementsWhereUniqueInput!
   update: MovementsUpdateWithoutUserDataInput!
   create: MovementsCreateWithoutUserInput!
 }
@@ -547,156 +568,90 @@ input MovementsWhereInput {
   id_ends_with: ID
   id_not_ends_with: ID
   user: CharacterWhereInput
-  weight: Int
-  weight_not: Int
-  weight_in: [Int!]
-  weight_not_in: [Int!]
-  weight_lt: Int
-  weight_lte: Int
-  weight_gt: Int
-  weight_gte: Int
-  maxJumps: Int
-  maxJumps_not: Int
-  maxJumps_in: [Int!]
-  maxJumps_not_in: [Int!]
-  maxJumps_lt: Int
-  maxJumps_lte: Int
-  maxJumps_gt: Int
-  maxJumps_gte: Int
-  runSpeed: Int
-  runSpeed_not: Int
-  runSpeed_in: [Int!]
-  runSpeed_not_in: [Int!]
-  runSpeed_lt: Int
-  runSpeed_lte: Int
-  runSpeed_gt: Int
-  runSpeed_gte: Int
-  wallJump: Boolean
-  wallJump_not: Boolean
-  walkSpeed: Int
-  walkSpeed_not: Int
-  walkSpeed_in: [Int!]
-  walkSpeed_not_in: [Int!]
-  walkSpeed_lt: Int
-  walkSpeed_lte: Int
-  walkSpeed_gt: Int
-  walkSpeed_gte: Int
-  wallCling: Boolean
-  wallCling_not: Boolean
-  airSpeed: Int
-  airSpeed_not: Int
-  airSpeed_in: [Int!]
-  airSpeed_not_in: [Int!]
-  airSpeed_lt: Int
-  airSpeed_lte: Int
-  airSpeed_gt: Int
-  airSpeed_gte: Int
-  crawl: Boolean
-  crawl_not: Boolean
-  fallSpeed: Int
-  fallSpeed_not: Int
-  fallSpeed_in: [Int!]
-  fallSpeed_not_in: [Int!]
-  fallSpeed_lt: Int
-  fallSpeed_lte: Int
-  fallSpeed_gt: Int
-  fallSpeed_gte: Int
-  tether: Boolean
-  tether_not: Boolean
-  fastFallSpeed: Int
-  fastFallSpeed_not: Int
-  fastFallSpeed_in: [Int!]
-  fastFallSpeed_not_in: [Int!]
-  fastFallSpeed_lt: Int
-  fastFallSpeed_lte: Int
-  fastFallSpeed_gt: Int
-  fastFallSpeed_gte: Int
-  jumpSquat: String
-  jumpSquat_not: String
-  jumpSquat_in: [String!]
-  jumpSquat_not_in: [String!]
-  jumpSquat_lt: String
-  jumpSquat_lte: String
-  jumpSquat_gt: String
-  jumpSquat_gte: String
-  jumpSquat_contains: String
-  jumpSquat_not_contains: String
-  jumpSquat_starts_with: String
-  jumpSquat_not_starts_with: String
-  jumpSquat_ends_with: String
-  jumpSquat_not_ends_with: String
-  airAcceleration: Int
-  airAcceleration_not: Int
-  airAcceleration_in: [Int!]
-  airAcceleration_not_in: [Int!]
-  airAcceleration_lt: Int
-  airAcceleration_lte: Int
-  airAcceleration_gt: Int
-  airAcceleration_gte: Int
-  softLandingLag: String
-  softLandingLag_not: String
-  softLandingLag_in: [String!]
-  softLandingLag_not_in: [String!]
-  softLandingLag_lt: String
-  softLandingLag_lte: String
-  softLandingLag_gt: String
-  softLandingLag_gte: String
-  softLandingLag_contains: String
-  softLandingLag_not_contains: String
-  softLandingLag_starts_with: String
-  softLandingLag_not_starts_with: String
-  softLandingLag_ends_with: String
-  softLandingLag_not_ends_with: String
-  gravity: Int
-  gravity_not: Int
-  gravity_in: [Int!]
-  gravity_not_in: [Int!]
-  gravity_lt: Int
-  gravity_lte: Int
-  gravity_gt: Int
-  gravity_gte: Int
-  hardLandingLag: String
-  hardLandingLag_not: String
-  hardLandingLag_in: [String!]
-  hardLandingLag_not_in: [String!]
-  hardLandingLag_lt: String
-  hardLandingLag_lte: String
-  hardLandingLag_gt: String
-  hardLandingLag_gte: String
-  hardLandingLag_contains: String
-  hardLandingLag_not_contains: String
-  hardLandingLag_starts_with: String
-  hardLandingLag_not_starts_with: String
-  hardLandingLag_ends_with: String
-  hardLandingLag_not_ends_with: String
-  shAirTime: String
-  shAirTime_not: String
-  shAirTime_in: [String!]
-  shAirTime_not_in: [String!]
-  shAirTime_lt: String
-  shAirTime_lte: String
-  shAirTime_gt: String
-  shAirTime_gte: String
-  shAirTime_contains: String
-  shAirTime_not_contains: String
-  shAirTime_starts_with: String
-  shAirTime_not_starts_with: String
-  shAirTime_ends_with: String
-  shAirTime_not_ends_with: String
-  fhAirTime: String
-  fhAirTime_not: String
-  fhAirTime_in: [String!]
-  fhAirTime_not_in: [String!]
-  fhAirTime_lt: String
-  fhAirTime_lte: String
-  fhAirTime_gt: String
-  fhAirTime_gte: String
-  fhAirTime_contains: String
-  fhAirTime_not_contains: String
-  fhAirTime_starts_with: String
-  fhAirTime_not_starts_with: String
-  fhAirTime_ends_with: String
-  fhAirTime_not_ends_with: String
+  weight: String
+  weight_not: String
+  weight_in: [String!]
+  weight_not_in: [String!]
+  weight_lt: String
+  weight_lte: String
+  weight_gt: String
+  weight_gte: String
+  weight_contains: String
+  weight_not_contains: String
+  weight_starts_with: String
+  weight_not_starts_with: String
+  weight_ends_with: String
+  weight_not_ends_with: String
+  maxJumps: String
+  maxJumps_not: String
+  maxJumps_in: [String!]
+  maxJumps_not_in: [String!]
+  maxJumps_lt: String
+  maxJumps_lte: String
+  maxJumps_gt: String
+  maxJumps_gte: String
+  maxJumps_contains: String
+  maxJumps_not_contains: String
+  maxJumps_starts_with: String
+  maxJumps_not_starts_with: String
+  maxJumps_ends_with: String
+  maxJumps_not_ends_with: String
+  wallJump: String
+  wallJump_not: String
+  wallJump_in: [String!]
+  wallJump_not_in: [String!]
+  wallJump_lt: String
+  wallJump_lte: String
+  wallJump_gt: String
+  wallJump_gte: String
+  wallJump_contains: String
+  wallJump_not_contains: String
+  wallJump_starts_with: String
+  wallJump_not_starts_with: String
+  wallJump_ends_with: String
+  wallJump_not_ends_with: String
+  wallCling: String
+  wallCling_not: String
+  wallCling_in: [String!]
+  wallCling_not_in: [String!]
+  wallCling_lt: String
+  wallCling_lte: String
+  wallCling_gt: String
+  wallCling_gte: String
+  wallCling_contains: String
+  wallCling_not_contains: String
+  wallCling_starts_with: String
+  wallCling_not_starts_with: String
+  wallCling_ends_with: String
+  wallCling_not_ends_with: String
+  crawl: String
+  crawl_not: String
+  crawl_in: [String!]
+  crawl_not_in: [String!]
+  crawl_lt: String
+  crawl_lte: String
+  crawl_gt: String
+  crawl_gte: String
+  crawl_contains: String
+  crawl_not_contains: String
+  crawl_starts_with: String
+  crawl_not_starts_with: String
+  crawl_ends_with: String
+  crawl_not_ends_with: String
+  airSpeed: String
+  airSpeed_not: String
+  airSpeed_in: [String!]
+  airSpeed_not_in: [String!]
+  airSpeed_lt: String
+  airSpeed_lte: String
+  airSpeed_gt: String
+  airSpeed_gte: String
+  airSpeed_contains: String
+  airSpeed_not_contains: String
+  airSpeed_starts_with: String
+  airSpeed_not_starts_with: String
+  airSpeed_ends_with: String
+  airSpeed_not_ends_with: String
   AND: [MovementsWhereInput!]
   OR: [MovementsWhereInput!]
   NOT: [MovementsWhereInput!]

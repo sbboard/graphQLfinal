@@ -1,7 +1,8 @@
-#Seed
-
-
-#To-Do
+# Seed
+```
+npm run load
+```
+# To-Do
 - At least 3 Query resolvers to get data from your server
 - At least 2 Mutation resolvers allowing users to create, update, or upsert an item.
 - At least 1 Mutation resolver allowing users to delete an item.

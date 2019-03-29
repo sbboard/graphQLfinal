@@ -225,6 +225,26 @@ export type MovesOrderByInput =
   | "updatedAt_ASC"
   | "updatedAt_DESC";
 
+export type MovementsOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "weight_ASC"
+  | "weight_DESC"
+  | "maxJumps_ASC"
+  | "maxJumps_DESC"
+  | "wallJump_ASC"
+  | "wallJump_DESC"
+  | "wallCling_ASC"
+  | "wallCling_DESC"
+  | "crawl_ASC"
+  | "crawl_DESC"
+  | "airSpeed_ASC"
+  | "airSpeed_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC";
+
 export type CharacterOrderByInput =
   | "id_ASC"
   | "id_DESC"
@@ -243,56 +263,11 @@ export type CharacterOrderByInput =
   | "updatedAt_ASC"
   | "updatedAt_DESC";
 
-export type MovementsOrderByInput =
-  | "id_ASC"
-  | "id_DESC"
-  | "weight_ASC"
-  | "weight_DESC"
-  | "maxJumps_ASC"
-  | "maxJumps_DESC"
-  | "runSpeed_ASC"
-  | "runSpeed_DESC"
-  | "wallJump_ASC"
-  | "wallJump_DESC"
-  | "walkSpeed_ASC"
-  | "walkSpeed_DESC"
-  | "wallCling_ASC"
-  | "wallCling_DESC"
-  | "airSpeed_ASC"
-  | "airSpeed_DESC"
-  | "crawl_ASC"
-  | "crawl_DESC"
-  | "fallSpeed_ASC"
-  | "fallSpeed_DESC"
-  | "tether_ASC"
-  | "tether_DESC"
-  | "fastFallSpeed_ASC"
-  | "fastFallSpeed_DESC"
-  | "jumpSquat_ASC"
-  | "jumpSquat_DESC"
-  | "airAcceleration_ASC"
-  | "airAcceleration_DESC"
-  | "softLandingLag_ASC"
-  | "softLandingLag_DESC"
-  | "gravity_ASC"
-  | "gravity_DESC"
-  | "hardLandingLag_ASC"
-  | "hardLandingLag_DESC"
-  | "shAirTime_ASC"
-  | "shAirTime_DESC"
-  | "fhAirTime_ASC"
-  | "fhAirTime_DESC"
-  | "createdAt_ASC"
-  | "createdAt_DESC"
-  | "updatedAt_ASC"
-  | "updatedAt_DESC";
-
 export type MutationType = "CREATED" | "UPDATED" | "DELETED";
 
-export interface MovesUpsertWithWhereUniqueWithoutUserInput {
-  where: MovesWhereUniqueInput;
-  update: MovesUpdateWithoutUserDataInput;
-  create: MovesCreateWithoutUserInput;
+export interface MovesUpdateManyWithWhereNestedInput {
+  where: MovesScalarWhereInput;
+  data: MovesUpdateManyDataInput;
 }
 
 export type CharacterWhereUniqueInput = AtLeastOne<{
@@ -300,18 +275,9 @@ export type CharacterWhereUniqueInput = AtLeastOne<{
   name?: String;
 }>;
 
-export interface MovesUpdateManyDataInput {
-  name?: String;
-  hitBoxActive?: String;
-  firstActionableFrame?: Int;
-  baseDmg?: Int;
-  angle?: Int;
-  baseKnockBackSetKnockback?: Int;
-  landingLag?: Int;
-  autoCancel?: String;
-  knockbackGrowth?: Int;
-  moveType?: String;
-  isWeightDependent?: Boolean;
+export interface MovementsUpdateWithWhereUniqueWithoutUserInput {
+  where: MovementsWhereUniqueInput;
+  data: MovementsUpdateWithoutUserDataInput;
 }
 
 export interface MovementsWhereInput {
@@ -330,164 +296,98 @@ export interface MovementsWhereInput {
   id_ends_with?: ID_Input;
   id_not_ends_with?: ID_Input;
   user?: CharacterWhereInput;
-  weight?: Int;
-  weight_not?: Int;
-  weight_in?: Int[] | Int;
-  weight_not_in?: Int[] | Int;
-  weight_lt?: Int;
-  weight_lte?: Int;
-  weight_gt?: Int;
-  weight_gte?: Int;
-  maxJumps?: Int;
-  maxJumps_not?: Int;
-  maxJumps_in?: Int[] | Int;
-  maxJumps_not_in?: Int[] | Int;
-  maxJumps_lt?: Int;
-  maxJumps_lte?: Int;
-  maxJumps_gt?: Int;
-  maxJumps_gte?: Int;
-  runSpeed?: Int;
-  runSpeed_not?: Int;
-  runSpeed_in?: Int[] | Int;
-  runSpeed_not_in?: Int[] | Int;
-  runSpeed_lt?: Int;
-  runSpeed_lte?: Int;
-  runSpeed_gt?: Int;
-  runSpeed_gte?: Int;
-  wallJump?: Boolean;
-  wallJump_not?: Boolean;
-  walkSpeed?: Int;
-  walkSpeed_not?: Int;
-  walkSpeed_in?: Int[] | Int;
-  walkSpeed_not_in?: Int[] | Int;
-  walkSpeed_lt?: Int;
-  walkSpeed_lte?: Int;
-  walkSpeed_gt?: Int;
-  walkSpeed_gte?: Int;
-  wallCling?: Boolean;
-  wallCling_not?: Boolean;
-  airSpeed?: Int;
-  airSpeed_not?: Int;
-  airSpeed_in?: Int[] | Int;
-  airSpeed_not_in?: Int[] | Int;
-  airSpeed_lt?: Int;
-  airSpeed_lte?: Int;
-  airSpeed_gt?: Int;
-  airSpeed_gte?: Int;
-  crawl?: Boolean;
-  crawl_not?: Boolean;
-  fallSpeed?: Int;
-  fallSpeed_not?: Int;
-  fallSpeed_in?: Int[] | Int;
-  fallSpeed_not_in?: Int[] | Int;
-  fallSpeed_lt?: Int;
-  fallSpeed_lte?: Int;
-  fallSpeed_gt?: Int;
-  fallSpeed_gte?: Int;
-  tether?: Boolean;
-  tether_not?: Boolean;
-  fastFallSpeed?: Int;
-  fastFallSpeed_not?: Int;
-  fastFallSpeed_in?: Int[] | Int;
-  fastFallSpeed_not_in?: Int[] | Int;
-  fastFallSpeed_lt?: Int;
-  fastFallSpeed_lte?: Int;
-  fastFallSpeed_gt?: Int;
-  fastFallSpeed_gte?: Int;
-  jumpSquat?: String;
-  jumpSquat_not?: String;
-  jumpSquat_in?: String[] | String;
-  jumpSquat_not_in?: String[] | String;
-  jumpSquat_lt?: String;
-  jumpSquat_lte?: String;
-  jumpSquat_gt?: String;
-  jumpSquat_gte?: String;
-  jumpSquat_contains?: String;
-  jumpSquat_not_contains?: String;
-  jumpSquat_starts_with?: String;
-  jumpSquat_not_starts_with?: String;
-  jumpSquat_ends_with?: String;
-  jumpSquat_not_ends_with?: String;
-  airAcceleration?: Int;
-  airAcceleration_not?: Int;
-  airAcceleration_in?: Int[] | Int;
-  airAcceleration_not_in?: Int[] | Int;
-  airAcceleration_lt?: Int;
-  airAcceleration_lte?: Int;
-  airAcceleration_gt?: Int;
-  airAcceleration_gte?: Int;
-  softLandingLag?: String;
-  softLandingLag_not?: String;
-  softLandingLag_in?: String[] | String;
-  softLandingLag_not_in?: String[] | String;
-  softLandingLag_lt?: String;
-  softLandingLag_lte?: String;
-  softLandingLag_gt?: String;
-  softLandingLag_gte?: String;
-  softLandingLag_contains?: String;
-  softLandingLag_not_contains?: String;
-  softLandingLag_starts_with?: String;
-  softLandingLag_not_starts_with?: String;
-  softLandingLag_ends_with?: String;
-  softLandingLag_not_ends_with?: String;
-  gravity?: Int;
-  gravity_not?: Int;
-  gravity_in?: Int[] | Int;
-  gravity_not_in?: Int[] | Int;
-  gravity_lt?: Int;
-  gravity_lte?: Int;
-  gravity_gt?: Int;
-  gravity_gte?: Int;
-  hardLandingLag?: String;
-  hardLandingLag_not?: String;
-  hardLandingLag_in?: String[] | String;
-  hardLandingLag_not_in?: String[] | String;
-  hardLandingLag_lt?: String;
-  hardLandingLag_lte?: String;
-  hardLandingLag_gt?: String;
-  hardLandingLag_gte?: String;
-  hardLandingLag_contains?: String;
-  hardLandingLag_not_contains?: String;
-  hardLandingLag_starts_with?: String;
-  hardLandingLag_not_starts_with?: String;
-  hardLandingLag_ends_with?: String;
-  hardLandingLag_not_ends_with?: String;
-  shAirTime?: String;
-  shAirTime_not?: String;
-  shAirTime_in?: String[] | String;
-  shAirTime_not_in?: String[] | String;
-  shAirTime_lt?: String;
-  shAirTime_lte?: String;
-  shAirTime_gt?: String;
-  shAirTime_gte?: String;
-  shAirTime_contains?: String;
-  shAirTime_not_contains?: String;
-  shAirTime_starts_with?: String;
-  shAirTime_not_starts_with?: String;
-  shAirTime_ends_with?: String;
-  shAirTime_not_ends_with?: String;
-  fhAirTime?: String;
-  fhAirTime_not?: String;
-  fhAirTime_in?: String[] | String;
-  fhAirTime_not_in?: String[] | String;
-  fhAirTime_lt?: String;
-  fhAirTime_lte?: String;
-  fhAirTime_gt?: String;
-  fhAirTime_gte?: String;
-  fhAirTime_contains?: String;
-  fhAirTime_not_contains?: String;
-  fhAirTime_starts_with?: String;
-  fhAirTime_not_starts_with?: String;
-  fhAirTime_ends_with?: String;
-  fhAirTime_not_ends_with?: String;
+  weight?: String;
+  weight_not?: String;
+  weight_in?: String[] | String;
+  weight_not_in?: String[] | String;
+  weight_lt?: String;
+  weight_lte?: String;
+  weight_gt?: String;
+  weight_gte?: String;
+  weight_contains?: String;
+  weight_not_contains?: String;
+  weight_starts_with?: String;
+  weight_not_starts_with?: String;
+  weight_ends_with?: String;
+  weight_not_ends_with?: String;
+  maxJumps?: String;
+  maxJumps_not?: String;
+  maxJumps_in?: String[] | String;
+  maxJumps_not_in?: String[] | String;
+  maxJumps_lt?: String;
+  maxJumps_lte?: String;
+  maxJumps_gt?: String;
+  maxJumps_gte?: String;
+  maxJumps_contains?: String;
+  maxJumps_not_contains?: String;
+  maxJumps_starts_with?: String;
+  maxJumps_not_starts_with?: String;
+  maxJumps_ends_with?: String;
+  maxJumps_not_ends_with?: String;
+  wallJump?: String;
+  wallJump_not?: String;
+  wallJump_in?: String[] | String;
+  wallJump_not_in?: String[] | String;
+  wallJump_lt?: String;
+  wallJump_lte?: String;
+  wallJump_gt?: String;
+  wallJump_gte?: String;
+  wallJump_contains?: String;
+  wallJump_not_contains?: String;
+  wallJump_starts_with?: String;
+  wallJump_not_starts_with?: String;
+  wallJump_ends_with?: String;
+  wallJump_not_ends_with?: String;
+  wallCling?: String;
+  wallCling_not?: String;
+  wallCling_in?: String[] | String;
+  wallCling_not_in?: String[] | String;
+  wallCling_lt?: String;
+  wallCling_lte?: String;
+  wallCling_gt?: String;
+  wallCling_gte?: String;
+  wallCling_contains?: String;
+  wallCling_not_contains?: String;
+  wallCling_starts_with?: String;
+  wallCling_not_starts_with?: String;
+  wallCling_ends_with?: String;
+  wallCling_not_ends_with?: String;
+  crawl?: String;
+  crawl_not?: String;
+  crawl_in?: String[] | String;
+  crawl_not_in?: String[] | String;
+  crawl_lt?: String;
+  crawl_lte?: String;
+  crawl_gt?: String;
+  crawl_gte?: String;
+  crawl_contains?: String;
+  crawl_not_contains?: String;
+  crawl_starts_with?: String;
+  crawl_not_starts_with?: String;
+  crawl_ends_with?: String;
+  crawl_not_ends_with?: String;
+  airSpeed?: String;
+  airSpeed_not?: String;
+  airSpeed_in?: String[] | String;
+  airSpeed_not_in?: String[] | String;
+  airSpeed_lt?: String;
+  airSpeed_lte?: String;
+  airSpeed_gt?: String;
+  airSpeed_gte?: String;
+  airSpeed_contains?: String;
+  airSpeed_not_contains?: String;
+  airSpeed_starts_with?: String;
+  airSpeed_not_starts_with?: String;
+  airSpeed_ends_with?: String;
+  airSpeed_not_ends_with?: String;
   AND?: MovementsWhereInput[] | MovementsWhereInput;
   OR?: MovementsWhereInput[] | MovementsWhereInput;
   NOT?: MovementsWhereInput[] | MovementsWhereInput;
 }
 
-export interface MovesCreateManyWithoutUserInput {
-  create?: MovesCreateWithoutUserInput[] | MovesCreateWithoutUserInput;
-  connect?: MovesWhereUniqueInput[] | MovesWhereUniqueInput;
+export interface MovementsCreateManyWithoutUserInput {
+  create?: MovementsCreateWithoutUserInput[] | MovementsCreateWithoutUserInput;
+  connect?: MovementsWhereUniqueInput[] | MovementsWhereUniqueInput;
 }
 
 export interface CharacterCreateOneWithoutMovementsInfoInput {
@@ -495,75 +395,22 @@ export interface CharacterCreateOneWithoutMovementsInfoInput {
   connect?: CharacterWhereUniqueInput;
 }
 
-export interface MovesCreateWithoutUserInput {
-  name: String;
-  hitBoxActive?: String;
-  firstActionableFrame?: Int;
-  baseDmg?: Int;
-  angle?: Int;
-  baseKnockBackSetKnockback?: Int;
-  landingLag?: Int;
-  autoCancel?: String;
-  knockbackGrowth?: Int;
-  moveType?: String;
-  isWeightDependent?: Boolean;
-}
-
-export interface MovementsUpdateOneWithoutUserInput {
-  create?: MovementsCreateWithoutUserInput;
-  update?: MovementsUpdateWithoutUserDataInput;
-  upsert?: MovementsUpsertWithoutUserInput;
-  delete?: Boolean;
-  disconnect?: Boolean;
-  connect?: MovementsWhereUniqueInput;
-}
-
-export interface MovementsCreateOneWithoutUserInput {
-  create?: MovementsCreateWithoutUserInput;
-  connect?: MovementsWhereUniqueInput;
-}
-
-export interface MovementsSubscriptionWhereInput {
-  mutation_in?: MutationType[] | MutationType;
-  updatedFields_contains?: String;
-  updatedFields_contains_every?: String[] | String;
-  updatedFields_contains_some?: String[] | String;
-  node?: MovementsWhereInput;
-  AND?: MovementsSubscriptionWhereInput[] | MovementsSubscriptionWhereInput;
-  OR?: MovementsSubscriptionWhereInput[] | MovementsSubscriptionWhereInput;
-  NOT?: MovementsSubscriptionWhereInput[] | MovementsSubscriptionWhereInput;
-}
-
 export interface MovementsCreateWithoutUserInput {
-  weight?: Int;
-  maxJumps?: Int;
-  runSpeed?: Int;
-  wallJump?: Boolean;
-  walkSpeed?: Int;
-  wallCling?: Boolean;
-  airSpeed?: Int;
-  crawl?: Boolean;
-  fallSpeed?: Int;
-  tether?: Boolean;
-  fastFallSpeed?: Int;
-  jumpSquat?: String;
-  airAcceleration?: Int;
-  softLandingLag?: String;
-  gravity?: Int;
-  hardLandingLag?: String;
-  shAirTime?: String;
-  fhAirTime?: String;
+  weight?: String;
+  maxJumps?: String;
+  wallJump?: String;
+  wallCling?: String;
+  crawl?: String;
+  airSpeed?: String;
 }
 
-export interface CharacterSubscriptionWhereInput {
-  mutation_in?: MutationType[] | MutationType;
-  updatedFields_contains?: String;
-  updatedFields_contains_every?: String[] | String;
-  updatedFields_contains_some?: String[] | String;
-  node?: CharacterWhereInput;
-  AND?: CharacterSubscriptionWhereInput[] | CharacterSubscriptionWhereInput;
-  OR?: CharacterSubscriptionWhereInput[] | CharacterSubscriptionWhereInput;
-  NOT?: CharacterSubscriptionWhereInput[] | CharacterSubscriptionWhereInput;
+export interface MovementsUpdateWithoutUserDataInput {
+  weight?: String;
+  maxJumps?: String;
+  wallJump?: String;
+  wallCling?: String;
+  crawl?: String;
+  airSpeed?: String;
 }
 
 export interface CharacterUpdateInput {
@@ -573,12 +420,134 @@ export interface CharacterUpdateInput {
   thumbnailImg?: String;
   colorTheme?: String;
   moveInfo?: MovesUpdateManyWithoutUserInput;
-  movementsInfo?: MovementsUpdateOneWithoutUserInput;
+  movementsInfo?: MovementsUpdateManyWithoutUserInput;
 }
 
-export interface CharacterUpsertWithoutMoveInfoInput {
-  update: CharacterUpdateWithoutMoveInfoDataInput;
-  create: CharacterCreateWithoutMoveInfoInput;
+export interface MovesWhereInput {
+  id?: ID_Input;
+  id_not?: ID_Input;
+  id_in?: ID_Input[] | ID_Input;
+  id_not_in?: ID_Input[] | ID_Input;
+  id_lt?: ID_Input;
+  id_lte?: ID_Input;
+  id_gt?: ID_Input;
+  id_gte?: ID_Input;
+  id_contains?: ID_Input;
+  id_not_contains?: ID_Input;
+  id_starts_with?: ID_Input;
+  id_not_starts_with?: ID_Input;
+  id_ends_with?: ID_Input;
+  id_not_ends_with?: ID_Input;
+  name?: String;
+  name_not?: String;
+  name_in?: String[] | String;
+  name_not_in?: String[] | String;
+  name_lt?: String;
+  name_lte?: String;
+  name_gt?: String;
+  name_gte?: String;
+  name_contains?: String;
+  name_not_contains?: String;
+  name_starts_with?: String;
+  name_not_starts_with?: String;
+  name_ends_with?: String;
+  name_not_ends_with?: String;
+  user?: CharacterWhereInput;
+  hitBoxActive?: String;
+  hitBoxActive_not?: String;
+  hitBoxActive_in?: String[] | String;
+  hitBoxActive_not_in?: String[] | String;
+  hitBoxActive_lt?: String;
+  hitBoxActive_lte?: String;
+  hitBoxActive_gt?: String;
+  hitBoxActive_gte?: String;
+  hitBoxActive_contains?: String;
+  hitBoxActive_not_contains?: String;
+  hitBoxActive_starts_with?: String;
+  hitBoxActive_not_starts_with?: String;
+  hitBoxActive_ends_with?: String;
+  hitBoxActive_not_ends_with?: String;
+  firstActionableFrame?: Int;
+  firstActionableFrame_not?: Int;
+  firstActionableFrame_in?: Int[] | Int;
+  firstActionableFrame_not_in?: Int[] | Int;
+  firstActionableFrame_lt?: Int;
+  firstActionableFrame_lte?: Int;
+  firstActionableFrame_gt?: Int;
+  firstActionableFrame_gte?: Int;
+  baseDmg?: Int;
+  baseDmg_not?: Int;
+  baseDmg_in?: Int[] | Int;
+  baseDmg_not_in?: Int[] | Int;
+  baseDmg_lt?: Int;
+  baseDmg_lte?: Int;
+  baseDmg_gt?: Int;
+  baseDmg_gte?: Int;
+  angle?: Int;
+  angle_not?: Int;
+  angle_in?: Int[] | Int;
+  angle_not_in?: Int[] | Int;
+  angle_lt?: Int;
+  angle_lte?: Int;
+  angle_gt?: Int;
+  angle_gte?: Int;
+  baseKnockBackSetKnockback?: Int;
+  baseKnockBackSetKnockback_not?: Int;
+  baseKnockBackSetKnockback_in?: Int[] | Int;
+  baseKnockBackSetKnockback_not_in?: Int[] | Int;
+  baseKnockBackSetKnockback_lt?: Int;
+  baseKnockBackSetKnockback_lte?: Int;
+  baseKnockBackSetKnockback_gt?: Int;
+  baseKnockBackSetKnockback_gte?: Int;
+  landingLag?: Int;
+  landingLag_not?: Int;
+  landingLag_in?: Int[] | Int;
+  landingLag_not_in?: Int[] | Int;
+  landingLag_lt?: Int;
+  landingLag_lte?: Int;
+  landingLag_gt?: Int;
+  landingLag_gte?: Int;
+  autoCancel?: String;
+  autoCancel_not?: String;
+  autoCancel_in?: String[] | String;
+  autoCancel_not_in?: String[] | String;
+  autoCancel_lt?: String;
+  autoCancel_lte?: String;
+  autoCancel_gt?: String;
+  autoCancel_gte?: String;
+  autoCancel_contains?: String;
+  autoCancel_not_contains?: String;
+  autoCancel_starts_with?: String;
+  autoCancel_not_starts_with?: String;
+  autoCancel_ends_with?: String;
+  autoCancel_not_ends_with?: String;
+  knockbackGrowth?: Int;
+  knockbackGrowth_not?: Int;
+  knockbackGrowth_in?: Int[] | Int;
+  knockbackGrowth_not_in?: Int[] | Int;
+  knockbackGrowth_lt?: Int;
+  knockbackGrowth_lte?: Int;
+  knockbackGrowth_gt?: Int;
+  knockbackGrowth_gte?: Int;
+  moveType?: String;
+  moveType_not?: String;
+  moveType_in?: String[] | String;
+  moveType_not_in?: String[] | String;
+  moveType_lt?: String;
+  moveType_lte?: String;
+  moveType_gt?: String;
+  moveType_gte?: String;
+  moveType_contains?: String;
+  moveType_not_contains?: String;
+  moveType_starts_with?: String;
+  moveType_not_starts_with?: String;
+  moveType_ends_with?: String;
+  moveType_not_ends_with?: String;
+  isWeightDependent?: Boolean;
+  isWeightDependent_not?: Boolean;
+  AND?: MovesWhereInput[] | MovesWhereInput;
+  OR?: MovesWhereInput[] | MovesWhereInput;
+  NOT?: MovesWhereInput[] | MovesWhereInput;
 }
 
 export interface MovesUpdateManyWithoutUserInput {
@@ -599,28 +568,25 @@ export interface MovesUpdateManyWithoutUserInput {
     | MovesUpdateManyWithWhereNestedInput;
 }
 
-export type MovementsWhereUniqueInput = AtLeastOne<{
-  id: ID_Input;
-}>;
+export interface CharacterSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: CharacterWhereInput;
+  AND?: CharacterSubscriptionWhereInput[] | CharacterSubscriptionWhereInput;
+  OR?: CharacterSubscriptionWhereInput[] | CharacterSubscriptionWhereInput;
+  NOT?: CharacterSubscriptionWhereInput[] | CharacterSubscriptionWhereInput;
+}
 
 export interface MovesUpdateWithWhereUniqueWithoutUserInput {
   where: MovesWhereUniqueInput;
   data: MovesUpdateWithoutUserDataInput;
 }
 
-export interface MovesUpdateInput {
-  name?: String;
-  user?: CharacterUpdateOneRequiredWithoutMoveInfoInput;
-  hitBoxActive?: String;
-  firstActionableFrame?: Int;
-  baseDmg?: Int;
-  angle?: Int;
-  baseKnockBackSetKnockback?: Int;
-  landingLag?: Int;
-  autoCancel?: String;
-  knockbackGrowth?: Int;
-  moveType?: String;
-  isWeightDependent?: Boolean;
+export interface CharacterUpsertWithoutMoveInfoInput {
+  update: CharacterUpdateWithoutMoveInfoDataInput;
+  create: CharacterCreateWithoutMoveInfoInput;
 }
 
 export interface MovesUpdateWithoutUserDataInput {
@@ -637,23 +603,22 @@ export interface MovesUpdateWithoutUserDataInput {
   isWeightDependent?: Boolean;
 }
 
-export interface CharacterCreateOneWithoutMoveInfoInput {
+export interface CharacterUpdateOneRequiredWithoutMoveInfoInput {
   create?: CharacterCreateWithoutMoveInfoInput;
+  update?: CharacterUpdateWithoutMoveInfoDataInput;
+  upsert?: CharacterUpsertWithoutMoveInfoInput;
   connect?: CharacterWhereUniqueInput;
 }
 
-export interface CharacterUpdateWithoutMovementsInfoDataInput {
-  name?: String;
-  displayName?: String;
-  mainImgUrl?: String;
-  thumbnailImg?: String;
-  colorTheme?: String;
-  moveInfo?: MovesUpdateManyWithoutUserInput;
+export interface MovesUpsertWithWhereUniqueWithoutUserInput {
+  where: MovesWhereUniqueInput;
+  update: MovesUpdateWithoutUserDataInput;
+  create: MovesCreateWithoutUserInput;
 }
 
-export interface MovesCreateInput {
-  name: String;
-  user: CharacterCreateOneWithoutMoveInfoInput;
+export interface MovesUpdateInput {
+  name?: String;
+  user?: CharacterUpdateOneRequiredWithoutMoveInfoInput;
   hitBoxActive?: String;
   firstActionableFrame?: Int;
   baseDmg?: Int;
@@ -792,14 +757,70 @@ export interface MovesScalarWhereInput {
   NOT?: MovesScalarWhereInput[] | MovesScalarWhereInput;
 }
 
+export interface CharacterCreateOneWithoutMoveInfoInput {
+  create?: CharacterCreateWithoutMoveInfoInput;
+  connect?: CharacterWhereUniqueInput;
+}
+
+export interface CharacterUpdateWithoutMovementsInfoDataInput {
+  name?: String;
+  displayName?: String;
+  mainImgUrl?: String;
+  thumbnailImg?: String;
+  colorTheme?: String;
+  moveInfo?: MovesUpdateManyWithoutUserInput;
+}
+
+export interface MovesCreateInput {
+  name: String;
+  user: CharacterCreateOneWithoutMoveInfoInput;
+  hitBoxActive?: String;
+  firstActionableFrame?: Int;
+  baseDmg?: Int;
+  angle?: Int;
+  baseKnockBackSetKnockback?: Int;
+  landingLag?: Int;
+  autoCancel?: String;
+  knockbackGrowth?: Int;
+  moveType?: String;
+  isWeightDependent?: Boolean;
+}
+
+export interface MovesUpdateManyDataInput {
+  name?: String;
+  hitBoxActive?: String;
+  firstActionableFrame?: Int;
+  baseDmg?: Int;
+  angle?: Int;
+  baseKnockBackSetKnockback?: Int;
+  landingLag?: Int;
+  autoCancel?: String;
+  knockbackGrowth?: Int;
+  moveType?: String;
+  isWeightDependent?: Boolean;
+}
+
 export interface CharacterUpsertWithoutMovementsInfoInput {
   update: CharacterUpdateWithoutMovementsInfoDataInput;
   create: CharacterCreateWithoutMovementsInfoInput;
 }
 
-export interface MovesUpdateManyWithWhereNestedInput {
-  where: MovesScalarWhereInput;
-  data: MovesUpdateManyDataInput;
+export interface MovementsUpdateManyWithoutUserInput {
+  create?: MovementsCreateWithoutUserInput[] | MovementsCreateWithoutUserInput;
+  delete?: MovementsWhereUniqueInput[] | MovementsWhereUniqueInput;
+  connect?: MovementsWhereUniqueInput[] | MovementsWhereUniqueInput;
+  set?: MovementsWhereUniqueInput[] | MovementsWhereUniqueInput;
+  disconnect?: MovementsWhereUniqueInput[] | MovementsWhereUniqueInput;
+  update?:
+    | MovementsUpdateWithWhereUniqueWithoutUserInput[]
+    | MovementsUpdateWithWhereUniqueWithoutUserInput;
+  upsert?:
+    | MovementsUpsertWithWhereUniqueWithoutUserInput[]
+    | MovementsUpsertWithWhereUniqueWithoutUserInput;
+  deleteMany?: MovementsScalarWhereInput[] | MovementsScalarWhereInput;
+  updateMany?:
+    | MovementsUpdateManyWithWhereNestedInput[]
+    | MovementsUpdateManyWithWhereNestedInput;
 }
 
 export interface CharacterCreateInput {
@@ -809,7 +830,7 @@ export interface CharacterCreateInput {
   thumbnailImg?: String;
   colorTheme?: String;
   moveInfo?: MovesCreateManyWithoutUserInput;
-  movementsInfo?: MovementsCreateOneWithoutUserInput;
+  movementsInfo?: MovementsCreateManyWithoutUserInput;
 }
 
 export interface CharacterUpdateOneRequiredWithoutMovementsInfoInput {
@@ -819,131 +840,18 @@ export interface CharacterUpdateOneRequiredWithoutMovementsInfoInput {
   connect?: CharacterWhereUniqueInput;
 }
 
-export interface MovesWhereInput {
-  id?: ID_Input;
-  id_not?: ID_Input;
-  id_in?: ID_Input[] | ID_Input;
-  id_not_in?: ID_Input[] | ID_Input;
-  id_lt?: ID_Input;
-  id_lte?: ID_Input;
-  id_gt?: ID_Input;
-  id_gte?: ID_Input;
-  id_contains?: ID_Input;
-  id_not_contains?: ID_Input;
-  id_starts_with?: ID_Input;
-  id_not_starts_with?: ID_Input;
-  id_ends_with?: ID_Input;
-  id_not_ends_with?: ID_Input;
-  name?: String;
-  name_not?: String;
-  name_in?: String[] | String;
-  name_not_in?: String[] | String;
-  name_lt?: String;
-  name_lte?: String;
-  name_gt?: String;
-  name_gte?: String;
-  name_contains?: String;
-  name_not_contains?: String;
-  name_starts_with?: String;
-  name_not_starts_with?: String;
-  name_ends_with?: String;
-  name_not_ends_with?: String;
-  user?: CharacterWhereInput;
+export interface MovesCreateWithoutUserInput {
+  name: String;
   hitBoxActive?: String;
-  hitBoxActive_not?: String;
-  hitBoxActive_in?: String[] | String;
-  hitBoxActive_not_in?: String[] | String;
-  hitBoxActive_lt?: String;
-  hitBoxActive_lte?: String;
-  hitBoxActive_gt?: String;
-  hitBoxActive_gte?: String;
-  hitBoxActive_contains?: String;
-  hitBoxActive_not_contains?: String;
-  hitBoxActive_starts_with?: String;
-  hitBoxActive_not_starts_with?: String;
-  hitBoxActive_ends_with?: String;
-  hitBoxActive_not_ends_with?: String;
   firstActionableFrame?: Int;
-  firstActionableFrame_not?: Int;
-  firstActionableFrame_in?: Int[] | Int;
-  firstActionableFrame_not_in?: Int[] | Int;
-  firstActionableFrame_lt?: Int;
-  firstActionableFrame_lte?: Int;
-  firstActionableFrame_gt?: Int;
-  firstActionableFrame_gte?: Int;
   baseDmg?: Int;
-  baseDmg_not?: Int;
-  baseDmg_in?: Int[] | Int;
-  baseDmg_not_in?: Int[] | Int;
-  baseDmg_lt?: Int;
-  baseDmg_lte?: Int;
-  baseDmg_gt?: Int;
-  baseDmg_gte?: Int;
   angle?: Int;
-  angle_not?: Int;
-  angle_in?: Int[] | Int;
-  angle_not_in?: Int[] | Int;
-  angle_lt?: Int;
-  angle_lte?: Int;
-  angle_gt?: Int;
-  angle_gte?: Int;
   baseKnockBackSetKnockback?: Int;
-  baseKnockBackSetKnockback_not?: Int;
-  baseKnockBackSetKnockback_in?: Int[] | Int;
-  baseKnockBackSetKnockback_not_in?: Int[] | Int;
-  baseKnockBackSetKnockback_lt?: Int;
-  baseKnockBackSetKnockback_lte?: Int;
-  baseKnockBackSetKnockback_gt?: Int;
-  baseKnockBackSetKnockback_gte?: Int;
   landingLag?: Int;
-  landingLag_not?: Int;
-  landingLag_in?: Int[] | Int;
-  landingLag_not_in?: Int[] | Int;
-  landingLag_lt?: Int;
-  landingLag_lte?: Int;
-  landingLag_gt?: Int;
-  landingLag_gte?: Int;
   autoCancel?: String;
-  autoCancel_not?: String;
-  autoCancel_in?: String[] | String;
-  autoCancel_not_in?: String[] | String;
-  autoCancel_lt?: String;
-  autoCancel_lte?: String;
-  autoCancel_gt?: String;
-  autoCancel_gte?: String;
-  autoCancel_contains?: String;
-  autoCancel_not_contains?: String;
-  autoCancel_starts_with?: String;
-  autoCancel_not_starts_with?: String;
-  autoCancel_ends_with?: String;
-  autoCancel_not_ends_with?: String;
   knockbackGrowth?: Int;
-  knockbackGrowth_not?: Int;
-  knockbackGrowth_in?: Int[] | Int;
-  knockbackGrowth_not_in?: Int[] | Int;
-  knockbackGrowth_lt?: Int;
-  knockbackGrowth_lte?: Int;
-  knockbackGrowth_gt?: Int;
-  knockbackGrowth_gte?: Int;
   moveType?: String;
-  moveType_not?: String;
-  moveType_in?: String[] | String;
-  moveType_not_in?: String[] | String;
-  moveType_lt?: String;
-  moveType_lte?: String;
-  moveType_gt?: String;
-  moveType_gte?: String;
-  moveType_contains?: String;
-  moveType_not_contains?: String;
-  moveType_starts_with?: String;
-  moveType_not_starts_with?: String;
-  moveType_ends_with?: String;
-  moveType_not_ends_with?: String;
   isWeightDependent?: Boolean;
-  isWeightDependent_not?: Boolean;
-  AND?: MovesWhereInput[] | MovesWhereInput;
-  OR?: MovesWhereInput[] | MovesWhereInput;
-  NOT?: MovesWhereInput[] | MovesWhereInput;
 }
 
 export interface CharacterWhereInput {
@@ -1034,10 +942,29 @@ export interface CharacterWhereInput {
   moveInfo_every?: MovesWhereInput;
   moveInfo_some?: MovesWhereInput;
   moveInfo_none?: MovesWhereInput;
-  movementsInfo?: MovementsWhereInput;
+  movementsInfo_every?: MovementsWhereInput;
+  movementsInfo_some?: MovementsWhereInput;
+  movementsInfo_none?: MovementsWhereInput;
   AND?: CharacterWhereInput[] | CharacterWhereInput;
   OR?: CharacterWhereInput[] | CharacterWhereInput;
   NOT?: CharacterWhereInput[] | CharacterWhereInput;
+}
+
+export interface MovementsSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: MovementsWhereInput;
+  AND?: MovementsSubscriptionWhereInput[] | MovementsSubscriptionWhereInput;
+  OR?: MovementsSubscriptionWhereInput[] | MovementsSubscriptionWhereInput;
+  NOT?: MovementsSubscriptionWhereInput[] | MovementsSubscriptionWhereInput;
+}
+
+export interface MovementsUpsertWithWhereUniqueWithoutUserInput {
+  where: MovementsWhereUniqueInput;
+  update: MovementsUpdateWithoutUserDataInput;
+  create: MovementsCreateWithoutUserInput;
 }
 
 export interface CharacterUpdateWithoutMoveInfoDataInput {
@@ -1046,28 +973,111 @@ export interface CharacterUpdateWithoutMoveInfoDataInput {
   mainImgUrl?: String;
   thumbnailImg?: String;
   colorTheme?: String;
-  movementsInfo?: MovementsUpdateOneWithoutUserInput;
+  movementsInfo?: MovementsUpdateManyWithoutUserInput;
 }
 
-export interface MovementsUpdateWithoutUserDataInput {
-  weight?: Int;
-  maxJumps?: Int;
-  runSpeed?: Int;
-  wallJump?: Boolean;
-  walkSpeed?: Int;
-  wallCling?: Boolean;
-  airSpeed?: Int;
-  crawl?: Boolean;
-  fallSpeed?: Int;
-  tether?: Boolean;
-  fastFallSpeed?: Int;
-  jumpSquat?: String;
-  airAcceleration?: Int;
-  softLandingLag?: String;
-  gravity?: Int;
-  hardLandingLag?: String;
-  shAirTime?: String;
-  fhAirTime?: String;
+export interface MovementsScalarWhereInput {
+  id?: ID_Input;
+  id_not?: ID_Input;
+  id_in?: ID_Input[] | ID_Input;
+  id_not_in?: ID_Input[] | ID_Input;
+  id_lt?: ID_Input;
+  id_lte?: ID_Input;
+  id_gt?: ID_Input;
+  id_gte?: ID_Input;
+  id_contains?: ID_Input;
+  id_not_contains?: ID_Input;
+  id_starts_with?: ID_Input;
+  id_not_starts_with?: ID_Input;
+  id_ends_with?: ID_Input;
+  id_not_ends_with?: ID_Input;
+  weight?: String;
+  weight_not?: String;
+  weight_in?: String[] | String;
+  weight_not_in?: String[] | String;
+  weight_lt?: String;
+  weight_lte?: String;
+  weight_gt?: String;
+  weight_gte?: String;
+  weight_contains?: String;
+  weight_not_contains?: String;
+  weight_starts_with?: String;
+  weight_not_starts_with?: String;
+  weight_ends_with?: String;
+  weight_not_ends_with?: String;
+  maxJumps?: String;
+  maxJumps_not?: String;
+  maxJumps_in?: String[] | String;
+  maxJumps_not_in?: String[] | String;
+  maxJumps_lt?: String;
+  maxJumps_lte?: String;
+  maxJumps_gt?: String;
+  maxJumps_gte?: String;
+  maxJumps_contains?: String;
+  maxJumps_not_contains?: String;
+  maxJumps_starts_with?: String;
+  maxJumps_not_starts_with?: String;
+  maxJumps_ends_with?: String;
+  maxJumps_not_ends_with?: String;
+  wallJump?: String;
+  wallJump_not?: String;
+  wallJump_in?: String[] | String;
+  wallJump_not_in?: String[] | String;
+  wallJump_lt?: String;
+  wallJump_lte?: String;
+  wallJump_gt?: String;
+  wallJump_gte?: String;
+  wallJump_contains?: String;
+  wallJump_not_contains?: String;
+  wallJump_starts_with?: String;
+  wallJump_not_starts_with?: String;
+  wallJump_ends_with?: String;
+  wallJump_not_ends_with?: String;
+  wallCling?: String;
+  wallCling_not?: String;
+  wallCling_in?: String[] | String;
+  wallCling_not_in?: String[] | String;
+  wallCling_lt?: String;
+  wallCling_lte?: String;
+  wallCling_gt?: String;
+  wallCling_gte?: String;
+  wallCling_contains?: String;
+  wallCling_not_contains?: String;
+  wallCling_starts_with?: String;
+  wallCling_not_starts_with?: String;
+  wallCling_ends_with?: String;
+  wallCling_not_ends_with?: String;
+  crawl?: String;
+  crawl_not?: String;
+  crawl_in?: String[] | String;
+  crawl_not_in?: String[] | String;
+  crawl_lt?: String;
+  crawl_lte?: String;
+  crawl_gt?: String;
+  crawl_gte?: String;
+  crawl_contains?: String;
+  crawl_not_contains?: String;
+  crawl_starts_with?: String;
+  crawl_not_starts_with?: String;
+  crawl_ends_with?: String;
+  crawl_not_ends_with?: String;
+  airSpeed?: String;
+  airSpeed_not?: String;
+  airSpeed_in?: String[] | String;
+  airSpeed_not_in?: String[] | String;
+  airSpeed_lt?: String;
+  airSpeed_lte?: String;
+  airSpeed_gt?: String;
+  airSpeed_gte?: String;
+  airSpeed_contains?: String;
+  airSpeed_not_contains?: String;
+  airSpeed_starts_with?: String;
+  airSpeed_not_starts_with?: String;
+  airSpeed_ends_with?: String;
+  airSpeed_not_ends_with?: String;
+  AND?: MovementsScalarWhereInput[] | MovementsScalarWhereInput;
+  OR?: MovementsScalarWhereInput[] | MovementsScalarWhereInput;
+  NOT?: MovementsScalarWhereInput[] | MovementsScalarWhereInput;
 }
 
 export interface CharacterCreateWithoutMoveInfoInput {
@@ -1076,105 +1086,35 @@ export interface CharacterCreateWithoutMoveInfoInput {
   mainImgUrl?: String;
   thumbnailImg?: String;
   colorTheme?: String;
-  movementsInfo?: MovementsCreateOneWithoutUserInput;
+  movementsInfo?: MovementsCreateManyWithoutUserInput;
 }
 
-export interface MovementsUpsertWithoutUserInput {
-  update: MovementsUpdateWithoutUserDataInput;
-  create: MovementsCreateWithoutUserInput;
+export interface MovementsUpdateManyWithWhereNestedInput {
+  where: MovementsScalarWhereInput;
+  data: MovementsUpdateManyDataInput;
 }
 
 export interface MovementsUpdateManyMutationInput {
-  weight?: Int;
-  maxJumps?: Int;
-  runSpeed?: Int;
-  wallJump?: Boolean;
-  walkSpeed?: Int;
-  wallCling?: Boolean;
-  airSpeed?: Int;
-  crawl?: Boolean;
-  fallSpeed?: Int;
-  tether?: Boolean;
-  fastFallSpeed?: Int;
-  jumpSquat?: String;
-  airAcceleration?: Int;
-  softLandingLag?: String;
-  gravity?: Int;
-  hardLandingLag?: String;
-  shAirTime?: String;
-  fhAirTime?: String;
+  weight?: String;
+  maxJumps?: String;
+  wallJump?: String;
+  wallCling?: String;
+  crawl?: String;
+  airSpeed?: String;
 }
 
-export interface MovesSubscriptionWhereInput {
-  mutation_in?: MutationType[] | MutationType;
-  updatedFields_contains?: String;
-  updatedFields_contains_every?: String[] | String;
-  updatedFields_contains_some?: String[] | String;
-  node?: MovesWhereInput;
-  AND?: MovesSubscriptionWhereInput[] | MovesSubscriptionWhereInput;
-  OR?: MovesSubscriptionWhereInput[] | MovesSubscriptionWhereInput;
-  NOT?: MovesSubscriptionWhereInput[] | MovesSubscriptionWhereInput;
+export interface MovementsUpdateManyDataInput {
+  weight?: String;
+  maxJumps?: String;
+  wallJump?: String;
+  wallCling?: String;
+  crawl?: String;
+  airSpeed?: String;
 }
 
-export interface MovementsCreateInput {
-  user: CharacterCreateOneWithoutMovementsInfoInput;
-  weight?: Int;
-  maxJumps?: Int;
-  runSpeed?: Int;
-  wallJump?: Boolean;
-  walkSpeed?: Int;
-  wallCling?: Boolean;
-  airSpeed?: Int;
-  crawl?: Boolean;
-  fallSpeed?: Int;
-  tether?: Boolean;
-  fastFallSpeed?: Int;
-  jumpSquat?: String;
-  airAcceleration?: Int;
-  softLandingLag?: String;
-  gravity?: Int;
-  hardLandingLag?: String;
-  shAirTime?: String;
-  fhAirTime?: String;
-}
-
-export interface CharacterCreateWithoutMovementsInfoInput {
-  name: String;
-  displayName?: String;
-  mainImgUrl?: String;
-  thumbnailImg?: String;
-  colorTheme?: String;
-  moveInfo?: MovesCreateManyWithoutUserInput;
-}
-
-export interface MovementsUpdateInput {
-  user?: CharacterUpdateOneRequiredWithoutMovementsInfoInput;
-  weight?: Int;
-  maxJumps?: Int;
-  runSpeed?: Int;
-  wallJump?: Boolean;
-  walkSpeed?: Int;
-  wallCling?: Boolean;
-  airSpeed?: Int;
-  crawl?: Boolean;
-  fallSpeed?: Int;
-  tether?: Boolean;
-  fastFallSpeed?: Int;
-  jumpSquat?: String;
-  airAcceleration?: Int;
-  softLandingLag?: String;
-  gravity?: Int;
-  hardLandingLag?: String;
-  shAirTime?: String;
-  fhAirTime?: String;
-}
-
-export interface CharacterUpdateManyMutationInput {
-  name?: String;
-  displayName?: String;
-  mainImgUrl?: String;
-  thumbnailImg?: String;
-  colorTheme?: String;
+export interface MovesCreateManyWithoutUserInput {
+  create?: MovesCreateWithoutUserInput[] | MovesCreateWithoutUserInput;
+  connect?: MovesWhereUniqueInput[] | MovesWhereUniqueInput;
 }
 
 export interface MovesUpdateManyMutationInput {
@@ -1191,16 +1131,61 @@ export interface MovesUpdateManyMutationInput {
   isWeightDependent?: Boolean;
 }
 
-export type MovesWhereUniqueInput = AtLeastOne<{
+export interface MovementsCreateInput {
+  user: CharacterCreateOneWithoutMovementsInfoInput;
+  weight?: String;
+  maxJumps?: String;
+  wallJump?: String;
+  wallCling?: String;
+  crawl?: String;
+  airSpeed?: String;
+}
+
+export interface CharacterCreateWithoutMovementsInfoInput {
+  name: String;
+  displayName?: String;
+  mainImgUrl?: String;
+  thumbnailImg?: String;
+  colorTheme?: String;
+  moveInfo?: MovesCreateManyWithoutUserInput;
+}
+
+export interface MovementsUpdateInput {
+  user?: CharacterUpdateOneRequiredWithoutMovementsInfoInput;
+  weight?: String;
+  maxJumps?: String;
+  wallJump?: String;
+  wallCling?: String;
+  crawl?: String;
+  airSpeed?: String;
+}
+
+export interface CharacterUpdateManyMutationInput {
+  name?: String;
+  displayName?: String;
+  mainImgUrl?: String;
+  thumbnailImg?: String;
+  colorTheme?: String;
+}
+
+export type MovementsWhereUniqueInput = AtLeastOne<{
   id: ID_Input;
 }>;
 
-export interface CharacterUpdateOneRequiredWithoutMoveInfoInput {
-  create?: CharacterCreateWithoutMoveInfoInput;
-  update?: CharacterUpdateWithoutMoveInfoDataInput;
-  upsert?: CharacterUpsertWithoutMoveInfoInput;
-  connect?: CharacterWhereUniqueInput;
+export interface MovesSubscriptionWhereInput {
+  mutation_in?: MutationType[] | MutationType;
+  updatedFields_contains?: String;
+  updatedFields_contains_every?: String[] | String;
+  updatedFields_contains_some?: String[] | String;
+  node?: MovesWhereInput;
+  AND?: MovesSubscriptionWhereInput[] | MovesSubscriptionWhereInput;
+  OR?: MovesSubscriptionWhereInput[] | MovesSubscriptionWhereInput;
+  NOT?: MovesSubscriptionWhereInput[] | MovesSubscriptionWhereInput;
 }
+
+export type MovesWhereUniqueInput = AtLeastOne<{
+  id: ID_Input;
+}>;
 
 export interface NodeNode {
   id: ID_Output;
@@ -1255,57 +1240,20 @@ export interface MovesPreviousValuesSubscription
   isWeightDependent: () => Promise<AsyncIterator<Boolean>>;
 }
 
-export interface Character {
-  id: ID_Output;
-  name: String;
-  displayName?: String;
-  mainImgUrl?: String;
-  thumbnailImg?: String;
-  colorTheme?: String;
+export interface AggregateCharacter {
+  count: Int;
 }
 
-export interface CharacterPromise extends Promise<Character>, Fragmentable {
-  id: () => Promise<ID_Output>;
-  name: () => Promise<String>;
-  displayName: () => Promise<String>;
-  mainImgUrl: () => Promise<String>;
-  thumbnailImg: () => Promise<String>;
-  colorTheme: () => Promise<String>;
-  moveInfo: <T = FragmentableArray<Moves>>(
-    args?: {
-      where?: MovesWhereInput;
-      orderBy?: MovesOrderByInput;
-      skip?: Int;
-      after?: String;
-      before?: String;
-      first?: Int;
-      last?: Int;
-    }
-  ) => T;
-  movementsInfo: <T = MovementsPromise>() => T;
-}
-
-export interface CharacterSubscription
-  extends Promise<AsyncIterator<Character>>,
+export interface AggregateCharacterPromise
+  extends Promise<AggregateCharacter>,
     Fragmentable {
-  id: () => Promise<AsyncIterator<ID_Output>>;
-  name: () => Promise<AsyncIterator<String>>;
-  displayName: () => Promise<AsyncIterator<String>>;
-  mainImgUrl: () => Promise<AsyncIterator<String>>;
-  thumbnailImg: () => Promise<AsyncIterator<String>>;
-  colorTheme: () => Promise<AsyncIterator<String>>;
-  moveInfo: <T = Promise<AsyncIterator<MovesSubscription>>>(
-    args?: {
-      where?: MovesWhereInput;
-      orderBy?: MovesOrderByInput;
-      skip?: Int;
-      after?: String;
-      before?: String;
-      first?: Int;
-      last?: Int;
-    }
-  ) => T;
-  movementsInfo: <T = MovementsSubscription>() => T;
+  count: () => Promise<Int>;
+}
+
+export interface AggregateCharacterSubscription
+  extends Promise<AsyncIterator<AggregateCharacter>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
 }
 
 export interface MovementsSubscriptionPayload {
@@ -1333,22 +1281,6 @@ export interface MovementsSubscriptionPayloadSubscription
   previousValues: <T = MovementsPreviousValuesSubscription>() => T;
 }
 
-export interface AggregateCharacter {
-  count: Int;
-}
-
-export interface AggregateCharacterPromise
-  extends Promise<AggregateCharacter>,
-    Fragmentable {
-  count: () => Promise<Int>;
-}
-
-export interface AggregateCharacterSubscription
-  extends Promise<AsyncIterator<AggregateCharacter>>,
-    Fragmentable {
-  count: () => Promise<AsyncIterator<Int>>;
-}
-
 export interface CharacterEdge {
   node: Character;
   cursor: String;
@@ -1366,6 +1298,29 @@ export interface CharacterEdgeSubscription
     Fragmentable {
   node: <T = CharacterSubscription>() => T;
   cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PageInfo {
+  hasNextPage: Boolean;
+  hasPreviousPage: Boolean;
+  startCursor?: String;
+  endCursor?: String;
+}
+
+export interface PageInfoPromise extends Promise<PageInfo>, Fragmentable {
+  hasNextPage: () => Promise<Boolean>;
+  hasPreviousPage: () => Promise<Boolean>;
+  startCursor: () => Promise<String>;
+  endCursor: () => Promise<String>;
+}
+
+export interface PageInfoSubscription
+  extends Promise<AsyncIterator<PageInfo>>,
+    Fragmentable {
+  hasNextPage: () => Promise<AsyncIterator<Boolean>>;
+  hasPreviousPage: () => Promise<AsyncIterator<Boolean>>;
+  startCursor: () => Promise<AsyncIterator<String>>;
+  endCursor: () => Promise<AsyncIterator<String>>;
 }
 
 export interface BatchPayload {
@@ -1433,46 +1388,6 @@ export interface MovesSubscription
   isWeightDependent: () => Promise<AsyncIterator<Boolean>>;
 }
 
-export interface PageInfo {
-  hasNextPage: Boolean;
-  hasPreviousPage: Boolean;
-  startCursor?: String;
-  endCursor?: String;
-}
-
-export interface PageInfoPromise extends Promise<PageInfo>, Fragmentable {
-  hasNextPage: () => Promise<Boolean>;
-  hasPreviousPage: () => Promise<Boolean>;
-  startCursor: () => Promise<String>;
-  endCursor: () => Promise<String>;
-}
-
-export interface PageInfoSubscription
-  extends Promise<AsyncIterator<PageInfo>>,
-    Fragmentable {
-  hasNextPage: () => Promise<AsyncIterator<Boolean>>;
-  hasPreviousPage: () => Promise<AsyncIterator<Boolean>>;
-  startCursor: () => Promise<AsyncIterator<String>>;
-  endCursor: () => Promise<AsyncIterator<String>>;
-}
-
-export interface MovesEdge {
-  node: Moves;
-  cursor: String;
-}
-
-export interface MovesEdgePromise extends Promise<MovesEdge>, Fragmentable {
-  node: <T = MovesPromise>() => T;
-  cursor: () => Promise<String>;
-}
-
-export interface MovesEdgeSubscription
-  extends Promise<AsyncIterator<MovesEdge>>,
-    Fragmentable {
-  node: <T = MovesSubscription>() => T;
-  cursor: () => Promise<AsyncIterator<String>>;
-}
-
 export interface CharacterConnection {
   pageInfo: PageInfo;
   edges: CharacterEdge[];
@@ -1492,6 +1407,96 @@ export interface CharacterConnectionSubscription
   pageInfo: <T = PageInfoSubscription>() => T;
   edges: <T = Promise<AsyncIterator<CharacterEdgeSubscription>>>() => T;
   aggregate: <T = AggregateCharacterSubscription>() => T;
+}
+
+export interface MovesEdge {
+  node: Moves;
+  cursor: String;
+}
+
+export interface MovesEdgePromise extends Promise<MovesEdge>, Fragmentable {
+  node: <T = MovesPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface MovesEdgeSubscription
+  extends Promise<AsyncIterator<MovesEdge>>,
+    Fragmentable {
+  node: <T = MovesSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface Character {
+  id: ID_Output;
+  name: String;
+  displayName?: String;
+  mainImgUrl?: String;
+  thumbnailImg?: String;
+  colorTheme?: String;
+}
+
+export interface CharacterPromise extends Promise<Character>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  displayName: () => Promise<String>;
+  mainImgUrl: () => Promise<String>;
+  thumbnailImg: () => Promise<String>;
+  colorTheme: () => Promise<String>;
+  moveInfo: <T = FragmentableArray<Moves>>(
+    args?: {
+      where?: MovesWhereInput;
+      orderBy?: MovesOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  movementsInfo: <T = FragmentableArray<Movements>>(
+    args?: {
+      where?: MovementsWhereInput;
+      orderBy?: MovementsOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+}
+
+export interface CharacterSubscription
+  extends Promise<AsyncIterator<Character>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+  displayName: () => Promise<AsyncIterator<String>>;
+  mainImgUrl: () => Promise<AsyncIterator<String>>;
+  thumbnailImg: () => Promise<AsyncIterator<String>>;
+  colorTheme: () => Promise<AsyncIterator<String>>;
+  moveInfo: <T = Promise<AsyncIterator<MovesSubscription>>>(
+    args?: {
+      where?: MovesWhereInput;
+      orderBy?: MovesOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
+  movementsInfo: <T = Promise<AsyncIterator<MovementsSubscription>>>(
+    args?: {
+      where?: MovementsWhereInput;
+      orderBy?: MovementsOrderByInput;
+      skip?: Int;
+      after?: String;
+      before?: String;
+      first?: Int;
+      last?: Int;
+    }
+  ) => T;
 }
 
 export interface AggregateMovements {
@@ -1533,47 +1538,23 @@ export interface MovementsConnectionSubscription
 
 export interface Movements {
   id: ID_Output;
-  weight?: Int;
-  maxJumps?: Int;
-  runSpeed?: Int;
-  wallJump?: Boolean;
-  walkSpeed?: Int;
-  wallCling?: Boolean;
-  airSpeed?: Int;
-  crawl?: Boolean;
-  fallSpeed?: Int;
-  tether?: Boolean;
-  fastFallSpeed?: Int;
-  jumpSquat?: String;
-  airAcceleration?: Int;
-  softLandingLag?: String;
-  gravity?: Int;
-  hardLandingLag?: String;
-  shAirTime?: String;
-  fhAirTime?: String;
+  weight?: String;
+  maxJumps?: String;
+  wallJump?: String;
+  wallCling?: String;
+  crawl?: String;
+  airSpeed?: String;
 }
 
 export interface MovementsPromise extends Promise<Movements>, Fragmentable {
   id: () => Promise<ID_Output>;
   user: <T = CharacterPromise>() => T;
-  weight: () => Promise<Int>;
-  maxJumps: () => Promise<Int>;
-  runSpeed: () => Promise<Int>;
-  wallJump: () => Promise<Boolean>;
-  walkSpeed: () => Promise<Int>;
-  wallCling: () => Promise<Boolean>;
-  airSpeed: () => Promise<Int>;
-  crawl: () => Promise<Boolean>;
-  fallSpeed: () => Promise<Int>;
-  tether: () => Promise<Boolean>;
-  fastFallSpeed: () => Promise<Int>;
-  jumpSquat: () => Promise<String>;
-  airAcceleration: () => Promise<Int>;
-  softLandingLag: () => Promise<String>;
-  gravity: () => Promise<Int>;
-  hardLandingLag: () => Promise<String>;
-  shAirTime: () => Promise<String>;
-  fhAirTime: () => Promise<String>;
+  weight: () => Promise<String>;
+  maxJumps: () => Promise<String>;
+  wallJump: () => Promise<String>;
+  wallCling: () => Promise<String>;
+  crawl: () => Promise<String>;
+  airSpeed: () => Promise<String>;
 }
 
 export interface MovementsSubscription
@@ -1581,24 +1562,12 @@ export interface MovementsSubscription
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
   user: <T = CharacterSubscription>() => T;
-  weight: () => Promise<AsyncIterator<Int>>;
-  maxJumps: () => Promise<AsyncIterator<Int>>;
-  runSpeed: () => Promise<AsyncIterator<Int>>;
-  wallJump: () => Promise<AsyncIterator<Boolean>>;
-  walkSpeed: () => Promise<AsyncIterator<Int>>;
-  wallCling: () => Promise<AsyncIterator<Boolean>>;
-  airSpeed: () => Promise<AsyncIterator<Int>>;
-  crawl: () => Promise<AsyncIterator<Boolean>>;
-  fallSpeed: () => Promise<AsyncIterator<Int>>;
-  tether: () => Promise<AsyncIterator<Boolean>>;
-  fastFallSpeed: () => Promise<AsyncIterator<Int>>;
-  jumpSquat: () => Promise<AsyncIterator<String>>;
-  airAcceleration: () => Promise<AsyncIterator<Int>>;
-  softLandingLag: () => Promise<AsyncIterator<String>>;
-  gravity: () => Promise<AsyncIterator<Int>>;
-  hardLandingLag: () => Promise<AsyncIterator<String>>;
-  shAirTime: () => Promise<AsyncIterator<String>>;
-  fhAirTime: () => Promise<AsyncIterator<String>>;
+  weight: () => Promise<AsyncIterator<String>>;
+  maxJumps: () => Promise<AsyncIterator<String>>;
+  wallJump: () => Promise<AsyncIterator<String>>;
+  wallCling: () => Promise<AsyncIterator<String>>;
+  crawl: () => Promise<AsyncIterator<String>>;
+  airSpeed: () => Promise<AsyncIterator<String>>;
 }
 
 export interface CharacterPreviousValues {
@@ -1659,72 +1628,36 @@ export interface CharacterSubscriptionPayloadSubscription
 
 export interface MovementsPreviousValues {
   id: ID_Output;
-  weight?: Int;
-  maxJumps?: Int;
-  runSpeed?: Int;
-  wallJump?: Boolean;
-  walkSpeed?: Int;
-  wallCling?: Boolean;
-  airSpeed?: Int;
-  crawl?: Boolean;
-  fallSpeed?: Int;
-  tether?: Boolean;
-  fastFallSpeed?: Int;
-  jumpSquat?: String;
-  airAcceleration?: Int;
-  softLandingLag?: String;
-  gravity?: Int;
-  hardLandingLag?: String;
-  shAirTime?: String;
-  fhAirTime?: String;
+  weight?: String;
+  maxJumps?: String;
+  wallJump?: String;
+  wallCling?: String;
+  crawl?: String;
+  airSpeed?: String;
 }
 
 export interface MovementsPreviousValuesPromise
   extends Promise<MovementsPreviousValues>,
     Fragmentable {
   id: () => Promise<ID_Output>;
-  weight: () => Promise<Int>;
-  maxJumps: () => Promise<Int>;
-  runSpeed: () => Promise<Int>;
-  wallJump: () => Promise<Boolean>;
-  walkSpeed: () => Promise<Int>;
-  wallCling: () => Promise<Boolean>;
-  airSpeed: () => Promise<Int>;
-  crawl: () => Promise<Boolean>;
-  fallSpeed: () => Promise<Int>;
-  tether: () => Promise<Boolean>;
-  fastFallSpeed: () => Promise<Int>;
-  jumpSquat: () => Promise<String>;
-  airAcceleration: () => Promise<Int>;
-  softLandingLag: () => Promise<String>;
-  gravity: () => Promise<Int>;
-  hardLandingLag: () => Promise<String>;
-  shAirTime: () => Promise<String>;
-  fhAirTime: () => Promise<String>;
+  weight: () => Promise<String>;
+  maxJumps: () => Promise<String>;
+  wallJump: () => Promise<String>;
+  wallCling: () => Promise<String>;
+  crawl: () => Promise<String>;
+  airSpeed: () => Promise<String>;
 }
 
 export interface MovementsPreviousValuesSubscription
   extends Promise<AsyncIterator<MovementsPreviousValues>>,
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
-  weight: () => Promise<AsyncIterator<Int>>;
-  maxJumps: () => Promise<AsyncIterator<Int>>;
-  runSpeed: () => Promise<AsyncIterator<Int>>;
-  wallJump: () => Promise<AsyncIterator<Boolean>>;
-  walkSpeed: () => Promise<AsyncIterator<Int>>;
-  wallCling: () => Promise<AsyncIterator<Boolean>>;
-  airSpeed: () => Promise<AsyncIterator<Int>>;
-  crawl: () => Promise<AsyncIterator<Boolean>>;
-  fallSpeed: () => Promise<AsyncIterator<Int>>;
-  tether: () => Promise<AsyncIterator<Boolean>>;
-  fastFallSpeed: () => Promise<AsyncIterator<Int>>;
-  jumpSquat: () => Promise<AsyncIterator<String>>;
-  airAcceleration: () => Promise<AsyncIterator<Int>>;
-  softLandingLag: () => Promise<AsyncIterator<String>>;
-  gravity: () => Promise<AsyncIterator<Int>>;
-  hardLandingLag: () => Promise<AsyncIterator<String>>;
-  shAirTime: () => Promise<AsyncIterator<String>>;
-  fhAirTime: () => Promise<AsyncIterator<String>>;
+  weight: () => Promise<AsyncIterator<String>>;
+  maxJumps: () => Promise<AsyncIterator<String>>;
+  wallJump: () => Promise<AsyncIterator<String>>;
+  wallCling: () => Promise<AsyncIterator<String>>;
+  crawl: () => Promise<AsyncIterator<String>>;
+  airSpeed: () => Promise<AsyncIterator<String>>;
 }
 
 export interface MovesSubscriptionPayload {

@@ -6,7 +6,7 @@ type Character {
   thumbnailImg: String
   colorTheme: String
   moveInfo: [Moves!]!
-  movementsInfo: Movements
+  movementsInfo: [Movements!]!
 }
 
 type Moves {
@@ -28,22 +28,10 @@ type Moves {
 type Movements {
   id: ID! @unique
   user: Character!
-  weight: Int
-  maxJumps: Int
-  runSpeed: Int
-  wallJump: Boolean
-  walkSpeed: Int
-  wallCling: Boolean
-  airSpeed: Int
-  crawl: Boolean
-  fallSpeed: Int
-  tether: Boolean
-  fastFallSpeed: Int
-  jumpSquat: String
-  airAcceleration: Int
-  softLandingLag: String
-  gravity: Int
-  hardLandingLag: String
-  shAirTime: String
-  fhAirTime: String
+  weight: String
+  maxJumps: String
+  wallJump: String
+  wallCling: String
+  crawl: String
+  airSpeed: String
 }

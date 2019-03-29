@@ -75,7 +75,7 @@ export interface NexusPrismaTypes {
       CharacterCreateInput: CharacterCreateInputInputObject
       MovesCreateManyWithoutUserInput: MovesCreateManyWithoutUserInputInputObject
       MovesCreateWithoutUserInput: MovesCreateWithoutUserInputInputObject
-      MovementsCreateOneWithoutUserInput: MovementsCreateOneWithoutUserInputInputObject
+      MovementsCreateManyWithoutUserInput: MovementsCreateManyWithoutUserInputInputObject
       MovementsCreateWithoutUserInput: MovementsCreateWithoutUserInputInputObject
       CharacterUpdateInput: CharacterUpdateInputInputObject
       MovesUpdateManyWithoutUserInput: MovesUpdateManyWithoutUserInputInputObject
@@ -85,9 +85,13 @@ export interface NexusPrismaTypes {
       MovesScalarWhereInput: MovesScalarWhereInputInputObject
       MovesUpdateManyWithWhereNestedInput: MovesUpdateManyWithWhereNestedInputInputObject
       MovesUpdateManyDataInput: MovesUpdateManyDataInputInputObject
-      MovementsUpdateOneWithoutUserInput: MovementsUpdateOneWithoutUserInputInputObject
+      MovementsUpdateManyWithoutUserInput: MovementsUpdateManyWithoutUserInputInputObject
+      MovementsUpdateWithWhereUniqueWithoutUserInput: MovementsUpdateWithWhereUniqueWithoutUserInputInputObject
       MovementsUpdateWithoutUserDataInput: MovementsUpdateWithoutUserDataInputInputObject
-      MovementsUpsertWithoutUserInput: MovementsUpsertWithoutUserInputInputObject
+      MovementsUpsertWithWhereUniqueWithoutUserInput: MovementsUpsertWithWhereUniqueWithoutUserInputInputObject
+      MovementsScalarWhereInput: MovementsScalarWhereInputInputObject
+      MovementsUpdateManyWithWhereNestedInput: MovementsUpdateManyWithWhereNestedInputInputObject
+      MovementsUpdateManyDataInput: MovementsUpdateManyDataInputInputObject
       CharacterUpdateManyMutationInput: CharacterUpdateManyMutationInputInputObject
       MovesCreateInput: MovesCreateInputInputObject
       CharacterCreateOneWithoutMoveInfoInput: CharacterCreateOneWithoutMoveInfoInputInputObject
@@ -112,8 +116,8 @@ export interface NexusPrismaTypes {
   }
   enumTypes: {
     MovesOrderByInput: MovesOrderByInputValues,
-    CharacterOrderByInput: CharacterOrderByInputValues,
     MovementsOrderByInput: MovementsOrderByInputValues,
+    CharacterOrderByInput: CharacterOrderByInputValues,
     MutationType: MutationTypeValues,
   }
 }
@@ -332,7 +336,7 @@ type CharacterObject =
   | { name: 'thumbnailImg', args?: [] | false, alias?: string  } 
   | { name: 'colorTheme', args?: [] | false, alias?: string  } 
   | { name: 'moveInfo', args?: CharacterMoveInfoArgs[] | false, alias?: string  } 
-  | { name: 'movementsInfo', args?: [] | false, alias?: string  } 
+  | { name: 'movementsInfo', args?: CharacterMovementsInfoArgs[] | false, alias?: string  } 
 
 type CharacterFields =
   | 'id'
@@ -346,6 +350,14 @@ type CharacterFields =
 
 
 type CharacterMoveInfoArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type CharacterMovementsInfoArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -419,16 +431,16 @@ export interface CharacterFieldDetails {
   }
   movementsInfo: {
     type: 'Movements'
-    args: {}
+    args: Record<CharacterMovementsInfoArgs, core.NexusArgDef<string>>
     description: string
-    list: undefined
-    nullable: true
+    list: true
+    nullable: false
     resolve: (
       root: core.RootValue<"Character">,
-      args: {  }  ,
+      args: { where?: MovementsWhereInput | null, orderBy?: prisma.MovementsOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Movements | null> | prisma.Movements | null
+    ) => Promise<prisma.Movements[]> | prisma.Movements[]
   }
 }
   
@@ -591,44 +603,20 @@ type MovementsObject =
   | { name: 'user', args?: [] | false, alias?: string  } 
   | { name: 'weight', args?: [] | false, alias?: string  } 
   | { name: 'maxJumps', args?: [] | false, alias?: string  } 
-  | { name: 'runSpeed', args?: [] | false, alias?: string  } 
   | { name: 'wallJump', args?: [] | false, alias?: string  } 
-  | { name: 'walkSpeed', args?: [] | false, alias?: string  } 
   | { name: 'wallCling', args?: [] | false, alias?: string  } 
-  | { name: 'airSpeed', args?: [] | false, alias?: string  } 
   | { name: 'crawl', args?: [] | false, alias?: string  } 
-  | { name: 'fallSpeed', args?: [] | false, alias?: string  } 
-  | { name: 'tether', args?: [] | false, alias?: string  } 
-  | { name: 'fastFallSpeed', args?: [] | false, alias?: string  } 
-  | { name: 'jumpSquat', args?: [] | false, alias?: string  } 
-  | { name: 'airAcceleration', args?: [] | false, alias?: string  } 
-  | { name: 'softLandingLag', args?: [] | false, alias?: string  } 
-  | { name: 'gravity', args?: [] | false, alias?: string  } 
-  | { name: 'hardLandingLag', args?: [] | false, alias?: string  } 
-  | { name: 'shAirTime', args?: [] | false, alias?: string  } 
-  | { name: 'fhAirTime', args?: [] | false, alias?: string  } 
+  | { name: 'airSpeed', args?: [] | false, alias?: string  } 
 
 type MovementsFields =
   | 'id'
   | 'user'
   | 'weight'
   | 'maxJumps'
-  | 'runSpeed'
   | 'wallJump'
-  | 'walkSpeed'
   | 'wallCling'
-  | 'airSpeed'
   | 'crawl'
-  | 'fallSpeed'
-  | 'tether'
-  | 'fastFallSpeed'
-  | 'jumpSquat'
-  | 'airAcceleration'
-  | 'softLandingLag'
-  | 'gravity'
-  | 'hardLandingLag'
-  | 'shAirTime'
-  | 'fhAirTime'
+  | 'airSpeed'
 
 
 
@@ -657,7 +645,7 @@ export interface MovementsFieldDetails {
     ) => Promise<prisma.Character> | prisma.Character
   }
   weight: {
-    type: 'Int'
+    type: 'String'
     args: {}
     description: string
     list: undefined
@@ -665,15 +653,7 @@ export interface MovementsFieldDetails {
     resolve: undefined
   }
   maxJumps: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  runSpeed: {
-    type: 'Int'
+    type: 'String'
     args: {}
     description: string
     list: undefined
@@ -681,15 +661,7 @@ export interface MovementsFieldDetails {
     resolve: undefined
   }
   wallJump: {
-    type: 'Boolean'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  walkSpeed: {
-    type: 'Int'
+    type: 'String'
     args: {}
     description: string
     list: undefined
@@ -697,15 +669,7 @@ export interface MovementsFieldDetails {
     resolve: undefined
   }
   wallCling: {
-    type: 'Boolean'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  airSpeed: {
-    type: 'Int'
+    type: 'String'
     args: {}
     description: string
     list: undefined
@@ -713,38 +677,6 @@ export interface MovementsFieldDetails {
     resolve: undefined
   }
   crawl: {
-    type: 'Boolean'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  fallSpeed: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  tether: {
-    type: 'Boolean'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  fastFallSpeed: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  jumpSquat: {
     type: 'String'
     args: {}
     description: string
@@ -752,47 +684,7 @@ export interface MovementsFieldDetails {
     nullable: true
     resolve: undefined
   }
-  airAcceleration: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  softLandingLag: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  gravity: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  hardLandingLag: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  shAirTime: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  fhAirTime: {
+  airSpeed: {
     type: 'String'
     args: {}
     description: string
@@ -2082,43 +1974,19 @@ type MovementsPreviousValuesObject =
   | { name: 'id', args?: [] | false, alias?: string  } 
   | { name: 'weight', args?: [] | false, alias?: string  } 
   | { name: 'maxJumps', args?: [] | false, alias?: string  } 
-  | { name: 'runSpeed', args?: [] | false, alias?: string  } 
   | { name: 'wallJump', args?: [] | false, alias?: string  } 
-  | { name: 'walkSpeed', args?: [] | false, alias?: string  } 
   | { name: 'wallCling', args?: [] | false, alias?: string  } 
-  | { name: 'airSpeed', args?: [] | false, alias?: string  } 
   | { name: 'crawl', args?: [] | false, alias?: string  } 
-  | { name: 'fallSpeed', args?: [] | false, alias?: string  } 
-  | { name: 'tether', args?: [] | false, alias?: string  } 
-  | { name: 'fastFallSpeed', args?: [] | false, alias?: string  } 
-  | { name: 'jumpSquat', args?: [] | false, alias?: string  } 
-  | { name: 'airAcceleration', args?: [] | false, alias?: string  } 
-  | { name: 'softLandingLag', args?: [] | false, alias?: string  } 
-  | { name: 'gravity', args?: [] | false, alias?: string  } 
-  | { name: 'hardLandingLag', args?: [] | false, alias?: string  } 
-  | { name: 'shAirTime', args?: [] | false, alias?: string  } 
-  | { name: 'fhAirTime', args?: [] | false, alias?: string  } 
+  | { name: 'airSpeed', args?: [] | false, alias?: string  } 
 
 type MovementsPreviousValuesFields =
   | 'id'
   | 'weight'
   | 'maxJumps'
-  | 'runSpeed'
   | 'wallJump'
-  | 'walkSpeed'
   | 'wallCling'
-  | 'airSpeed'
   | 'crawl'
-  | 'fallSpeed'
-  | 'tether'
-  | 'fastFallSpeed'
-  | 'jumpSquat'
-  | 'airAcceleration'
-  | 'softLandingLag'
-  | 'gravity'
-  | 'hardLandingLag'
-  | 'shAirTime'
-  | 'fhAirTime'
+  | 'airSpeed'
 
 
 
@@ -2134,7 +2002,7 @@ export interface MovementsPreviousValuesFieldDetails {
     resolve: undefined
   }
   weight: {
-    type: 'Int'
+    type: 'String'
     args: {}
     description: string
     list: undefined
@@ -2142,15 +2010,7 @@ export interface MovementsPreviousValuesFieldDetails {
     resolve: undefined
   }
   maxJumps: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  runSpeed: {
-    type: 'Int'
+    type: 'String'
     args: {}
     description: string
     list: undefined
@@ -2158,15 +2018,7 @@ export interface MovementsPreviousValuesFieldDetails {
     resolve: undefined
   }
   wallJump: {
-    type: 'Boolean'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  walkSpeed: {
-    type: 'Int'
+    type: 'String'
     args: {}
     description: string
     list: undefined
@@ -2174,15 +2026,7 @@ export interface MovementsPreviousValuesFieldDetails {
     resolve: undefined
   }
   wallCling: {
-    type: 'Boolean'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  airSpeed: {
-    type: 'Int'
+    type: 'String'
     args: {}
     description: string
     list: undefined
@@ -2190,38 +2034,6 @@ export interface MovementsPreviousValuesFieldDetails {
     resolve: undefined
   }
   crawl: {
-    type: 'Boolean'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  fallSpeed: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  tether: {
-    type: 'Boolean'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  fastFallSpeed: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  jumpSquat: {
     type: 'String'
     args: {}
     description: string
@@ -2229,47 +2041,7 @@ export interface MovementsPreviousValuesFieldDetails {
     nullable: true
     resolve: undefined
   }
-  airAcceleration: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  softLandingLag: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  gravity: {
-    type: 'Int'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  hardLandingLag: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  shAirTime: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: true
-    resolve: undefined
-  }
-  fhAirTime: {
+  airSpeed: {
     type: 'String'
     args: {}
     description: string
@@ -2631,7 +2403,9 @@ export interface CharacterWhereInput {
   moveInfo_every?: MovesWhereInput | null
   moveInfo_some?: MovesWhereInput | null
   moveInfo_none?: MovesWhereInput | null
-  movementsInfo?: MovementsWhereInput | null
+  movementsInfo_every?: MovementsWhereInput | null
+  movementsInfo_some?: MovementsWhereInput | null
+  movementsInfo_none?: MovementsWhereInput | null
   AND?: CharacterWhereInput[]
   OR?: CharacterWhereInput[]
   NOT?: CharacterWhereInput[]
@@ -2725,7 +2499,9 @@ export type CharacterWhereInputInputObject =
   | { name: 'moveInfo_every', alias?: string  } 
   | { name: 'moveInfo_some', alias?: string  } 
   | { name: 'moveInfo_none', alias?: string  } 
-  | { name: 'movementsInfo', alias?: string  } 
+  | { name: 'movementsInfo_every', alias?: string  } 
+  | { name: 'movementsInfo_some', alias?: string  } 
+  | { name: 'movementsInfo_none', alias?: string  } 
   | { name: 'AND', alias?: string  } 
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
@@ -2746,156 +2522,90 @@ export interface MovementsWhereInput {
   id_ends_with?: string | null
   id_not_ends_with?: string | null
   user?: CharacterWhereInput | null
-  weight?: number | null
-  weight_not?: number | null
-  weight_in?: number[]
-  weight_not_in?: number[]
-  weight_lt?: number | null
-  weight_lte?: number | null
-  weight_gt?: number | null
-  weight_gte?: number | null
-  maxJumps?: number | null
-  maxJumps_not?: number | null
-  maxJumps_in?: number[]
-  maxJumps_not_in?: number[]
-  maxJumps_lt?: number | null
-  maxJumps_lte?: number | null
-  maxJumps_gt?: number | null
-  maxJumps_gte?: number | null
-  runSpeed?: number | null
-  runSpeed_not?: number | null
-  runSpeed_in?: number[]
-  runSpeed_not_in?: number[]
-  runSpeed_lt?: number | null
-  runSpeed_lte?: number | null
-  runSpeed_gt?: number | null
-  runSpeed_gte?: number | null
-  wallJump?: boolean | null
-  wallJump_not?: boolean | null
-  walkSpeed?: number | null
-  walkSpeed_not?: number | null
-  walkSpeed_in?: number[]
-  walkSpeed_not_in?: number[]
-  walkSpeed_lt?: number | null
-  walkSpeed_lte?: number | null
-  walkSpeed_gt?: number | null
-  walkSpeed_gte?: number | null
-  wallCling?: boolean | null
-  wallCling_not?: boolean | null
-  airSpeed?: number | null
-  airSpeed_not?: number | null
-  airSpeed_in?: number[]
-  airSpeed_not_in?: number[]
-  airSpeed_lt?: number | null
-  airSpeed_lte?: number | null
-  airSpeed_gt?: number | null
-  airSpeed_gte?: number | null
-  crawl?: boolean | null
-  crawl_not?: boolean | null
-  fallSpeed?: number | null
-  fallSpeed_not?: number | null
-  fallSpeed_in?: number[]
-  fallSpeed_not_in?: number[]
-  fallSpeed_lt?: number | null
-  fallSpeed_lte?: number | null
-  fallSpeed_gt?: number | null
-  fallSpeed_gte?: number | null
-  tether?: boolean | null
-  tether_not?: boolean | null
-  fastFallSpeed?: number | null
-  fastFallSpeed_not?: number | null
-  fastFallSpeed_in?: number[]
-  fastFallSpeed_not_in?: number[]
-  fastFallSpeed_lt?: number | null
-  fastFallSpeed_lte?: number | null
-  fastFallSpeed_gt?: number | null
-  fastFallSpeed_gte?: number | null
-  jumpSquat?: string | null
-  jumpSquat_not?: string | null
-  jumpSquat_in?: string[]
-  jumpSquat_not_in?: string[]
-  jumpSquat_lt?: string | null
-  jumpSquat_lte?: string | null
-  jumpSquat_gt?: string | null
-  jumpSquat_gte?: string | null
-  jumpSquat_contains?: string | null
-  jumpSquat_not_contains?: string | null
-  jumpSquat_starts_with?: string | null
-  jumpSquat_not_starts_with?: string | null
-  jumpSquat_ends_with?: string | null
-  jumpSquat_not_ends_with?: string | null
-  airAcceleration?: number | null
-  airAcceleration_not?: number | null
-  airAcceleration_in?: number[]
-  airAcceleration_not_in?: number[]
-  airAcceleration_lt?: number | null
-  airAcceleration_lte?: number | null
-  airAcceleration_gt?: number | null
-  airAcceleration_gte?: number | null
-  softLandingLag?: string | null
-  softLandingLag_not?: string | null
-  softLandingLag_in?: string[]
-  softLandingLag_not_in?: string[]
-  softLandingLag_lt?: string | null
-  softLandingLag_lte?: string | null
-  softLandingLag_gt?: string | null
-  softLandingLag_gte?: string | null
-  softLandingLag_contains?: string | null
-  softLandingLag_not_contains?: string | null
-  softLandingLag_starts_with?: string | null
-  softLandingLag_not_starts_with?: string | null
-  softLandingLag_ends_with?: string | null
-  softLandingLag_not_ends_with?: string | null
-  gravity?: number | null
-  gravity_not?: number | null
-  gravity_in?: number[]
-  gravity_not_in?: number[]
-  gravity_lt?: number | null
-  gravity_lte?: number | null
-  gravity_gt?: number | null
-  gravity_gte?: number | null
-  hardLandingLag?: string | null
-  hardLandingLag_not?: string | null
-  hardLandingLag_in?: string[]
-  hardLandingLag_not_in?: string[]
-  hardLandingLag_lt?: string | null
-  hardLandingLag_lte?: string | null
-  hardLandingLag_gt?: string | null
-  hardLandingLag_gte?: string | null
-  hardLandingLag_contains?: string | null
-  hardLandingLag_not_contains?: string | null
-  hardLandingLag_starts_with?: string | null
-  hardLandingLag_not_starts_with?: string | null
-  hardLandingLag_ends_with?: string | null
-  hardLandingLag_not_ends_with?: string | null
-  shAirTime?: string | null
-  shAirTime_not?: string | null
-  shAirTime_in?: string[]
-  shAirTime_not_in?: string[]
-  shAirTime_lt?: string | null
-  shAirTime_lte?: string | null
-  shAirTime_gt?: string | null
-  shAirTime_gte?: string | null
-  shAirTime_contains?: string | null
-  shAirTime_not_contains?: string | null
-  shAirTime_starts_with?: string | null
-  shAirTime_not_starts_with?: string | null
-  shAirTime_ends_with?: string | null
-  shAirTime_not_ends_with?: string | null
-  fhAirTime?: string | null
-  fhAirTime_not?: string | null
-  fhAirTime_in?: string[]
-  fhAirTime_not_in?: string[]
-  fhAirTime_lt?: string | null
-  fhAirTime_lte?: string | null
-  fhAirTime_gt?: string | null
-  fhAirTime_gte?: string | null
-  fhAirTime_contains?: string | null
-  fhAirTime_not_contains?: string | null
-  fhAirTime_starts_with?: string | null
-  fhAirTime_not_starts_with?: string | null
-  fhAirTime_ends_with?: string | null
-  fhAirTime_not_ends_with?: string | null
+  weight?: string | null
+  weight_not?: string | null
+  weight_in?: string[]
+  weight_not_in?: string[]
+  weight_lt?: string | null
+  weight_lte?: string | null
+  weight_gt?: string | null
+  weight_gte?: string | null
+  weight_contains?: string | null
+  weight_not_contains?: string | null
+  weight_starts_with?: string | null
+  weight_not_starts_with?: string | null
+  weight_ends_with?: string | null
+  weight_not_ends_with?: string | null
+  maxJumps?: string | null
+  maxJumps_not?: string | null
+  maxJumps_in?: string[]
+  maxJumps_not_in?: string[]
+  maxJumps_lt?: string | null
+  maxJumps_lte?: string | null
+  maxJumps_gt?: string | null
+  maxJumps_gte?: string | null
+  maxJumps_contains?: string | null
+  maxJumps_not_contains?: string | null
+  maxJumps_starts_with?: string | null
+  maxJumps_not_starts_with?: string | null
+  maxJumps_ends_with?: string | null
+  maxJumps_not_ends_with?: string | null
+  wallJump?: string | null
+  wallJump_not?: string | null
+  wallJump_in?: string[]
+  wallJump_not_in?: string[]
+  wallJump_lt?: string | null
+  wallJump_lte?: string | null
+  wallJump_gt?: string | null
+  wallJump_gte?: string | null
+  wallJump_contains?: string | null
+  wallJump_not_contains?: string | null
+  wallJump_starts_with?: string | null
+  wallJump_not_starts_with?: string | null
+  wallJump_ends_with?: string | null
+  wallJump_not_ends_with?: string | null
+  wallCling?: string | null
+  wallCling_not?: string | null
+  wallCling_in?: string[]
+  wallCling_not_in?: string[]
+  wallCling_lt?: string | null
+  wallCling_lte?: string | null
+  wallCling_gt?: string | null
+  wallCling_gte?: string | null
+  wallCling_contains?: string | null
+  wallCling_not_contains?: string | null
+  wallCling_starts_with?: string | null
+  wallCling_not_starts_with?: string | null
+  wallCling_ends_with?: string | null
+  wallCling_not_ends_with?: string | null
+  crawl?: string | null
+  crawl_not?: string | null
+  crawl_in?: string[]
+  crawl_not_in?: string[]
+  crawl_lt?: string | null
+  crawl_lte?: string | null
+  crawl_gt?: string | null
+  crawl_gte?: string | null
+  crawl_contains?: string | null
+  crawl_not_contains?: string | null
+  crawl_starts_with?: string | null
+  crawl_not_starts_with?: string | null
+  crawl_ends_with?: string | null
+  crawl_not_ends_with?: string | null
+  airSpeed?: string | null
+  airSpeed_not?: string | null
+  airSpeed_in?: string[]
+  airSpeed_not_in?: string[]
+  airSpeed_lt?: string | null
+  airSpeed_lte?: string | null
+  airSpeed_gt?: string | null
+  airSpeed_gte?: string | null
+  airSpeed_contains?: string | null
+  airSpeed_not_contains?: string | null
+  airSpeed_starts_with?: string | null
+  airSpeed_not_starts_with?: string | null
+  airSpeed_ends_with?: string | null
+  airSpeed_not_ends_with?: string | null
   AND?: MovementsWhereInput[]
   OR?: MovementsWhereInput[]
   NOT?: MovementsWhereInput[]
@@ -2925,6 +2635,12 @@ export type MovementsWhereInputInputObject =
   | { name: 'weight_lte', alias?: string  } 
   | { name: 'weight_gt', alias?: string  } 
   | { name: 'weight_gte', alias?: string  } 
+  | { name: 'weight_contains', alias?: string  } 
+  | { name: 'weight_not_contains', alias?: string  } 
+  | { name: 'weight_starts_with', alias?: string  } 
+  | { name: 'weight_not_starts_with', alias?: string  } 
+  | { name: 'weight_ends_with', alias?: string  } 
+  | { name: 'weight_not_ends_with', alias?: string  } 
   | { name: 'maxJumps', alias?: string  } 
   | { name: 'maxJumps_not', alias?: string  } 
   | { name: 'maxJumps_in', alias?: string  } 
@@ -2933,26 +2649,54 @@ export type MovementsWhereInputInputObject =
   | { name: 'maxJumps_lte', alias?: string  } 
   | { name: 'maxJumps_gt', alias?: string  } 
   | { name: 'maxJumps_gte', alias?: string  } 
-  | { name: 'runSpeed', alias?: string  } 
-  | { name: 'runSpeed_not', alias?: string  } 
-  | { name: 'runSpeed_in', alias?: string  } 
-  | { name: 'runSpeed_not_in', alias?: string  } 
-  | { name: 'runSpeed_lt', alias?: string  } 
-  | { name: 'runSpeed_lte', alias?: string  } 
-  | { name: 'runSpeed_gt', alias?: string  } 
-  | { name: 'runSpeed_gte', alias?: string  } 
+  | { name: 'maxJumps_contains', alias?: string  } 
+  | { name: 'maxJumps_not_contains', alias?: string  } 
+  | { name: 'maxJumps_starts_with', alias?: string  } 
+  | { name: 'maxJumps_not_starts_with', alias?: string  } 
+  | { name: 'maxJumps_ends_with', alias?: string  } 
+  | { name: 'maxJumps_not_ends_with', alias?: string  } 
   | { name: 'wallJump', alias?: string  } 
   | { name: 'wallJump_not', alias?: string  } 
-  | { name: 'walkSpeed', alias?: string  } 
-  | { name: 'walkSpeed_not', alias?: string  } 
-  | { name: 'walkSpeed_in', alias?: string  } 
-  | { name: 'walkSpeed_not_in', alias?: string  } 
-  | { name: 'walkSpeed_lt', alias?: string  } 
-  | { name: 'walkSpeed_lte', alias?: string  } 
-  | { name: 'walkSpeed_gt', alias?: string  } 
-  | { name: 'walkSpeed_gte', alias?: string  } 
+  | { name: 'wallJump_in', alias?: string  } 
+  | { name: 'wallJump_not_in', alias?: string  } 
+  | { name: 'wallJump_lt', alias?: string  } 
+  | { name: 'wallJump_lte', alias?: string  } 
+  | { name: 'wallJump_gt', alias?: string  } 
+  | { name: 'wallJump_gte', alias?: string  } 
+  | { name: 'wallJump_contains', alias?: string  } 
+  | { name: 'wallJump_not_contains', alias?: string  } 
+  | { name: 'wallJump_starts_with', alias?: string  } 
+  | { name: 'wallJump_not_starts_with', alias?: string  } 
+  | { name: 'wallJump_ends_with', alias?: string  } 
+  | { name: 'wallJump_not_ends_with', alias?: string  } 
   | { name: 'wallCling', alias?: string  } 
   | { name: 'wallCling_not', alias?: string  } 
+  | { name: 'wallCling_in', alias?: string  } 
+  | { name: 'wallCling_not_in', alias?: string  } 
+  | { name: 'wallCling_lt', alias?: string  } 
+  | { name: 'wallCling_lte', alias?: string  } 
+  | { name: 'wallCling_gt', alias?: string  } 
+  | { name: 'wallCling_gte', alias?: string  } 
+  | { name: 'wallCling_contains', alias?: string  } 
+  | { name: 'wallCling_not_contains', alias?: string  } 
+  | { name: 'wallCling_starts_with', alias?: string  } 
+  | { name: 'wallCling_not_starts_with', alias?: string  } 
+  | { name: 'wallCling_ends_with', alias?: string  } 
+  | { name: 'wallCling_not_ends_with', alias?: string  } 
+  | { name: 'crawl', alias?: string  } 
+  | { name: 'crawl_not', alias?: string  } 
+  | { name: 'crawl_in', alias?: string  } 
+  | { name: 'crawl_not_in', alias?: string  } 
+  | { name: 'crawl_lt', alias?: string  } 
+  | { name: 'crawl_lte', alias?: string  } 
+  | { name: 'crawl_gt', alias?: string  } 
+  | { name: 'crawl_gte', alias?: string  } 
+  | { name: 'crawl_contains', alias?: string  } 
+  | { name: 'crawl_not_contains', alias?: string  } 
+  | { name: 'crawl_starts_with', alias?: string  } 
+  | { name: 'crawl_not_starts_with', alias?: string  } 
+  | { name: 'crawl_ends_with', alias?: string  } 
+  | { name: 'crawl_not_ends_with', alias?: string  } 
   | { name: 'airSpeed', alias?: string  } 
   | { name: 'airSpeed_not', alias?: string  } 
   | { name: 'airSpeed_in', alias?: string  } 
@@ -2961,112 +2705,12 @@ export type MovementsWhereInputInputObject =
   | { name: 'airSpeed_lte', alias?: string  } 
   | { name: 'airSpeed_gt', alias?: string  } 
   | { name: 'airSpeed_gte', alias?: string  } 
-  | { name: 'crawl', alias?: string  } 
-  | { name: 'crawl_not', alias?: string  } 
-  | { name: 'fallSpeed', alias?: string  } 
-  | { name: 'fallSpeed_not', alias?: string  } 
-  | { name: 'fallSpeed_in', alias?: string  } 
-  | { name: 'fallSpeed_not_in', alias?: string  } 
-  | { name: 'fallSpeed_lt', alias?: string  } 
-  | { name: 'fallSpeed_lte', alias?: string  } 
-  | { name: 'fallSpeed_gt', alias?: string  } 
-  | { name: 'fallSpeed_gte', alias?: string  } 
-  | { name: 'tether', alias?: string  } 
-  | { name: 'tether_not', alias?: string  } 
-  | { name: 'fastFallSpeed', alias?: string  } 
-  | { name: 'fastFallSpeed_not', alias?: string  } 
-  | { name: 'fastFallSpeed_in', alias?: string  } 
-  | { name: 'fastFallSpeed_not_in', alias?: string  } 
-  | { name: 'fastFallSpeed_lt', alias?: string  } 
-  | { name: 'fastFallSpeed_lte', alias?: string  } 
-  | { name: 'fastFallSpeed_gt', alias?: string  } 
-  | { name: 'fastFallSpeed_gte', alias?: string  } 
-  | { name: 'jumpSquat', alias?: string  } 
-  | { name: 'jumpSquat_not', alias?: string  } 
-  | { name: 'jumpSquat_in', alias?: string  } 
-  | { name: 'jumpSquat_not_in', alias?: string  } 
-  | { name: 'jumpSquat_lt', alias?: string  } 
-  | { name: 'jumpSquat_lte', alias?: string  } 
-  | { name: 'jumpSquat_gt', alias?: string  } 
-  | { name: 'jumpSquat_gte', alias?: string  } 
-  | { name: 'jumpSquat_contains', alias?: string  } 
-  | { name: 'jumpSquat_not_contains', alias?: string  } 
-  | { name: 'jumpSquat_starts_with', alias?: string  } 
-  | { name: 'jumpSquat_not_starts_with', alias?: string  } 
-  | { name: 'jumpSquat_ends_with', alias?: string  } 
-  | { name: 'jumpSquat_not_ends_with', alias?: string  } 
-  | { name: 'airAcceleration', alias?: string  } 
-  | { name: 'airAcceleration_not', alias?: string  } 
-  | { name: 'airAcceleration_in', alias?: string  } 
-  | { name: 'airAcceleration_not_in', alias?: string  } 
-  | { name: 'airAcceleration_lt', alias?: string  } 
-  | { name: 'airAcceleration_lte', alias?: string  } 
-  | { name: 'airAcceleration_gt', alias?: string  } 
-  | { name: 'airAcceleration_gte', alias?: string  } 
-  | { name: 'softLandingLag', alias?: string  } 
-  | { name: 'softLandingLag_not', alias?: string  } 
-  | { name: 'softLandingLag_in', alias?: string  } 
-  | { name: 'softLandingLag_not_in', alias?: string  } 
-  | { name: 'softLandingLag_lt', alias?: string  } 
-  | { name: 'softLandingLag_lte', alias?: string  } 
-  | { name: 'softLandingLag_gt', alias?: string  } 
-  | { name: 'softLandingLag_gte', alias?: string  } 
-  | { name: 'softLandingLag_contains', alias?: string  } 
-  | { name: 'softLandingLag_not_contains', alias?: string  } 
-  | { name: 'softLandingLag_starts_with', alias?: string  } 
-  | { name: 'softLandingLag_not_starts_with', alias?: string  } 
-  | { name: 'softLandingLag_ends_with', alias?: string  } 
-  | { name: 'softLandingLag_not_ends_with', alias?: string  } 
-  | { name: 'gravity', alias?: string  } 
-  | { name: 'gravity_not', alias?: string  } 
-  | { name: 'gravity_in', alias?: string  } 
-  | { name: 'gravity_not_in', alias?: string  } 
-  | { name: 'gravity_lt', alias?: string  } 
-  | { name: 'gravity_lte', alias?: string  } 
-  | { name: 'gravity_gt', alias?: string  } 
-  | { name: 'gravity_gte', alias?: string  } 
-  | { name: 'hardLandingLag', alias?: string  } 
-  | { name: 'hardLandingLag_not', alias?: string  } 
-  | { name: 'hardLandingLag_in', alias?: string  } 
-  | { name: 'hardLandingLag_not_in', alias?: string  } 
-  | { name: 'hardLandingLag_lt', alias?: string  } 
-  | { name: 'hardLandingLag_lte', alias?: string  } 
-  | { name: 'hardLandingLag_gt', alias?: string  } 
-  | { name: 'hardLandingLag_gte', alias?: string  } 
-  | { name: 'hardLandingLag_contains', alias?: string  } 
-  | { name: 'hardLandingLag_not_contains', alias?: string  } 
-  | { name: 'hardLandingLag_starts_with', alias?: string  } 
-  | { name: 'hardLandingLag_not_starts_with', alias?: string  } 
-  | { name: 'hardLandingLag_ends_with', alias?: string  } 
-  | { name: 'hardLandingLag_not_ends_with', alias?: string  } 
-  | { name: 'shAirTime', alias?: string  } 
-  | { name: 'shAirTime_not', alias?: string  } 
-  | { name: 'shAirTime_in', alias?: string  } 
-  | { name: 'shAirTime_not_in', alias?: string  } 
-  | { name: 'shAirTime_lt', alias?: string  } 
-  | { name: 'shAirTime_lte', alias?: string  } 
-  | { name: 'shAirTime_gt', alias?: string  } 
-  | { name: 'shAirTime_gte', alias?: string  } 
-  | { name: 'shAirTime_contains', alias?: string  } 
-  | { name: 'shAirTime_not_contains', alias?: string  } 
-  | { name: 'shAirTime_starts_with', alias?: string  } 
-  | { name: 'shAirTime_not_starts_with', alias?: string  } 
-  | { name: 'shAirTime_ends_with', alias?: string  } 
-  | { name: 'shAirTime_not_ends_with', alias?: string  } 
-  | { name: 'fhAirTime', alias?: string  } 
-  | { name: 'fhAirTime_not', alias?: string  } 
-  | { name: 'fhAirTime_in', alias?: string  } 
-  | { name: 'fhAirTime_not_in', alias?: string  } 
-  | { name: 'fhAirTime_lt', alias?: string  } 
-  | { name: 'fhAirTime_lte', alias?: string  } 
-  | { name: 'fhAirTime_gt', alias?: string  } 
-  | { name: 'fhAirTime_gte', alias?: string  } 
-  | { name: 'fhAirTime_contains', alias?: string  } 
-  | { name: 'fhAirTime_not_contains', alias?: string  } 
-  | { name: 'fhAirTime_starts_with', alias?: string  } 
-  | { name: 'fhAirTime_not_starts_with', alias?: string  } 
-  | { name: 'fhAirTime_ends_with', alias?: string  } 
-  | { name: 'fhAirTime_not_ends_with', alias?: string  } 
+  | { name: 'airSpeed_contains', alias?: string  } 
+  | { name: 'airSpeed_not_contains', alias?: string  } 
+  | { name: 'airSpeed_starts_with', alias?: string  } 
+  | { name: 'airSpeed_not_starts_with', alias?: string  } 
+  | { name: 'airSpeed_ends_with', alias?: string  } 
+  | { name: 'airSpeed_not_ends_with', alias?: string  } 
   | { name: 'AND', alias?: string  } 
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
@@ -3092,7 +2736,7 @@ export interface CharacterCreateInput {
   thumbnailImg?: string | null
   colorTheme?: string | null
   moveInfo?: MovesCreateManyWithoutUserInput | null
-  movementsInfo?: MovementsCreateOneWithoutUserInput | null
+  movementsInfo?: MovementsCreateManyWithoutUserInput | null
 }
 export type CharacterCreateInputInputObject =
   | Extract<keyof CharacterCreateInput, string>
@@ -3140,55 +2784,31 @@ export type MovesCreateWithoutUserInputInputObject =
   | { name: 'moveType', alias?: string  } 
   | { name: 'isWeightDependent', alias?: string  } 
   
-export interface MovementsCreateOneWithoutUserInput {
-  create?: MovementsCreateWithoutUserInput | null
-  connect?: MovementsWhereUniqueInput | null
+export interface MovementsCreateManyWithoutUserInput {
+  create?: MovementsCreateWithoutUserInput[]
+  connect?: MovementsWhereUniqueInput[]
 }
-export type MovementsCreateOneWithoutUserInputInputObject =
-  | Extract<keyof MovementsCreateOneWithoutUserInput, string>
+export type MovementsCreateManyWithoutUserInputInputObject =
+  | Extract<keyof MovementsCreateManyWithoutUserInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'connect', alias?: string  } 
   
 export interface MovementsCreateWithoutUserInput {
-  weight?: number | null
-  maxJumps?: number | null
-  runSpeed?: number | null
-  wallJump?: boolean | null
-  walkSpeed?: number | null
-  wallCling?: boolean | null
-  airSpeed?: number | null
-  crawl?: boolean | null
-  fallSpeed?: number | null
-  tether?: boolean | null
-  fastFallSpeed?: number | null
-  jumpSquat?: string | null
-  airAcceleration?: number | null
-  softLandingLag?: string | null
-  gravity?: number | null
-  hardLandingLag?: string | null
-  shAirTime?: string | null
-  fhAirTime?: string | null
+  weight?: string | null
+  maxJumps?: string | null
+  wallJump?: string | null
+  wallCling?: string | null
+  crawl?: string | null
+  airSpeed?: string | null
 }
 export type MovementsCreateWithoutUserInputInputObject =
   | Extract<keyof MovementsCreateWithoutUserInput, string>
   | { name: 'weight', alias?: string  } 
   | { name: 'maxJumps', alias?: string  } 
-  | { name: 'runSpeed', alias?: string  } 
   | { name: 'wallJump', alias?: string  } 
-  | { name: 'walkSpeed', alias?: string  } 
   | { name: 'wallCling', alias?: string  } 
-  | { name: 'airSpeed', alias?: string  } 
   | { name: 'crawl', alias?: string  } 
-  | { name: 'fallSpeed', alias?: string  } 
-  | { name: 'tether', alias?: string  } 
-  | { name: 'fastFallSpeed', alias?: string  } 
-  | { name: 'jumpSquat', alias?: string  } 
-  | { name: 'airAcceleration', alias?: string  } 
-  | { name: 'softLandingLag', alias?: string  } 
-  | { name: 'gravity', alias?: string  } 
-  | { name: 'hardLandingLag', alias?: string  } 
-  | { name: 'shAirTime', alias?: string  } 
-  | { name: 'fhAirTime', alias?: string  } 
+  | { name: 'airSpeed', alias?: string  } 
   
 export interface CharacterUpdateInput {
   name?: string | null
@@ -3197,7 +2817,7 @@ export interface CharacterUpdateInput {
   thumbnailImg?: string | null
   colorTheme?: string | null
   moveInfo?: MovesUpdateManyWithoutUserInput | null
-  movementsInfo?: MovementsUpdateOneWithoutUserInput | null
+  movementsInfo?: MovementsUpdateManyWithoutUserInput | null
 }
 export type CharacterUpdateInputInputObject =
   | Extract<keyof CharacterUpdateInput, string>
@@ -3566,72 +3186,298 @@ export type MovesUpdateManyDataInputInputObject =
   | { name: 'moveType', alias?: string  } 
   | { name: 'isWeightDependent', alias?: string  } 
   
-export interface MovementsUpdateOneWithoutUserInput {
-  create?: MovementsCreateWithoutUserInput | null
-  update?: MovementsUpdateWithoutUserDataInput | null
-  upsert?: MovementsUpsertWithoutUserInput | null
-  delete?: boolean | null
-  disconnect?: boolean | null
-  connect?: MovementsWhereUniqueInput | null
+export interface MovementsUpdateManyWithoutUserInput {
+  create?: MovementsCreateWithoutUserInput[]
+  delete?: MovementsWhereUniqueInput[]
+  connect?: MovementsWhereUniqueInput[]
+  set?: MovementsWhereUniqueInput[]
+  disconnect?: MovementsWhereUniqueInput[]
+  update?: MovementsUpdateWithWhereUniqueWithoutUserInput[]
+  upsert?: MovementsUpsertWithWhereUniqueWithoutUserInput[]
+  deleteMany?: MovementsScalarWhereInput[]
+  updateMany?: MovementsUpdateManyWithWhereNestedInput[]
 }
-export type MovementsUpdateOneWithoutUserInputInputObject =
-  | Extract<keyof MovementsUpdateOneWithoutUserInput, string>
+export type MovementsUpdateManyWithoutUserInputInputObject =
+  | Extract<keyof MovementsUpdateManyWithoutUserInput, string>
   | { name: 'create', alias?: string  } 
+  | { name: 'delete', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  | { name: 'set', alias?: string  } 
+  | { name: 'disconnect', alias?: string  } 
   | { name: 'update', alias?: string  } 
   | { name: 'upsert', alias?: string  } 
-  | { name: 'delete', alias?: string  } 
-  | { name: 'disconnect', alias?: string  } 
-  | { name: 'connect', alias?: string  } 
+  | { name: 'deleteMany', alias?: string  } 
+  | { name: 'updateMany', alias?: string  } 
+  
+export interface MovementsUpdateWithWhereUniqueWithoutUserInput {
+  where?: MovementsWhereUniqueInput
+  data?: MovementsUpdateWithoutUserDataInput
+}
+export type MovementsUpdateWithWhereUniqueWithoutUserInputInputObject =
+  | Extract<keyof MovementsUpdateWithWhereUniqueWithoutUserInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'data', alias?: string  } 
   
 export interface MovementsUpdateWithoutUserDataInput {
-  weight?: number | null
-  maxJumps?: number | null
-  runSpeed?: number | null
-  wallJump?: boolean | null
-  walkSpeed?: number | null
-  wallCling?: boolean | null
-  airSpeed?: number | null
-  crawl?: boolean | null
-  fallSpeed?: number | null
-  tether?: boolean | null
-  fastFallSpeed?: number | null
-  jumpSquat?: string | null
-  airAcceleration?: number | null
-  softLandingLag?: string | null
-  gravity?: number | null
-  hardLandingLag?: string | null
-  shAirTime?: string | null
-  fhAirTime?: string | null
+  weight?: string | null
+  maxJumps?: string | null
+  wallJump?: string | null
+  wallCling?: string | null
+  crawl?: string | null
+  airSpeed?: string | null
 }
 export type MovementsUpdateWithoutUserDataInputInputObject =
   | Extract<keyof MovementsUpdateWithoutUserDataInput, string>
   | { name: 'weight', alias?: string  } 
   | { name: 'maxJumps', alias?: string  } 
-  | { name: 'runSpeed', alias?: string  } 
   | { name: 'wallJump', alias?: string  } 
-  | { name: 'walkSpeed', alias?: string  } 
   | { name: 'wallCling', alias?: string  } 
-  | { name: 'airSpeed', alias?: string  } 
   | { name: 'crawl', alias?: string  } 
-  | { name: 'fallSpeed', alias?: string  } 
-  | { name: 'tether', alias?: string  } 
-  | { name: 'fastFallSpeed', alias?: string  } 
-  | { name: 'jumpSquat', alias?: string  } 
-  | { name: 'airAcceleration', alias?: string  } 
-  | { name: 'softLandingLag', alias?: string  } 
-  | { name: 'gravity', alias?: string  } 
-  | { name: 'hardLandingLag', alias?: string  } 
-  | { name: 'shAirTime', alias?: string  } 
-  | { name: 'fhAirTime', alias?: string  } 
+  | { name: 'airSpeed', alias?: string  } 
   
-export interface MovementsUpsertWithoutUserInput {
+export interface MovementsUpsertWithWhereUniqueWithoutUserInput {
+  where?: MovementsWhereUniqueInput
   update?: MovementsUpdateWithoutUserDataInput
   create?: MovementsCreateWithoutUserInput
 }
-export type MovementsUpsertWithoutUserInputInputObject =
-  | Extract<keyof MovementsUpsertWithoutUserInput, string>
+export type MovementsUpsertWithWhereUniqueWithoutUserInputInputObject =
+  | Extract<keyof MovementsUpsertWithWhereUniqueWithoutUserInput, string>
+  | { name: 'where', alias?: string  } 
   | { name: 'update', alias?: string  } 
   | { name: 'create', alias?: string  } 
+  
+export interface MovementsScalarWhereInput {
+  id?: string | null
+  id_not?: string | null
+  id_in?: string[]
+  id_not_in?: string[]
+  id_lt?: string | null
+  id_lte?: string | null
+  id_gt?: string | null
+  id_gte?: string | null
+  id_contains?: string | null
+  id_not_contains?: string | null
+  id_starts_with?: string | null
+  id_not_starts_with?: string | null
+  id_ends_with?: string | null
+  id_not_ends_with?: string | null
+  weight?: string | null
+  weight_not?: string | null
+  weight_in?: string[]
+  weight_not_in?: string[]
+  weight_lt?: string | null
+  weight_lte?: string | null
+  weight_gt?: string | null
+  weight_gte?: string | null
+  weight_contains?: string | null
+  weight_not_contains?: string | null
+  weight_starts_with?: string | null
+  weight_not_starts_with?: string | null
+  weight_ends_with?: string | null
+  weight_not_ends_with?: string | null
+  maxJumps?: string | null
+  maxJumps_not?: string | null
+  maxJumps_in?: string[]
+  maxJumps_not_in?: string[]
+  maxJumps_lt?: string | null
+  maxJumps_lte?: string | null
+  maxJumps_gt?: string | null
+  maxJumps_gte?: string | null
+  maxJumps_contains?: string | null
+  maxJumps_not_contains?: string | null
+  maxJumps_starts_with?: string | null
+  maxJumps_not_starts_with?: string | null
+  maxJumps_ends_with?: string | null
+  maxJumps_not_ends_with?: string | null
+  wallJump?: string | null
+  wallJump_not?: string | null
+  wallJump_in?: string[]
+  wallJump_not_in?: string[]
+  wallJump_lt?: string | null
+  wallJump_lte?: string | null
+  wallJump_gt?: string | null
+  wallJump_gte?: string | null
+  wallJump_contains?: string | null
+  wallJump_not_contains?: string | null
+  wallJump_starts_with?: string | null
+  wallJump_not_starts_with?: string | null
+  wallJump_ends_with?: string | null
+  wallJump_not_ends_with?: string | null
+  wallCling?: string | null
+  wallCling_not?: string | null
+  wallCling_in?: string[]
+  wallCling_not_in?: string[]
+  wallCling_lt?: string | null
+  wallCling_lte?: string | null
+  wallCling_gt?: string | null
+  wallCling_gte?: string | null
+  wallCling_contains?: string | null
+  wallCling_not_contains?: string | null
+  wallCling_starts_with?: string | null
+  wallCling_not_starts_with?: string | null
+  wallCling_ends_with?: string | null
+  wallCling_not_ends_with?: string | null
+  crawl?: string | null
+  crawl_not?: string | null
+  crawl_in?: string[]
+  crawl_not_in?: string[]
+  crawl_lt?: string | null
+  crawl_lte?: string | null
+  crawl_gt?: string | null
+  crawl_gte?: string | null
+  crawl_contains?: string | null
+  crawl_not_contains?: string | null
+  crawl_starts_with?: string | null
+  crawl_not_starts_with?: string | null
+  crawl_ends_with?: string | null
+  crawl_not_ends_with?: string | null
+  airSpeed?: string | null
+  airSpeed_not?: string | null
+  airSpeed_in?: string[]
+  airSpeed_not_in?: string[]
+  airSpeed_lt?: string | null
+  airSpeed_lte?: string | null
+  airSpeed_gt?: string | null
+  airSpeed_gte?: string | null
+  airSpeed_contains?: string | null
+  airSpeed_not_contains?: string | null
+  airSpeed_starts_with?: string | null
+  airSpeed_not_starts_with?: string | null
+  airSpeed_ends_with?: string | null
+  airSpeed_not_ends_with?: string | null
+  AND?: MovementsScalarWhereInput[]
+  OR?: MovementsScalarWhereInput[]
+  NOT?: MovementsScalarWhereInput[]
+}
+export type MovementsScalarWhereInputInputObject =
+  | Extract<keyof MovementsScalarWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'id_contains', alias?: string  } 
+  | { name: 'id_not_contains', alias?: string  } 
+  | { name: 'id_starts_with', alias?: string  } 
+  | { name: 'id_not_starts_with', alias?: string  } 
+  | { name: 'id_ends_with', alias?: string  } 
+  | { name: 'id_not_ends_with', alias?: string  } 
+  | { name: 'weight', alias?: string  } 
+  | { name: 'weight_not', alias?: string  } 
+  | { name: 'weight_in', alias?: string  } 
+  | { name: 'weight_not_in', alias?: string  } 
+  | { name: 'weight_lt', alias?: string  } 
+  | { name: 'weight_lte', alias?: string  } 
+  | { name: 'weight_gt', alias?: string  } 
+  | { name: 'weight_gte', alias?: string  } 
+  | { name: 'weight_contains', alias?: string  } 
+  | { name: 'weight_not_contains', alias?: string  } 
+  | { name: 'weight_starts_with', alias?: string  } 
+  | { name: 'weight_not_starts_with', alias?: string  } 
+  | { name: 'weight_ends_with', alias?: string  } 
+  | { name: 'weight_not_ends_with', alias?: string  } 
+  | { name: 'maxJumps', alias?: string  } 
+  | { name: 'maxJumps_not', alias?: string  } 
+  | { name: 'maxJumps_in', alias?: string  } 
+  | { name: 'maxJumps_not_in', alias?: string  } 
+  | { name: 'maxJumps_lt', alias?: string  } 
+  | { name: 'maxJumps_lte', alias?: string  } 
+  | { name: 'maxJumps_gt', alias?: string  } 
+  | { name: 'maxJumps_gte', alias?: string  } 
+  | { name: 'maxJumps_contains', alias?: string  } 
+  | { name: 'maxJumps_not_contains', alias?: string  } 
+  | { name: 'maxJumps_starts_with', alias?: string  } 
+  | { name: 'maxJumps_not_starts_with', alias?: string  } 
+  | { name: 'maxJumps_ends_with', alias?: string  } 
+  | { name: 'maxJumps_not_ends_with', alias?: string  } 
+  | { name: 'wallJump', alias?: string  } 
+  | { name: 'wallJump_not', alias?: string  } 
+  | { name: 'wallJump_in', alias?: string  } 
+  | { name: 'wallJump_not_in', alias?: string  } 
+  | { name: 'wallJump_lt', alias?: string  } 
+  | { name: 'wallJump_lte', alias?: string  } 
+  | { name: 'wallJump_gt', alias?: string  } 
+  | { name: 'wallJump_gte', alias?: string  } 
+  | { name: 'wallJump_contains', alias?: string  } 
+  | { name: 'wallJump_not_contains', alias?: string  } 
+  | { name: 'wallJump_starts_with', alias?: string  } 
+  | { name: 'wallJump_not_starts_with', alias?: string  } 
+  | { name: 'wallJump_ends_with', alias?: string  } 
+  | { name: 'wallJump_not_ends_with', alias?: string  } 
+  | { name: 'wallCling', alias?: string  } 
+  | { name: 'wallCling_not', alias?: string  } 
+  | { name: 'wallCling_in', alias?: string  } 
+  | { name: 'wallCling_not_in', alias?: string  } 
+  | { name: 'wallCling_lt', alias?: string  } 
+  | { name: 'wallCling_lte', alias?: string  } 
+  | { name: 'wallCling_gt', alias?: string  } 
+  | { name: 'wallCling_gte', alias?: string  } 
+  | { name: 'wallCling_contains', alias?: string  } 
+  | { name: 'wallCling_not_contains', alias?: string  } 
+  | { name: 'wallCling_starts_with', alias?: string  } 
+  | { name: 'wallCling_not_starts_with', alias?: string  } 
+  | { name: 'wallCling_ends_with', alias?: string  } 
+  | { name: 'wallCling_not_ends_with', alias?: string  } 
+  | { name: 'crawl', alias?: string  } 
+  | { name: 'crawl_not', alias?: string  } 
+  | { name: 'crawl_in', alias?: string  } 
+  | { name: 'crawl_not_in', alias?: string  } 
+  | { name: 'crawl_lt', alias?: string  } 
+  | { name: 'crawl_lte', alias?: string  } 
+  | { name: 'crawl_gt', alias?: string  } 
+  | { name: 'crawl_gte', alias?: string  } 
+  | { name: 'crawl_contains', alias?: string  } 
+  | { name: 'crawl_not_contains', alias?: string  } 
+  | { name: 'crawl_starts_with', alias?: string  } 
+  | { name: 'crawl_not_starts_with', alias?: string  } 
+  | { name: 'crawl_ends_with', alias?: string  } 
+  | { name: 'crawl_not_ends_with', alias?: string  } 
+  | { name: 'airSpeed', alias?: string  } 
+  | { name: 'airSpeed_not', alias?: string  } 
+  | { name: 'airSpeed_in', alias?: string  } 
+  | { name: 'airSpeed_not_in', alias?: string  } 
+  | { name: 'airSpeed_lt', alias?: string  } 
+  | { name: 'airSpeed_lte', alias?: string  } 
+  | { name: 'airSpeed_gt', alias?: string  } 
+  | { name: 'airSpeed_gte', alias?: string  } 
+  | { name: 'airSpeed_contains', alias?: string  } 
+  | { name: 'airSpeed_not_contains', alias?: string  } 
+  | { name: 'airSpeed_starts_with', alias?: string  } 
+  | { name: 'airSpeed_not_starts_with', alias?: string  } 
+  | { name: 'airSpeed_ends_with', alias?: string  } 
+  | { name: 'airSpeed_not_ends_with', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface MovementsUpdateManyWithWhereNestedInput {
+  where?: MovementsScalarWhereInput
+  data?: MovementsUpdateManyDataInput
+}
+export type MovementsUpdateManyWithWhereNestedInputInputObject =
+  | Extract<keyof MovementsUpdateManyWithWhereNestedInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'data', alias?: string  } 
+  
+export interface MovementsUpdateManyDataInput {
+  weight?: string | null
+  maxJumps?: string | null
+  wallJump?: string | null
+  wallCling?: string | null
+  crawl?: string | null
+  airSpeed?: string | null
+}
+export type MovementsUpdateManyDataInputInputObject =
+  | Extract<keyof MovementsUpdateManyDataInput, string>
+  | { name: 'weight', alias?: string  } 
+  | { name: 'maxJumps', alias?: string  } 
+  | { name: 'wallJump', alias?: string  } 
+  | { name: 'wallCling', alias?: string  } 
+  | { name: 'crawl', alias?: string  } 
+  | { name: 'airSpeed', alias?: string  } 
   
 export interface CharacterUpdateManyMutationInput {
   name?: string | null
@@ -3692,7 +3538,7 @@ export interface CharacterCreateWithoutMoveInfoInput {
   mainImgUrl?: string | null
   thumbnailImg?: string | null
   colorTheme?: string | null
-  movementsInfo?: MovementsCreateOneWithoutUserInput | null
+  movementsInfo?: MovementsCreateManyWithoutUserInput | null
 }
 export type CharacterCreateWithoutMoveInfoInputInputObject =
   | Extract<keyof CharacterCreateWithoutMoveInfoInput, string>
@@ -3751,7 +3597,7 @@ export interface CharacterUpdateWithoutMoveInfoDataInput {
   mainImgUrl?: string | null
   thumbnailImg?: string | null
   colorTheme?: string | null
-  movementsInfo?: MovementsUpdateOneWithoutUserInput | null
+  movementsInfo?: MovementsUpdateManyWithoutUserInput | null
 }
 export type CharacterUpdateWithoutMoveInfoDataInputInputObject =
   | Extract<keyof CharacterUpdateWithoutMoveInfoDataInput, string>
@@ -3800,46 +3646,22 @@ export type MovesUpdateManyMutationInputInputObject =
   
 export interface MovementsCreateInput {
   user?: CharacterCreateOneWithoutMovementsInfoInput
-  weight?: number | null
-  maxJumps?: number | null
-  runSpeed?: number | null
-  wallJump?: boolean | null
-  walkSpeed?: number | null
-  wallCling?: boolean | null
-  airSpeed?: number | null
-  crawl?: boolean | null
-  fallSpeed?: number | null
-  tether?: boolean | null
-  fastFallSpeed?: number | null
-  jumpSquat?: string | null
-  airAcceleration?: number | null
-  softLandingLag?: string | null
-  gravity?: number | null
-  hardLandingLag?: string | null
-  shAirTime?: string | null
-  fhAirTime?: string | null
+  weight?: string | null
+  maxJumps?: string | null
+  wallJump?: string | null
+  wallCling?: string | null
+  crawl?: string | null
+  airSpeed?: string | null
 }
 export type MovementsCreateInputInputObject =
   | Extract<keyof MovementsCreateInput, string>
   | { name: 'user', alias?: string  } 
   | { name: 'weight', alias?: string  } 
   | { name: 'maxJumps', alias?: string  } 
-  | { name: 'runSpeed', alias?: string  } 
   | { name: 'wallJump', alias?: string  } 
-  | { name: 'walkSpeed', alias?: string  } 
   | { name: 'wallCling', alias?: string  } 
-  | { name: 'airSpeed', alias?: string  } 
   | { name: 'crawl', alias?: string  } 
-  | { name: 'fallSpeed', alias?: string  } 
-  | { name: 'tether', alias?: string  } 
-  | { name: 'fastFallSpeed', alias?: string  } 
-  | { name: 'jumpSquat', alias?: string  } 
-  | { name: 'airAcceleration', alias?: string  } 
-  | { name: 'softLandingLag', alias?: string  } 
-  | { name: 'gravity', alias?: string  } 
-  | { name: 'hardLandingLag', alias?: string  } 
-  | { name: 'shAirTime', alias?: string  } 
-  | { name: 'fhAirTime', alias?: string  } 
+  | { name: 'airSpeed', alias?: string  } 
   
 export interface CharacterCreateOneWithoutMovementsInfoInput {
   create?: CharacterCreateWithoutMovementsInfoInput | null
@@ -3869,46 +3691,22 @@ export type CharacterCreateWithoutMovementsInfoInputInputObject =
   
 export interface MovementsUpdateInput {
   user?: CharacterUpdateOneRequiredWithoutMovementsInfoInput | null
-  weight?: number | null
-  maxJumps?: number | null
-  runSpeed?: number | null
-  wallJump?: boolean | null
-  walkSpeed?: number | null
-  wallCling?: boolean | null
-  airSpeed?: number | null
-  crawl?: boolean | null
-  fallSpeed?: number | null
-  tether?: boolean | null
-  fastFallSpeed?: number | null
-  jumpSquat?: string | null
-  airAcceleration?: number | null
-  softLandingLag?: string | null
-  gravity?: number | null
-  hardLandingLag?: string | null
-  shAirTime?: string | null
-  fhAirTime?: string | null
+  weight?: string | null
+  maxJumps?: string | null
+  wallJump?: string | null
+  wallCling?: string | null
+  crawl?: string | null
+  airSpeed?: string | null
 }
 export type MovementsUpdateInputInputObject =
   | Extract<keyof MovementsUpdateInput, string>
   | { name: 'user', alias?: string  } 
   | { name: 'weight', alias?: string  } 
   | { name: 'maxJumps', alias?: string  } 
-  | { name: 'runSpeed', alias?: string  } 
   | { name: 'wallJump', alias?: string  } 
-  | { name: 'walkSpeed', alias?: string  } 
   | { name: 'wallCling', alias?: string  } 
-  | { name: 'airSpeed', alias?: string  } 
   | { name: 'crawl', alias?: string  } 
-  | { name: 'fallSpeed', alias?: string  } 
-  | { name: 'tether', alias?: string  } 
-  | { name: 'fastFallSpeed', alias?: string  } 
-  | { name: 'jumpSquat', alias?: string  } 
-  | { name: 'airAcceleration', alias?: string  } 
-  | { name: 'softLandingLag', alias?: string  } 
-  | { name: 'gravity', alias?: string  } 
-  | { name: 'hardLandingLag', alias?: string  } 
-  | { name: 'shAirTime', alias?: string  } 
-  | { name: 'fhAirTime', alias?: string  } 
+  | { name: 'airSpeed', alias?: string  } 
   
 export interface CharacterUpdateOneRequiredWithoutMovementsInfoInput {
   create?: CharacterCreateWithoutMovementsInfoInput | null
@@ -3950,45 +3748,21 @@ export type CharacterUpsertWithoutMovementsInfoInputInputObject =
   | { name: 'create', alias?: string  } 
   
 export interface MovementsUpdateManyMutationInput {
-  weight?: number | null
-  maxJumps?: number | null
-  runSpeed?: number | null
-  wallJump?: boolean | null
-  walkSpeed?: number | null
-  wallCling?: boolean | null
-  airSpeed?: number | null
-  crawl?: boolean | null
-  fallSpeed?: number | null
-  tether?: boolean | null
-  fastFallSpeed?: number | null
-  jumpSquat?: string | null
-  airAcceleration?: number | null
-  softLandingLag?: string | null
-  gravity?: number | null
-  hardLandingLag?: string | null
-  shAirTime?: string | null
-  fhAirTime?: string | null
+  weight?: string | null
+  maxJumps?: string | null
+  wallJump?: string | null
+  wallCling?: string | null
+  crawl?: string | null
+  airSpeed?: string | null
 }
 export type MovementsUpdateManyMutationInputInputObject =
   | Extract<keyof MovementsUpdateManyMutationInput, string>
   | { name: 'weight', alias?: string  } 
   | { name: 'maxJumps', alias?: string  } 
-  | { name: 'runSpeed', alias?: string  } 
   | { name: 'wallJump', alias?: string  } 
-  | { name: 'walkSpeed', alias?: string  } 
   | { name: 'wallCling', alias?: string  } 
-  | { name: 'airSpeed', alias?: string  } 
   | { name: 'crawl', alias?: string  } 
-  | { name: 'fallSpeed', alias?: string  } 
-  | { name: 'tether', alias?: string  } 
-  | { name: 'fastFallSpeed', alias?: string  } 
-  | { name: 'jumpSquat', alias?: string  } 
-  | { name: 'airAcceleration', alias?: string  } 
-  | { name: 'softLandingLag', alias?: string  } 
-  | { name: 'gravity', alias?: string  } 
-  | { name: 'hardLandingLag', alias?: string  } 
-  | { name: 'shAirTime', alias?: string  } 
-  | { name: 'fhAirTime', alias?: string  } 
+  | { name: 'airSpeed', alias?: string  } 
   
 export interface CharacterSubscriptionWhereInput {
   mutation_in?: prisma.MutationType[]
@@ -4084,6 +3858,26 @@ export type MovesOrderByInputValues =
   | 'updatedAt_ASC'
   | 'updatedAt_DESC'
   
+export type MovementsOrderByInputValues =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'weight_ASC'
+  | 'weight_DESC'
+  | 'maxJumps_ASC'
+  | 'maxJumps_DESC'
+  | 'wallJump_ASC'
+  | 'wallJump_DESC'
+  | 'wallCling_ASC'
+  | 'wallCling_DESC'
+  | 'crawl_ASC'
+  | 'crawl_DESC'
+  | 'airSpeed_ASC'
+  | 'airSpeed_DESC'
+  | 'createdAt_ASC'
+  | 'createdAt_DESC'
+  | 'updatedAt_ASC'
+  | 'updatedAt_DESC'
+  
 export type CharacterOrderByInputValues =
   | 'id_ASC'
   | 'id_DESC'
@@ -4097,50 +3891,6 @@ export type CharacterOrderByInputValues =
   | 'thumbnailImg_DESC'
   | 'colorTheme_ASC'
   | 'colorTheme_DESC'
-  | 'createdAt_ASC'
-  | 'createdAt_DESC'
-  | 'updatedAt_ASC'
-  | 'updatedAt_DESC'
-  
-export type MovementsOrderByInputValues =
-  | 'id_ASC'
-  | 'id_DESC'
-  | 'weight_ASC'
-  | 'weight_DESC'
-  | 'maxJumps_ASC'
-  | 'maxJumps_DESC'
-  | 'runSpeed_ASC'
-  | 'runSpeed_DESC'
-  | 'wallJump_ASC'
-  | 'wallJump_DESC'
-  | 'walkSpeed_ASC'
-  | 'walkSpeed_DESC'
-  | 'wallCling_ASC'
-  | 'wallCling_DESC'
-  | 'airSpeed_ASC'
-  | 'airSpeed_DESC'
-  | 'crawl_ASC'
-  | 'crawl_DESC'
-  | 'fallSpeed_ASC'
-  | 'fallSpeed_DESC'
-  | 'tether_ASC'
-  | 'tether_DESC'
-  | 'fastFallSpeed_ASC'
-  | 'fastFallSpeed_DESC'
-  | 'jumpSquat_ASC'
-  | 'jumpSquat_DESC'
-  | 'airAcceleration_ASC'
-  | 'airAcceleration_DESC'
-  | 'softLandingLag_ASC'
-  | 'softLandingLag_DESC'
-  | 'gravity_ASC'
-  | 'gravity_DESC'
-  | 'hardLandingLag_ASC'
-  | 'hardLandingLag_DESC'
-  | 'shAirTime_ASC'
-  | 'shAirTime_DESC'
-  | 'fhAirTime_ASC'
-  | 'fhAirTime_DESC'
   | 'createdAt_ASC'
   | 'createdAt_DESC'
   | 'updatedAt_ASC'
