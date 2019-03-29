@@ -1,3 +1,7 @@
+# Install Project
+```
+npm install
+```
 # Starting Database
 ```
 npm run dockerStart
