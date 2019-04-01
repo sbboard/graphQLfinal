@@ -1,7 +1,7 @@
 {
-  "name": "grapql-server-practice",
+  "name": "grapql-server",
   "version": "1.0.0",
-  "description": "This is my graphql server practice project",
+  "description": "",
   "main": "index.ts",
   "scripts": {
     "dockerStart": "docker-compose -f ./docker-compose.yml up -d",
@@ -11,7 +11,7 @@
     "delete": "prisma delete --force",
     "start": "ts-node-dev --no-notify --respawn --transpileOnly ./"
   },
-  "author": "Thor Anderson",
+  "author": "Buffum",
   "license": "ISC",
   "dependencies": {
     "graphql": "^14.1.1",

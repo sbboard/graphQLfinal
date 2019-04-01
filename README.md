@@ -6,8 +6,9 @@ npm install
 ```
 npm run dockerStart
 npm run deploy
+npm run start
 ```
-After deploying the GraphQL Playground can be accessed on http://192.168.99.100:4499/
+Playground can be accessed on http://localhost:4000/
 # Seed
 ```
 npm run load
