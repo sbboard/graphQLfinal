@@ -58,9 +58,34 @@ query getPikachuWeight{
 Returns the weight of characters named "Pikachu"
 # Mutation Examples
 ## Create Character
-
+```
+mutation createCharacter{
+  createCharacter(data:{
+    name: "Muddy Mole"
+  })
+  {
+    id
+    name
+  }
+}
+```
+Running this mutation creates the character Muddy Mole.
 ## Update Move Damage
-
+```
+mutation nerfDashAttack{
+  updateMoves(where:{
+    id:"cjtytgwum00ap07764m5zztzn"
+  }
+  data:{
+    baseDmg:2
+  })
+  {
+    name
+    baseDmg
+  }
+}
+```
+Finds a move by id, then sets its base damage to 2. Returns the name of the move and the new damage.
 ## Delete Move
 ```
 mutation deleteMove{
@@ -75,5 +100,3 @@ mutation deleteMove{
 }
 ```
 Mutation uses an id to find and delete a specific move. Returns the name of the move and the name of the person who used the move.
-# To-Do
-- At least 2 Mutation resolvers allowing users to create, update, or upsert an item.
