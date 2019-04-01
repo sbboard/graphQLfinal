@@ -25,8 +25,8 @@ query getCharList{
     name
   }
 }
-Returns a list of every character
 ```
+Returns a list of every character
 ## Get Character's Moveset
 ```
 query getBowserMoves{
@@ -57,9 +57,23 @@ query getPikachuWeight{
 ```
 Returns the weight of characters named "Pikachu"
 # Mutation Examples
-## Update Character
-## Delete Character
+## Create Character
+
+## Update Move Damage
+
+## Delete Move
+```
+mutation deleteMove{
+  deleteMoves(where:{
+    id:"cjtyth3em01ew0776rjltt6j8"
+  }){
+    user{
+      name
+    }
+    name
+  }
+}
+```
+Mutation uses an id to find and delete a specific move. Returns the name of the move and the name of the person who used the move.
 # To-Do
-- At least 3 Query resolvers to get data from your server
 - At least 2 Mutation resolvers allowing users to create, update, or upsert an item.
-- At least 1 Mutation resolver allowing users to delete an item.
