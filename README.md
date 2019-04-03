@@ -87,6 +87,7 @@ mutation nerfDashAttack{
 }
 ```
 Finds a move by id, then sets its base damage to 2. Returns the name of the move and the new damage.
+Your specific ID wont match the one in this example. You'll have to run a query to get the ID before updating.
 ## Delete Move
 ```
 mutation deleteMove{
@@ -101,3 +102,4 @@ mutation deleteMove{
 }
 ```
 Mutation uses an id to find and delete a specific move. Returns the name of the move and the name of the person who used the move.
+Your specific ID wont match the one in this example. You'll have to run a query to get the ID before deleting.
